@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://bnmtru6eu72vj"]
+
+[ext_resource type="Script" uid="uid://bsqpwcbnvjvpw" path="res://script/wheelchair.gd" id="1_0vjwd"]
+[ext_resource type="Script" uid="uid://bvwud5pg3w2i2" path="res://script/terminal.gd" id="2_38gba"]
+[ext_resource type="Script" uid="uid://31wrqp237dtm" path="res://script/head_look.gd" id="3_kmb4p"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g4v7s"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_yf5fn"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_57qmd"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_d0u6y"]
+
+[node name="Wheelchair" type="CharacterBody3D" unique_id=311727349]
+script = ExtResource("1_0vjwd")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1800488574]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5015951, 0)
+shape = SubResource("BoxShape3D_g4v7s")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D" unique_id=320073706]
+layers = 1023
+mesh = SubResource("BoxMesh_yf5fn")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="CollisionShape3D" unique_id=521274290]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.3334955, 0, 0.9726829, 0.6245416)
+mesh = SubResource("BoxMesh_57qmd")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="CollisionShape3D" unique_id=1034590069]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.59920275, -0.63767254, 0.69397897, -0.40121832)
+mesh = SubResource("BoxMesh_d0u6y")
+
+[node name="Terminal" type="Node3D" parent="." unique_id=668549793]
+script = ExtResource("2_38gba")
+
+[node name="Head" type="Node3D" parent="." unique_id=741527528]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9319098, 0.118594944)
+script = ExtResource("3_kmb4p")
+
+[node name="Camera3D" type="Camera3D" parent="Head" unique_id=1783926359]

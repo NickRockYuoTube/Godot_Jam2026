@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://djw6hnxcpjexi"]
+
+[ext_resource type="PackedScene" uid="uid://bnmtru6eu72vj" path="res://scen/wheelchair.tscn" id="1_46lwt"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_g4v7s"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yf5fn"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_yf5fn"]
+
+[node name="TestLevel" type="Node3D" unique_id=725854085]
+
+[node name="Wheelchair" parent="." unique_id=311727349 instance=ExtResource("1_46lwt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7612095, 2.3303251, 9.422695)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1364498435]
+physics_material_override = SubResource("PhysicsMaterial_g4v7s")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1021851173]
+transform = Transform3D(45.314533, 0, 0, 0, 0.659291, 0, 0, 0, 45.13046, 0, 0, 0)
+shape = SubResource("BoxShape3D_yf5fn")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D/CollisionShape3D" unique_id=1096026536]
+layers = 1023
+mesh = SubResource("BoxMesh_yf5fn")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=1007659653]
+transform = Transform3D(1, 0, 0, 0, -0.008787087, 0.99996144, 0, -0.99996144, -0.008787087, -13.59665, 7.763041, -14.044572)
+light_color = Color(0.33559018, 0.9999998, 0.92779773, 1)
+light_energy = 5.0
+spot_range = 10.788224
+spot_angle = 43.268635
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1949928066]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.020349, 0)
+light_energy = 2.0
+omni_range = 12.6144085
