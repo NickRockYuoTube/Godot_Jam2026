@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://bvwud5pg3w2i2" path="res://script/terminal.gd" id="2_38gba"]
 [ext_resource type="Script" uid="uid://31wrqp237dtm" path="res://script/head_look.gd" id="3_kmb4p"]
 [ext_resource type="PackedScene" uid="uid://btu4a7utwcuqr" path="res://models/кресло2.0.glb" id="4_38gba"]
+[ext_resource type="PackedScene" uid="uid://cvmsmjg843pxg" path="res://models/sitting_idle.tscn" id="5_kmb4p"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_g4v7s"]
 size = Vector3(1, 1.7525635, 1.8577881)
@@ -44,8 +45,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9319098, 0.118594944)
 script = ExtResource("3_kmb4p")
 
 [node name="Camera3D" type="Camera3D" parent="Head" unique_id=1783926359]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25861216, -0.23596674)
-fov = 60.0
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.15420794, -0.33497387)
+fov = 65.0
 
 [node name="кресло2_0" parent="." unique_id=1249380776 instance=ExtResource("4_38gba")]
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -1.6007485, -0.77689874, 0.13294268)
+
+[node name="Sitting Idle" parent="." unique_id=2042649073 instance=ExtResource("5_kmb4p")]
+transform = Transform3D(-0.49998778, 0, 0.0034947866, 0, 0.5, 0, -0.0034947866, 0, -0.49998778, 0.010014892, 0.13220143, -0.14779186)
