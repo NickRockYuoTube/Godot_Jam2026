@@ -1,7 +1,7 @@
 extends Node3D
 class_name HeadLook
 
-@export var max_yaw_deg := 40.0           # лимит поворота головы влево/вправо
+@export var max_yaw_deg := 50.0           # лимит поворота головы влево/вправо
 @export var max_pitch_up_deg := 15.0      # вверх голова почти не поднимается
 @export var max_pitch_down_deg := 30.0    # вниз можно посмотреть на терминал
 @export var sensitivity := 0.0018
