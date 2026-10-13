@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://cvmsmjg843pxg"]
 
-[ext_resource type="PackedScene" uid="uid://lq0t6ejhniq5" path="res://models/Sitting Idle.fbx" id="1_km3kw"]
-[ext_resource type="Texture2D" uid="uid://4o6nir4vvfi5" path="res://models/Character_13.png" id="2_7qt4v"]
+[ext_resource type="PackedScene" uid="uid://lq0t6ejhniq5" path="res://models/Sitting Idle.fbx" id="1_cb8cq"]
+[ext_resource type="Texture2D" uid="uid://4o6nir4vvfi5" path="res://textur/Character_13.png" id="2_jdmg1"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jels4"]
-albedo_texture = ExtResource("2_7qt4v")
+albedo_texture = ExtResource("2_jdmg1")
 
-[node name="Sitting Idle" unique_id=2042649073 instance=ExtResource("1_km3kw")]
+[node name="Sitting Idle" unique_id=2042649073 instance=ExtResource("1_cb8cq")]
 
 [node name="Skeleton3D" parent="." index="0" unique_id=759172439]
 bones/0/position = Vector3(-0.0033384406, 1.5816802, 0.04858558)
