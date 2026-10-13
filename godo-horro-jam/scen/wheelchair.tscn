@@ -2,12 +2,14 @@
 
 [ext_resource type="Script" uid="uid://bsqpwcbnvjvpw" path="res://script/wheelchair.gd" id="1_0vjwd"]
 [ext_resource type="Script" uid="uid://bvwud5pg3w2i2" path="res://script/terminal.gd" id="2_38gba"]
+[ext_resource type="Script" uid="uid://bpoi1efv3n6ht" path="res://script/console_button.gd" id="3_3xlf3"]
 [ext_resource type="Script" uid="uid://31wrqp237dtm" path="res://script/head_look.gd" id="3_kmb4p"]
-[ext_resource type="PackedScene" uid="uid://btu4a7utwcuqr" path="res://models/кресло2.0.glb" id="4_38gba"]
-[ext_resource type="PackedScene" uid="uid://cvmsmjg843pxg" path="res://prefab/sitting_idle.tscn" id="5_kmb4p"]
+[ext_resource type="PackedScene" uid="uid://dubvvqny8xok8" path="res://models/кресло 3.glb" id="4_kmb4p"]
+[ext_resource type="Script" uid="uid://2mmt3ci5n3a6" path="res://script/console_interactor.gd" id="5_g8x6k"]
+[ext_resource type="Texture2D" uid="uid://brvd66h8amj1b" path="res://textur/415.png" id="5_kmb4p"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_g4v7s"]
-size = Vector3(1, 1.7525635, 1.8577881)
+size = Vector3(1, 2.0789185, 1.8577881)
 
 [sub_resource type="BoxMesh" id="BoxMesh_yf5fn"]
 
@@ -15,11 +17,13 @@ size = Vector3(1, 1.7525635, 1.8577881)
 
 [sub_resource type="BoxMesh" id="BoxMesh_d0u6y"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_yf5fn"]
+
 [node name="Wheelchair" type="CharacterBody3D" unique_id=311727349]
 script = ExtResource("1_0vjwd")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1800488574]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.034775853, 0.8778768, -0.38067627)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.034775853, 1.0410542, -0.38067627)
 shape = SubResource("BoxShape3D_g4v7s")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D" unique_id=320073706]
@@ -40,16 +44,78 @@ mesh = SubResource("BoxMesh_d0u6y")
 [node name="Terminal" type="Node3D" parent="." unique_id=668549793]
 script = ExtResource("2_38gba")
 
+[node name="BtnForward" type="Area3D" parent="Terminal" unique_id=438560941]
+transform = Transform3D(4.5641975, 0, -2.0415933, 0, 5, 0, 2.0415933, 0, 4.5641975, -0.37494254, 1.7330862, -0.51929295)
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("3_3xlf3")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Terminal/BtnForward" unique_id=1692396552]
+transform = Transform3D(0.01, 0, 0, 0, 0.010000001, 0, 0, 0, 0.01, 0, 0.0009574294, 0)
+shape = SubResource("BoxShape3D_yf5fn")
+
+[node name="BtnBack" type="Area3D" parent="Terminal" unique_id=813717172]
+transform = Transform3D(4.5641975, 0, -2.0415933, 0, 5, 0, 2.0415933, 0, 4.5641975, -0.37644553, 1.6528679, -0.5201967)
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("3_3xlf3")
+command = 1
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Terminal/BtnBack" unique_id=1794086318]
+transform = Transform3D(0.01, 0, 0, 0, 0.010000001, 0, 0, 0, 0.01, 0, 0.0009574294, 0)
+shape = SubResource("BoxShape3D_yf5fn")
+
+[node name="BtnLeft" type="Area3D" parent="Terminal" unique_id=102077955]
+transform = Transform3D(4.5641975, 0, -2.0415933, 0, 5, 0, 2.0415933, 0, 4.5641975, -0.39436382, 1.6528679, -0.45961004)
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("3_3xlf3")
+command = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Terminal/BtnLeft" unique_id=139000557]
+transform = Transform3D(0.01, 0, 0, 0, 0.010000001, 0, 0, 0, 0.01, 0, 0.0009574294, 0)
+shape = SubResource("BoxShape3D_yf5fn")
+
+[node name="BtnRight" type="Area3D" parent="Terminal" unique_id=291927978]
+transform = Transform3D(4.5641975, 0, -2.0415933, 0, 5, 0, 2.0415933, 0, 4.5641975, -0.3429705, 1.6528679, -0.5815291)
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("3_3xlf3")
+command = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Terminal/BtnRight" unique_id=1883682568]
+transform = Transform3D(0.01, 0, 0, 0, 0.010000001, 0, 0, 0, 0.01, 0, 0.0009574294, 0)
+shape = SubResource("BoxShape3D_yf5fn")
+
 [node name="Head" type="Node3D" parent="." unique_id=741527528]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9319098, 0.118594944)
 script = ExtResource("3_kmb4p")
 
 [node name="Camera3D" type="Camera3D" parent="Head" unique_id=1783926359]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.15420794, -0.4876631)
-fov = 65.0
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.10379052, -0.4876631)
+fov = 68.0
 
-[node name="кресло2_0" parent="." unique_id=1249380776 instance=ExtResource("4_38gba")]
-transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -1.6007485, -0.77689874, 0.13294268)
+[node name="RayCast3D" type="RayCast3D" parent="Head/Camera3D" unique_id=365777482]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
+collision_mask = 2
+script = ExtResource("5_g8x6k")
 
-[node name="Sitting Idle" parent="." unique_id=2042649073 instance=ExtResource("5_kmb4p")]
-transform = Transform3D(-0.49998778, 0, 0.0034947866, 0, 0.5, 0, -0.0034947866, 0, -0.49998778, 0.010014892, 0.13220143, -0.14779186)
+[node name="кресло 3" parent="." unique_id=1674091288 instance=ExtResource("4_kmb4p")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -1.5913036, -0.737115, 0.06714296)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=259285061]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer" unique_id=576681726]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -94.0
+offset_top = -54.0
+offset_right = 2594.0
+offset_bottom = 1482.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("5_kmb4p")

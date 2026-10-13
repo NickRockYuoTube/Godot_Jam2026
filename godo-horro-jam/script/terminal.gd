@@ -1,18 +1,24 @@
 extends Node3D
 class_name Terminal
 
-# Сигнал: что сейчас нажато на терминале
-# forward: 1 = вперёд, -1 = назад; turn: 1 = влево, -1 = вправо
 signal command_changed(forward: float, turn: float)
 
-var _forward := 0.0
-var _turn := 0.0
+var _active := {}   # Command -> bool
 
-func _process(_delta: float) -> void:
-	var f := Input.get_axis("chair_back", "chair_forward")
-	var t := Input.get_axis("chair_turn_right", "chair_turn_left")
-	# Шлём сигнал только при изменении
-	if f != _forward or t != _turn:
-		_forward = f
-		_turn = t
-		command_changed.emit(_forward, _turn)
+func _ready() -> void:
+	_collect_buttons(self)
+
+func _collect_buttons(node: Node) -> void:
+	for child in node.get_children():
+		if child is ConsoleButton:
+			child.pressed_changed.connect(_on_button_pressed_changed)
+		_collect_buttons(child)
+
+func _on_button_pressed_changed(command: ConsoleButton.Command, is_pressed: bool) -> void:
+	_active[command] = is_pressed
+	var forward := _axis(ConsoleButton.Command.FORWARD, ConsoleButton.Command.BACK)
+	var turn := _axis(ConsoleButton.Command.TURN_LEFT, ConsoleButton.Command.TURN_RIGHT)
+	command_changed.emit(forward, turn)
+
+func _axis(positive: ConsoleButton.Command, negative: ConsoleButton.Command) -> float:
+	return float(_active.get(positive, false)) - float(_active.get(negative, false))
