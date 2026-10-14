@@ -4,9 +4,9 @@
 [ext_resource type="Script" uid="uid://bvwud5pg3w2i2" path="res://script/terminal.gd" id="2_38gba"]
 [ext_resource type="Script" uid="uid://bpoi1efv3n6ht" path="res://script/console_button.gd" id="3_3xlf3"]
 [ext_resource type="Script" uid="uid://31wrqp237dtm" path="res://script/head_look.gd" id="3_kmb4p"]
-[ext_resource type="PackedScene" uid="uid://dubvvqny8xok8" path="res://models/кресло 3.glb" id="4_kmb4p"]
 [ext_resource type="Script" uid="uid://2mmt3ci5n3a6" path="res://script/console_interactor.gd" id="5_g8x6k"]
 [ext_resource type="Texture2D" uid="uid://brvd66h8amj1b" path="res://textur/415.png" id="5_kmb4p"]
+[ext_resource type="PackedScene" uid="uid://da52c2gvih5vp" path="res://models/кресло 4.1 nohead .glb" id="8_ypavh"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_g4v7s"]
 size = Vector3(1, 2.0789185, 1.9776306)
@@ -46,7 +46,7 @@ mesh = SubResource("BoxMesh_d0u6y")
 script = ExtResource("2_38gba")
 
 [node name="BtnForward" type="Area3D" parent="Terminal" unique_id=438560941 node_paths=PackedStringArray("lamp")]
-transform = Transform3D(4.5641975, 0, -2.0415933, 0, 5, 0, 2.0415933, 0, 4.5641975, -0.37494254, 1.7330862, -0.51929295)
+transform = Transform3D(4.5641975, 0, -2.0415933, 0, 5, 0, 2.0415933, 0, 4.5641975, -0.3868194, 1.7858812, -0.52686)
 collision_layer = 2
 collision_mask = 0
 script = ExtResource("3_3xlf3")
@@ -65,7 +65,7 @@ light_specular = 2.0
 omni_range = 0.06632122
 
 [node name="BtnBack" type="Area3D" parent="Terminal" unique_id=813717172 node_paths=PackedStringArray("lamp")]
-transform = Transform3D(4.5641975, 0, -2.0415933, 0, 5, 0, 2.0415933, 0, 4.5641975, -0.37644553, 1.6528679, -0.5201967)
+transform = Transform3D(4.5641975, 0, -2.0415933, 0, 5, 0, 2.0415933, 0, 4.5641975, -0.3926559, 1.6502854, -0.532345)
 collision_layer = 2
 collision_mask = 0
 script = ExtResource("3_3xlf3")
@@ -85,7 +85,7 @@ light_specular = 2.0
 omni_range = 0.06632122
 
 [node name="BtnLeft" type="Area3D" parent="Terminal" unique_id=102077955 node_paths=PackedStringArray("lamp")]
-transform = Transform3D(4.5641975, 0, -2.0415933, 0, 5, 0, 2.0415933, 0, 4.5641975, -0.39436382, 1.6528679, -0.45961004)
+transform = Transform3D(4.5641975, 0, -2.0415933, 0, 5, 0, 2.0415933, 0, 4.5641975, -0.4010464, 1.7155472, -0.47118962)
 collision_layer = 2
 collision_mask = 0
 script = ExtResource("3_3xlf3")
@@ -105,7 +105,7 @@ light_specular = 2.0
 omni_range = 0.06632122
 
 [node name="BtnRight" type="Area3D" parent="Terminal" unique_id=291927978 node_paths=PackedStringArray("lamp")]
-transform = Transform3D(4.5641975, 0, -2.0415933, 0, 5, 0, 2.0415933, 0, 4.5641975, -0.3429705, 1.6528679, -0.5815291)
+transform = Transform3D(4.5641975, 0, -2.0415933, 0, 5, 0, 2.0415933, 0, 4.5641975, -0.35871074, 1.7134658, -0.58812815)
 collision_layer = 2
 collision_mask = 0
 script = ExtResource("3_3xlf3")
@@ -124,21 +124,53 @@ light_color = Color(0, 0.65974355, 0.30096498, 1)
 light_specular = 2.0
 omni_range = 0.06632122
 
+[node name="FlashlightPanel" type="Node3D" parent="." unique_id=884885818]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5090718, 1.4927545, -0.5569459)
+
+[node name="BtnFlashlight" type="Area3D" parent="FlashlightPanel" unique_id=971335084]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11339277, -0.018352747, -0.031779855)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FlashlightPanel/BtnFlashlight" unique_id=346603963]
+transform = Transform3D(0.01, 0, 0, 0, 0.010000001, 0, 0, 0, 0.01, 0, 0.0009574294, 0)
+shape = SubResource("BoxShape3D_yf5fn")
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="FlashlightPanel/BtnFlashlight" unique_id=1462241004]
+transform = Transform3D(0.20000002, 0, 0, 0, 0.20000002, 0, 0, 0, 0.20000002, 0.0015159175, -0.0016382337, 2.734363e-06)
+layers = 2
+light_color = Color(0, 0.65974355, 0.30096498, 1)
+light_specular = 2.0
+omni_range = 0.06632122
+
+[node name="SpotLight3D" type="SpotLight3D" parent="FlashlightPanel" unique_id=1384589958]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1124289, -0.15992367, -0.3303814)
+
+[node name="LampGreen" type="OmniLight3D" parent="FlashlightPanel" unique_id=2055612309]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2112968, -0.08850515, 0.0403015)
+light_color = Color(6.3773246e-07, 0.3514827, 0.14830226, 1)
+omni_range = 0.07615738
+
+[node name="LampOrange" type="OmniLight3D" parent="FlashlightPanel" unique_id=951903637]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.20121497, -0.102915525, 0.046326935)
+light_color = Color(0.65835935, 0.3752825, 0, 1)
+omni_range = 0.07851483
+
+[node name="LampRed" type="OmniLight3D" parent="FlashlightPanel" unique_id=1345671424]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.24772614, 0, 0.042444676)
+light_color = Color(0.54003376, 0.029732518, 0.14307386, 1)
+omni_range = 0.06601828
+
 [node name="Head" type="Node3D" parent="." unique_id=741527528]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9319098, 0.118594944)
 script = ExtResource("3_kmb4p")
 
 [node name="Camera3D" type="Camera3D" parent="Head" unique_id=1783926359]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.10379052, -0.4876631)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.026337206, -0.056592464, -0.33019873)
 fov = 68.0
 
 [node name="RayCast3D" type="RayCast3D" parent="Head/Camera3D" unique_id=365777482]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
 collision_mask = 2
 script = ExtResource("5_g8x6k")
-
-[node name="кресло 3" parent="." unique_id=1674091288 instance=ExtResource("4_kmb4p")]
-transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -1.5913036, -0.737115, 0.06714296)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=259285061]
 
@@ -156,3 +188,6 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.07, 0.07)
 texture = ExtResource("5_kmb4p")
+
+[node name="кресло 4_1 nohead" parent="." unique_id=1176111271 instance=ExtResource("8_ypavh")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -1.5994767, -0.7481282, 0.06274581)
