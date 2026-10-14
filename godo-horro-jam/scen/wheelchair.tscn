@@ -4,49 +4,35 @@
 [ext_resource type="Script" uid="uid://bvwud5pg3w2i2" path="res://script/terminal.gd" id="2_38gba"]
 [ext_resource type="Script" uid="uid://bpoi1efv3n6ht" path="res://script/console_button.gd" id="3_3xlf3"]
 [ext_resource type="Script" uid="uid://31wrqp237dtm" path="res://script/head_look.gd" id="3_kmb4p"]
-[ext_resource type="PackedScene" uid="uid://dubvvqny8xok8" path="res://models/кресло 3.glb" id="4_kmb4p"]
+[ext_resource type="AudioStream" uid="uid://cxuj3bimbj4t7" path="res://sound/ClickSound.ogg" id="4_2aake"]
+[ext_resource type="Script" uid="uid://6qkcmulft5vk" path="res://script/flashlight_panel.gd" id="4_ypavh"]
 [ext_resource type="Script" uid="uid://2mmt3ci5n3a6" path="res://script/console_interactor.gd" id="5_g8x6k"]
 [ext_resource type="Texture2D" uid="uid://brvd66h8amj1b" path="res://textur/415.png" id="5_kmb4p"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_g4v7s"]
-size = Vector3(1, 2.0789185, 1.9776306)
-
-[sub_resource type="BoxMesh" id="BoxMesh_yf5fn"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_57qmd"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_d0u6y"]
+[ext_resource type="AudioStream" uid="uid://duuypjbeovtno" path="res://sound/LightSound.ogg" id="6_bxuc5"]
+[ext_resource type="Script" uid="uid://4thteyplwpvh" path="res://script/loop_sound.gd" id="7_bxuc5"]
+[ext_resource type="PackedScene" uid="uid://cm8cxo1nkqo5r" path="res://models/кресло 4.2 nohead .glb" id="7_g8x6k"]
+[ext_resource type="AudioStream" uid="uid://dvy8ixa7t1n7u" path="res://sound/WarningSound.ogg" id="7_u0ik3"]
+[ext_resource type="AudioStream" uid="uid://t34dipa5frq3" path="res://sound/WheelSound.ogg" id="12_vjl7f"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_yf5fn"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_d0u6y"]
+size = Vector3(1, 2.319458, 1.8027344)
 
 [node name="Wheelchair" type="CharacterBody3D" unique_id=311727349]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.24693179)
 script = ExtResource("1_0vjwd")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1800488574]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.034775853, 1.0410542, -0.44059753)
-shape = SubResource("BoxShape3D_g4v7s")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D" unique_id=320073706]
-visible = false
-layers = 1023
-mesh = SubResource("BoxMesh_yf5fn")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="CollisionShape3D" unique_id=521274290]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.3334955, 0, 0.9726829, 0.6245416)
-visible = false
-mesh = SubResource("BoxMesh_57qmd")
-
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="CollisionShape3D" unique_id=1034590069]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.59920275, -0.63767254, 0.69397897, -0.40121832)
-visible = false
-mesh = SubResource("BoxMesh_d0u6y")
+forward_speed = null
+back_speed = null
+turn_speed_deg = null
+acceleration = null
+terminal_path = null
 
 [node name="Terminal" type="Node3D" parent="." unique_id=668549793]
 script = ExtResource("2_38gba")
 
 [node name="BtnForward" type="Area3D" parent="Terminal" unique_id=438560941 node_paths=PackedStringArray("lamp")]
-transform = Transform3D(4.5641975, 0, -2.0415933, 0, 5, 0, 2.0415933, 0, 4.5641975, -0.37494254, 1.7330862, -0.51929295)
+transform = Transform3D(4.5641975, 0, -2.0415933, 0, 5, 0, 2.0415933, 0, 4.5641975, -0.39169908, 1.7858812, -0.51742494)
 collision_layer = 2
 collision_mask = 0
 script = ExtResource("3_3xlf3")
@@ -64,8 +50,11 @@ light_color = Color(0, 0.65974355, 0.30096498, 1)
 light_specular = 2.0
 omni_range = 0.06632122
 
+[node name="ClickSound" type="AudioStreamPlayer3D" parent="Terminal/BtnForward" unique_id=1075716017]
+stream = ExtResource("4_2aake")
+
 [node name="BtnBack" type="Area3D" parent="Terminal" unique_id=813717172 node_paths=PackedStringArray("lamp")]
-transform = Transform3D(4.5641975, 0, -2.0415933, 0, 5, 0, 2.0415933, 0, 4.5641975, -0.37644553, 1.6528679, -0.5201967)
+transform = Transform3D(4.5641975, 0, -2.0415933, 0, 5, 0, 2.0415933, 0, 4.5641975, -0.3975356, 1.6502854, -0.52290994)
 collision_layer = 2
 collision_mask = 0
 script = ExtResource("3_3xlf3")
@@ -84,8 +73,12 @@ light_color = Color(0, 0.65974355, 0.30096498, 1)
 light_specular = 2.0
 omni_range = 0.06632122
 
+[node name="ClickSound" type="AudioStreamPlayer3D" parent="Terminal/BtnBack" unique_id=436444538]
+transform = Transform3D(0.2, 0, 0, 0, 0.20000002, 0, 0, 0, 0.2, 0.0015134811, 0.0011131763, 0.0005247593)
+stream = ExtResource("4_2aake")
+
 [node name="BtnLeft" type="Area3D" parent="Terminal" unique_id=102077955 node_paths=PackedStringArray("lamp")]
-transform = Transform3D(4.5641975, 0, -2.0415933, 0, 5, 0, 2.0415933, 0, 4.5641975, -0.39436382, 1.6528679, -0.45961004)
+transform = Transform3D(4.5641975, 0, -2.0415933, 0, 5, 0, 2.0415933, 0, 4.5641975, -0.40592608, 1.7155472, -0.46175456)
 collision_layer = 2
 collision_mask = 0
 script = ExtResource("3_3xlf3")
@@ -104,8 +97,12 @@ light_color = Color(0, 0.65974355, 0.30096498, 1)
 light_specular = 2.0
 omni_range = 0.06632122
 
+[node name="ClickSound" type="AudioStreamPlayer3D" parent="Terminal/BtnLeft" unique_id=770706410]
+transform = Transform3D(0.2, 0, 0, 0, 0.20000002, 0, 0, 0, 0.2, -0.0015784353, 0.0003683269, 0.0004108511)
+stream = ExtResource("4_2aake")
+
 [node name="BtnRight" type="Area3D" parent="Terminal" unique_id=291927978 node_paths=PackedStringArray("lamp")]
-transform = Transform3D(4.5641975, 0, -2.0415933, 0, 5, 0, 2.0415933, 0, 4.5641975, -0.3429705, 1.6528679, -0.5815291)
+transform = Transform3D(4.5641975, 0, -2.0415933, 0, 5, 0, 2.0415933, 0, 4.5641975, -0.36359042, 1.7134658, -0.5786931)
 collision_layer = 2
 collision_mask = 0
 script = ExtResource("3_3xlf3")
@@ -124,21 +121,92 @@ light_color = Color(0, 0.65974355, 0.30096498, 1)
 light_specular = 2.0
 omni_range = 0.06632122
 
+[node name="ClickSound" type="AudioStreamPlayer3D" parent="Terminal/BtnRight" unique_id=1409213433]
+transform = Transform3D(0.2, 0, 0, 0, 0.20000002, 0, 0, 0, 0.2, -0.0018038005, 7.465482e-05, 0.0012366995)
+stream = ExtResource("4_2aake")
+
+[node name="FlashlightPanel" type="Node3D" parent="." unique_id=884885818 node_paths=PackedStringArray("button", "spot", "lamp_green", "lamp_orange", "lamp_red")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6156974, 1.4927545, -0.5569459)
+script = ExtResource("4_ypavh")
+button = NodePath("BtnFlashlight")
+spot = NodePath("SpotLight3D")
+lamp_green = NodePath("LampGreen")
+lamp_orange = NodePath("LampOrange")
+lamp_red = NodePath("LampRed")
+
+[node name="BtnFlashlight" type="Area3D" parent="FlashlightPanel" unique_id=971335084 node_paths=PackedStringArray("lamp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0048787, -0.015518904, -0.019095212)
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("3_3xlf3")
+command = 4
+lamp = NodePath("OmniLight3D4")
+glow_color = Color(1.2513996e-06, 0.68130547, 0.3442099, 1)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FlashlightPanel/BtnFlashlight" unique_id=346603963]
+transform = Transform3D(0.04, 0, 0, 0, 0.04, 0, 0, 0, 0.04, 0.0059440136, -0.018458605, 0.003329277)
+shape = SubResource("BoxShape3D_yf5fn")
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="FlashlightPanel/BtnFlashlight" unique_id=1462241004]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0015159249, -0.0006854534, 2.7418137e-06)
+layers = 2
+light_color = Color(0, 0.65974355, 0.30096498, 1)
+light_specular = 2.0
+omni_range = 0.06632122
+
+[node name="ClickSound" type="AudioStreamPlayer3D" parent="FlashlightPanel/BtnFlashlight" unique_id=951268545]
+transform = Transform3D(0.9128395, 0, -0.40831864, 0, 1, 0, 0.40831864, 0, 0.9128395, 0.00709939, -0.0026794672, -0.03390616)
+stream = ExtResource("4_2aake")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="FlashlightPanel" unique_id=1384589958]
+transform = Transform3D(1, 0, 0, 0, 0.98690057, 0.16132963, 0, -0.16132963, 0.98690057, 0.010590732, -0.13515484, -0.34331512)
+light_color = Color(0.68802667, 0.59101987, 0, 1)
+light_energy = 5.0
+shadow_enabled = true
+spot_range = 4.780888
+spot_angle = 35.905823
+
+[node name="LampGreen" type="OmniLight3D" parent="FlashlightPanel" unique_id=2055612309]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.009660363, -0.0030819178, 0.07238281)
+light_color = Color(6.3773246e-07, 0.3514827, 0.14830226, 1)
+omni_range = 0.07615738
+
+[node name="LampOrange" type="OmniLight3D" parent="FlashlightPanel" unique_id=951903637]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.008549213, -0.0028928518, 0.070280775)
+light_color = Color(0.65835935, 0.3752825, 0, 1)
+omni_range = 0.07851483
+
+[node name="LampRed" type="OmniLight3D" parent="FlashlightPanel" unique_id=1345671424]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.006537497, -0.0016549826, 0.07114558)
+light_color = Color(0.54003376, 0.029732518, 0.14307386, 1)
+omni_range = 0.06601828
+
+[node name="LightSound" type="AudioStreamPlayer3D" parent="FlashlightPanel" unique_id=35524370]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.09124613, -0.3343264)
+stream = ExtResource("6_bxuc5")
+volume_db = -35.0
+bus = &"Wheelchair"
+script = ExtResource("7_bxuc5")
+trigger = 1
+fade_time = 1.0
+
+[node name="WarningSound" type="AudioStreamPlayer3D" parent="FlashlightPanel" unique_id=2100723506]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.08410442)
+stream = ExtResource("7_u0ik3")
+bus = &"Wheelchair"
+
 [node name="Head" type="Node3D" parent="." unique_id=741527528]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9319098, 0.118594944)
 script = ExtResource("3_kmb4p")
 
 [node name="Camera3D" type="Camera3D" parent="Head" unique_id=1783926359]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.10379052, -0.4876631)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.026337206, -0.056592464, -0.33019873)
 fov = 68.0
 
 [node name="RayCast3D" type="RayCast3D" parent="Head/Camera3D" unique_id=365777482]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
 collision_mask = 2
 script = ExtResource("5_g8x6k")
-
-[node name="кресло 3" parent="." unique_id=1674091288 instance=ExtResource("4_kmb4p")]
-transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -1.5913036, -0.737115, 0.06714296)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=259285061]
 
@@ -156,3 +224,17 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.07, 0.07)
 texture = ExtResource("5_kmb4p")
+
+[node name="кресло 4_2 nohead " parent="." unique_id=1798535467 instance=ExtResource("7_g8x6k")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -1.609478, -0.7441693, 0.07402432)
+
+[node name="WheelSound" type="AudioStreamPlayer3D" parent="." unique_id=1317571679]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.36526796, 0.11035502)
+stream = ExtResource("12_vjl7f")
+volume_db = -15.0
+bus = &"Wheelchair"
+script = ExtResource("7_bxuc5")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=332806517]
+transform = Transform3D(1.4141009, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1373453, -0.4013672)
+shape = SubResource("BoxShape3D_d0u6y")
