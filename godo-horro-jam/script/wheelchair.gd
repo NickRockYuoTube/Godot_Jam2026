@@ -18,6 +18,7 @@ var _gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
 func _ready() -> void:
 	var terminal := get_node(terminal_path) as Terminal
 	terminal.command_changed.connect(_on_command_changed)
+	movement_changed.connect(PowerSystem.set_moving)   # ← добавить
 
 func _on_command_changed(forward: float, turn: float) -> void:
 	_cmd_forward = forward
@@ -49,3 +50,6 @@ func _physics_process(delta: float) -> void:
 	if moving != _was_moving:
 		_was_moving = moving
 		movement_changed.emit(moving)
+		
+		
+	
