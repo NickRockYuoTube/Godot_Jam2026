@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://beejgjcl7ttb6"
+path="res://.godot/imported/demo_radio_music.ogg-ac51e84b09673fc09cd6237b0be1b9c1.oggvorbisstr"
+
+[deps]
+
+source_file="res://models/PSX modular house interior pack/extra/demo_radio_music.ogg"
+dest_files=["res://.godot/imported/demo_radio_music.ogg-ac51e84b09673fc09cd6237b0be1b9c1.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
