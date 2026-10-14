@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dubvvqny8xok8"
-path="res://.godot/imported/кресло 3.glb-1c2914f23f339181729a0097cce8b52f.scn"
+uid="uid://cow6ik51bxe1e"
+path="res://.godot/imported/кресло 4.2 blend.glb-a0ddc31f31d3e47bb148fd8ff871f1d5.scn"
 
 [deps]
 
-source_file="res://models/кресло 3.glb"
-dest_files=["res://.godot/imported/кресло 3.glb-1c2914f23f339181729a0097cce8b52f.scn"]
+source_file="res://models/кресло 4.2 blend.glb"
+dest_files=["res://.godot/imported/кресло 4.2 blend.glb-a0ddc31f31d3e47bb148fd8ff871f1d5.scn"]
 
 [params]
 
