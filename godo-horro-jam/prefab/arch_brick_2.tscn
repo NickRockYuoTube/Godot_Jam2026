@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://c18hkbvm7dbqi"]
+
+[ext_resource type="PackedScene" uid="uid://btl07po6stbmy" path="res://models/PSX modular house interior pack/geometry/archBrick.glb" id="1_6x441"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_g4v7s"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g4v7s"]
+size = Vector3(0.74938965, 4.0092697, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yf5fn"]
+size = Vector3(2.5890808, 0.7350769, 0.18566895)
+
+[node name="archBrick2" unique_id=2036894152 instance=ExtResource("1_6x441")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1" unique_id=1781095504]
+physics_material_override = SubResource("PhysicsMaterial_g4v7s")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=1479014581]
+transform = Transform3D(0.9679768, 0, 0, 0, 1, 0, 0, 0, 0.19158393, 1.683063, 2.0135612, 1.9557326)
+shape = SubResource("BoxShape3D_g4v7s")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D" index="1" unique_id=1880825252]
+transform = Transform3D(0.9679768, 0, 0, 0, 1, 0, 0, 0, 0.19158393, -1.6181719, 2.0135612, 1.9586501)
+shape = SubResource("BoxShape3D_g4v7s")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="StaticBody3D" index="2" unique_id=2101352500]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.028121948, 3.6486137, 1.9647996)
+shape = SubResource("BoxShape3D_yf5fn")

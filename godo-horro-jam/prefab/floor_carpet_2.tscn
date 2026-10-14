@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://gbo3fdxxg12w"]
+
+[ext_resource type="PackedScene" uid="uid://dyo5shc5kxnuh" path="res://models/PSX modular house interior pack/geometry/floorCarpet.glb" id="1_yee4w"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_g4v7s"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g4v7s"]
+
+[node name="floorCarpet2" unique_id=1862307730 instance=ExtResource("1_yee4w")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1" unique_id=1840802275]
+physics_material_override = SubResource("PhysicsMaterial_g4v7s")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=880137991]
+transform = Transform3D(3.9602704, 0, 0, 0, 0.19999999, 0, 0, 0, 4, 0, 0, 0)
+shape = SubResource("BoxShape3D_g4v7s")

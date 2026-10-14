@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://dwgjqkebillwt"]
+
+[ext_resource type="PackedScene" uid="uid://cd0bo8yl7l5fr" path="res://models/PSX modular house interior pack/geometry/ceilingConcrete.glb" id="1_06mfq"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_g4v7s"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g4v7s"]
+
+[node name="ceilingConcrete2" unique_id=2097043910 instance=ExtResource("1_06mfq")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1" unique_id=476643352]
+physics_material_override = SubResource("PhysicsMaterial_g4v7s")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=199103544]
+transform = Transform3D(4, 0, 0, 0, 0.099999964, 0, 0, 0, 4, 0, 4, 0)
+shape = SubResource("BoxShape3D_g4v7s")
