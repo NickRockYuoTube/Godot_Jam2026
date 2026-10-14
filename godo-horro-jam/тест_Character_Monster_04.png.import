@@ -2,20 +2,30 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<<< HEAD:godo-horro-jam/тест_Character_Monster_04.png.import
 uid="uid://cg35d2cn3grys"
 path.s3tc="res://.godot/imported/тест_Character_Monster_04.png-842ee1dd82bb85eeaef679f2e237b868.s3tc.ctex"
+========
+uid="uid://b27n62gdtf27l"
+path.s3tc="res://.godot/imported/apple_albedo.png-1acb4a67795883bbc00151e7a232b489.s3tc.ctex"
+>>>>>>>> eed7d528d50f988ed2b84328603d91ee3cd25d3a:godo-horro-jam/models/PSX modular house interior pack/props/apple_albedo.png.import
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "3ac6bbdc370058350cd813ce01743958"
+"md5": "638194e050ccd1bc70aa0910244a83f5"
 }
 
 [deps]
 
+<<<<<<<< HEAD:godo-horro-jam/тест_Character_Monster_04.png.import
 source_file="res://тест_Character_Monster_04.png"
 dest_files=["res://.godot/imported/тест_Character_Monster_04.png-842ee1dd82bb85eeaef679f2e237b868.s3tc.ctex"]
+========
+source_file="res://models/PSX modular house interior pack/props/apple_albedo.png"
+dest_files=["res://.godot/imported/apple_albedo.png-1acb4a67795883bbc00151e7a232b489.s3tc.ctex"]
+>>>>>>>> eed7d528d50f988ed2b84328603d91ee3cd25d3a:godo-horro-jam/models/PSX modular house interior pack/props/apple_albedo.png.import
 
 [params]
 
