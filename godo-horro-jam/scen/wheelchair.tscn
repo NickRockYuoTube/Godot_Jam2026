@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://brvd66h8amj1b" path="res://textur/415.png" id="5_kmb4p"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_g4v7s"]
-size = Vector3(1, 2.0789185, 1.8577881)
+size = Vector3(1, 2.0789185, 1.9776306)
 
 [sub_resource type="BoxMesh" id="BoxMesh_yf5fn"]
 
@@ -20,10 +20,11 @@ size = Vector3(1, 2.0789185, 1.8577881)
 [sub_resource type="BoxShape3D" id="BoxShape3D_yf5fn"]
 
 [node name="Wheelchair" type="CharacterBody3D" unique_id=311727349]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.24693179)
 script = ExtResource("1_0vjwd")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1800488574]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.034775853, 1.0410542, -0.38067627)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.034775853, 1.0410542, -0.44059753)
 shape = SubResource("BoxShape3D_g4v7s")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D" unique_id=320073706]
@@ -44,48 +45,84 @@ mesh = SubResource("BoxMesh_d0u6y")
 [node name="Terminal" type="Node3D" parent="." unique_id=668549793]
 script = ExtResource("2_38gba")
 
-[node name="BtnForward" type="Area3D" parent="Terminal" unique_id=438560941]
+[node name="BtnForward" type="Area3D" parent="Terminal" unique_id=438560941 node_paths=PackedStringArray("lamp")]
 transform = Transform3D(4.5641975, 0, -2.0415933, 0, 5, 0, 2.0415933, 0, 4.5641975, -0.37494254, 1.7330862, -0.51929295)
 collision_layer = 2
 collision_mask = 0
 script = ExtResource("3_3xlf3")
+lamp = NodePath("OmniLight3D")
+glow_color = Color(0, 0.40392157, 0.10980392, 1)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Terminal/BtnForward" unique_id=1692396552]
 transform = Transform3D(0.01, 0, 0, 0, 0.010000001, 0, 0, 0, 0.01, 0, 0.0009574294, 0)
 shape = SubResource("BoxShape3D_yf5fn")
 
-[node name="BtnBack" type="Area3D" parent="Terminal" unique_id=813717172]
+[node name="OmniLight3D" type="OmniLight3D" parent="Terminal/BtnForward" unique_id=478126408]
+transform = Transform3D(0.20000002, 0, 0, 0, 0.20000002, 0, 0, 0, 0.20000002, 0.0016493797, -0.0018606186, -0.00045359135)
+layers = 2
+light_color = Color(0, 0.65974355, 0.30096498, 1)
+light_specular = 2.0
+omni_range = 0.06632122
+
+[node name="BtnBack" type="Area3D" parent="Terminal" unique_id=813717172 node_paths=PackedStringArray("lamp")]
 transform = Transform3D(4.5641975, 0, -2.0415933, 0, 5, 0, 2.0415933, 0, 4.5641975, -0.37644553, 1.6528679, -0.5201967)
 collision_layer = 2
 collision_mask = 0
 script = ExtResource("3_3xlf3")
 command = 1
+lamp = NodePath("OmniLight3D2")
+glow_color = Color(0, 0.40392157, 0.10980392, 1)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Terminal/BtnBack" unique_id=1794086318]
 transform = Transform3D(0.01, 0, 0, 0, 0.010000001, 0, 0, 0, 0.01, 0, 0.0009574294, 0)
 shape = SubResource("BoxShape3D_yf5fn")
 
-[node name="BtnLeft" type="Area3D" parent="Terminal" unique_id=102077955]
+[node name="OmniLight3D2" type="OmniLight3D" parent="Terminal/BtnBack" unique_id=196103895]
+transform = Transform3D(0.2, 0, 0, 0, 0.20000002, 0, 0, 0, 0.2, 0.0019975677, -0.0015550554, -0.00041134097)
+layers = 2
+light_color = Color(0, 0.65974355, 0.30096498, 1)
+light_specular = 2.0
+omni_range = 0.06632122
+
+[node name="BtnLeft" type="Area3D" parent="Terminal" unique_id=102077955 node_paths=PackedStringArray("lamp")]
 transform = Transform3D(4.5641975, 0, -2.0415933, 0, 5, 0, 2.0415933, 0, 4.5641975, -0.39436382, 1.6528679, -0.45961004)
 collision_layer = 2
 collision_mask = 0
 script = ExtResource("3_3xlf3")
 command = 2
+lamp = NodePath("OmniLight3D3")
+glow_color = Color(0, 0.40392157, 0.10980392, 1)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Terminal/BtnLeft" unique_id=139000557]
 transform = Transform3D(0.01, 0, 0, 0, 0.010000001, 0, 0, 0, 0.01, 0, 0.0009574294, 0)
 shape = SubResource("BoxShape3D_yf5fn")
 
-[node name="BtnRight" type="Area3D" parent="Terminal" unique_id=291927978]
+[node name="OmniLight3D3" type="OmniLight3D" parent="Terminal/BtnLeft" unique_id=575072781]
+transform = Transform3D(0.2, 0, 0, 0, 0.20000002, 0, 0, 0, 0.2, 0.0010931343, -0.0021646917, -5.7246536e-05)
+layers = 2
+light_color = Color(0, 0.65974355, 0.30096498, 1)
+light_specular = 2.0
+omni_range = 0.06632122
+
+[node name="BtnRight" type="Area3D" parent="Terminal" unique_id=291927978 node_paths=PackedStringArray("lamp")]
 transform = Transform3D(4.5641975, 0, -2.0415933, 0, 5, 0, 2.0415933, 0, 4.5641975, -0.3429705, 1.6528679, -0.5815291)
 collision_layer = 2
 collision_mask = 0
 script = ExtResource("3_3xlf3")
 command = 3
+lamp = NodePath("OmniLight3D4")
+glow_color = Color(3.3691526e-07, 0.4022097, 0.11152355, 1)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Terminal/BtnRight" unique_id=1883682568]
 transform = Transform3D(0.01, 0, 0, 0, 0.010000001, 0, 0, 0, 0.01, 0, 0.0009574294, 0)
 shape = SubResource("BoxShape3D_yf5fn")
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="Terminal/BtnRight" unique_id=929412112]
+transform = Transform3D(0.20000002, 0, 0, 0, 0.20000002, 0, 0, 0, 0.20000002, 0.0015159175, -0.0016382337, 2.734363e-06)
+layers = 2
+light_color = Color(0, 0.65974355, 0.30096498, 1)
+light_specular = 2.0
+omni_range = 0.06632122
 
 [node name="Head" type="Node3D" parent="." unique_id=741527528]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9319098, 0.118594944)

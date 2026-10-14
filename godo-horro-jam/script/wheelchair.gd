@@ -5,7 +5,7 @@ signal movement_changed(is_moving: bool)  # пригодится для дина
 
 @export var forward_speed := 1.6          # м/с вперёд
 @export var back_speed := 0.8             # назад кресло едет медленнее
-@export var turn_speed_deg := 55.0        # градусов/сек
+@export var turn_speed_deg := 25.0        # градусов/сек
 @export var acceleration := 5.0           # плавность разгона
 @export var terminal_path: NodePath = ^"Terminal"
 
