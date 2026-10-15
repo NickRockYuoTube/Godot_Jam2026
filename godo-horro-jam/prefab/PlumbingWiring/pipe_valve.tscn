@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://0sfti66wfjvt"]
+
+[ext_resource type="PackedScene" uid="uid://bnlvsx3m3p1je" path="res://models/3D Retro Plumbing & Wiring M/Pipe Valve.glb" id="1_mq07k"]
+[ext_resource type="Texture2D" uid="uid://cyjs3w0uqj16u" path="res://models/3D Retro Plumbing & Wiring M/Pipe-Texture.png" id="2_volef"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r5mt1"]
+albedo_texture = ExtResource("2_volef")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dxfmk"]
+albedo_texture = ExtResource("2_volef")
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_g4v7s"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g4v7s"]
+size = Vector3(0.493042, 0.33251953, 0.24310303)
+
+[node name="Pipe Valve" unique_id=1149122396 instance=ExtResource("1_mq07k")]
+
+[node name="Valve Handle" parent="Valve" parent_id_path=PackedInt32Array(1448176889) index="0" unique_id=1741405861]
+material_override = SubResource("StandardMaterial3D_r5mt1")
+
+[node name="Valve Pipe" parent="Valve" parent_id_path=PackedInt32Array(1448176889) index="1" unique_id=345094233]
+material_override = SubResource("StandardMaterial3D_dxfmk")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1" unique_id=1405940823]
+physics_material_override = SubResource("PhysicsMaterial_g4v7s")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=10679351]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.24676514, -0.021240234, -0.014129639)
+shape = SubResource("BoxShape3D_g4v7s")

@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://4t1fhae2lj8v"]
+
+[ext_resource type="PackedScene" uid="uid://c5byp0lafo8jq" path="res://models/3D Retro Plumbing & Wiring M/Generator.glb" id="1_gkmh6"]
+[ext_resource type="Texture2D" uid="uid://bsn8n53t1346d" path="res://models/3D Retro Plumbing & Wiring M/Generator-Texture.png" id="2_farca"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uha17"]
+albedo_texture = ExtResource("2_farca")
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_g4v7s"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g4v7s"]
+
+[node name="Generator2" unique_id=482659461 instance=ExtResource("1_gkmh6")]
+
+[node name="Generator" parent="." index="0" unique_id=232590474]
+material_override = SubResource("StandardMaterial3D_uha17")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1" unique_id=1646823496]
+physics_material_override = SubResource("PhysicsMaterial_g4v7s")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="2" unique_id=1578032668]
+transform = Transform3D(1.2924318, 0, 0, 0, 1.4460355, 0, 0, 0, 2.652975, 0, 0.97757244, 0.18358707)
+shape = SubResource("BoxShape3D_g4v7s")

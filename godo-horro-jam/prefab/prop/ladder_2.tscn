@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://dsn7wprhc2cu3"]
+
+[ext_resource type="PackedScene" uid="uid://dnx7spyuilvqg" path="res://models/PSX modular house interior pack/props/ladder.glb" id="1_ac0yv"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_g4v7s"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g4v7s"]
+size = Vector3(1, 0.7705078, 1)
+
+[node name="ladder2" unique_id=959039969 instance=ExtResource("1_ac0yv")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1" unique_id=1120899717]
+physics_material_override = SubResource("PhysicsMaterial_g4v7s")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=199700686]
+transform = Transform3D(0.8684465, 0, 0, 0, 1, 0, 0, 0, 0.85600513, 0, 0.4194336, 0)
+shape = SubResource("BoxShape3D_g4v7s")

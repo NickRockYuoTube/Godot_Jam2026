@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://b86lp4yesjkmb"]
+
+[ext_resource type="PackedScene" uid="uid://djjsbal5mtaxc" path="res://models/PSX modular house interior pack/props/ceilingLight3.glb" id="1_f6vlo"]
+
+[node name="ceilingLight32" unique_id=864440962 instance=ExtResource("1_f6vlo")]
+
+[node name="ceilingLight3" parent="." index="0" unique_id=1355257138]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="." index="1" unique_id=1989494732]
+transform = Transform3D(-4.371139e-08, -1, 0, -4.371139e-08, 1.9106855e-15, 1, -1, 4.371139e-08, -4.371139e-08, -0.5035268, 1.923785, 0)
+spot_range = 12.0
+spot_angle = 51.0
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="." index="2" unique_id=827041515]
+transform = Transform3D(-4.371139e-08, -1, 0, -4.371139e-08, 1.9106855e-15, 1, -1, 4.371139e-08, -4.371139e-08, 0.55637515, 1.923785, 0)
+spot_range = 12.0
+spot_angle = 51.0

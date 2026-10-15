@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://d37i5ja1er608"]
+
+[ext_resource type="PackedScene" uid="uid://6fv1i4otxcx2" path="res://models/PSX modular house interior pack/props/radiator.glb" id="1_kvt3a"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_g4v7s"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g4v7s"]
+size = Vector3(1, 0.7840576, 0.86950684)
+
+[node name="radiator2" unique_id=1403233901 instance=ExtResource("1_kvt3a")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1" unique_id=230390436]
+physics_material_override = SubResource("PhysicsMaterial_g4v7s")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=850730450]
+transform = Transform3D(0.15726787, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.39172816, 0.0026245117)
+shape = SubResource("BoxShape3D_g4v7s")

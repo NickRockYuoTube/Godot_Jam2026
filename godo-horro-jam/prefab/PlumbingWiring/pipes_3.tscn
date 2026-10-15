@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://i38fira74tpq"]
+
+[ext_resource type="PackedScene" uid="uid://ctodc80niev2l" path="res://models/3D Retro Plumbing & Wiring M/Pipes3.glb" id="1_1den5"]
+[ext_resource type="Texture2D" uid="uid://cyjs3w0uqj16u" path="res://models/3D Retro Plumbing & Wiring M/Pipe-Texture.png" id="2_0y075"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8oy3a"]
+albedo_texture = ExtResource("2_0y075")
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_g4v7s"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g4v7s"]
+size = Vector3(0.48675537, 1, 1)
+
+[node name="Pipes3" unique_id=641738965 instance=ExtResource("1_1den5")]
+
+[node name="Pipe Short" parent="SketchUp" parent_id_path=PackedInt32Array(1123604521) index="0" unique_id=1881011444]
+material_override = SubResource("StandardMaterial3D_8oy3a")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1" unique_id=940257902]
+physics_material_override = SubResource("PhysicsMaterial_g4v7s")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=1155614673]
+transform = Transform3D(1, 0, 0, 0, 0.26501065, 0, 0, 0, 0.30103207, 0.2566223, 0, 0)
+shape = SubResource("BoxShape3D_g4v7s")

@@ -8,7 +8,7 @@ signal moving_changed(is_moving: bool)    # ← НОВОЕ: сигнал для 
 
 enum Level { FULL, HALF, EMPTY }
 
-const CHARGE_PER_SEC := 1.0 / 90.0   # динамо: полный заряд за 90 с движения
+const CHARGE_PER_SEC := 1.0 / 65.0   # динамо: полный заряд за 90 с движения
 const DRAIN_PER_SEC := 1.0 / 60.0    # фонарь: полный заряд хватает на 60 с
 const GREEN_MIN := 0.66              # выше этого значения горит зелёный
 const ORANGE_MIN := 0.2              # выше этого значения горит оранжевый, ниже красный

@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://dug32okislqlq"]
+
+[ext_resource type="PackedScene" uid="uid://ok4yq10npg2e" path="res://models/PSX modular house interior pack/props/box.glb" id="1_u6uxr"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_g4v7s"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g4v7s"]
+size = Vector3(0.41796875, 0.3869629, 0.810791)
+
+[node name="box2" unique_id=879892629 instance=ExtResource("1_u6uxr")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1" unique_id=1931195378]
+physics_material_override = SubResource("PhysicsMaterial_g4v7s")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=1391023090]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.19506836, -0.0015869141)
+shape = SubResource("BoxShape3D_g4v7s")

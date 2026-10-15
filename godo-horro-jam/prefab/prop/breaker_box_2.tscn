@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://do5svee4b10j3"]
+
+[ext_resource type="PackedScene" uid="uid://cu0gir1qw07pi" path="res://models/PSX modular house interior pack/props/breakerBox.glb" id="1_73bdu"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_g4v7s"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g4v7s"]
+size = Vector3(1.7260742, 1, 1)
+
+[node name="breakerBox2" unique_id=1905080933 instance=ExtResource("1_73bdu")]
+
+[node name="breakerBox" parent="." index="0" unique_id=473780946]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1" unique_id=1266974916]
+transform = Transform3D(1, 0, 0, 0, 0.6407156, 0, 0, 0, 1, 0, 0.6998446, 0)
+physics_material_override = SubResource("PhysicsMaterial_g4v7s")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=604156527]
+transform = Transform3D(0.0964936, 0, 0, 0, 0.88415945, 0, 0, 0, 0.5329542, 0.08931378, 0.45628643, -0.052707553)
+shape = SubResource("BoxShape3D_g4v7s")

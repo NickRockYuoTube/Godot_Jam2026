@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://ir7omksbkfy"]
+
+[ext_resource type="PackedScene" uid="uid://bs18qf0gdg5hn" path="res://models/3D Retro Plumbing & Wiring M/Turbine.glb" id="1_a16f3"]
+[ext_resource type="Texture2D" uid="uid://dh7a5a5n13th4" path="res://models/3D Retro Plumbing & Wiring M/Turbine-Texture.png" id="2_b4wv7"]
+[ext_resource type="AudioStream" uid="uid://c73uwm607fbwm" path="res://sound/Pomp.ogg" id="3_n5qoa"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4vehg"]
+albedo_texture = ExtResource("2_b4wv7")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g4v7s"]
+size = Vector3(1.020874, 0.7583618, 1)
+
+[node name="Turbine2" unique_id=2072318145 instance=ExtResource("1_a16f3")]
+
+[node name="Turbine" parent="." index="0" unique_id=496242697]
+material_override = SubResource("StandardMaterial3D_4vehg")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1" unique_id=1486889766]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="2" unique_id=1284256994]
+transform = Transform3D(2.521608, 0, 0, 0, 2.450861, 0, 0, 0, 2.5939147, 1.2433304, 0.9483174, -1.2459081)
+shape = SubResource("BoxShape3D_g4v7s")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." index="3" unique_id=177338550]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.232777, 1.7073538, -1.200273)
+stream = ExtResource("3_n5qoa")
+volume_db = -10.0
+autoplay = true
+max_distance = 50.0
+bus = &"Fleshing"
