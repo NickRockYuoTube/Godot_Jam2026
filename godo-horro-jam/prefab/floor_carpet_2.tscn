@@ -12,5 +12,5 @@
 physics_material_override = SubResource("PhysicsMaterial_g4v7s")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=880137991]
-transform = Transform3D(3.9602704, 0, 0, 0, 0.19999999, 0, 0, 0, 4, 0, 0, 0)
+transform = Transform3D(3.9602704, 0, 0, 0, 0.10071771, 0, 0, 0, 4, 0, 0, 0)
 shape = SubResource("BoxShape3D_g4v7s")

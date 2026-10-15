@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://e6xbckk6xhjg"]
+
+[ext_resource type="PackedScene" uid="uid://bxk4yky8weaop" path="res://models/PSX modular house interior pack/props/trashBag.glb" id="1_yhpsh"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_g4v7s"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g4v7s"]
+size = Vector3(0.9996338, 0.67126465, 0.8857422)
+
+[node name="trashBag2" unique_id=119788221 instance=ExtResource("1_yhpsh")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1" unique_id=124511922]
+physics_material_override = SubResource("PhysicsMaterial_g4v7s")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=103675430]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.09295654, 0.3324901, -0.064941406)
+shape = SubResource("BoxShape3D_g4v7s")

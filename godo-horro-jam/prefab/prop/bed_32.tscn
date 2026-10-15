@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://bp7ttldap1ih5"]
+
+[ext_resource type="PackedScene" uid="uid://5s60f05lsbe8" path="res://models/PSX modular house interior pack/props/bed3.glb" id="1_5uxgu"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_g4v7s"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g4v7s"]
+size = Vector3(2.5002441, 1.0522766, 1.2591553)
+
+[node name="bed32" unique_id=1367625097 instance=ExtResource("1_5uxgu")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1" unique_id=1847669523]
+physics_material_override = SubResource("PhysicsMaterial_g4v7s")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=308852324]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00061035156, 0.5242462, -0.004211426)
+shape = SubResource("BoxShape3D_g4v7s")

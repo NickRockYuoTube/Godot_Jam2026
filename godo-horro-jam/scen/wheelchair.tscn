@@ -8,7 +8,7 @@
 [ext_resource type="Script" uid="uid://6qkcmulft5vk" path="res://script/flashlight_panel.gd" id="4_ypavh"]
 [ext_resource type="Script" uid="uid://2mmt3ci5n3a6" path="res://script/console_interactor.gd" id="5_g8x6k"]
 [ext_resource type="Texture2D" uid="uid://brvd66h8amj1b" path="res://textur/415.png" id="5_kmb4p"]
-[ext_resource type="AudioStream" uid="uid://duuypjbeovtno" path="res://sound/LightSound.ogg" id="6_bxuc5"]
+[ext_resource type="AudioStream" uid="uid://d6o04s1kodt7" path="res://sound/fleshlite.ogg" id="6_u0ik3"]
 [ext_resource type="Script" uid="uid://4thteyplwpvh" path="res://script/loop_sound.gd" id="7_bxuc5"]
 [ext_resource type="PackedScene" uid="uid://cm8cxo1nkqo5r" path="res://models/кресло 4.2 nohead .glb" id="7_g8x6k"]
 [ext_resource type="AudioStream" uid="uid://dvy8ixa7t1n7u" path="res://sound/WarningSound.ogg" id="7_u0ik3"]
@@ -204,12 +204,13 @@ omni_range = 0.06601828
 
 [node name="LightSound" type="AudioStreamPlayer3D" parent="FlashlightPanel" unique_id=35524370]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.09124613, -0.3343264)
-stream = ExtResource("6_bxuc5")
-volume_db = -35.0
-bus = &"Fleshing"
+stream = ExtResource("6_u0ik3")
+volume_db = -55.0
+bus = &"Wheelchair"
 script = ExtResource("7_bxuc5")
 trigger = 1
 fade_time = 1.0
+volume_on_db = -25.0
 
 [node name="WarningSound" type="AudioStreamPlayer3D" parent="FlashlightPanel" unique_id=2100723506]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.08410442)

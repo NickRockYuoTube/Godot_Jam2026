@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://6uynsvnq8p8a"]
+
+[ext_resource type="PackedScene" uid="uid://btf7ilmqpqmlg" path="res://models/3D Retro Plumbing & Wiring M/Pump.glb" id="1_0w2e5"]
+[ext_resource type="Texture2D" uid="uid://cavcdoo7eobkq" path="res://models/3D Retro Plumbing & Wiring M/Pump-Texture.png" id="2_ymcj0"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_42anr"]
+albedo_texture = ExtResource("2_ymcj0")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g4v7s"]
+size = Vector3(0.8113098, 0.37713623, 1)
+
+[node name="Pump" unique_id=1216037530 instance=ExtResource("1_0w2e5")]
+
+[node name="instance_4" parent="SketchUp" parent_id_path=PackedInt32Array(259309506) index="0" unique_id=868972446]
+material_override = SubResource("StandardMaterial3D_42anr")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1" unique_id=1666298910]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=1168127826]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.50600433, 0.3229584, 0.20089722, 0)
+shape = SubResource("BoxShape3D_g4v7s")

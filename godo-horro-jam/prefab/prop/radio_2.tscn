@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://b02f1vbiv3o1q"]
+
+[ext_resource type="PackedScene" uid="uid://l31rkg07dguk" path="res://models/PSX modular house interior pack/props/radio.glb" id="1_3q6lu"]
+[ext_resource type="AudioStream" uid="uid://e43656qvf3rs" path="res://music/demo_radio_musicV2.ogg" id="2_3q6lu"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_g4v7s"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g4v7s"]
+size = Vector3(0.9250488, 0.9794922, 1.0637207)
+
+[node name="radio2" unique_id=1215376553 instance=ExtResource("1_3q6lu")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1" unique_id=1748081571]
+physics_material_override = SubResource("PhysicsMaterial_g4v7s")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=1974037337]
+transform = Transform3D(0.41958255, 0, 0, 0, 0.22401732, 0, 0, 0, 0.19999999, 0.05373774, 0.1056421, 0.01996708)
+shape = SubResource("BoxShape3D_g4v7s")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." index="2" unique_id=1678906833]
+stream = ExtResource("2_3q6lu")
+volume_db = -15.0
+autoplay = true
+bus = &"Radio"

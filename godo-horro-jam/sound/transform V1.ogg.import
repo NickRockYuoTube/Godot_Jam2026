@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cvevjrd80mvno"
+path="res://.godot/imported/transform V1.ogg-c71e06ac56fb0628abcdff8985c97e4a.oggvorbisstr"
+
+[deps]
+
+source_file="res://sound/transform V1.ogg"
+dest_files=["res://.godot/imported/transform V1.ogg-c71e06ac56fb0628abcdff8985c97e4a.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

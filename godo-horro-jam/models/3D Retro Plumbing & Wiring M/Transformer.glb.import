@@ -3,23 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-<<<<<<<< HEAD:godo-horro-jam/тест.glb.import
-uid="uid://bh0nt21pypev"
-path="res://.godot/imported/тест.glb-9f989b94f3af5db8fde06a53f7fd8f9b.scn"
+uid="uid://d3gjiwdssl5wl"
+path="res://.godot/imported/Transformer.glb-78ac0f79cb521f935df046d3d21343a6.scn"
 
 [deps]
 
-source_file="res://тест.glb"
-dest_files=["res://.godot/imported/тест.glb-9f989b94f3af5db8fde06a53f7fd8f9b.scn"]
-========
-uid="uid://c15qc7cucp6ud"
-path="res://.godot/imported/tv.glb-63d87496f3df297f99d387c608209993.scn"
-
-[deps]
-
-source_file="res://models/PSX modular house interior pack/props/tv.glb"
-dest_files=["res://.godot/imported/tv.glb-63d87496f3df297f99d387c608209993.scn"]
->>>>>>>> eed7d528d50f988ed2b84328603d91ee3cd25d3a:godo-horro-jam/models/PSX modular house interior pack/props/tv.glb.import
+source_file="res://models/3D Retro Plumbing & Wiring M/Transformer.glb"
+dest_files=["res://.godot/imported/Transformer.glb-78ac0f79cb521f935df046d3d21343a6.scn"]
 
 [params]
 
