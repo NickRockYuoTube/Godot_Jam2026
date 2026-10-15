@@ -5,8 +5,27 @@
 [ext_resource type="PackedScene" uid="uid://bqmbwpsvpjuin" path="res://prefab/wall_brick_2.tscn" id="3_2j4y6"]
 [ext_resource type="PackedScene" uid="uid://bnmtru6eu72vj" path="res://scen/wheelchair.tscn" id="3_vi6ws"]
 [ext_resource type="PackedScene" uid="uid://dwgjqkebillwt" path="res://prefab/ceiling_concrete_2.tscn" id="4_vi6ws"]
+[ext_resource type="PackedScene" uid="uid://ddv84nku4ccs1" path="res://prefab/prop/ceiling_light_2.tscn" id="6_cr8f5"]
+[ext_resource type="PackedScene" uid="uid://ck0ayachgku6u" path="res://prefab/prop/corner_pillar_stone_2.tscn" id="7_gqfrg"]
+
+[sub_resource type="Environment" id="Environment_g4v7s"]
+ambient_light_source = 2
+ambient_light_color = Color(0.025363835, 0.025363786, 0.025363814, 1)
+ambient_light_energy = 0.5
+fog_enabled = true
+fog_light_color = Color(0.010290074, 0.012257993, 0.03920411, 1)
+fog_density = 0.15
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_cr8f5"]
 
 [node name="Level1" type="Node3D" unique_id=2144309022]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=816843777]
+environment = SubResource("Environment_g4v7s")
+camera_attributes = SubResource("CameraAttributesPractical_cr8f5")
+
+[node name="Wheelchair" parent="." unique_id=311727349 instance=ExtResource("3_vi6ws")]
+transform = Transform3D(-0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, -0.70710677, -3, 0.07839537, 0.24693179)
 
 [node name="Floor" type="Node3D" parent="." unique_id=67046966]
 
@@ -78,5 +97,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 4)
 [node name="ceilingConcrete6" parent="Ceiling" unique_id=231148489 instance=ExtResource("4_vi6ws")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
 
-[node name="Wheelchair" parent="." unique_id=311727349 instance=ExtResource("3_vi6ws")]
-transform = Transform3D(-0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, -0.70710677, -3, 0.07839537, 0.24693179)
+[node name="Prop" type="Node3D" parent="." unique_id=1868751376]
+
+[node name="ceilingLight2" parent="Prop" unique_id=1932943327 instance=ExtResource("6_cr8f5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 4)
+
+[node name="cornerPillarStone2" parent="Prop" unique_id=1738037917 instance=ExtResource("7_gqfrg")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -3.8288362, 0, 7.828229)

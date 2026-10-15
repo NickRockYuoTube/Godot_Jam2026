@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://ck0ayachgku6u"]
+
+[ext_resource type="PackedScene" uid="uid://c4o7l6t1ktgrd" path="res://models/PSX modular house interior pack/geometry/cornerPillarStone.glb" id="1_eeyw4"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_g4v7s"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g4v7s"]
+size = Vector3(1, 1.0627441, 1)
+
+[node name="cornerPillarStone2" unique_id=1738037917 instance=ExtResource("1_eeyw4")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1" unique_id=1206765678]
+physics_material_override = SubResource("PhysicsMaterial_g4v7s")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=1097600513]
+transform = Transform3D(0.24966992, 0, 0, 0, 3.7439997, 0, 0, 0, 0.23939036, -1.9071273, 2.0123398, 1.9016945)
+shape = SubResource("BoxShape3D_g4v7s")
