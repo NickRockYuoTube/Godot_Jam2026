@@ -12,9 +12,20 @@
 [ext_resource type="Script" uid="uid://4thteyplwpvh" path="res://script/loop_sound.gd" id="7_bxuc5"]
 [ext_resource type="PackedScene" uid="uid://cm8cxo1nkqo5r" path="res://models/кресло 4.2 nohead .glb" id="7_g8x6k"]
 [ext_resource type="AudioStream" uid="uid://dvy8ixa7t1n7u" path="res://sound/WarningSound.ogg" id="7_u0ik3"]
+[ext_resource type="Shader" uid="uid://bvpq8vfw0hc1" path="res://material/VHS_Effect.gdshader" id="11_u0ik3"]
 [ext_resource type="AudioStream" uid="uid://t34dipa5frq3" path="res://sound/WheelSound.ogg" id="12_vjl7f"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_yf5fn"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bxuc5"]
+shader = ExtResource("11_u0ik3")
+shader_parameter/scanline_density = 600.0000237500001
+shader_parameter/scanline_intensity = 0.0150000007125
+shader_parameter/chromatic_aberration = 0.0010000000475
+shader_parameter/noise_intensity = 0.050000002375
+shader_parameter/vignette_intensity = 0.010000000475
+shader_parameter/color_bleed = 0.2000000095
+shader_parameter/desaturation = 0.2
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_d0u6y"]
 size = Vector3(1, 2.319458, 1.8027344)
@@ -44,11 +55,12 @@ transform = Transform3D(0.01, 0, 0, 0, 0.010000001, 0, 0, 0, 0.01, 0, 0.00095742
 shape = SubResource("BoxShape3D_yf5fn")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Terminal/BtnForward" unique_id=478126408]
-transform = Transform3D(0.2, 0, 0, 0, 0.20000002, 0, 0, 0, 0.2, 0.0016493797, -0.0014067888, -0.00045359135)
+transform = Transform3D(0.2, 0, 0, 0, 0.20000002, 0, 0, 0, 0.2, -0.0030306578, -0.00014343858, 0.00012629479)
 layers = 2
 light_color = Color(0, 0.65974355, 0.30096498, 1)
+light_energy = 0.1
 light_specular = 2.0
-omni_range = 0.06632122
+omni_range = 0.1324824
 
 [node name="ClickSound" type="AudioStreamPlayer3D" parent="Terminal/BtnForward" unique_id=1075716017]
 stream = ExtResource("4_2aake")
@@ -67,11 +79,12 @@ transform = Transform3D(0.01, 0, 0, 0, 0.010000001, 0, 0, 0, 0.01, 0, 0.00095742
 shape = SubResource("BoxShape3D_yf5fn")
 
 [node name="OmniLight3D2" type="OmniLight3D" parent="Terminal/BtnBack" unique_id=196103895]
-transform = Transform3D(0.2, 0, 0, 0, 0.20000002, 0, 0, 0, 0.2, 0.0019975677, -0.0015550554, -0.00041134097)
+transform = Transform3D(0.20000002, 0, 0, 0, 0.20000002, 0, 0, 0, 0.20000002, -0.00026004761, 0.00035950541, 0.00063505024)
 layers = 2
 light_color = Color(0, 0.65974355, 0.30096498, 1)
+light_energy = 0.1
 light_specular = 2.0
-omni_range = 0.06632122
+omni_range = 0.13465215
 
 [node name="ClickSound" type="AudioStreamPlayer3D" parent="Terminal/BtnBack" unique_id=436444538]
 transform = Transform3D(0.2, 0, 0, 0, 0.20000002, 0, 0, 0, 0.2, 0.0015134811, 0.0011131763, 0.0005247593)
@@ -91,11 +104,12 @@ transform = Transform3D(0.01, 0, 0, 0, 0.010000001, 0, 0, 0, 0.01, 0, 0.00095742
 shape = SubResource("BoxShape3D_yf5fn")
 
 [node name="OmniLight3D3" type="OmniLight3D" parent="Terminal/BtnLeft" unique_id=575072781]
-transform = Transform3D(0.2, 0, 0, 0, 0.20000002, 0, 0, 0, 0.2, 0.0010931343, -0.0021646917, -5.7246536e-05)
+transform = Transform3D(0.2, 0, 0, 0, 0.20000002, 0, 0, 0, 0.2, -0.000585638, -6.020069e-06, -0.00039304048)
 layers = 2
 light_color = Color(0, 0.65974355, 0.30096498, 1)
+light_energy = 0.1
 light_specular = 2.0
-omni_range = 0.06632122
+omni_range = 0.15701452
 
 [node name="ClickSound" type="AudioStreamPlayer3D" parent="Terminal/BtnLeft" unique_id=770706410]
 transform = Transform3D(0.2, 0, 0, 0, 0.20000002, 0, 0, 0, 0.2, -0.0015784353, 0.0003683269, 0.0004108511)
@@ -115,15 +129,22 @@ transform = Transform3D(0.01, 0, 0, 0, 0.010000001, 0, 0, 0, 0.01, 0, 0.00095742
 shape = SubResource("BoxShape3D_yf5fn")
 
 [node name="OmniLight3D4" type="OmniLight3D" parent="Terminal/BtnRight" unique_id=929412112]
-transform = Transform3D(0.20000002, 0, 0, 0, 0.20000002, 0, 0, 0, 0.20000002, 0.0015159175, -0.0016382337, 2.734363e-06)
+transform = Transform3D(0.20000002, 0, 0, 0, 0.20000002, 0, 0, 0, 0.20000002, -0.0036722347, -0.00026893616, -0.00019489042)
 layers = 2
 light_color = Color(0, 0.65974355, 0.30096498, 1)
+light_energy = 0.1
 light_specular = 2.0
-omni_range = 0.06632122
+omni_range = 0.14884113
 
 [node name="ClickSound" type="AudioStreamPlayer3D" parent="Terminal/BtnRight" unique_id=1409213433]
 transform = Transform3D(0.2, 0, 0, 0, 0.20000002, 0, 0, 0, 0.2, -0.0018038005, 7.465482e-05, 0.0012366995)
 stream = ExtResource("4_2aake")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Terminal" unique_id=1258758066]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3903568, 1.7346579, -0.5101755)
+light_color = Color(0.40069774, 0.40069774, 0.40069768, 1)
+light_energy = 0.02
+omni_range = 0.17875747
 
 [node name="FlashlightPanel" type="Node3D" parent="." unique_id=884885818 node_paths=PackedStringArray("button", "spot", "lamp_green", "lamp_orange", "lamp_red")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6156974, 1.4927545, -0.5569459)
@@ -159,11 +180,11 @@ transform = Transform3D(0.9128395, 0, -0.40831864, 0, 1, 0, 0.40831864, 0, 0.912
 stream = ExtResource("4_2aake")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="FlashlightPanel" unique_id=1384589958]
-transform = Transform3D(1, 0, 0, 0, 0.98690057, 0.16132963, 0, -0.16132963, 0.98690057, 0.010590732, -0.13515484, -0.34331512)
-light_color = Color(0.68802667, 0.59101987, 0, 1)
+transform = Transform3D(1, 0, 0, 0, 0.99074364, 0.13574645, 0, -0.13574645, 0.99074364, 0.010590732, -0.13515484, -0.34331512)
+light_color = Color(0.6772341, 0.591221, 0.27801293, 1)
 light_energy = 5.0
 shadow_enabled = true
-spot_range = 4.780888
+spot_range = 7.246628
 spot_angle = 35.905823
 
 [node name="LampGreen" type="OmniLight3D" parent="FlashlightPanel" unique_id=2055612309]
@@ -207,6 +228,17 @@ fov = 68.0
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
 collision_mask = 2
 script = ExtResource("5_g8x6k")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Head/Camera3D" unique_id=1946881383]
+
+[node name="ColorRect" type="ColorRect" parent="Head/Camera3D/CanvasLayer" unique_id=1569874404]
+material = SubResource("ShaderMaterial_bxuc5")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=259285061]
 
