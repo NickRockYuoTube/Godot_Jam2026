@@ -21,5 +21,5 @@ shape = SubResource("BoxShape3D_g4v7s")
 stream = ExtResource("2_3q6lu")
 volume_db = -15.0
 autoplay = true
-max_distance = 150.0
+max_distance = 100.0
 bus = &"Radio"
