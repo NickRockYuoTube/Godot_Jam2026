@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://c5byp0lafo8jq" path="res://models/3D Retro Plumbing & Wiring M/Generator.glb" id="1_gkmh6"]
 [ext_resource type="Texture2D" uid="uid://bsn8n53t1346d" path="res://models/3D Retro Plumbing & Wiring M/Generator-Texture.png" id="2_farca"]
+[ext_resource type="AudioStream" uid="uid://cogg5cyurwftj" path="res://sound/generator.ogg" id="3_bw7ku"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uha17"]
 albedo_texture = ExtResource("2_farca")
@@ -18,6 +19,13 @@ material_override = SubResource("StandardMaterial3D_uha17")
 [node name="StaticBody3D" type="StaticBody3D" parent="." index="1" unique_id=1646823496]
 physics_material_override = SubResource("PhysicsMaterial_g4v7s")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="2" unique_id=1578032668]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=1578032668]
 transform = Transform3D(1.2924318, 0, 0, 0, 1.4460355, 0, 0, 0, 2.652975, 0, 0.97757244, 0.18358707)
 shape = SubResource("BoxShape3D_g4v7s")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." index="2" unique_id=201072426]
+stream = ExtResource("3_bw7ku")
+volume_db = -15.0
+autoplay = true
+max_distance = 50.0
+bus = &"Wheelchair"

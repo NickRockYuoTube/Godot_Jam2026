@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://b3qbu8dyk0u02"]
+
+[ext_resource type="PackedScene" uid="uid://b1cv8pelo41xj" path="res://models/Street Furniture/Box/Box.fbx" id="1_2ggtu"]
+[ext_resource type="Texture2D" uid="uid://c6nuysmvull2q" path="res://models/Street Furniture/Box/Box.png" id="2_mjt2p"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g3q2y"]
+albedo_texture = ExtResource("2_mjt2p")
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_g4v7s"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g4v7s"]
+
+[node name="Box" unique_id=1039835085 instance=ExtResource("1_2ggtu")]
+
+[node name="Cube" parent="." index="0" unique_id=1958481627]
+material_override = SubResource("StandardMaterial3D_g3q2y")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1" unique_id=1093786303]
+physics_material_override = SubResource("PhysicsMaterial_g4v7s")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=143428517]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0.99697983, 0)
+shape = SubResource("BoxShape3D_g4v7s")

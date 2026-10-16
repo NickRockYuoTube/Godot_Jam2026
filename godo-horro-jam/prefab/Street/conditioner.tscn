@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://cjls4ot23qjfu"]
+
+[ext_resource type="PackedScene" uid="uid://b4b8cdxblw05b" path="res://models/Street Furniture/Conditioner/Conditioner.fbx" id="1_egv3x"]
+[ext_resource type="Texture2D" uid="uid://o61yh7sq1r2o" path="res://models/Street Furniture/Conditioner/Conditioner.png" id="2_u3tmr"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bw6e6"]
+albedo_texture = ExtResource("2_u3tmr")
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_g4v7s"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g4v7s"]
+size = Vector3(1, 0.6035156, 0.9058838)
+
+[node name="Conditioner" unique_id=1577848002 instance=ExtResource("1_egv3x")]
+
+[node name="Cube" parent="." index="0" unique_id=1402306897]
+material_override = SubResource("StandardMaterial3D_bw6e6")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1" unique_id=1771283652]
+physics_material_override = SubResource("PhysicsMaterial_g4v7s")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=356921656]
+transform = Transform3D(1.2022562, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0.6211375, 0.0045166016)
+shape = SubResource("BoxShape3D_g4v7s")
