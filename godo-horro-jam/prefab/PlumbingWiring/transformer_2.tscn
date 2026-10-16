@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://d3gjiwdssl5wl" path="res://models/3D Retro Plumbing & Wiring M/Transformer.glb" id="1_lgxo3"]
 [ext_resource type="Texture2D" uid="uid://da5cq7og53ec1" path="res://models/3D Retro Plumbing & Wiring M/Transformer-Texture.png" id="2_j0m0y"]
+[ext_resource type="AudioStream" uid="uid://cvevjrd80mvno" path="res://sound/transform V1.ogg" id="3_pa76q"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b1xhq"]
 albedo_texture = ExtResource("2_j0m0y")
@@ -22,3 +23,9 @@ physics_material_override = SubResource("PhysicsMaterial_g4v7s")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=1158866]
 transform = Transform3D(0.6303934, 0, 0, 0, 1.618007, 0, 0, 0, 0.9074792, 0.30940014, 0.8415725, 0)
 shape = SubResource("BoxShape3D_g4v7s")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." index="2" unique_id=40514275]
+stream = ExtResource("3_pa76q")
+volume_db = -15.0
+autoplay = true
+max_distance = 25.0

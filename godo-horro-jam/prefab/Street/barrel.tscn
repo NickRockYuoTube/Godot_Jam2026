@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://dnopnws70j8da"]
+
+[ext_resource type="PackedScene" uid="uid://bluqo7tl2dssa" path="res://models/Street Furniture/Barrel/Barrel.fbx" id="1_f8h1u"]
+[ext_resource type="Texture2D" uid="uid://hbcw27deigvc" path="res://models/Street Furniture/Barrel/barrel.png" id="2_p4nnl"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xerof"]
+albedo_texture = ExtResource("2_p4nnl")
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_g4v7s"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_md6si"]
+height = 2.03125
+radius = 0.53564453
+
+[node name="Barrel" unique_id=1163239448 instance=ExtResource("1_f8h1u")]
+
+[node name="Cylinder_001" parent="." index="0" unique_id=1513042946]
+material_override = SubResource("StandardMaterial3D_xerof")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1" unique_id=508513809]
+physics_material_override = SubResource("PhysicsMaterial_g4v7s")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=1816014586]
+transform = Transform3D(1.147697, 0, 0, 0, 0.8640463, 0, 0, 0, 1.1582286, 0, 0.8828387, -0.0022899583)
+shape = SubResource("CylinderShape3D_md6si")

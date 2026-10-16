@@ -28,6 +28,10 @@ PowerSystem="*uid://qtvxu78mulba"
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
+[filesystem]
+
+import/blender/enabled=false
+
 [input]
 
 chair_forward={
