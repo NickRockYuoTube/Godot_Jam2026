@@ -1,0 +1,93 @@
+[gd_scene format=3 uid="uid://cp82p4fqs586"]
+
+[ext_resource type="Script" uid="uid://jdfrkvw52ofa" path="res://script_move.gd" id="1_a202f"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_a202f"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_noarx"]
+sky_material = SubResource("ProceduralSkyMaterial_a202f")
+
+[sub_resource type="Environment" id="Environment_a0tk4"]
+background_mode = 2
+sky = SubResource("Sky_noarx")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_6fhyq"]
+
+[sub_resource type="GDScript" id="GDScript_jq8tk"]
+script/source = "extends Node3D
+@onready var area: Area3D = $Area3D
+@onready var box: Node3D = $\"../../box\"
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	print(\"box is PhysicsBody3D: \", box is PhysicsBody3D)
+	print(\"box: \", box)
+	pass
+	
+	
+func _physics_process(_delta: float) -> void:
+	var other_body =  $\"../../box\" # узел, с которым проверяем
+	if area.overlaps_body(other_body):
+		print(\"Area3D пересекается с \", other_body.name)
+"
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dwbtc"]
+size = Vector3(1, 1, 6.2543945)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_3xd07"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cdwd0"]
+
+[node name="Node3D" type="Node3D" unique_id=1790245435]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1031456154]
+environment = SubResource("Environment_a0tk4")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=724060053]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="player ( CharacterBody3D" type="CharacterBody3D" parent="." unique_id=1188043406]
+script = ExtResource("1_a202f")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="player ( CharacterBody3D" unique_id=227692222]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00015604496, 1.234944, 0.004160695)
+shape = SubResource("CapsuleShape3D_6fhyq")
+
+[node name="Head" type="Node3D" parent="player ( CharacterBody3D" unique_id=1230063054]
+script = SubResource("GDScript_jq8tk")
+
+[node name="Camera3D" type="Camera3D" parent="player ( CharacterBody3D/Head" unique_id=479914435]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.3776033, 0)
+current = true
+
+[node name="Area3D" type="Area3D" parent="player ( CharacterBody3D/Head" unique_id=1194087695]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.378695, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="player ( CharacterBody3D/Head/Area3D" unique_id=1204669265]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.1930578, 0, -2.4462106, -3.1343982)
+shape = SubResource("BoxShape3D_dwbtc")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1225777155]
+transform = Transform3D(11.042517, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.51090205, 0.48547363)
+use_collision = true
+size = Vector3(1, 1, 11.949463)
+
+[node name="box" type="StaticBody3D" parent="." unique_id=1882671588]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0941265, 0, 0, 5.548496)
+physics_material_override = SubResource("PhysicsMaterial_3xd07")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="box" unique_id=365900206]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.9585903, 0)
+shape = SubResource("BoxShape3D_cdwd0")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="box" unique_id=1606776563]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.9484913, 0)

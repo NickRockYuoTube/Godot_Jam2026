@@ -1,0 +1,93 @@
+[gd_scene load_steps=9 format=3 uid="uid://da0wdun62jma6"]
+
+[ext_resource type="Material" uid="uid://vo1llyou40fm" path="res://materials/white.tres" id="1_ufdl5"]
+[ext_resource type="Script" path="res://player.gd" id="2_16bnd"]
+[ext_resource type="Material" uid="uid://b8tbtfxb8rndq" path="res://materials/red.tres" id="3_ll81h"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_snw0r"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_5v2dm"]
+sky_material = SubResource("ProceduralSkyMaterial_snw0r")
+
+[sub_resource type="Environment" id="Environment_wudne"]
+background_mode = 2
+sky = SubResource("Sky_5v2dm")
+tonemap_mode = 2
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_trgub"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_18qpp"]
+
+[node name="Main" type="Node3D"]
+
+[node name="World" type="Node3D" parent="."]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="World"]
+environment = SubResource("Environment_wudne")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="World"]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Environmet" type="Node3D" parent="."]
+
+[node name="Ground" type="CSGBox3D" parent="Environmet"]
+transform = Transform3D(26.5416, 0, 0, 0, 1.01142, 0, 0, 0, 26.32, 0, 0, 0)
+use_collision = true
+material = ExtResource("1_ufdl5")
+
+[node name="ArrowBody" type="CSGBox3D" parent="Environmet"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.823514, -7.0668)
+use_collision = true
+size = Vector3(1, 1, 4.74316)
+material = ExtResource("1_ufdl5")
+
+[node name="ArrowEnd" type="CSGBox3D" parent="Environmet"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.131337, 0.823514, -8.98349)
+use_collision = true
+size = Vector3(3.43652, 1, 2.80017)
+material = ExtResource("1_ufdl5")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Environmet/ArrowEnd"]
+transform = Transform3D(0.884084, 0, 0.467328, 0, 1, 0, -0.467328, 0, 0.884084, 2.13296, 0, -1.24363)
+operation = 2
+size = Vector3(3.43652, 1, 6.54483)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Environmet/ArrowEnd"]
+transform = Transform3D(0.88321, 0, -0.468978, 0, 1, 0, 0.468978, 0, 0.88321, -3.1749, 0, 0.538099)
+operation = 2
+size = Vector3(3.43652, 1, 6.54483)
+
+[node name="CameraPivot" type="Node3D" parent="."]
+transform = Transform3D(0.695675, 0, 0.718357, 0, 1, 0, -0.718357, 0, 0.695675, 0, 0, 0)
+
+[node name="Camera3D" type="Camera3D" parent="CameraPivot"]
+transform = Transform3D(1, 0, 0, 0, 0.817507, 0.575919, 0, -0.575919, 0.817507, 0, 7.02282, 4.77404)
+
+[node name="Player" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12.3182, 0)
+script = ExtResource("2_16bnd")
+
+[node name="PlayerMesh" type="MeshInstance3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.59176, 0)
+mesh = SubResource("CapsuleMesh_trgub")
+
+[node name="PlayerCollisionShape" type="CollisionShape3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.59611, 0)
+shape = SubResource("CapsuleShape3D_18qpp")
+
+[node name="Level" type="Node3D" parent="."]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Level"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.76636, 0.888484, 0.40219)
+use_collision = true
+size = Vector3(5.62097, 1, 3.97546)
+material = ExtResource("3_ll81h")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Level"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.27339, 1.39196, 2.51559)
+use_collision = true
+size = Vector3(2.46283, 2.00696, 6.03119)
+material = ExtResource("3_ll81h")
