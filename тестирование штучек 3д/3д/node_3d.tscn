@@ -2,6 +2,16 @@
 
 [ext_resource type="Script" uid="uid://jdfrkvw52ofa" path="res://script_move.gd" id="1_a202f"]
 
+[sub_resource type="NavigationMesh" id="NavigationMesh_a202f"]
+vertices = PackedVector3Array(-124.66899, 0.41842175, 0.40327454, -19.668991, 0.41842175, 0.40327454, -16.668991, 0.41842175, -5.5967255, -7.668991, 0.41842175, -125.596725, -124.66899, 0.41842175, -125.596725, -7.668991, 0.41842175, -5.5967255, 1.3310089, 0.41842175, -5.5967255, 4.331009, 0.41842175, 0.40327454, 124.33101, 0.41842175, 0.40327454, 124.33101, 0.41842175, -125.596725, -16.668991, 0.41842175, 6.4032745, -124.66899, 0.41842175, 123.403275, -7.668991, 0.41842175, 123.403275, -7.668991, 0.41842175, 6.4032745, 1.3310089, 0.41842175, 6.4032745, 124.33101, 0.41842175, 123.403275)
+polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 4), PackedInt32Array(2, 4, 3), PackedInt32Array(3, 5, 2), PackedInt32Array(6, 5, 3), PackedInt32Array(7, 6, 8), PackedInt32Array(8, 6, 9), PackedInt32Array(9, 6, 3), PackedInt32Array(1, 10, 0), PackedInt32Array(0, 10, 11), PackedInt32Array(11, 10, 12), PackedInt32Array(10, 13, 12), PackedInt32Array(12, 13, 14), PackedInt32Array(14, 7, 12), PackedInt32Array(12, 7, 8), PackedInt32Array(12, 8, 15)]
+cell_size = 3.0
+border_size = 1.0
+agent_height = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_noarx"]
+albedo_color = Color(0.39918026, 0.9512499, 1.1551381e-06, 1)
+
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_a202f"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
 ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -19,7 +29,7 @@ glow_enabled = true
 
 [sub_resource type="GDScript" id="GDScript_jq8tk"]
 script/source = "extends Node3D
-@onready var area: Area3D = $Area3D
+
 @onready var box: Node3D = $\"../../box\"
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -28,25 +38,114 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	print(\"box is PhysicsBody3D: \", box is PhysicsBody3D)
-	print(\"box: \", box)
+	
 	pass
 	
 	
-func _physics_process(_delta: float) -> void:
-	var other_body =  $\"../../box\" # узел, с которым проверяем
-	if area.overlaps_body(other_body):
-		print(\"Area3D пересекается с \", other_body.name)
 "
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_dwbtc"]
-size = Vector3(1, 1, 6.2543945)
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_3xd07"]
 
+[sub_resource type="GDScript" id="GDScript_a202f"]
+script/source = "extends Node3D
+
+@export var move_speed := 3.0
+@export var waypoints: Array[Node3D] = []
+@export var player: Node3D
+
+@onready var nav_agent: NavigationAgent3D = $NavigationAgent3D
+
+var is_active := false
+var is_escaping := false  # Флаг: box убегает к точке
+var escape_target: Vector3 = Vector3.ZERO
+var rotation_speed := 2.0
+
+func _ready() -> void:
+	var players = get_tree().get_nodes_in_group(\"player\")
+	if players.size() > 0:
+		player = players[0]
+	
+	nav_agent.path_desired_distance = 0.5
+	nav_agent.target_desired_distance = 0.5
+
+func on_looked_at() -> void:
+	if not is_active:
+		is_active = true
+		is_escaping = true  # Начинаем убегать
+		escape_target = _find_nearest_waypoint()
+		print(\"👁️ На box смотрят — убегает к точке: \", escape_target)
+
+func on_looked_away() -> void:
+	if is_active:
+		is_active = false
+		print(\"🙈 Взгляд убран, но box продолжит бежать к точке\")
+		# НЕ сбрасываем is_escaping — box должен добежать
+
+func _find_nearest_waypoint() -> Vector3:
+	if waypoints.size() == 0:
+		return global_position
+	
+	var nearest := waypoints[0]
+	var min_dist := global_position.distance_to(nearest.global_position)
+	
+	for wp in waypoints:
+		var dist := global_position.distance_to(wp.global_position)
+		if dist < min_dist:
+			min_dist = dist
+			nearest = wp
+	
+	return nearest.global_position
+
+func _physics_process(delta: float) -> void:
+	var target_position: Vector3
+	
+	if is_escaping:
+		# Убегаем к точке (даже если взгляд уже отведён)
+		target_position = escape_target
+		
+		# Проверяем, достигли ли точки
+		if global_position.distance_to(target_position) < 1.0:
+			print(\"✅ Box достиг точки укрытия\")
+			is_escaping = false  # Теперь можно идти к игроку
+	else:
+		# Идём к игроку
+		if player == null:
+			return
+		target_position = player.global_position
+	
+	nav_agent.target_position = target_position
+	
+	if nav_agent.is_navigation_finished():
+		return
+	
+	var next_path_position = nav_agent.get_next_path_position()
+	var direction = (next_path_position - global_position).normalized()
+	var movement = direction * move_speed * delta
+	global_position += movement
+	
+	if direction.length() > 0.01:
+		var target_rotation = atan2(direction.x, direction.z)
+		rotation.y = lerp_angle(rotation.y, target_rotation, 10.0 * delta)
+"
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_cdwd0"]
+size = Vector3(1, 3.8427734, 1)
 
 [node name="Node3D" type="Node3D" unique_id=1790245435]
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=1584516205]
+navigation_mesh = SubResource("NavigationMesh_a202f")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="NavigationRegion3D" unique_id=1586686448]
+transform = Transform3D(14.1875305, 0, 0, 0, 15.070015, 0, 0, 0, -4.461048, -7.9396353, 0.95342946, 0.71757364)
+autosmooth = true
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="NavigationRegion3D" unique_id=1225777155]
+transform = Transform3D(11.042517, 0, 0, 0, 1, 0, 0, 0, 1, 0.14995956, -0.5109019, -0.8145828)
+use_collision = true
+size = Vector3(23.15033, 1, 255.56429)
+material = SubResource("StandardMaterial3D_noarx")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1031456154]
 environment = SubResource("Environment_a0tk4")
@@ -55,39 +154,51 @@ environment = SubResource("Environment_a0tk4")
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
 shadow_enabled = true
 
-[node name="player ( CharacterBody3D" type="CharacterBody3D" parent="." unique_id=1188043406]
+[node name="player" type="CharacterBody3D" parent="." unique_id=1188043406 node_paths=PackedStringArray("player")]
+transform = Transform3D(0.9999993, -0.0011799673, 0, 0.0011799673, 0.9999993, 0, 0, 0, 1, 0, 0, 0)
 script = ExtResource("1_a202f")
+player = NodePath(".")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="player ( CharacterBody3D" unique_id=227692222]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="player" unique_id=227692222]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00015604496, 1.234944, 0.004160695)
 shape = SubResource("CapsuleShape3D_6fhyq")
 
-[node name="Head" type="Node3D" parent="player ( CharacterBody3D" unique_id=1230063054]
+[node name="Head" type="Node3D" parent="player" unique_id=1230063054]
 script = SubResource("GDScript_jq8tk")
 
-[node name="Camera3D" type="Camera3D" parent="player ( CharacterBody3D/Head" unique_id=479914435]
+[node name="Camera3D" type="Camera3D" parent="player/Head" unique_id=479914435]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.3776033, 0)
 current = true
 
-[node name="Area3D" type="Area3D" parent="player ( CharacterBody3D/Head" unique_id=1194087695]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.378695, 0)
+[node name="RayCast3D" type="RayCast3D" parent="player/Head/Camera3D" unique_id=998834694]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, -0.9884421)
+target_position = Vector3(0, -10, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="player ( CharacterBody3D/Head/Area3D" unique_id=1204669265]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.1930578, 0, -2.4462106, -3.1343982)
-shape = SubResource("BoxShape3D_dwbtc")
-
-[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1225777155]
-transform = Transform3D(11.042517, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.51090205, 0.48547363)
-use_collision = true
-size = Vector3(1, 1, 11.949463)
-
-[node name="box" type="StaticBody3D" parent="." unique_id=1882671588]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0941265, 0, 0, 5.548496)
+[node name="box" type="StaticBody3D" parent="." unique_id=1882671588 node_paths=PackedStringArray("waypoints", "player")]
+transform = Transform3D(1, 0, 0, 0, 0.3353619, 0, 0, 0, 1.0941265, 0, 0.8195236, 5.548496)
 physics_material_override = SubResource("PhysicsMaterial_3xd07")
+script = SubResource("GDScript_a202f")
+waypoints = [NodePath("../waypoints"), NodePath("../waypoints2"), NodePath("../waypoints3"), NodePath("../waypoints4")]
+player = NodePath("../player")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="box" unique_id=365900206]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.9585903, 0)
+transform = Transform3D(1, 0, 0, 0, 0.9999999, 0, 0, 0, 0.9999995, 0, 0.89532995, 0)
 shape = SubResource("BoxShape3D_cdwd0")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="box" unique_id=1606776563]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.9484913, 0)
+transform = Transform3D(1, 0, 0, 0, 0.9999999, 0, 0, 0, 0.9999995, 0, 0.87928677, 0)
+size = Vector3(1, 3.8116455, 1)
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="box" unique_id=1229156371]
+
+[node name="waypoints" type="Node3D" parent="." unique_id=1557590930]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.799508, 0, 0)
+
+[node name="waypoints2" type="Node3D" parent="." unique_id=1690691673]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 11.4449625)
+
+[node name="waypoints3" type="Node3D" parent="." unique_id=862144475]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.4404993, 0, 6.381796)
+
+[node name="waypoints4" type="Node3D" parent="." unique_id=570665614]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.463955, 0, 3.749763)
