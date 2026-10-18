@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://ddi742tvp28bk"]
+
+[ext_resource type="Script" uid="uid://ctv2c7bt504r2" path="res://script/scare_trigger.gd" id="1_hhvv5"]
+[ext_resource type="Script" uid="uid://dwyrsa0so6hrt" path="res://script/run_past_scare.gd" id="2_rahkt"]
+[ext_resource type="PackedScene" uid="uid://b7uadggvvp0wf" path="res://scen/screamers.tscn" id="3_0vpil"]
+[ext_resource type="AudioStream" uid="uid://brkxlwiawhpln" path="res://sound/monster.ogg" id="4_5lock"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g4v7s"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_g4v7s"]
+
+[node name="ScareTrigger1" type="Area3D" unique_id=906765975]
+script = ExtResource("1_hhvv5")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=765324056]
+transform = Transform3D(4.033085, 0, 0, 0, 2.0060363, 0, 0, 0, 1, 0, 0.9909388, -6.16712)
+shape = SubResource("BoxShape3D_g4v7s")
+
+[node name="RunPastScare" type="Node3D" parent="." unique_id=414285937]
+script = ExtResource("2_rahkt")
+
+[node name="Monster" type="Node3D" parent="RunPastScare" unique_id=1416924124]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RunPastScare/Monster" unique_id=1315756193]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0034871101, 0.9763279, 0)
+visible = false
+mesh = SubResource("CapsuleMesh_g4v7s")
+
+[node name="тест" parent="RunPastScare/Monster" unique_id=2141584480 instance=ExtResource("3_0vpil")]
+transform = Transform3D(-2.1855694e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.1855694e-08, -3.3531466, -1.632925, -3.5064988)
+
+[node name="ScareSound" type="AudioStreamPlayer3D" parent="RunPastScare/Monster/тест" unique_id=1709337584]
+transform = Transform3D(-1.999668, 0, -0.03644009, 0, 2, 0, 0.03644009, 0, -1.999668, -7.120201, 3.1452096, 6.7974706)
+stream = ExtResource("4_5lock")
+volume_db = -5.0
+max_distance = 25.0
+bus = &"Radio"
+
+[node name="StartPoint" type="Marker3D" parent="RunPastScare" unique_id=795955638]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.9627438, 0, 0)
+
+[node name="EndPoint" type="Marker3D" parent="RunPastScare" unique_id=1406941636]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.967449, 0, 0)

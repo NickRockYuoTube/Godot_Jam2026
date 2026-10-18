@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://3f2qnl688mnt"]
+
+[ext_resource type="PackedScene" uid="uid://cjsis2ittf2ds" path="res://models/PSX modular house interior pack/geometry/floorTiles.glb" id="1_ls67m"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_g4v7s"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yf5fn"]
+size = Vector3(1, 0.3642578, 1)
+
+[node name="floorTiles2" unique_id=820422587 instance=ExtResource("1_ls67m")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1" unique_id=783086352]
+physics_material_override = SubResource("PhysicsMaterial_g4v7s")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=813524034]
+transform = Transform3D(4.015528, 0, 0, 0, 0.1281187, 0, 0, 0, 4.0202527, 0, 0.033553958, 0)
+shape = SubResource("BoxShape3D_yf5fn")

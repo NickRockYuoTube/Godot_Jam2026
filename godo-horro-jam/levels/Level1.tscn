@@ -23,7 +23,6 @@
 [ext_resource type="PackedScene" uid="uid://0sfti66wfjvt" path="res://prefab/PlumbingWiring/pipe_valve.tscn" id="22_tsgrn"]
 [ext_resource type="PackedScene" uid="uid://4t1fhae2lj8v" path="res://prefab/PlumbingWiring/generator_2.tscn" id="23_mq75a"]
 [ext_resource type="PackedScene" uid="uid://7f5x4yyd1pe7" path="res://prefab/PlumbingWiring/transformer_2.tscn" id="24_ok7fr"]
-[ext_resource type="PackedScene" uid="uid://djy0va1jbe55e" path="res://prefab/lift.tscn" id="25_l12am"]
 [ext_resource type="PackedScene" uid="uid://dessx8fwx3ret" path="res://prefab/prop/pallet_2.tscn" id="25_ok7fr"]
 [ext_resource type="PackedScene" uid="uid://d37i5ja1er608" path="res://prefab/prop/radiator_2.tscn" id="26_l12am"]
 [ext_resource type="PackedScene" uid="uid://b3qbu8dyk0u02" path="res://prefab/Street/box.tscn" id="27_wugiy"]
@@ -31,6 +30,12 @@
 [ext_resource type="PackedScene" uid="uid://cjls4ot23qjfu" path="res://prefab/Street/conditioner.tscn" id="29_md6si"]
 [ext_resource type="PackedScene" uid="uid://ca0nx6p4i6cmi" path="res://prefab/prop/box_32.tscn" id="30_wyuhx"]
 [ext_resource type="PackedScene" uid="uid://dug32okislqlq" path="res://prefab/prop/box_2.tscn" id="31_dp4a1"]
+[ext_resource type="PackedScene" uid="uid://b33u0itbp24ru" path="res://scen/ScareTrigger1.tscn" id="32_dp4a1"]
+[ext_resource type="PackedScene" uid="uid://dq18t146vwtn3" path="res://prefab/lift_2.tscn" id="32_jb2e5"]
+[ext_resource type="PackedScene" uid="uid://ddi742tvp28bk" path="res://scen/ScareTrigger2.tscn" id="33_jb2e5"]
+[ext_resource type="PackedScene" uid="uid://lmf6k1d66ggw" path="res://scen/GazeTarget.tscn" id="34_u4hc1"]
+[ext_resource type="Script" uid="uid://ctv2c7bt504r2" path="res://script/scare_trigger.gd" id="35_5py4f"]
+[ext_resource type="Script" uid="uid://clhmxvvlxrjm2" path="res://script/vanish_scare.gd" id="36_qv7rl"]
 
 [sub_resource type="Environment" id="Environment_g4v7s"]
 ambient_light_source = 2
@@ -42,6 +47,9 @@ fog_density = 0.15
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_cr8f5"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_g4v7s"]
+size = Vector3(1, 1.498291, 1)
+
 [node name="Level1" type="Node3D" unique_id=2144309022]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=816843777]
@@ -51,8 +59,17 @@ camera_attributes = SubResource("CameraAttributesPractical_cr8f5")
 [node name="Wheelchair" parent="." unique_id=311727349 instance=ExtResource("3_vi6ws")]
 transform = Transform3D(-0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, -0.70710677, -4.2280636, 0.07839537, 1.3678558)
 
-[node name="lift" parent="." unique_id=950174017 instance=ExtResource("25_l12am")]
-transform = Transform3D(-0.25, 0, -3.774895e-08, 0, 0.25, 0, 3.774895e-08, 0, -0.25, -29.819363, 0.056401372, 32.92871)
+[node name="lift2" parent="." unique_id=985641796 instance=ExtResource("32_jb2e5")]
+transform = Transform3D(-0.25, 0, 2.1855694e-08, 0, 0.25, 0, -2.1855694e-08, 0, -0.25, -29.846048, 0.06660712, 32.908634)
+
+[node name="GazeTarget" parent="." unique_id=1995476138 instance=ExtResource("34_u4hc1")]
+transform = Transform3D(-0.013712973, 0, 0.99990594, 0, 1, 0, -0.99990594, 0, -0.013712973, 0.8961934, 0.14063203, 39.75452)
+
+[node name="ScareTrigger1" parent="." unique_id=906765975 instance=ExtResource("32_dp4a1")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.012569224, 0.073672295, 15.116771)
+
+[node name="ScareTrigger2" parent="." unique_id=30866893 instance=ExtResource("33_jb2e5")]
+transform = Transform3D(-4.3711385e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, -4.3711385e-08, -11.388156, 0.3427708, 35.960487)
 
 [node name="Floor" type="Node3D" parent="." unique_id=67046966]
 
@@ -463,9 +480,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
 [node name="Prop" type="Node3D" parent="." unique_id=1868751376]
 
 [node name="ceilingLight5" parent="Prop" unique_id=890590046 instance=ExtResource("6_cr8f5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1.9324818, 15.999804)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1.9324818, 18.395681)
 
-[node name="ceilingLight6" parent="Prop" unique_id=1932943327 instance=ExtResource("6_cr8f5")]
+[node name="ceilingLight9" parent="Prop" unique_id=491203843 instance=ExtResource("6_cr8f5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.850636, 1.9324818, 20.035633)
+
+[node name="ceilingLight6" parent="Prop" unique_id=494155417 instance=ExtResource("6_cr8f5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 1.9324818, 35.9998)
 
 [node name="ceilingLight7" parent="Prop" unique_id=1214158192 instance=ExtResource("6_cr8f5")]
@@ -481,7 +501,7 @@ transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 0.17
 transform = Transform3D(-4.371138e-08, 0, -1, 0, 1, 0, 1, 0, -4.371138e-08, 3.8379683, 0, 35.812256)
 
 [node name="cornerPillarStone5" parent="Prop" unique_id=1142748801 instance=ExtResource("7_gqfrg")]
-transform = Transform3D(-1, 0, 8.742277e-08, 0, 1, 0, -8.742277e-08, 0, -1, -15.810257, 0, 35.83607)
+transform = Transform3D(-1, 0, 8.742277e-08, 0, 1, 0, -8.742277e-08, 0, -1, -15.8352585, 0, 35.83607)
 
 [node name="radio2" parent="Prop" unique_id=1215376553 instance=ExtResource("9_lbu4x")]
 transform = Transform3D(0.5460976, 0, 1.3970603, 0, 1.5, 0, -1.3970603, 0, 0.5460976, -8.867292, 1.1798288, 15.085386)
@@ -525,6 +545,9 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.18
 [node name="ceilingLight34" parent="Prop" unique_id=1054601452 instance=ExtResource("18_6gurj")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.18387794, 1.8624446, 27.923416)
 
+[node name="ceilingLight38" parent="Prop" unique_id=922162102 instance=ExtResource("18_6gurj")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -4.8565135, 1.8624456, 17.309513)
+
 [node name="ceilingLight37" parent="Prop" unique_id=1732486015 instance=ExtResource("18_6gurj")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 4.183878, 1.8624446, 31.923414)
 
@@ -534,11 +557,8 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -8.8
 [node name="ceilingLight36" parent="Prop" unique_id=1154224778 instance=ExtResource("18_6gurj")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -11.816122, 1.8624446, 43.923416)
 
-[node name="ceilingLight33" parent="Prop" unique_id=831381282 instance=ExtResource("18_6gurj")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -5.816122, 1.9202511, 17.923414)
-
 [node name="Pipes4" parent="Prop" unique_id=2069256608 instance=ExtResource("13_nu2w0")]
-transform = Transform3D(-5.7320843e-08, -1.3113481, -0.7282624, 1.5, -6.556708e-08, 0, -3.183336e-08, -0.7282624, 1.3113481, -5.539921, 0.17135254, 14.5392885)
+transform = Transform3D(-5.7320843e-08, -1.3113481, -0.7282624, 1.5, -6.556708e-08, 0, -3.183336e-08, -0.7282624, 1.3113481, -5.539921, 0.0132775605, 14.5392885)
 
 [node name="Pipes5" parent="Prop/Pipes4" unique_id=822495662 instance=ExtResource("20_ccxey")]
 transform = Transform3D(2.3588958e-08, -8.051148e-08, -1, 0.53965247, -0.84188795, 8.051148e-08, -0.84188795, -0.53965247, 2.3588957e-08, 1.2264049, -0.15420961, 0.2442255)
@@ -789,14 +809,24 @@ transform = Transform3D(0.00059697864, 0.0016400571, -0.99999845, -0.34201968, -
 [node name="Pipe Valve4" parent="Prop/Pipe Valve3" unique_id=1189323209 instance=ExtResource("22_tsgrn")]
 transform = Transform3D(1, 2.6361193e-09, -1.4950174e-08, 2.6361238e-09, 0.9396926, 0.34202012, 1.495017e-08, -0.34202012, 0.9396926, -1.9654369, -0.18812752, -0.5023012)
 
-[node name="Pipes1" parent="." unique_id=1328503621 instance=ExtResource("12_j4pg1")]
-transform = Transform3D(-1.4999999, 0, 1.3113416e-07, 0, 1.5, 0, -1.3113416e-07, 0, -1.4999999, -17.391796, 1.8648022, 30.411072)
+[node name="Pipes1" parent="Prop/Pipe Valve3" unique_id=1328503621 instance=ExtResource("12_j4pg1")]
+transform = Transform3D(-0.99999994, -1.4950174e-08, 9.00589e-08, 7.9514415e-08, 0.3420201, 0.93969256, -4.4850516e-08, 0.9396926, -0.34202006, -3.3894224, -0.16341019, -0.5317707)
 
-[node name="Pipes2" parent="." unique_id=1361219225 instance=ExtResource("12_j4pg1")]
-transform = Transform3D(-6.556708e-08, 0, 1.4999999, 0, 1.5, 0, -1.4999999, 0, -6.556708e-08, -17.03614, 2.7054513, 30.916204)
+[node name="Pipes6" parent="Prop/Pipe Valve3" unique_id=1361219225 instance=ExtResource("12_j4pg1")]
+transform = Transform3D(-4.107527e-08, -1.4950174e-08, 0.99999994, 0.93969256, 0.3420201, 4.3711392e-08, -0.34202006, 0.9396926, -1.7763568e-15, -3.152319, -0.2881775, 0.110040665)
 
-[node name="Pipes3" parent="." unique_id=323335294 instance=ExtResource("13_nu2w0")]
-transform = Transform3D(-6.556708e-08, 0, 1.5, 0, 1.5, 0, -1.5, 0, -6.556708e-08, -17.021347, 2.7098267, 32.398636)
+[node name="Pipes7" parent="Prop/Pipe Valve3" unique_id=323335294 instance=ExtResource("13_nu2w0")]
+transform = Transform3D(-4.107527e-08, -1.4950174e-08, 1, 0.9396926, 0.3420201, 4.3711392e-08, -0.3420201, 0.9396926, -1.7763568e-15, -3.142456, -1.215868, 0.45079613)
 
-[node name="Pipes4" parent="." unique_id=92900369 instance=ExtResource("13_nu2w0")]
-transform = Transform3D(-6.6637256e-08, 0, 1.5, 0, 1.5, 0, -1.5244828, 0, -6.556708e-08, -17.021347, 2.7098267, 33.91388)
+[node name="Pipes8" parent="Prop/Pipe Valve3" unique_id=92900369 instance=ExtResource("13_nu2w0")]
+transform = Transform3D(-4.1745693e-08, -1.4950174e-08, 1, 0.9550302, 0.3420201, 4.3711392e-08, -0.34760252, 0.9396926, -1.7763568e-15, -3.142456, -2.1651096, 0.79629135)
+
+[node name="VanishTrigger" type="Area3D" parent="." unique_id=675896708]
+script = ExtResource("35_5py4f")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="VanishTrigger" unique_id=1676079340]
+transform = Transform3D(3.7934103, 0, 0, 0, 1, 0, 0, 0, 0.69133425, -0.01873321, 1.235731, 34.52129)
+shape = SubResource("BoxShape3D_g4v7s")
+
+[node name="VanishScare" type="Node3D" parent="VanishTrigger" unique_id=623501935]
+script = ExtResource("36_qv7rl")

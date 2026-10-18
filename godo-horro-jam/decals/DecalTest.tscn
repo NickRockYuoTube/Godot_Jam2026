@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://babtjbenh4qkh"]
+
+[ext_resource type="FontFile" uid="uid://cvo0aw7dhu72u" path="res://title/Ustroke-Regular.ttf" id="1_afxr6"]
+
+[node name="DecalTest" type="SubViewport" unique_id=1454088767]
+transparent_bg = true
+
+[node name="Label" type="Label" parent="." unique_id=1116776724]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_afxr6")
+theme_override_font_sizes/font_size = 100
+text = "I hate people"
+horizontal_alignment = 1
+vertical_alignment = 1

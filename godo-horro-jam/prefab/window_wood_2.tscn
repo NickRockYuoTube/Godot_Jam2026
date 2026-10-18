@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://ftsct7cj4gxa"]
+
+[ext_resource type="PackedScene" uid="uid://kj1wr40mgfb7" path="res://models/PSX modular house interior pack/geometry/WindowWood.glb" id="1_hbqiq"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_g4v7s"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yf5fn"]
+size = Vector3(1, 1.0395508, 1)
+
+[node name="WindowWood2" unique_id=921550311 instance=ExtResource("1_hbqiq")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1" unique_id=1085467870]
+physics_material_override = SubResource("PhysicsMaterial_g4v7s")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=853400032]
+transform = Transform3D(1.4531144, 0, 0, 0, 1.7118322, 0, 0, 0, 0.20178163, 0, 2.0284283, 1.8886067)
+shape = SubResource("BoxShape3D_yf5fn")

@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://cm8cxo1nkqo5r" path="res://models/кресло 4.2 nohead .glb" id="7_g8x6k"]
 [ext_resource type="AudioStream" uid="uid://dvy8ixa7t1n7u" path="res://sound/WarningSound.ogg" id="7_u0ik3"]
 [ext_resource type="Shader" uid="uid://bvpq8vfw0hc1" path="res://material/VHS_Effect.gdshader" id="11_u0ik3"]
+[ext_resource type="Script" uid="uid://dqq1mqkdj33sy" path="res://script/gaze_watcher.gd" id="11_vjl7f"]
 [ext_resource type="AudioStream" uid="uid://t34dipa5frq3" path="res://sound/WheelSound.ogg" id="12_vjl7f"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_yf5fn"]
@@ -230,6 +231,9 @@ transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0
 collision_mask = 2
 script = ExtResource("5_g8x6k")
 
+[node name="RayCast3D_2" type="RayCast3D" parent="Head/Camera3D" unique_id=693760215]
+script = ExtResource("11_vjl7f")
+
 [node name="CanvasLayer" type="CanvasLayer" parent="Head/Camera3D" unique_id=1946881383]
 
 [node name="ColorRect" type="ColorRect" parent="Head/Camera3D/CanvasLayer" unique_id=1569874404]
@@ -264,9 +268,10 @@ transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -1.609478, -0.744169
 [node name="WheelSound" type="AudioStreamPlayer3D" parent="." unique_id=1317571679]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.36526796, 0.11035502)
 stream = ExtResource("12_vjl7f")
-volume_db = -15.0
+volume_db = -20.0
 bus = &"Wheelchair"
 script = ExtResource("7_bxuc5")
+volume_on_db = -20.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=332806517]
 transform = Transform3D(1.4141009, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1373453, -0.4013672)

@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://dq18t146vwtn3"]
+
+[ext_resource type="PackedScene" uid="uid://hr708gcmss31" path="res://models/lift2.glb" id="1_mrmso"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_g1py8"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rempp"]
+size = Vector3(1.256958, 1, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ckd2n"]
+size = Vector3(1, 0.94921875, 0.73779297)
+
+[node name="lift2" unique_id=985641796 instance=ExtResource("1_mrmso")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+
+[node name="Куб_010" parent="." index="3" unique_id=1730717814]
+visible = false
+
+[node name="Пустышка" parent="." index="4" unique_id=1297642778]
+visible = false
+
+[node name="Пустышка_001" parent="." index="5" unique_id=139063682]
+visible = false
+
+[node name="Пустышка_002" parent="." index="6" unique_id=702582231]
+visible = false
+
+[node name="Пустышка_003" parent="." index="7" unique_id=2107899354]
+visible = false
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="9" unique_id=1156210013]
+physics_material_override = SubResource("PhysicsMaterial_g1py8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=41723319]
+transform = Transform3D(9.1744995, 0, 0, 0, 0.5530674, 0, 0, 0, 11.834084, -9.725836, -0.27594328, 3.2053382)
+shape = SubResource("BoxShape3D_rempp")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D" index="1" unique_id=1324686931]
+transform = Transform3D(0.8329568, 0, 0, 0, 19.37081, 0, 0, 0, 16.538853, -4.4116235, 8.606822, 3.6945662)
+shape = SubResource("BoxShape3D_ckd2n")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="StaticBody3D" index="2" unique_id=2046978386]
+transform = Transform3D(-3.6409702e-08, 0, -16.538855, 0, 19.37081, 0, 0.8329569, 0, -7.229363e-07, -9.396938, 8.606822, 9.488461)
+shape = SubResource("BoxShape3D_ckd2n")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="StaticBody3D" index="3" unique_id=234822739]
+transform = Transform3D(-3.6409702e-08, 0, -16.538855, 0, 19.37081, 0, 0.8329569, 0, -7.229363e-07, -9.396938, 8.606822, -2.1364555)
+shape = SubResource("BoxShape3D_ckd2n")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="." index="10" unique_id=499764264]
+transform = Transform3D(2, 0, 0, 0, -8.742278e-08, 2, 0, -2, -8.742278e-08, -9.770005, 15.713198, 3.5870023)
+shadow_enabled = true
+spot_range = 10.672798
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." index="11" unique_id=1459644974]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -10.019438, 15.737327, 3.79981)
+shadow_enabled = true
+omni_range = 0.73894906
