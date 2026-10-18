@@ -1,0 +1,332 @@
+[gd_scene format=3 uid="uid://c8ok3s27eila1"]
+
+[ext_resource type="PackedScene" uid="uid://gbo3fdxxg12w" path="res://prefab/floor_carpet_2.tscn" id="1_i4ne0"]
+[ext_resource type="PackedScene" uid="uid://cj5cea5ow6y2b" path="res://prefab/arch_plaster_2.tscn" id="2_4q7ee"]
+[ext_resource type="PackedScene" uid="uid://ck8sehrd0n28e" path="res://prefab/ceiling_plaster_2.tscn" id="3_odmt8"]
+[ext_resource type="PackedScene" uid="uid://cnu6i2jvkhexe" path="res://prefab/wall_window_plaster_2.tscn" id="4_w5yml"]
+[ext_resource type="PackedScene" uid="uid://ftsct7cj4gxa" path="res://prefab/window_wood_2.tscn" id="5_bnfj6"]
+[ext_resource type="PackedScene" uid="uid://c7g7ap7iasjmo" path="res://prefab/wall_plaster_2.tscn" id="6_2fvca"]
+[ext_resource type="PackedScene" uid="uid://ddv84nku4ccs1" path="res://prefab/prop/ceiling_light_2.tscn" id="7_odmt8"]
+[ext_resource type="Script" uid="uid://0rhaj4ximuma" path="res://levels/ui.gd" id="9_751lk"]
+[ext_resource type="Shader" uid="uid://bvpq8vfw0hc1" path="res://material/VHS_Effect.gdshader" id="9_etil5"]
+[ext_resource type="PackedScene" uid="uid://cow6ik51bxe1e" path="res://models/кресло 4.2 blend.glb" id="9_w5yml"]
+[ext_resource type="PackedScene" uid="uid://dwniht75bhq18" path="res://models/PSX modular house interior pack/props/bucket.glb" id="10_2fvca"]
+[ext_resource type="PackedScene" uid="uid://dq18t146vwtn3" path="res://prefab/lift_2.tscn" id="10_bnfj6"]
+[ext_resource type="FontFile" uid="uid://3qko443w4nu0" path="res://title/BlankSpotsRegular.ttf" id="10_dbgr6"]
+[ext_resource type="AudioStream" uid="uid://ca3seckps7fy5" path="res://sound/point.ogg" id="10_umd7l"]
+[ext_resource type="PackedScene" uid="uid://drej4bbn46n5v" path="res://models/PSX modular house interior pack/props/broom.glb" id="11_2fvca"]
+[ext_resource type="PackedScene" uid="uid://bkyjjp0s5tnsy" path="res://models/PSX modular house interior pack/props/couchBig.glb" id="12_pdtoi"]
+[ext_resource type="PackedScene" uid="uid://d37i5ja1er608" path="res://prefab/prop/radiator_2.tscn" id="13_el1eq"]
+[ext_resource type="AudioStream" uid="uid://jwxra4tjpqs8" path="res://music/HorrorThemMenuV2.ogg" id="15_f43ds"]
+[ext_resource type="PackedScene" uid="uid://3g5r7mk1lsw8" path="res://scen/screamer2.tscn" id="18_qm43r"]
+
+[sub_resource type="Environment" id="Environment_g4v7s"]
+ambient_light_source = 1
+fog_enabled = true
+fog_light_color = Color(0.011764706, 0.011764706, 0.039215688, 1)
+fog_density = 0.15
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_57qmd"]
+
+[sub_resource type="Compositor" id="Compositor_yf5fn"]
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_dbgr6"]
+
+[sub_resource type="Compositor" id="Compositor_751lk"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_f43ds"]
+shader = ExtResource("9_etil5")
+shader_parameter/scanline_density = 2000.0
+shader_parameter/scanline_intensity = 0.15
+shader_parameter/chromatic_aberration = 0.003
+shader_parameter/noise_intensity = 0.08
+shader_parameter/vignette_intensity = 0.5
+shader_parameter/color_bleed = 0.3
+shader_parameter/desaturation = 0.2
+
+[node name="Menu" type="Node3D" unique_id=37019305]
+
+[node name="WindowWood2" parent="." unique_id=921550311 instance=ExtResource("5_bnfj6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 2)
+
+[node name="floorCarpet2" parent="WindowWood2" unique_id=1862307730 instance=ExtResource("1_i4ne0")]
+
+[node name="floorCarpet3" parent="WindowWood2" unique_id=1109359892 instance=ExtResource("1_i4ne0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+
+[node name="floorCarpet6" parent="WindowWood2" unique_id=1012458064 instance=ExtResource("1_i4ne0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 4)
+
+[node name="floorCarpet4" parent="WindowWood2" unique_id=2052341823 instance=ExtResource("1_i4ne0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
+
+[node name="floorCarpet5" parent="WindowWood2" unique_id=82378822 instance=ExtResource("1_i4ne0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -4)
+
+[node name="archPlaster2" parent="WindowWood2" unique_id=1003620266 instance=ExtResource("2_4q7ee")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+
+[node name="archPlaster4" parent="WindowWood2" unique_id=1155046658 instance=ExtResource("2_4q7ee")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 4)
+
+[node name="archPlaster3" parent="WindowWood2" unique_id=492583600 instance=ExtResource("2_4q7ee")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 4, 0, 4)
+
+[node name="ceilingPlaster2" parent="WindowWood2" unique_id=1132000842 instance=ExtResource("3_odmt8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+
+[node name="ceilingPlaster6" parent="WindowWood2" unique_id=157396733 instance=ExtResource("3_odmt8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 4)
+
+[node name="ceilingPlaster3" parent="WindowWood2" unique_id=197767082 instance=ExtResource("3_odmt8")]
+
+[node name="ceilingPlaster4" parent="WindowWood2" unique_id=2026181333 instance=ExtResource("3_odmt8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -4)
+
+[node name="ceilingPlaster5" parent="WindowWood2" unique_id=906701760 instance=ExtResource("3_odmt8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
+
+[node name="wallWindowPlaster2" parent="WindowWood2" unique_id=428001705 instance=ExtResource("4_w5yml")]
+
+[node name="wallPlaster2" parent="WindowWood2" unique_id=1185111535 instance=ExtResource("6_2fvca")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, -1.1920929e-07)
+
+[node name="wallPlaster3" parent="WindowWood2" unique_id=151716813 instance=ExtResource("6_2fvca")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 1.1920929e-07, 0, -4)
+
+[node name="wallPlaster4" parent="WindowWood2" unique_id=1862091260 instance=ExtResource("6_2fvca")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 1.1920929e-07, 0, -4)
+
+[node name="wallPlaster5" parent="WindowWood2" unique_id=1386396417 instance=ExtResource("6_2fvca")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 4, 0, -3.9999995)
+
+[node name="wallPlaster6" parent="WindowWood2" unique_id=1625143377 instance=ExtResource("6_2fvca")]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 4, 0, -3.9999995)
+
+[node name="wallPlaster8" parent="WindowWood2" unique_id=453237876 instance=ExtResource("6_2fvca")]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 3.999999, 0, 4.0000005)
+
+[node name="wallPlaster9" parent="WindowWood2" unique_id=1326338864 instance=ExtResource("6_2fvca")]
+transform = Transform3D(-2.1855693e-07, 0, -1, 0, 1, 0, 1, 0, -2.1855693e-07, 3.999999, 0, 4.0000005)
+
+[node name="wallPlaster11" parent="WindowWood2" unique_id=1757381908 instance=ExtResource("6_2fvca")]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 3.9999995, 0, 4.7683716e-07)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=349055410]
+environment = SubResource("Environment_g4v7s")
+camera_attributes = SubResource("CameraAttributesPractical_57qmd")
+compositor = SubResource("Compositor_yf5fn")
+
+[node name="кресло 4_2 blend" parent="." unique_id=356551790 instance=ExtResource("9_w5yml")]
+transform = Transform3D(0.14825387, 0, 0.20129776, 0, 0.25, 0, -0.20129776, 0, 0.14825387, 0.46498078, -0.6855308, 2.1056185)
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=404396726]
+transform = Transform3D(-0.97145164, -0.015712203, 0.23671666, 1.8626451e-09, 0.99780434, 0.06622984, -0.23723756, 0.0643391, -0.9693188, 0.7234889, 2.0218472, -0.82665306)
+attributes = SubResource("CameraAttributesPractical_dbgr6")
+compositor = SubResource("Compositor_751lk")
+fov = 68.0
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="Camera3D" unique_id=1063523359]
+
+[node name="UI" type="Control" parent="Camera3D/CanvasLayer2" unique_id=1519405355]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("9_751lk")
+
+[node name="ClickSound" type="AudioStreamPlayer" parent="Camera3D/CanvasLayer2/UI" unique_id=1321397024]
+stream = ExtResource("10_umd7l")
+
+[node name="MenuRight" type="VBoxContainer" parent="Camera3D/CanvasLayer2/UI" unique_id=745858423]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -381.0
+offset_top = -105.0
+offset_right = -190.0
+offset_bottom = 105.0
+grow_horizontal = 0
+grow_vertical = 2
+alignment = 1
+
+[node name="StartBtn" type="Button" parent="Camera3D/CanvasLayer2/UI/MenuRight" unique_id=267355391]
+layout_mode = 2
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("10_dbgr6")
+theme_override_font_sizes/font_size = 80
+text = "Start"
+icon_alignment = 1
+
+[node name="AuthorsBtn" type="Button" parent="Camera3D/CanvasLayer2/UI/MenuRight" unique_id=1456332415]
+layout_mode = 2
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("10_dbgr6")
+theme_override_font_sizes/font_size = 80
+text = "Authors"
+icon_alignment = 1
+
+[node name="ExitBtn" type="Button" parent="Camera3D/CanvasLayer2/UI/MenuRight" unique_id=982721551]
+layout_mode = 2
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("10_dbgr6")
+theme_override_font_sizes/font_size = 80
+text = "Exit"
+icon_alignment = 1
+
+[node name="TITLE" type="Label" parent="Camera3D/CanvasLayer2/UI" unique_id=230116466]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -573.0
+offset_top = 46.0
+offset_right = 576.0
+offset_bottom = 169.0
+grow_horizontal = 2
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("10_dbgr6")
+theme_override_font_sizes/font_size = 100
+text = "Paralyzed"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="Camera3D/CanvasLayer2/UI" unique_id=945501189]
+material = SubResource("ShaderMaterial_f43ds")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 1, 1, 0)
+metadata/_edit_use_anchors_ = true
+
+[node name="AuthorsPanel" type="PanelContainer" parent="Camera3D/CanvasLayer2/UI" unique_id=1022991610]
+visible = false
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 24.0
+offset_top = -169.0
+offset_right = 671.0
+offset_bottom = 299.0
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Camera3D/CanvasLayer2/UI/AuthorsPanel" unique_id=1963095176]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Camera3D/CanvasLayer2/UI/AuthorsPanel/VBoxContainer" unique_id=1476909295]
+layout_mode = 2
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("10_dbgr6")
+theme_override_font_sizes/font_size = 48
+text = "Authors:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="Camera3D/CanvasLayer2/UI/AuthorsPanel/VBoxContainer" unique_id=976826726]
+layout_mode = 2
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("10_dbgr6")
+theme_override_font_sizes/font_size = 48
+text = "Nikita Aleshin (NickRock)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="Camera3D/CanvasLayer2/UI/AuthorsPanel/VBoxContainer" unique_id=1599819117]
+layout_mode = 2
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("10_dbgr6")
+theme_override_font_sizes/font_size = 48
+text = "Gennady "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="Camera3D/CanvasLayer2/UI/AuthorsPanel/VBoxContainer" unique_id=889611626]
+layout_mode = 2
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("10_dbgr6")
+theme_override_font_sizes/font_size = 48
+text = "Special thanks for the models:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label5" type="Label" parent="Camera3D/CanvasLayer2/UI/AuthorsPanel/VBoxContainer" unique_id=477188088]
+layout_mode = 2
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("10_dbgr6")
+theme_override_font_sizes/font_size = 48
+text = "Kkryy"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label7" type="Label" parent="Camera3D/CanvasLayer2/UI/AuthorsPanel/VBoxContainer" unique_id=1435555072]
+layout_mode = 2
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("10_dbgr6")
+theme_override_font_sizes/font_size = 48
+text = "Сhilly_durango"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label8" type="Label" parent="Camera3D/CanvasLayer2/UI/AuthorsPanel/VBoxContainer" unique_id=1584723171]
+layout_mode = 2
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("10_dbgr6")
+theme_override_font_sizes/font_size = 48
+text = "DissonantVoid"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CloseBtn" type="Button" parent="Camera3D/CanvasLayer2/UI/AuthorsPanel/VBoxContainer" unique_id=126955398]
+layout_mode = 2
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("10_dbgr6")
+theme_override_font_sizes/font_size = 48
+text = "Close"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Camera3D" unique_id=655923113]
+
+[node name="lift2" parent="." unique_id=985641796 instance=ExtResource("10_bnfj6")]
+transform = Transform3D(-1.0927847e-08, 0, -0.25, 0, 0.25, 0, 0.25, 0, -1.0927847e-08, 2.7500002, 0, 11.843962)
+
+[node name="bucket2" parent="." unique_id=727610121 instance=ExtResource("10_2fvca")]
+transform = Transform3D(-0.5512694, 0, -1.3950276, 0, 1.5, 0, 1.3950276, 0, -0.5512694, -0.32593557, 0.050358653, 3.2825334)
+
+[node name="broom2" parent="." unique_id=996972611 instance=ExtResource("11_2fvca")]
+transform = Transform3D(-0.038198948, 0.007457152, 0.99924225, 0.19160189, 0.98147273, -4.656613e-10, -0.9807291, 0.19145672, -0.03892003, 0.22718078, 0.032797784, 3.4558682)
+
+[node name="couchBig2" parent="." unique_id=1698006139 instance=ExtResource("12_pdtoi")]
+transform = Transform3D(-6.556708e-08, 0, 1.5, 0, 1.5, 0, -1.5, 0, -6.556708e-08, -2.91324, 0.050358772, 1.7363341)
+
+[node name="radiator2" parent="." unique_id=1403233901 instance=ExtResource("13_el1eq")]
+transform = Transform3D(-6.556708e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.556708e-08, -1.0509691, 0.050358895, 3.7356381)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1745122895]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9546745, 1.7116344, 3.6909556)
+light_color = Color(0.45452422, 0.45452428, 0.45452422, 1)
+light_energy = 0.5
+omni_range = 2.5140083
+
+[node name="ceilingLight2" parent="." unique_id=1932943327 instance=ExtResource("7_odmt8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2605274, 1.9692771, -1.2428956)
+
+[node name="ceilingLight3" parent="." unique_id=1987113854 instance=ExtResource("7_odmt8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4198103, 1.9692771, 0.18872952)
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=972339684]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3560338, 1.5461498, 1.1045564)
+stream = ExtResource("15_f43ds")
+volume_db = -15.0
+autoplay = true
+
+[node name="тест" parent="." unique_id=471729371 instance=ExtResource("18_qm43r")]
+transform = Transform3D(-2.4041263e-08, 0, 0.55, 0, 0.55, 0, -0.55, 0, -2.4041263e-08, -1.8985988, -1.7239335, 4.7087183)

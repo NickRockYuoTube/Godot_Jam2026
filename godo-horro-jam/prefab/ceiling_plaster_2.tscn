@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://ck8sehrd0n28e"]
+
+[ext_resource type="PackedScene" uid="uid://dxmgpe5mxtbc" path="res://models/PSX modular house interior pack/geometry/ceilingPlaster.glb" id="1_0b6uk"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_g4v7s"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g4v7s"]
+size = Vector3(1, 0.064453125, 1)
+
+[node name="ceilingPlaster2" unique_id=1132000842 instance=ExtResource("1_0b6uk")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1" unique_id=2064357469]
+physics_material_override = SubResource("PhysicsMaterial_g4v7s")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=251566900]
+transform = Transform3D(4.0337286, 0, 0, 0, 1, 0, 0, 0, 4.012162, 0, 3.960865, 0)
+shape = SubResource("BoxShape3D_g4v7s")

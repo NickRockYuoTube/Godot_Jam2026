@@ -11,6 +11,7 @@ signal pressed_changed(command: Command, is_pressed: bool)
 @export var click_sound: AudioStreamPlayer3D
 @export var glow_color := Color(1.0, 0.25, 0.1)
 @export var lamp_energy_on := 1.5
+@export var dwell_time := 0.0   # сколько секунд нужно смотреть на кнопку, чтобы она сработала
 
 var is_hovered := false
 var is_pressed := false

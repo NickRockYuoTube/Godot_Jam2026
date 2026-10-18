@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://lmf6k1d66ggw"]
+
+[ext_resource type="Script" uid="uid://bx3sj1cbt1xkp" path="res://script/gaze_monster.gd" id="1_omnma"]
+[ext_resource type="PackedScene" uid="uid://3g5r7mk1lsw8" path="res://scen/screamer2.tscn" id="2_qydaj"]
+[ext_resource type="Script" uid="uid://bqvyv5khwkgie" path="res://script/gaze_target.gd" id="3_qydaj"]
+[ext_resource type="AudioStream" uid="uid://qtq3swrpe6at" path="res://sound/scrimer.ogg" id="4_qydaj"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g4v7s"]
+
+[node name="GazeTarget" type="Node3D" unique_id=1995476138 node_paths=PackedStringArray("gaze_target", "vanish_sound")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.09693539, 0.035911888, 0.16186595)
+script = ExtResource("1_omnma")
+gaze_target = NodePath("GazeTarget")
+vanish_sound = NodePath("AudioStreamPlayer3D")
+
+[node name="тест" parent="." unique_id=471729371 instance=ExtResource("2_qydaj")]
+transform = Transform3D(0.55, 0, 0, 0, 0.55, 0, 0, 0, 0.55, 4.1757936, -1.903618, -4.1556315)
+
+[node name="GazeTarget" type="Area3D" parent="." unique_id=1303575215]
+transform = Transform3D(150, 0, 0, 0, 225.58841, 0, 0, 0, 150, 0, 1.1382371, -0.21218932)
+script = ExtResource("3_qydaj")
+look_time = 0.1
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GazeTarget" unique_id=2022134788]
+transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 0, 0, 0)
+shape = SubResource("BoxShape3D_g4v7s")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=1421975883]
+stream = ExtResource("4_qydaj")
+volume_db = -15.0
+max_distance = 25.0
+bus = &"Wheelchair"
