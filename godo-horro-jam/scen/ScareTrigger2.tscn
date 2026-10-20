@@ -13,7 +13,7 @@
 script = ExtResource("1_hhvv5")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=765324056]
-transform = Transform3D(4.033085, 0, 0, 0, 2.0060363, 0, 0, 0, 1, 0, 0.9909388, -6.16712)
+transform = Transform3D(4.033085, 0, 0, 0, 2.0060363, 0, 0, 0, 1, 0, 0.9909388, -6.4994044)
 shape = SubResource("BoxShape3D_g4v7s")
 
 [node name="RunPastScare" type="Node3D" parent="." unique_id=414285937]

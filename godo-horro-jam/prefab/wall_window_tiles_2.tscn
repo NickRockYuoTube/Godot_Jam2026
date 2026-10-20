@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://cpim3iy2ppg1o"]
+
+[ext_resource type="PackedScene" uid="uid://ysn0ghfee75a" path="res://models/PSX modular house interior pack/geometry/wallWindowTiles.glb" id="1_t2nrv"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_g4v7s"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g4v7s"]
+size = Vector3(1, 1, 2)
+
+[node name="wallWindowTiles2" unique_id=1000002409 instance=ExtResource("1_t2nrv")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1" unique_id=1742553429]
+physics_material_override = SubResource("PhysicsMaterial_g4v7s")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=1046886948]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 0.1, 0, 2, 1.9)
+shape = SubResource("BoxShape3D_g4v7s")

@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://cytolb84pr1ai"]
+
+[ext_resource type="PackedScene" uid="uid://bi7rb86q1g35l" path="res://models/PSX modular house interior pack/geometry/wallDoorWallpaper2.glb" id="1_3ks8l"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g4v7s"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yf5fn"]
+
+[node name="wallDoorWallpaper22" unique_id=68288372 instance=ExtResource("1_3ks8l")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1" unique_id=1829812356]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=2025641305]
+transform = Transform3D(1.1, 0, 0, 0, 4.083531, 0, 0, 0, 0.1, 1.4643421, 2.0041082, 1.8861413)
+shape = SubResource("BoxShape3D_g4v7s")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D" index="1" unique_id=955838571]
+transform = Transform3D(1.1, 0, 0, 0, 4.083531, 0, 0, 0, 0.1, -1.5218, 2.0041082, 1.8861413)
+shape = SubResource("BoxShape3D_g4v7s")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="StaticBody3D" index="2" unique_id=965762343]
+transform = Transform3D(1.9927852, 0, 0, 0, 1.319875, 0, 0, 0, 0.1, 0, 3.357931, 1.8981342)
+shape = SubResource("BoxShape3D_yf5fn")
