@@ -1,0 +1,73 @@
+[gd_scene format=4 uid="uid://ggm1pkn1toas"]
+
+[ext_resource type="Texture2D" uid="uid://kjacdjdse0xg" path="res://models/PSX modular house interior pack/props/painting2_albedo.png" id="1_nljdp"]
+[ext_resource type="Texture2D" uid="uid://c63c5x1ckw65e" path="res://models/PSX modular house interior pack/props/painting2_roughness.png" id="2_au7w8"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_28jke"]
+resource_name = "painting2"
+albedo_texture = ExtResource("1_nljdp")
+metallic_texture = ExtResource("2_au7w8")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_au7w8")
+roughness_texture_channel = 1
+texture_filter = 2
+metadata/extras = {
+"yp": {
+"active_ypaint_node": "",
+"expand_content": 0.0
+}
+}
+metadata/_gltf_primary_texture_coord = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_juvfb"]
+_surfaces = [{
+"aabb": AABB(8.0058226e-07, -0.43572822, -0.37870052, 0.07137166, 0.8714566, 0.7573998),
+"format": 34896613377,
+"index_count": 108,
+"index_data": PackedByteArray("AAABAAIAAwACAAEAAAAEAAEABAADAAEABQAAAAIABAAAAAUAAwAGAAIABQACAAYABAAHAAMABAAFAAcACAADAAcACQAGAAMACQADAAgACgAFAAYACgAGAAkACwAHAAUACwAFAAoACAAHAAsADAAKAAkADQAJAAgADAAJAA0ADgAIAAsADQAIAA4ADwALAAoADwAKAAwADgALAA8ADQAQAAwADwARAA4ADgASAA0ADQASABAADgARABIADAAQABMADAATAA8AEwAQABIADwATABEAEwASABEA"),
+"name": "painting2",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 20,
+"vertex_data": PackedByteArray("AABZCaX2AAAAAKX2WQkAAAAApfal9gAA/////wAAAAAAAFkJWQkAAP//AAD//wAA////////AAD//wAAAAAAAJPKL/sMAwAAk8ov+/L8AACTys8E8vwAAJPKzwQMAwAAk8q6G07nAACTykTkTucAAJPKROSwGAAAk8q6G7AYAAD7drobTucAAPt2ROSwGAAA+3ZE5E7nAAD7drobsBgAAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_dx1j4"]
+resource_name = "painting2_Cube_095"
+_surfaces = [{
+"aabb": AABB(8.0058226e-07, -0.43572822, -0.37870052, 0.07137166, 0.8714566, 0.7573998),
+"attribute_data": PackedByteArray("R7VmDZj5AFxHtQBcmPlmDSjrp/BY3h1kKOtxaVje+/VYPMzmqqKz6qqizOZYPLPqWN779SjrcWlY3h1kKOun8L809MjlrgjWHjAI1kOq9MgeMAjWQ6r0yL809MjlrgjWbtvbZlje+/Vu2z7zWN4dZKAxvdnlrgjWYq292R4wCNZirb3ZHjAI1qAxvdnlrgjWbts+81jeHWRu29tmWN779UGxR7sHEDwHQbE8BwcQR7u30C/m0Mzqc7fQ6nPQzC/mt9Dqc9DML+a30C/m0Mzqc6qizOZYPLPqWDzM5qqis+q30C/mbtvbZrfQ6nNu2z7zqqLM5qAxvdlYPMzmYq292Vg8zOZirb3ZqqLM5qAxvdm30Opzbts+87fQL+Zu29tm"),
+"format": 34896613399,
+"index_count": 108,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUAGAAZABoAGAAbABkAHAAdAB4AHAAfAB0AIAAhACIAIAAjACEAJAAlACYAJAAnACUAKAApACoAKAArACkALAAtAC4ALAAvAC0AMAAxADIAMAAzADEANAA1ADYANAA3ADUAOAA5ADoAOAA7ADkAPAA9AD4APAA/AD0AQABBAEIAQABDAEEARABFAEYARABHAEUA"),
+"material": SubResource("StandardMaterial3D_28jke"),
+"name": "painting2",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 72,
+"vertex_data": PackedByteArray("AABZCaX2//8AAKX2WQn//wAApfal9v//AABZCVkJ//8AAFkJWQnu8P////8AAO7wAACl9lkJ7vD//wAAAADu8JPKROSwGKoq+3ZE5E7nqiqTykTkTueqKvt2ROSwGKoq//8AAP//AAAAAKX2pfYAAP///////wAAAABZCaX2AAAAAFkJWQlBzP//AAD//0HM//8AAAAAQcwAAFkJpfZBzP////8AAL0zAACl9qX2vTMAAKX2WQm9M////////70zk8ov+wwDMZb//wAAAAAxlpPKzwQMAzGW/////wAAMZaTys8EDAP66v//AAD///rqk8rPBPL8+ur//wAAAAD66pPKL/vy/AQV/////wAABBWTyi/7DAMEFf///////wQVk8rPBPL8AAD///////8AAJPKL/vy/AAA//8AAP//AAD7drobsBj/v/t2RORO5/+/+3ZE5LAY/7/7drobTuf/v5PKuhuwGACA+3ZE5LAYAICTykTksBgAgPt2uhuwGACAk8pE5E7nAAD7drobTucAAJPKuhtO5wAA+3ZE5E7nAACTyrobTudU1ft2uhuwGFTVk8q6G7AYVNX7drobTudU1ZPKuhtO5wAAk8ov+/L8AACTykTkTucAAJPKzwTy/AAAk8pE5E7nAACTyi/7DAMAAJPKROSwGAAAk8ov+/L8AACTyrobsBj//5PKzwTy/P//k8q6G07n//+Tys8EDAP//5PKROSwGP+/k8rPBAwD/7+TyrobsBj/v5PKL/sMA/+//z//f/8//3//P/9//z//f/9//v//f/7//3/+//9//v+qKlTVqipU1aoqVNWqKlTV1Gv/f9Rr/3/Ua/9/1Gv/f7M32duzN9nbszfZ27M32dslpLO3JaSztyWks7clpLO3/38AAP9/AAD/fwAA/38AAKC1vZSgtb2UoLW9lKC1vZS+FF7KvhReyr4UXsq+FF7KDOT/fwzk/38M5P9/DOT/f/9/AAD/fwAA/38AAP9/AAD/f////3////9/////f///////f////3////9/////f6qqqqqqqqmqqqqpqqqqqqr/v/9//7//f/+//3//v/9//7//f/+//3//v/9//7//f/+//3//v/9//7//f/+//3//fwAA/38AAP9/AAD/fwAA")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_juvfb")
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_i7mxb"]
+friction = 0.8
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3t81m"]
+size = Vector3(0.07137166, 0.8714566, 0.7573998)
+
+[node name="painting22" type="Node3D" unique_id=1636596115]
+
+[node name="painting2" type="MeshInstance3D" parent="." unique_id=846231854]
+mesh = SubResource("ArrayMesh_dx1j4")
+metadata/extras = {
+"yp_decal": {}
+}
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=985756878]
+physics_material_override = SubResource("PhysicsMaterial_i7mxb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1197863664]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.03568663, 8.940697e-08, -6.2584877e-07)
+shape = SubResource("BoxShape3D_3t81m")

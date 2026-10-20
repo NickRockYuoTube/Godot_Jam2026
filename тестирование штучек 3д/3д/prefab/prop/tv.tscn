@@ -1,0 +1,113 @@
+[gd_scene format=4 uid="uid://cmqu1foa7prdu"]
+
+[ext_resource type="Texture2D" uid="uid://cv75r7wgh3naw" path="res://models/PSX modular house interior pack/props/tv_albedo.png" id="1_be74r"]
+[ext_resource type="Texture2D" uid="uid://cpofaih0xph1g" path="res://models/PSX modular house interior pack/props/tv_roughness.png" id="2_gaac4"]
+[ext_resource type="Texture2D" uid="uid://bbcel4ft1uhu2" path="res://models/PSX modular house interior pack/props/tv_screenAlbedo.png" id="3_4sffh"]
+[ext_resource type="Texture2D" uid="uid://b1igls4kpvspr" path="res://models/PSX modular house interior pack/props/tv_screenRoughness.png" id="4_2eh8j"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s8lsc"]
+resource_name = "tv"
+albedo_texture = ExtResource("1_be74r")
+metallic_texture = ExtResource("2_gaac4")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_gaac4")
+roughness_texture_channel = 1
+texture_filter = 2
+metadata/extras = {
+"yp": {
+"active_ypaint_node": "",
+"expand_content": 0.0
+}
+}
+metadata/_gltf_primary_texture_coord = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cktkw"]
+resource_name = "tvScreen"
+albedo_texture = ExtResource("3_4sffh")
+metallic_texture = ExtResource("4_2eh8j")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("4_2eh8j")
+roughness_texture_channel = 1
+texture_filter = 2
+metadata/extras = {
+"yp": {
+"active_ypaint_node": "",
+"expand_content": 0.0
+}
+}
+metadata/_gltf_primary_texture_coord = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_j81k3"]
+_surfaces = [{
+"aabb": AABB(-0.3315111, 1.1175871e-08, -0.39553434, 0.6630222, 0.5333753, 0.5937065),
+"format": 34896613377,
+"index_count": 252,
+"index_data": PackedByteArray("AAABAAIAAgABAAMABAADAAEAAAAEAAEABAAFAAMABgAEAAAABgAFAAQABwADAAUAAgADAAcABwAFAAYACAAAAAIACQACAAcACAACAAkACQAHAAoACgAHAAYACQALAAgADAAAAAgADAAGAAAACAALAAwACQANAAsADQAJAAoADgAMAAsADgALAA0ADAAPAAYADgAPAAwACgAGABAADwAQAAYAEQAKABAADQAKABEAEgAQAA8AEQAQABIADwATABIADgATAA8AEgAUABEAFAANABEAEgATABQADgANABUAFgAUABMAFgANABQAEwAOABcADQAYABUADQAWABgAGQAOABUAFwAOABkAGQAVABgAEwAXABoAFgATABoAGwAXABkAGAAWABwAHQAaABcAHQAXABsAHgAWABoAHgAaAB0AHwAcABYAHwAWAB4AHgAgAB8AHgAhACAAHQAhAB4AHwAgACIAHQAjACEAGwAjAB0AGwAkACMAHwAiACUAJQAcAB8AJQAYABwAJQAiACYAJwAYACUAJQAmACcAJwAmACQAJwAkABsAJwAZABgAGwAZACcAKAApACoAKQArACoAKAAsACkAKgArAC0AKgAtACgAKAAuACwAKAAtAC4ALAAvACkAKQAvACsALAAuAC8ALQArAC8ALQAvAC4A"),
+"name": "tv",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 48,
+"vertex_data": PackedByteArray("Bw44Of0/AAA5Fa6yAAAAAAcO7s0CQAAAxequsgAAAAA5Fe5NAAAAAMXq7k0AAAAA9/E4Of0/AAD38e7NAkAAABIG9Dk/hAAAEga790mEAADs+bv3SYQAAAAA4QxEhAAAEgbhDESEAAAAAP//RIQAAAAA4Qzs5QAA7PnhDESEAADs+fQ5P4QAAP////9EhAAA///hDESEAAD//+EM7OUAAP/////s5QAAAAD//+zlAABY8v//I/kAAP9/4Qz//wAApg3//yP5AACmDeEMI/kAAFjy4Qwj+QAA/38mPf//AAD/f/////8AAPnmJj0j+QAA+eam6yP5AAD/f6br//8AAP9/put+9QAA+eam66LuAAAFGabrou4AAPnmJj2i7gAA/38mPX71AAAFGabrI/kAAAUZJj2i7gAABRkmPSP5AABZCOEMwmMAAKX34QxV8QAAWQjhDFXxAABZCAAAVfEAAKX34QzCYwAAWQgAAMJjAACl9wAAwmMAAKX3AABV8QAA")
+}, {
+"aabb": AABB(-0.2667095, 0.12740457, 0.15790734, 0.533419, 0.36358348, 0.015904248),
+"format": 34896613377,
+"index_count": 12,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAAAAIABAACAAUA"),
+"name": "tvScreen",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 6,
+"vertex_data": PackedByteArray("/38AAP//AAAAAP//AAAAAP9//////wAAAAAAAAAAAAD//wAAAAAAAP////8AAAAA")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_fs3un"]
+resource_name = "tv_Cube_059"
+_surfaces = [{
+"aabb": AABB(-0.3315111, 1.1175871e-08, -0.39553434, 0.6630222, 0.5333753, 0.5937065),
+"attribute_data": PackedByteArray("Dz8ZPj1T+hsQP1EUO1NIOBE/TxQ+U0Y4Ez8XPj5T9xt7LIBaclASVXJQW1h7LDdXhAhbWIQIElUKn7WZIuzdhKXutZmNod2E7Z4CPQbskyeJ7gI9cKGTJ4zz+NBt8W2yjPNtskKcbbIjmvjQI5ptstjGINnH7vrW6J761jgWeJZAErtfOBZyZUASCKQ3JttMrQeNCDcmjQitB9tMS1rmC5Rd7jxLWu48lF3mC3ssgFpyUBJVclBbWHssN1eECFtYhAgSVZRd7jxLWuYLlF3mC0ta7jxzck9StJFPF7SRT1Jzck8XtJFPUnNyTxe0kU8Xc3JPUvXzfvH1uAz09bh+8fXzDPT1837x9bgM9PW4fvH18wz09fM57bPUx++z1Dnt9fPH7/XzOe2z1Mfvs9Q57fXzx+9woUQLBuyTJ3ChkycG7EQLQTp4lkASCKQ4FniWQToIpEZecGVCYgWkSV51lj5it18/Om9lPmK3X0ZecGU+Ordfqwqh8osIpbCrCk+9jAjz9KsKT72LCKWwqwqlsIwI8/TVX6Hy9GHz9KsKofL0YfP01V9PvfRhpbDVX6HyIvITeLmYiFki8ohZXe0Vfn2dFX5txTqAuZgTeEASCKSUCrtfQBK7X5QKCKQ+Yrdf7mkFpEJiBaTpabdfrQeNCDcm20ytB9tMNyaNCCacYFWJ7gI9UPFgVe2eAj2IKZAIEz8XPowp4z0RP08UiCnjPRA/URSIKZAIDz8ZPvRhpbDVX0+91V+lsG3xbbIKn7WZpe61mUKcbbIUP8NKiSlSPg8/GT4XP8FKEz8XPowpUT44FnJlPjq3Xz86b2VAErtfSV51lkE6CKRBOniWQmIFpA=="),
+"format": 34896613399,
+"index_count": 252,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAALAAgADAANAAsADgAPABAADgARAA8AEgATABQAEgAVABMAFgAXABgAFgAZABcAFgAaABkAGQAaABsAGgAWABwAHAAWAB0AGgAcAB4AHwAgACEAHwAiACAAIwAkACUAIwAmACQAJwAoACkAJwAqACgAKwAsAC0AKwAuACwALwAuACsALwAwAC4AMQAyADMAMQA0ADIANQA2ADcANQA4ADYAOQA6ADsAOQA8ADoAPQA+AD8APQBAAD4AQQBCAEMAQQBEAEIARQBGAEcARQBIAEYASQBKAEsASQBMAEoATQBOAE8ATQBQAE4AUQBSAFMAUQBUAFIAVQBWAFcAVQBYAFYAWQBaAFsAWQBcAFoAXQBeAF8AXQBgAF4AYQBiAGMAZABlAGYAZABnAGUAaABpAGoAaABrAGkAbABtAG4AbwBtAGwAbQBvAHAAcABvAHEAbQBwAHIAcwB0AHUAcwB2AHQAdwB4AHkAdwB6AHgAewB8AH0AewB+AHwAfwCAAIEAfwCCAIAAgwCEAIUAgwCGAIQAhwCIAIkAhwCKAIgAiwCMAI0AjgCPAJAAjgCRAI8AkgCTAJQAlQCWAJcAmACZAJoAmACbAJkAnACdAJ4AnACfAJ0A"),
+"material": SubResource("StandardMaterial3D_s8lsc"),
+"name": "tv",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 160,
+"vertex_data": PackedByteArray("Bw44Of0/AAA5Fa6yAAAAAAcO7s0CQAAAORXuTQAAAAD38e7NAkAVxcXq7k0AABXF9/E4Of0/FcXF6q6yAAAVxf9/Jj3///+/+eYmPaLu/7/55iY9I/n/v/9/Jj1+9f+/BRkmPSP5/78FGSY9ou7/v/fxODn9P///ORXuTQAA//8HDjg5/T///8Xq7k0AAP//Bw7uzQJA4c7F6q6yAADhzvfx7s0CQOHOORWusgAA4c4AAOEM7OX//xIG4QxEhP//AADhDESE///s+eEMRIT/////4Qzs5f/////hDESE////f+EM/////6YN4Qwj+f//WPLhDCP5//8FGSY9I/kEgKYN//8j+QCABRmm6yP5BoCmDeEMI/kGgP//4QxEhP+//////+zl/7//////RIT/v///4Qzs5f+/BRmm6yP5/78FGSY9ou7/vwUZJj0j+f+/BRmm66Lu/7//f6br/////wUZpuui7v//BRmm6yP5////f6brfvX///nmpusj+f//+eam66Lu///55iY9I/n/v/nmpuui7v+/+eam6yP5/7/55iY9ou7/v1kI4QzCY1TVpffhDFXxVNVZCOEMVfFU1aX34QzCY1TVWQgAAMJjVNWl9wAAVfFU1aX3AADCY1TVWQgAAFXxVNWl9+EMVfEAgFkIAABV8QCAWQjhDFXxAICl9wAAVfEAgFkI4QzCY///pfcAAMJj//+l9+EMwmP//1kIAADCY///pffhDMJj/7+l9wAAVfH/v6X34QxV8f+/pfcAAMJj/79ZCOEMVfH/v1kIAADCY/+/WQjhDMJj/79ZCAAAVfH/vzkV7k0AAP//xequsgAA//85Fa6yAAD//8Xq7k0AAP///38mPf//UoKmDeEMI/lSggUZJj0j+VKC/3/hDP//UoL55qbrI/kGgFjy4Qwj+QCA+eYmPSP5BIBY8v//I/kIgP9/puv//26CWPL//yP5boL55qbrI/lugv9//////26CEga790mE//8AAOEMRIT//xIG9Dk/hP//AAD//0SE//8SBvQ5P4T5/wAA4QxEhPn/EgbhDESE+f8AAP//RITj/+z5u/dJhOP//////0SE4/8SBrv3SYTj//////9EhP//7Pn0OT+E/////+EMRIT//+z5u/dJhP///////+zl/78AAP//RIT/v/////9EhP+/WPL//yP5/7+mDf//I/n/v/9///////+/AAD//+zl/7+mDeEMI/mspAAA///s5aykpg3//yP5rKQAAOEM7OWspFjy//8j+ayk///hDOzlrKRY8uEMI/mspP/////s5aykAADhDOzl//8AAP//RIT//wAA///s5f//AADhDESE//8SBrv3SYR81Pfx7s0CQHzU7Pm790mEfNQHDu7NAkB81Oz5u/dJhEXF9/E4Of0/RcXs+fQ5P4RFxffx7s0CQEXFEgb0OT+EAAAHDu7NAkAAABIGu/dJhAAABw44Of0/AAD//+EMRIT5/+z59Dk/hPn/7PnhDESE+f8SBuEMRIT///fxODn9P///Bw44Of0////s+eEMRIT//xIG4QxEhEXFBw44Of0/RcUSBvQ5P4RFxez54QxEhAUA7Pn0OT+EBQD38Tg5/T8FAAUZpusj+W6C/3//////boL/f6br//9ugqYN//8j+W6C+eYmPSP5UoL/f+EM//9Sgv9/Jj3//1KCWPLhDCP5UoL6/wG8+v8BvPr/Abz6/wG8/38AAP9/AAD/fwAA/38AAP7//3/+//9//v//f/7//3/+//9//v//f+G2///htv//4bb//+G2//////9/////f////3////9//3//P/9//z//f/8//3//P/9//z//f/8//3//P/9//z//f/8//3//f////////////3//f/9/AAD/fwAA/38AAP9/AAD/fwAA/38AAP9/AAD/fwAA/3//P/9//z//f/8//3//P/9//z//f/8//3////9/////f////3///6qqqqqqqqqqqqqqqqqqqqpUVVRVVFVUVVRVVFVUVVRV/3////9/////f////3////9//v//f////3////9//v//fwAA/38AAP9/AAD/fwAA/3////9//v//f/7//3///////3////9/////f////39ckEXvWJAu71aQJO9ekE7v/3//f////////////3//fzRfjyE5X5whOl+eITNfjiH+/wSA/v8EgP7/BID+/wSAAAD/fwAA/38AAP9/AAD/fwAA/38AAP9/AAD/f/r//3/5//9/+f//f/r//3/+//9/////f////3/+//9/////f/7//3/+//9//3////9/////f////3///wOACwADgAsAA4ALAAOACwD/P/9//z//f/8//3//P/9/////f////3////9/////f/9/AAD/fwAA/38AAP9/AAD6/9u7///Zu///2bv//9m7AAD/fwAA/38AAP9/TVH//01R//+xrv//TVH//+9/5P/vf+T/73/k/yDE938gxPd/IMT1f9JeDd/CXhPfwV4T39NeDN9mkJMQaZB6EGqQbxBlkJwQ")
+}, {
+"aabb": AABB(-0.2667095, 0.12740457, 0.15790734, 0.533419, 0.36358348, 0.015904248),
+"attribute_data": PackedByteArray("/7////9//3//v/9//3//////////v/9/////f/+///8="),
+"format": 34896613399,
+"index_count": 12,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUA"),
+"material": SubResource("StandardMaterial3D_cktkw"),
+"name": "tvScreen",
+"primitive": 3,
+"uv_scale": Vector4(2, 2, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("/38AAP//bIIAAP//AABsgv9//////2yCAAAAAAAAbIL//wAAAABsgv9//////2yC/////wAAbIL/fwAA//9sgv9/////f////3////9/////fwAA/38AAP9/AAD/fwAA")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_j81k3")
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_h2u4v"]
+friction = 0.8
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2k6sq"]
+size = Vector3(0.6630222, 0.5333753, 0.5937065)
+
+[node name="tv2" type="Node3D" unique_id=236487300]
+
+[node name="tv" type="MeshInstance3D" parent="." unique_id=827617826]
+mesh = SubResource("ArrayMesh_fs3un")
+metadata/extras = {
+"yp_decal": {}
+}
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=2118193188]
+physics_material_override = SubResource("PhysicsMaterial_h2u4v")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=589415795]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.26668766, -0.09868109)
+shape = SubResource("BoxShape3D_2k6sq")

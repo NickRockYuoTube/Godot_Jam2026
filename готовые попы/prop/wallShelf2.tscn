@@ -1,0 +1,75 @@
+[gd_scene format=4 uid="uid://cbndkm6rt8fku"]
+
+[ext_resource type="Texture2D" uid="uid://mlx3w1k80gjq" path="res://models/PSX modular house interior pack/props/wallShelf2_albedo.png" id="1_8fqtn"]
+[ext_resource type="Texture2D" uid="uid://d1hm4cjeodnaf" path="res://models/PSX modular house interior pack/props/wallShelf2_roughness.png" id="2_a1an7"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5ntkd"]
+resource_name = "wallShelf2"
+albedo_texture = ExtResource("1_8fqtn")
+metallic_texture = ExtResource("2_a1an7")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_a1an7")
+roughness_texture_channel = 1
+texture_filter = 2
+metadata/extras = {
+"yp": {
+"active_ypaint_node": "",
+"expand_content": 0.0
+}
+}
+metadata/_gltf_primary_texture_coord = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_bb88w"]
+_surfaces = [{
+"aabb": AABB(-4.0233135e-07, -0.15967152, -1.0202664, 0.3770337, 0.17776105, 2.0405328),
+"format": 34896613377,
+"index_count": 204,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAACAAEAAwAEAAEABQAAAAIAAwAAAAUABAAGAAIABQACAAYAAwAHAAQAAwAFAAcABwAGAAQABwAFAAYACAAJAAoACwAKAAkACAAMAAkADAALAAkADQAMAAgADgANAAgADQAPAAwADwANAA4ADwAQAAwADAAQAAsADwAOABEADwARABAADgAIABIAEQAOABIAEgAIAAoAEQASABAAEAATAAsAEgAKABQACwAUAAoAEgAVABAAEAAVABMAFAAWABIAEgAWABUACwAXABQACwATABcAFAAXABYAFQAXABMAFQAWABcAGAAZABoAGwAaABkAGAAcABkAHAAbABkAHQAcABgAHgAdABgAHQAfABwAHwAdAB4AHwAgABwAHAAgABsAHwAeACEAHwAhACAAHgAYACIAIQAeACIAIgAYABoAIQAiACAAIAAjABsAIgAaACQAGwAkABoAIgAlACAAIAAlACMAJAAmACIAIgAmACUAGwAnACQAGwAjACcAJAAnACYAJQAnACMAJQAmACcA"),
+"lods": [0.19133265, PackedByteArray("AAABAAIAAAADAAEABAACAAEAAwAEAAEABQAAAAIAAwAAAAUABAAGAAIABQACAAYAAwAHAAQAAwAFAAcABwAGAAQABwAFAAYA")],
+"name": "wallShelf2",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 40,
+"vertex_data": PackedByteArray("AADky///AAAAAP//AAAAAAAA/////wAAAADkywAAAAD/////AAAAAP//5Mv//wAA////////AAD//+TLAAAAAAAA866nzgAAAADky1rAAAAAAOTLp84AAKQN5MtawAAAAADzrlrAAAAAAAAAp84AAKUNAACnzgAAAAAAAFrAAAClDfOuWsAAAKUNAABawAAApQ3zrqfOAADdq+TLWsAAAKQN5MunzgAA3avzrlrAAADdq/Oup84AAN2r5MunzgAAAADzrqQ/AAAAAOTLVzEAAAAA5MukPwAApA3ky1cxAAAAAPOuVzEAAAAAAACkPwAApQ0AAKQ/AAAAAAAAVzEAAKUN865XMQAApQ0AAFcxAAClDfOupD8AAN2r5MtXMQAApA3ky6Q/AADdq/OuVzEAAN2r866kPwAA3avky6Q/AAA=")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_jhiwr"]
+resource_name = "wallShelf2_Cube_157"
+_surfaces = [{
+"aabb": AABB(-4.0233135e-07, -0.15967152, -1.0202664, 0.3770337, 0.17776105, 2.0405328),
+"attribute_data": PackedByteArray("dQV7+OkOF/l1BRf56Q57+EgAVsa4IqTJSACkybgiVsa4IlbGGd2kybgipMkZ3VbGGd1Wxon/pMkZ3aTJif9Wxn7ZqJ1iCTR3ftk0d2IJqJ1+2YBvYgkMSX7ZDEliCYBv9Aum890Lk/XdC6bz9AuT9YQMpvOEDJP1WrbTDoO0/AxatvwMg7TTDiqf/Awqn9MOWrb0GYO09BmDtNMOWrb8DIO0/AxattMOKp/TDiqf/AyDtPQZWrb0GUSYVA7TjX0MRJh9DNONVA7FC5P13Qum890Lk/XFC6bzsAqm87AKk/XprCEgyKGRKsihISDprJEqRJhUDtONfQxEmH0M041UDsihkSpvjCEgyKEhIG+MkSrRC3v46QuO9ukLe/jRC472QQt7+EELjvZattMOg7T8DFq2/AyDtNMOKp/8DCqf0w5atvQZg7T0GYO00w5atvwMg7T8DFq20w4qn9MOKp/8DIO09BlatvQZRJhUDtONfQxEmH0M041UDgAMjvbpC3v46QuO9gAMe/gVDXv4FQ2O9umsISDIoZEqyKEhIOmskSpEmFQO0419DESYfQzTjVQOyKGRKm+MISDIoSEgb4yRKg=="),
+"format": 34896613399,
+"index_count": 204,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUAGAAZABoAGAAbABkAHAAbABgAHAAdABsAHgAfACAAHgAhAB8AIQAiAB8AIQAjACIAJAAhAB4AJAAlACEAJgAnACgAJgApACcAKAAqACYAKAArACoALAApACYALAAtACkALgAvADAALgAxAC8AMgAzADQAMgA1ADMAMgA2ADUAMgA3ADYAOAA5ADoAOAA7ADkAPAA9AD4APAA/AD0AQABBAEIAQABDAEEARABFAEYARABHAEUASABHAEQASABJAEcASgBLAEwASgBNAEsATQBOAEsATQBPAE4AUABNAEoAUABRAE0AUgBTAFQAUgBVAFMAVABWAFIAVABXAFYAWABVAFIAWABZAFUAWgBbAFwAWgBdAFsAXgBfAGAAXgBhAF8AXgBiAGEAXgBjAGIAZABlAGYAZABnAGUAaABpAGoAaABrAGkAbABtAG4AbABvAG0A"),
+"lods": [0.19133265, PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUA")],
+"material": SubResource("StandardMaterial3D_5ntkd"),
+"name": "wallShelf2",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 112,
+"vertex_data": PackedByteArray("AADky/////8AAP//AAD//wAA////////AADkywAA//8AAOTLAAD///////8AAP//AAD//wAA/////+TLAAD/////5MsAAP//////////////////AAD/////5Mv////////ky/////8AAP//////////////////AADky/////8AAOTLAABU1f//5Mv//1TV///kywAAVNUAAOTL//9U1f////8AAFTVAAD/////VNUAAP//AABU1f///////1TVAADzrqfOVNUAAOTLWsBU1QAA5MunzlTVAADzrlrAVNUAAAAAp85U1QAAAABawFTVAADzrlrA//+kDeTLWsD//wAA5MtawP//pQ3zrlrA///dq+TLWsD//92r865awP//AAAAAFrA//+lDQAAWsD//6UN866nzgAAAADky6fOAACkDeTLp84AAAAA866nzgAA3avzrqfOAADdq+TLp84AAKUNAACnzgAAAAAAAKfOAAAAAAAAWsBU1aUNAACnzlTVpQ0AAFrAVNUAAAAAp85U1aQN5MtawP//AADky6fO//8AAOTLWsD//6QN5Munzv//3avky6fO///dq+TLWsD//6UNAABawFTVpQ3zrqfOVNWlDfOuWsBU1aUNAACnzlTV3avzrlrA/7/dq+TLp87/v92r5MtawP+/3avzrqfO/7+lDfOup87//92r865awP//pQ3zrlrA///dq/Oup87//wAA866kP1TVAADky1cxVNUAAOTLpD9U1QAA865XMVTVAAAAAKQ/VNUAAAAAVzFU1QAA865XMf//pA3ky1cx//8AAOTLVzH//6UN865XMf//3avky1cx///dq/OuVzH//wAAAABXMf//pQ0AAFcx//+lDfOupD8AAAAA5MukPwAApA3ky6Q/AAAAAPOupD8AAN2r866kPwAA3avky6Q/AAClDQAApD8AAAAAAACkPwAAAAAAAFcxVNWlDQAApD9U1aUNAABXMVTVAAAAAKQ/VNWkDeTLVzH/vwAA5MukP/+/AADky1cx/7+kDeTLpD//v92r5MukP/+/3avky1cx/7+lDQAAVzFU1aUN866kP1TVpQ3zrlcxVNWlDQAApD9U1d2r865XMf+/3avky6Q//7/dq+TLVzH/v92r866kP/+/pQ3zrqQ////dq/OuVzH//6UN865XMf//3avzrqQ/////P/9//z//f/8//3//P/9//v//f////3/+//9/////f/+//3//v/9//7//f/+//3//f/9//3//f/9//3//f/9/VFVUVVRVVFVUVVRVVFVUVVTVqipU1aoqVNWqKlTVqipUVaqqVFWqqlRVqqpUVaqqVFWqqlRVqqr/f/7//3/+//9/////f/7//3////9/////f/7//3////9//3//f/9//3//f/9//3//f/9//3//f/9//3//f/9/VFVVVVRVVVVUVVRVVFVVVf9//7//f/+//3//v/9//7//f/+//3//v6qqVFWqqlRVqqpUVaqqVFX/fwAA/38AAP9/AAD/fwAA/3//P/9//z//f/8//3//P1TVVNVU1VTVVNVU1VTVVNVU1VTVVNVU1f9//v//f/7//3////9//v//f////3////9//v//f///////////////f/9///////9//3//f/9//3//f/9//39UVVRVVFVUVVRVVFVUVVRV////f////3////9/////f////3////9/qqpVVaqqVVWqqlRVqqpVVf9/AAD/fwAA/38AAP9/AAD/f/8//3//P/9//z//f/8/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_bb88w")
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ifvap"]
+friction = 0.8
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8vvgw"]
+size = Vector3(0.3770337, 0.17776105, 2.0405328)
+
+[node name="wallShelf22" type="Node3D" unique_id=14447670]
+
+[node name="wallShelf2" type="MeshInstance3D" parent="." unique_id=1220929781]
+mesh = SubResource("ArrayMesh_jhiwr")
+metadata/extras = {
+"yp_decal": {}
+}
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=297432548]
+physics_material_override = SubResource("PhysicsMaterial_ifvap")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1063561132]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.18851645, -0.07079099, 0)
+shape = SubResource("BoxShape3D_8vvgw")

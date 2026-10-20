@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://di3ltav25skya"]
+
+[ext_resource type="Texture2D" uid="uid://52ueyg7gobhi" path="res://models/PSX modular house interior pack/props/doormat_albedo.png" id="1_ohbxa"]
+[ext_resource type="Texture2D" uid="uid://cbtv5xodsw3r1" path="res://models/PSX modular house interior pack/props/doormat_roughness.png" id="2_f0rm1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pb7qv"]
+resource_name = "doormat"
+albedo_texture = ExtResource("1_ohbxa")
+metallic_texture = ExtResource("2_f0rm1")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_f0rm1")
+roughness_texture_channel = 1
+texture_filter = 2
+metadata/extras = {
+"yp": {
+"active_ypaint_node": "",
+"expand_content": 0.0
+}
+}
+metadata/_gltf_primary_texture_coord = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_g4oll"]
+_surfaces = [{
+"aabb": AABB(-0.52979684, 0.050005216, -0.3149447, 1.0595937, 1e-05, 0.6298894),
+"format": 34896613377,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 0, 0, 3, 0, 1, 0),
+"name": "doormat",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray(254, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 0, 0, 254, 255, 0, 0)
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_imu5v"]
+resource_name = "doormat_Plane_203"
+_surfaces = [{
+"aabb": AABB(-0.52979684, 0.050005216, -0.3149447, 1.0595937, 1e-05, 0.6298894),
+"attribute_data": PackedByteArray(255, 255, 232, 51, 0, 0, 22, 204, 0, 0, 232, 51, 254, 255, 22, 204),
+"format": 34896613399,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 0, 0, 3, 0, 1, 0),
+"material": SubResource("StandardMaterial3D_pb7qv"),
+"name": "doormat",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray(254, 255, 0, 0, 0, 0, 255, 191, 0, 0, 0, 0, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 255, 191, 255, 255, 0, 0, 254, 255, 255, 191, 254, 255, 255, 127, 254, 255, 255, 127, 254, 255, 255, 127, 254, 255, 255, 127)
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_g4oll")
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_brnqd"]
+friction = 0.8
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bd48f"]
+size = Vector3(1.0595937, 9.998679e-06, 0.6298894)
+
+[node name="doormat2" type="Node3D" unique_id=892311460]
+
+[node name="doormat" type="MeshInstance3D" parent="." unique_id=308210520]
+mesh = SubResource("ArrayMesh_imu5v")
+metadata/extras = {
+"yp_decal": {}
+}
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1029725194]
+physics_material_override = SubResource("PhysicsMaterial_brnqd")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=698396038]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.050010215, 0)
+shape = SubResource("BoxShape3D_bd48f")

@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://bt8jbrv03vsk8"]
+
+[ext_resource type="PackedScene" uid="uid://cp82p4fqs586" path="res://node_3d.tscn" id="1_vhi7w"]
+[ext_resource type="PackedScene" uid="uid://bawer0saolm5x" path="res://bed2.tscn" id="2_wjwls"]
+
+[node name="Node3D" unique_id=1790245435 instance=ExtResource("1_vhi7w")]
+
+[node name="bed22" parent="." index="9" unique_id=680790406 instance=ExtResource("2_wjwls")]
+transform = Transform3D(1, 0, 0, 0, 2.4268959, 0, 0, 0, 2.8667138, -4.463955, 0.5897968, -15.218315)
