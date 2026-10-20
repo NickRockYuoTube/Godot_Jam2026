@@ -1,0 +1,78 @@
+[gd_scene format=4 uid="uid://c5s60ykp3l677"]
+
+[ext_resource type="Texture2D" uid="uid://r0faewh4fukh" path="res://models/PSX modular house interior pack/props/ceilingLight_albedo.png" id="1_sm3sb"]
+[ext_resource type="Texture2D" uid="uid://dj4xsggbd14p0" path="res://models/PSX modular house interior pack/props/ceilingLight_emission.png" id="2_du1qh"]
+[ext_resource type="Texture2D" uid="uid://ie5ap410asul" path="res://models/PSX modular house interior pack/props/ceilingLight_roughness.png" id="3_8qdbo"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fm3l1"]
+resource_name = "ceilingLight"
+albedo_texture = ExtResource("1_sm3sb")
+metallic_texture = ExtResource("3_8qdbo")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("3_8qdbo")
+roughness_texture_channel = 1
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_operator = 1
+emission_texture = ExtResource("2_du1qh")
+texture_filter = 2
+metadata/extras = {
+"yp": {
+"active_ypaint_node": "",
+"expand_content": 0.0
+}
+}
+metadata/_gltf_primary_texture_coord = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_py5p3"]
+_surfaces = [{
+"aabb": AABB(-0.2385945, -0.13473698, -0.23859397, 0.477189, 0.13473698, 0.47718894),
+"format": 34896613377,
+"index_count": 186,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAAAAIABAADAAAABQACAAEABAACAAYABQAHAAIABwAGAAIACAAEAAYABwAFAAkACgAEAAgACgADAAQACAAGAAsACgAIAAsABwAMAAYADAALAAYABwAJAA0ADAAHAA0ADgANAAkABQAOAAkADAANAA8ABQAQAA4AEAAFAAEADgARAA0AEQAPAA0AEAASAA4AEgARAA4AEAABABMAAwATAAEAEAAUABIAFAAQABMAAwAVABMAFAAWABIAEgAWABEAFAATABcAFQAXABMAAwAYABUAFQAYABcAAwAKABgAGAAKABkAFAAaABYAGgAUABcAGAAbABcAGgAXABsAGAAZABsAGgAcABYAGQAKAB0AGQAdABsACgALAB0AHgAaABsAGgAeABwAHgAbAB0AFgAcAB8AHgAfABwAFgAfABEAEQAfAA8AHgAgAB8AIAAeAB0AIAAPAB8AIAAdAAsAIAAMAA8ADAAgAAsA"),
+"name": "ceilingLight",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 33,
+"vertex_data": PackedByteArray("gdr//30lAAD/f1yNAAAAAIHaXI19JQAA/3///wAAAAD//////38AAP9/XI1AFwAA//9cjf9/AAAQylyN7jUAAIHa//+B2gAA/3/lYkAXAAD/f/////8AAIHaXI2B2gAAvuhcjf9/AAAQyuVi7jUAAO415WLuNQAAvujlYv9/AADuNVyN7jUAAP9/AAD/fwAAQBflYv9/AAB9JVyNfSUAAEAXXI3/fwAAfSX//30lAADuNeViEMoAAAAAXI3/fwAAAAD///9/AAB9Jf//gdoAAO41XI0QygAAfSVcjYHaAAD/f+VivugAAP9/XI3//wAA/39cjb7oAAAQyuViEMoAABDKXI0QygAA")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_7kx2l"]
+resource_name = "ceilingLight_Circle_001"
+_surfaces = [{
+"aabb": AABB(-0.2385945, -0.13473698, -0.23859397, 0.477189, 0.13473698, 0.47718894),
+"attribute_data": PackedByteArray("Njv6eOIsSKDiLPp4NjtIoDY7XyriLK1R4ixfKjY7rVEbG0J5Bg2noAYNQnkbG6egGxt3KgYN3FEGDXcqGxvcUTY7rVHiLPp44iytUTY7+ng2OxID4ixfKuIsEgM2O18qGxvcUQYNQnkGDdxRGxtCeRsbEgMGDXcqBg0SAxsbdypte8osMHWCVjB1yixte4JW6AJ3KgYNEgMGDXcq6AISA+gC3FEGDdxR6AJCeQYNQnnoAqegBg2noJYiXyriLBID4ixfKpYiEgOWIq1R4iytUZYi+njiLPp4liJIoOIsSKAmuaE5SqRGBwLORgfKhsUk8m7KLDB1EgMwdcos8m4SA/JuOYAwdYJWMHU5gPJuglZte4JWMHU5gDB1glZtezmAbXsSAzB1yiwwdRIDbXvKLPJuglYwdcosMHWCVvJuyizybvGpMHU5gDB18anybjmAbXs5gDB18akwdTmAbXvxqewSk9AqG3nk7BI73BAvO9zSJnnk0iZVyCobVcgQL5PQSqT9a8qGxSQmuaE5yoZ9ToLrfU4CzkYHguvFJCa5oTkCzv1rJrmhOYLrfU5KpP1r"),
+"format": 34896613399,
+"index_count": 186,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUAGAAZABoAGAAbABkAHAAdAB4AHAAfAB0AIAAhACIAIAAjACEAJAAlACYAJAAnACUAKAAkACYAKAAmACkAKgAoACkAKgApACsALAAqACsALAArAC0ALgAvADAALgAxAC8AMgAuADAAMgAwADMANAAyADMANAAzADUANgA0ADUANgA1ADcAOAA5ADoAOAA7ADkAPAA9AD4APAA/AD0AQABBAEIAQABDAEEARABFAEYARABHAEUASABJAEoASABLAEkATABNAE4ATABPAE0AUABRAFIAUABTAFEAVABVAFYAVABXAFUAWABZAFoAWABbAFkAWQBbAFwAWwBYAF0AXQBYAF4AWwBdAF8AYABhAGIAYABjAGEAZABlAGYAZABnAGUAaABpAGoAaABrAGkA"),
+"material": SubResource("StandardMaterial3D_fm3l1"),
+"name": "ceilingLight",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 108,
+"vertex_data": PackedByteArray("gdr//30luPT/f1yNAAC49IHaXI19Jbj0/3///wAAuPSB2v//gdrIzP//XI3/f8jMgdpcjYHayMz//////3/IzH0l//+B2ozB/39cjf//jMF9JVyNgdqMwf9//////4zBfSX//30lGd8AAFyN/38Z330lXI19JRnfAAD///9/Gd///////38Z34HaXI19JRnf//9cjf9/Gd+B2v//fSUZ3/9//////4zBgdpcjYHajMH/f1yN//+MwYHa//+B2ozBAAD///9/yMx9JVyNgdrIzAAAXI3/f8jMfSX//4HayMz/f///AAC49H0lXI19Jbj0/39cjQAAuPR9Jf//fSW49BDKXI0QysjMvujlYv9/yMwQyuViEMrIzL7oXI3/f8jM7jVcje41eOj/f1yNAADv2H0lXI19JbHr/39cjUAXVNVAF1yN/3+//gAAXI3/f+T97jVcjRDK3up9JVyNgdqo5/9/XI2+6G7X/39cjf//VNUQylyNEMqhxv9/XI3//+bRgdpcjYHa9sT/f1yNvuhU1b7oXI3/fwTA//9cjf9/DcAQylyN7jVexYHaXI19JRbH/39cjUAXSdP/f1yNAABU1f9/AAD/f8zYvujlYv9/zNgQyuVi7jU22BDK5WIQymTZ7jVcjRDKjMH/f+VivuiMwe415WIQyozB/39cjb7ojMHuNVyN7jUZ30AX5WL/fxnf7jXlYu41Gd9AF1yN/38Z377oXI3/fxnfEMrlYu41Gd++6OVi/38Z3xDKXI3uNRnf/39cjb7ojMEQyuViEMqMwf9/5WK+6IzBEMpcjRDKjMFAF1yN/3/IzO415WIQysjMQBflYv9/yMzuNVyNEMrIzP9/XI1AF7j07jXlYu41uPT/f+ViQBe49O41XI3uNbj0EMpcje41uPT/f+ViQBe49BDK5WLuNbj0/39cjUAXuPT/f///AADIzAAA////f8jMfSX//30lyMz/f//////IzH0l//+B2sjM//////9/yMyB2v//fSXIzIHa//+B2sjM7jXlYhDKgdoQyuViEMqB2v9/AAD/fy/a/3/lYr7oMNvuNeVi7jWg4xDK5WLuNaDj/3/lYkAXIOT/fwAA/39k40AX5WL/f17m/38AAP9/XubuNeVi7jUG5+415WIQyrflNTo1OjU6NTo1OjU6NTo1OpskmySbJJskmySbJJskmyTI7cjtyO3I7cjtyO3I7cjtBtAG0AbQBtAG0AbQBtAG0Pgv+C/4L/gv+C/4L/gv+C82EjYSNhI2EjYSNhI2EjYSY9tj22PbY9tj22PbY9tj28nFycXJxcnFycXJxcnFycWbJJskmySbJJskmySbJJsk7GiJS39ZP1PsawlKVFVUVaB+r0DZPrP9kzUn6xQ0KOjmK83XqipU1fMd5rt6KPPQTRubtqoqVNWoAlGFtwijewI4/mMrPWlhyVKaVlRVVFU+ZQBJPmUASY1kQ0nvZb1IyG02kshtNpLIbTaSyG02kgZQ+K8GUPivBlD4rwZQ+K/4L/gv+C/4L/gv+C/4L/gvNhI2EjYSNhI2EjYSNhI2EmRbmqRkW5qkZFuapGRbmqTJRTW6yUU1uslFNbrJRTW6NTo1OjU6NTo1OjU6NTo1Osi2mqTItpqkyLaapMi2mqTItpqkyLaapMi2mqTItpqk8WIBVfFiAVWvYh5VfmPEVJpcoUuaXKFLPF1FS09cy0u8WxdWvFsXVk1culUrW3RW")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_py5p3")
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_gbflx"]
+friction = 0.8
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8pll7"]
+size = Vector3(0.477189, 0.13473698, 0.47718894)
+
+[node name="ceilingLight2" type="Node3D" unique_id=2017817237]
+
+[node name="ceilingLight" type="MeshInstance3D" parent="." unique_id=1111637990]
+mesh = SubResource("ArrayMesh_7kx2l")
+metadata/extras = {
+"yp_decal": {}
+}
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1864369898]
+physics_material_override = SubResource("PhysicsMaterial_gbflx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=2082942006]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.06736849, 5.066395e-07)
+shape = SubResource("BoxShape3D_8pll7")

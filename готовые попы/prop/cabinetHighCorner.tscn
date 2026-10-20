@@ -1,0 +1,75 @@
+[gd_scene format=4 uid="uid://ykp6hei7w5mm"]
+
+[ext_resource type="Texture2D" uid="uid://cmbvfdxcustn3" path="res://models/PSX modular house interior pack/props/cabinetHighCorner_albedo.png" id="1_sw8ty"]
+[ext_resource type="Texture2D" uid="uid://cs1emjnw3hgo1" path="res://models/PSX modular house interior pack/props/cabinetHighCorner_roughness.png" id="2_t3ryr"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_obobe"]
+resource_name = "cabinetHighCorner"
+albedo_texture = ExtResource("1_sw8ty")
+metallic_texture = ExtResource("2_t3ryr")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_t3ryr")
+roughness_texture_channel = 1
+texture_filter = 2
+metadata/extras = {
+"yp": {
+"active_ypaint_node": "",
+"expand_content": 0.0
+}
+}
+metadata/_gltf_primary_texture_coord = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_jwroe"]
+_surfaces = [{
+"aabb": AABB(0.10000179, -1.958396, -0.5000001, 0.89999795, 1.4122883, 1.0000002),
+"format": 34896613377,
+"index_count": 84,
+"index_data": PackedByteArray("CgABAAsACgADAAEAAwAMAAEADAALAAEAAAAKAAsAAwANAAwACgAAAAgAAwAKAA4AAwAOAA0ACgAIAA4AAAALAAIACAAAAAIADAAPAAsADwACAAsACAACAAUADwAFAAIADgAIAAcADQAOAAcACQAIAAUACQAFAA8ACQAHAAgADQAHAAYABgAHAAkADQAGAAQABgAJAAQABAAJAA8ADQAEAAwABAAPAAwA"),
+"lods": [0.00042649877, PackedByteArray("AAABAAIAAAADAAEAAQAEAAIABAAFAAIAAwAGAAEABgAEAAEAAwAAAAcAAwAHAAYACAAAAAIACAACAAUAAAAIAAcABgAJAAQACQAFAAQABgAHAAkACQAIAAUACQAHAAgA")],
+"name": "cabinetHighCorner",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 16,
+"vertex_data": PackedByteArray("AAAAAP//AAAAAP//AAAAAAAA/////wAAAAAAAAAAAAD/////AAAAACup/////wAA//8AAAAAAAD//wAAQZgAACupAAD//wAA/////0GYAAAAAAAAQZgAAAAA//9BmAAAK6n//wAAAAArqQAAAAAAACupAABBmAAAK6n//0GYAAA=")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_qqnc7"]
+resource_name = "cabinetHighCorner_Cube_081"
+_surfaces = [{
+"aabb": AABB(0.10000179, -1.958396, -0.5000001, 0.89999795, 1.4122883, 1.0000002),
+"attribute_data": PackedByteArray("Sq1I1hmFhZ1KrYWdGYVI1rmtSNa5rYWd5dGFneXRSNa9mgyBC2dLBr2aSwYLZwyBulzTls4FS3zOBZhICCnTlrpcmEgJVBT8ViAU/M4F2tgJVCilzgUopYj6DIHWxksGiPpLBtbGDIHWxksGvZoMgb2aSwbWxgyBAJ1I1gCdhZ3+uUjW/rmFnVYg2tgJVNrYViAopQgpS3wIKZhIulxLfA=="),
+"format": 34896613399,
+"index_count": 84,
+"index_data": PackedByteArray("HgABAB8AHgADAAEAAAAeAB8AAAAfAAIAIAAFACEAIAAEAAUABwAgACEABwAhAAYACAAJAAoACAALAAkAIgASABMAIwASACIAIwARABIAFAAjACIAFAAiACQAJAAiABMAJAATABUAJQAOACYAJQANAA4ADwANACUADAAPACUADAAlACcAJwAlACYAJwAmABAAFgAXABgAFgAZABcAGgAbABwAGgAdABsA"),
+"lods": [0.00042649877, PackedByteArray("AAABAAIAAAADAAEABAAFAAYABwAEAAYACAAJAAoACAALAAkADAANAA4ADwANAAwAEAAMAA4AEQASABMAFAARABMAFAATABUAFgAXABgAFgAZABcAGgAbABwAGgAdABsA")],
+"material": SubResource("StandardMaterial3D_obobe"),
+"name": "cabinetHighCorner",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 40,
+"vertex_data": PackedByteArray("AAAAAP///78AAP//AAD/vwAA//////+/AAAAAAAA/7///wAAAAD///////8AAP//AAD//wAA//8AAAAAAAD//yupAAD//wCAAAD/////AIArqf////8AgAAAAAD//wCA/////wAAVNUrqf////9U1QAA/////1TV/////0GYVNUAAP//AABU1QAAAAD/////K6kAAP///////wAAQZj//wAAAAAAAP////8AAAAA/////wAAAAD/v/////9BmP+//////wAA/7///wAAQZj/v/////9BmLGlK6kAAP//saUrqf////+xpf//AABBmLGlAAAAAEGY/78AAP//QZj/vyupAAAAAP//K6n//wAA//8rqQAAQZj//wAAAABBmP//K6kAAAAA//8rqf//QZhU1QAA//9BmFTVK6n//wAAVNX/f////3////9/////f////3////9/////f////3////9/////f////3////9///9U1aoqVNWqKlTVqipU1aoqVNWqKv9//z//f/8//3//P/9//z//f/8//38AAP9/AAD/fwAA/38AAP9/AAD/fwAA/38AAP9/AAD/f////3////9/////f////3//P/9//z//f/8/VNWqKlTVqipU1aoq")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_jwroe")
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_cpypq"]
+friction = 0.8
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pxfyv"]
+size = Vector3(0.89999795, 1.4122883, 1.0000002)
+
+[node name="cabinetHighCorner2" type="Node3D" unique_id=1591742420]
+
+[node name="cabinetHighCorner" type="MeshInstance3D" parent="." unique_id=1766222355]
+mesh = SubResource("ArrayMesh_qqnc7")
+metadata/extras = {
+"yp_decal": {}
+}
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=828305628]
+physics_material_override = SubResource("PhysicsMaterial_cpypq")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1091582372]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5500008, -1.2522519, 0)
+shape = SubResource("BoxShape3D_pxfyv")
