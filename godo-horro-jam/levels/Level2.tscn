@@ -31,8 +31,6 @@
 [ext_resource type="PackedScene" uid="uid://drpi5q6lkiw45" path="res://models/PSX modular house interior pack/props/clock.glb" id="31_yw7ng"]
 [ext_resource type="PackedScene" uid="uid://cln2iyws78b1c" path="res://models/PSX modular house interior pack/props/doormat.glb" id="34_idw50"]
 [ext_resource type="PackedScene" uid="uid://buh7b6x3qrq1f" path="res://models/PSX modular house interior pack/props/fridge.glb" id="35_xupr1"]
-[ext_resource type="PackedScene" uid="uid://jjls6rho3q7v" path="res://models/PSX modular house interior pack/props/hanger2.glb" id="36_fflmk"]
-[ext_resource type="PackedScene" uid="uid://bhw5egsn3wago" path="res://models/PSX modular house interior pack/props/lamp.glb" id="37_dtvim"]
 [ext_resource type="PackedScene" uid="uid://dl8ioafckpss7" path="res://models/PSX modular house interior pack/props/mirror3.glb" id="38_aav6d"]
 [ext_resource type="PackedScene" uid="uid://be68wt1bop030" path="res://models/PSX modular house interior pack/props/oven.glb" id="39_aav6d"]
 [ext_resource type="PackedScene" uid="uid://ccy7ec6t4xqt4" path="res://models/PSX modular house interior pack/props/painting2.glb" id="40_b33tm"]
@@ -43,7 +41,6 @@
 [ext_resource type="PackedScene" uid="uid://r027mxx5uwrh" path="res://models/PSX modular house interior pack/props/pan.glb" id="45_lxdvw"]
 [ext_resource type="PackedScene" uid="uid://bwvv4vodl6eg" path="res://models/PSX modular house interior pack/props/paperBag.glb" id="46_oe68w"]
 [ext_resource type="PackedScene" uid="uid://d2ql7m8181xsj" path="res://models/PSX modular house interior pack/props/plant2.glb" id="47_kguvc"]
-[ext_resource type="PackedScene" uid="uid://bwofklw4bi6sn" path="res://models/PSX modular house interior pack/props/plant3.glb" id="48_6iiih"]
 
 [node name="Level2" type="Node3D" unique_id=711464759]
 
@@ -981,12 +978,6 @@ transform = Transform3D(0.72278696, 0, -1.6485081, 0, 1.8, 0, 1.6485081, 0, 0.72
 [node name="fridge2" parent="props" unique_id=2127727729 instance=ExtResource("35_xupr1")]
 transform = Transform3D(0.5773346, 0, -1.0519909, 0, 1.2, 0, 1.0519909, 0, 0.5773346, 36.09703, -0.6863502, 35.35456)
 
-[node name="hanger22" parent="props" unique_id=896524958 instance=ExtResource("36_fflmk")]
-transform = Transform3D(-0.7266744, 0, 1.3122287, 0, 1.5, 0, -1.3122287, 0, -0.7266744, -3.1661515, -0.6863506, 8.695574)
-
-[node name="lamp2" parent="props" unique_id=2007532053 instance=ExtResource("37_dtvim")]
-transform = Transform3D(-0.7266744, 0, 1.3122287, 0, 1.5, 0, -1.3122287, 0, -0.7266744, 5.326112, -0.6863501, -3.6792512)
-
 [node name="mirror32" parent="props" unique_id=34327126 instance=ExtResource("38_aav6d")]
 transform = Transform3D(-0.7266744, 0, 1.3122287, 0, 1.5, 0, -1.3122287, 0, -0.7266744, 5.9051695, 1.1171893, 4.1653075)
 
@@ -1016,6 +1007,3 @@ transform = Transform3D(0.39523053, 0, 1.4469944, 0, 1.5, 0, -1.4469944, 0, 0.39
 
 [node name="plant22" parent="props" unique_id=1119132094 instance=ExtResource("47_kguvc")]
 transform = Transform3D(-0.7266744, 0, 1.3122287, 0, 1.5, 0, -1.3122287, 0, -0.7266744, 18.905327, -0.6859646, 41.790176)
-
-[node name="plant32" parent="props" unique_id=355684285 instance=ExtResource("48_6iiih")]
-transform = Transform3D(-0.7266744, 0, 1.3122287, 0, 1.5, 0, -1.3122287, 0, -0.7266744, 2.387343, -0.6863502, -1.8880588)
