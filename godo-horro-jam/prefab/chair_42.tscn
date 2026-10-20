@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://bw7l4235xs4qd"]
+
+[ext_resource type="PackedScene" uid="uid://sr707nyy0ode" path="res://models/PSX modular house interior pack/props/chair4.glb" id="1_isrft"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_g4v7s"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g4v7s"]
+size = Vector3(1, 1.8960571, 1)
+
+[node name="chair42" unique_id=858295158 instance=ExtResource("1_isrft")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1" unique_id=1295067567]
+physics_material_override = SubResource("PhysicsMaterial_g4v7s")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=297710381]
+transform = Transform3D(0.6263668, 0, 0, 0, 0.67798805, 0, 0, 0, 0.6233274, 0, 0.6425403, -0.04244435)
+shape = SubResource("BoxShape3D_g4v7s")

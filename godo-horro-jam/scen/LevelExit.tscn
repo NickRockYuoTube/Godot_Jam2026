@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://dv8kukdnkjyup"]
+
+[ext_resource type="Script" uid="uid://dpdg0vnocdmr0" path="res://script/level_exit.gd" id="1_5j3ha"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g4v7s"]
+
+[node name="LevelExit" type="Area3D" unique_id=2014359388]
+script = ExtResource("1_5j3ha")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=348094306]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 1.0395044, 0)
+shape = SubResource("BoxShape3D_g4v7s")

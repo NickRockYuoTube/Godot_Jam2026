@@ -39,6 +39,7 @@
 [ext_resource type="Script" uid="uid://clhmxvvlxrjm2" path="res://script/vanish_scare.gd" id="36_qv7rl"]
 [ext_resource type="PackedScene" uid="uid://ci4ru6hdjpnga" path="res://scen/AudioTrigger1.tscn" id="38_xgs4t"]
 [ext_resource type="FontFile" uid="uid://cvo0aw7dhu72u" path="res://title/Ustroke-Regular.ttf" id="39_0y73d"]
+[ext_resource type="PackedScene" uid="uid://dv8kukdnkjyup" path="res://scen/LevelExit.tscn" id="40_d0msd"]
 
 [sub_resource type="Environment" id="Environment_g4v7s"]
 ambient_light_source = 2
@@ -913,3 +914,7 @@ need to go here"
 font = ExtResource("39_0y73d")
 font_size = 30
 outline_size = 0
+
+[node name="LevelExit" parent="." unique_id=2014359388 instance=ExtResource("40_d0msd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.7058175, -28.154812, 0.0667547, 32.048782)
+next_level = "uid://ch73p45bd8vc2"

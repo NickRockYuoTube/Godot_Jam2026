@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://b1kkjou08wyww"]
+
+[ext_resource type="PackedScene" uid="uid://dcotlx54v1rmy" path="res://models/PSX modular house interior pack/props/cabinetBig.glb" id="1_5snte"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_g4v7s"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g4v7s"]
+size = Vector3(1, 2.5193481, 1.6333618)
+
+[node name="cabinetBig2" unique_id=1392420298 instance=ExtResource("1_5snte")]
+
+[node name="cabinetBig_002" parent="cabinetBig" parent_id_path=PackedInt32Array(1534317312) index="1" unique_id=383350463]
+transform = Transform3D(0.8810508, 0, 0.4730216, 0, 1, 0, -0.4730216, 0, 0.8810508, 0.7686386, 1.3161441, 0.23632336)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1" unique_id=435656716]
+physics_material_override = SubResource("PhysicsMaterial_g4v7s")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=2139107925]
+transform = Transform3D(1.6357007, 0, 0, 0, 1, 0, 0, 0, 0.54423547, 0, 1.2628479, 0.17234899)
+shape = SubResource("BoxShape3D_g4v7s")

@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://dkjrqnrxklvjy"]
+
+[ext_resource type="PackedScene" uid="uid://drej4bbn46n5v" path="res://models/PSX modular house interior pack/props/broom.glb" id="1_4lii7"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_g4v7s"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g4v7s"]
+size = Vector3(1, 1.1137695, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yf5fn"]
+size = Vector3(0.12182617, 0.20336914, 0.69592285)
+
+[node name="broom2" unique_id=996972611 instance=ExtResource("1_4lii7")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1" unique_id=65003439]
+physics_material_override = SubResource("PhysicsMaterial_g4v7s")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=1043543597]
+transform = Transform3D(0.13088316, 0, 0, 0, 1.605108, 0, 0, 0, 0.19956017, 0, 1.0847619, 0)
+shape = SubResource("BoxShape3D_g4v7s")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D" index="1" unique_id=1538737877]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.013793945, 0.09161854, -0.001159668)
+shape = SubResource("BoxShape3D_yf5fn")
