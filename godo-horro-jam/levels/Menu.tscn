@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://d37i5ja1er608" path="res://prefab/prop/radiator_2.tscn" id="13_el1eq"]
 [ext_resource type="AudioStream" uid="uid://jwxra4tjpqs8" path="res://music/HorrorThemMenuV2.ogg" id="15_f43ds"]
 [ext_resource type="PackedScene" uid="uid://3g5r7mk1lsw8" path="res://scen/screamer2.tscn" id="18_qm43r"]
+[ext_resource type="FontFile" uid="uid://cvo0aw7dhu72u" path="res://title/Ustroke-Regular.ttf" id="20_e4q6l"]
 
 [sub_resource type="Environment" id="Environment_g4v7s"]
 ambient_light_source = 1
@@ -137,6 +138,35 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("9_751lk")
 
+[node name="TITLE" type="Label" parent="Camera3D/CanvasLayer2/UI" unique_id=230116466]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -573.0
+offset_top = 46.0
+offset_right = 576.0
+offset_bottom = 169.0
+grow_horizontal = 2
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("10_dbgr6")
+theme_override_font_sizes/font_size = 100
+text = "Paralyzed"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="Camera3D/CanvasLayer2/UI" unique_id=945501189]
+material = SubResource("ShaderMaterial_f43ds")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 1, 1, 0)
+metadata/_edit_use_anchors_ = true
+
 [node name="ClickSound" type="AudioStreamPlayer" parent="Camera3D/CanvasLayer2/UI" unique_id=1321397024]
 stream = ExtResource("10_umd7l")
 
@@ -179,35 +209,6 @@ theme_override_font_sizes/font_size = 80
 text = "Exit"
 icon_alignment = 1
 
-[node name="TITLE" type="Label" parent="Camera3D/CanvasLayer2/UI" unique_id=230116466]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -573.0
-offset_top = 46.0
-offset_right = 576.0
-offset_bottom = 169.0
-grow_horizontal = 2
-theme_override_constants/outline_size = 10
-theme_override_fonts/font = ExtResource("10_dbgr6")
-theme_override_font_sizes/font_size = 100
-text = "Paralyzed"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="ColorRect" type="ColorRect" parent="Camera3D/CanvasLayer2/UI" unique_id=945501189]
-material = SubResource("ShaderMaterial_f43ds")
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-color = Color(1, 1, 1, 0)
-metadata/_edit_use_anchors_ = true
-
 [node name="AuthorsPanel" type="PanelContainer" parent="Camera3D/CanvasLayer2/UI" unique_id=1022991610]
 visible = false
 layout_mode = 1
@@ -246,7 +247,7 @@ layout_mode = 2
 theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("10_dbgr6")
 theme_override_font_sizes/font_size = 48
-text = "Gennady "
+text = "Gennady Lipatov (Gogrog98)"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -329,4 +330,17 @@ volume_db = -15.0
 autoplay = true
 
 [node name="тест" parent="." unique_id=471729371 instance=ExtResource("18_qm43r")]
-transform = Transform3D(-2.4041263e-08, 0, 0.55, 0, 0.55, 0, -0.55, 0, -2.4041263e-08, -1.8985988, -1.7239335, 4.7087183)
+transform = Transform3D(-2.4041263e-08, 0, 0.55, 0, 0.55, 0, -0.55, 0, -2.4041263e-08, -1.8985988, -1.7239335, 5.1488385)
+
+[node name="Label3D" type="Label3D" parent="." unique_id=1986306713]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -3.8990448, 1.6944706, 1.87683)
+text = "I HATE you"
+font = ExtResource("20_e4q6l")
+font_size = 30
+outline_size = 0
+
+[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=498146402]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8825326, 2.0241318, 10.64432)
+light_energy = 5.0
+spot_range = 2.655206
+spot_angle = 77.084335

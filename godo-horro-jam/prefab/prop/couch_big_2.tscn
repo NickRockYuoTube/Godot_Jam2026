@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://cxbsl54ntlq6n"]
+
+[ext_resource type="PackedScene" uid="uid://bkyjjp0s5tnsy" path="res://models/PSX modular house interior pack/props/couchBig.glb" id="1_80fcl"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_g4v7s"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g4v7s"]
+size = Vector3(1, 1.1361084, 1)
+
+[node name="couchBig2" unique_id=1698006139 instance=ExtResource("1_80fcl")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1" unique_id=1940117201]
+physics_material_override = SubResource("PhysicsMaterial_g4v7s")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=1834927239]
+transform = Transform3D(2.375092, 0, 0, 0, 1, 0, 0, 0, 1.1708401, 0, 0.5683249, 0)
+shape = SubResource("BoxShape3D_g4v7s")

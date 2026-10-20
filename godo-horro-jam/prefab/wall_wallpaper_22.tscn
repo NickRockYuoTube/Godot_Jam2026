@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://u1yyofvkntd5"]
+
+[ext_resource type="PackedScene" uid="uid://d3m3x7rhtqfpf" path="res://models/PSX modular house interior pack/geometry/wallWallpaper2.glb" id="1_uwtjy"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_g4v7s"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g4v7s"]
+
+[node name="wallWallpaper22" unique_id=2104104910 instance=ExtResource("1_uwtjy")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1" unique_id=2023802810]
+physics_material_override = SubResource("PhysicsMaterial_g4v7s")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=408215242]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 0.1, 0, 1.9777493, 1.9120581)
+shape = SubResource("BoxShape3D_g4v7s")

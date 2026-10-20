@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://ddj75q07daxkb"]
+
+[ext_resource type="PackedScene" uid="uid://2ei0a43sviks" path="res://models/PSX modular house interior pack/geometry/cornerPillarWood.glb" id="1_7tqqr"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_g4v7s"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g4v7s"]
+size = Vector3(1, 3.9978638, 1)
+
+[node name="cornerPillarWood2" unique_id=1053198617 instance=ExtResource("1_7tqqr")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1" unique_id=733677500]
+physics_material_override = SubResource("PhysicsMaterial_g4v7s")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="2" unique_id=977596098]
+transform = Transform3D(0.25, 0, 0, 0, 1, 0, 0, 0, 0.25, -1.9065999, 2.0025356, 1.8967869)
+shape = SubResource("BoxShape3D_g4v7s")

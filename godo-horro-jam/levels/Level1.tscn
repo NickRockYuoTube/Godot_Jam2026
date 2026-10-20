@@ -1,12 +1,13 @@
 [gd_scene format=3 uid="uid://b6kufwnd1ncgj"]
 
+[ext_resource type="AudioStream" uid="uid://ce3ok6tfd3gvr" path="res://music/ambient_horror.ogg" id="1_qv7rl"]
 [ext_resource type="PackedScene" uid="uid://c18hkbvm7dbqi" path="res://prefab/arch_brick_2.tscn" id="2_2j4y6"]
 [ext_resource type="PackedScene" uid="uid://dcyutgi6gaf5h" path="res://prefab/floor_stone_2.tscn" id="2_gqfrg"]
 [ext_resource type="PackedScene" uid="uid://bqmbwpsvpjuin" path="res://prefab/wall_brick_2.tscn" id="3_2j4y6"]
 [ext_resource type="PackedScene" uid="uid://bnmtru6eu72vj" path="res://scen/wheelchair.tscn" id="3_vi6ws"]
 [ext_resource type="PackedScene" uid="uid://dwgjqkebillwt" path="res://prefab/ceiling_concrete_2.tscn" id="4_vi6ws"]
 [ext_resource type="PackedScene" uid="uid://ddv84nku4ccs1" path="res://prefab/prop/ceiling_light_2.tscn" id="6_cr8f5"]
-[ext_resource type="PackedScene" uid="uid://ck0ayachgku6u" path="res://prefab/prop/corner_pillar_stone_2.tscn" id="7_gqfrg"]
+[ext_resource type="PackedScene" uid="uid://ck0ayachgku6u" path="res://prefab/corner_pillar_stone_2.tscn" id="7_gqfrg"]
 [ext_resource type="PackedScene" uid="uid://b02f1vbiv3o1q" path="res://prefab/prop/radio_2.tscn" id="9_lbu4x"]
 [ext_resource type="PackedScene" uid="uid://dsn7wprhc2cu3" path="res://prefab/prop/ladder_2.tscn" id="9_vcl05"]
 [ext_resource type="PackedScene" uid="uid://ir7omksbkfy" path="res://prefab/PlumbingWiring/turbine_2.tscn" id="11_nn0v1"]
@@ -36,6 +37,9 @@
 [ext_resource type="PackedScene" uid="uid://lmf6k1d66ggw" path="res://scen/GazeTarget.tscn" id="34_u4hc1"]
 [ext_resource type="Script" uid="uid://ctv2c7bt504r2" path="res://script/scare_trigger.gd" id="35_5py4f"]
 [ext_resource type="Script" uid="uid://clhmxvvlxrjm2" path="res://script/vanish_scare.gd" id="36_qv7rl"]
+[ext_resource type="PackedScene" uid="uid://ci4ru6hdjpnga" path="res://scen/AudioTrigger1.tscn" id="38_xgs4t"]
+[ext_resource type="FontFile" uid="uid://cvo0aw7dhu72u" path="res://title/Ustroke-Regular.ttf" id="39_0y73d"]
+[ext_resource type="PackedScene" uid="uid://dv8kukdnkjyup" path="res://scen/LevelExit.tscn" id="40_d0msd"]
 
 [sub_resource type="Environment" id="Environment_g4v7s"]
 ambient_light_source = 2
@@ -52,9 +56,32 @@ size = Vector3(1, 1.498291, 1)
 
 [node name="Level1" type="Node3D" unique_id=2144309022]
 
+[node name="AmbientMusic" type="AudioStreamPlayer" parent="." unique_id=650899103]
+stream = ExtResource("1_qv7rl")
+volume_db = -15.0
+autoplay = true
+bus = &"Radio"
+
+[node name="AudioTrigger1" parent="." unique_id=1428236419 node_paths=PackedStringArray("player") instance=ExtResource("38_xgs4t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.7311587, 0.049999952, 35.912457)
+player = NodePath("../AmbientMusic")
+action = 1
+fade_time = 1.0
+one_shot = true
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=816843777]
 environment = SubResource("Environment_g4v7s")
 camera_attributes = SubResource("CameraAttributesPractical_cr8f5")
+
+[node name="VanishTrigger" type="Area3D" parent="." unique_id=675896708]
+script = ExtResource("35_5py4f")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="VanishTrigger" unique_id=1676079340]
+transform = Transform3D(3.7934103, 0, 0, 0, 1, 0, 0, 0, 0.69133425, -0.01873321, 1.235731, 34.52129)
+shape = SubResource("BoxShape3D_g4v7s")
+
+[node name="VanishScare" type="Node3D" parent="VanishTrigger" unique_id=623501935]
+script = ExtResource("36_qv7rl")
 
 [node name="Wheelchair" parent="." unique_id=311727349 instance=ExtResource("3_vi6ws")]
 transform = Transform3D(-0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, -0.70710677, -4.2280636, 0.07839537, 1.3678558)
@@ -63,7 +90,7 @@ transform = Transform3D(-0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, -0.
 transform = Transform3D(-0.25, 0, 2.1855694e-08, 0, 0.25, 0, -2.1855694e-08, 0, -0.25, -29.846048, 0.06660712, 32.908634)
 
 [node name="GazeTarget" parent="." unique_id=1995476138 instance=ExtResource("34_u4hc1")]
-transform = Transform3D(-0.013712973, 0, 0.99990594, 0, 1, 0, -0.99990594, 0, -0.013712973, 0.8961934, 0.14063203, 39.75452)
+transform = Transform3D(-0.013712973, 0, 0.99990594, 0, 1, 0, -0.99990594, 0, -0.013712973, 0.902296, 0.14063203, 40.1995)
 
 [node name="ScareTrigger1" parent="." unique_id=906765975 instance=ExtResource("32_dp4a1")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.012569224, 0.073672295, 15.116771)
@@ -821,12 +848,73 @@ transform = Transform3D(-4.107527e-08, -1.4950174e-08, 1, 0.9396926, 0.3420201, 
 [node name="Pipes8" parent="Prop/Pipe Valve3" unique_id=92900369 instance=ExtResource("13_nu2w0")]
 transform = Transform3D(-4.1745693e-08, -1.4950174e-08, 1, 0.9550302, 0.3420201, 4.3711392e-08, -0.34760252, 0.9396926, -1.7763568e-15, -3.142456, -2.1651096, 0.79629135)
 
-[node name="VanishTrigger" type="Area3D" parent="." unique_id=675896708]
-script = ExtResource("35_5py4f")
+[node name="Decals" type="Node3D" parent="." unique_id=1597249295]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 1.8934518, 1.475496, 5.214819)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="VanishTrigger" unique_id=1676079340]
-transform = Transform3D(3.7934103, 0, 0, 0, 1, 0, 0, 0, 0.69133425, -0.01873321, 1.235731, 34.52129)
-shape = SubResource("BoxShape3D_g4v7s")
+[node name="Label3D" type="Label3D" parent="Decals" unique_id=251718809]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.10458946, -0.15899932, 0)
+text = "I  hate
+people"
+font = ExtResource("39_0y73d")
+font_size = 30
+outline_size = 0
 
-[node name="VanishScare" type="Node3D" parent="VanishTrigger" unique_id=623501935]
-script = ExtResource("36_qv7rl")
+[node name="Label3D2" type="Label3D" parent="Decals" unique_id=677142935]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 9.66541, 0.7835436, 11.785751)
+text = "I hate 
+this music"
+font = ExtResource("39_0y73d")
+font_size = 30
+outline_size = 0
+
+[node name="Label3D3" type="Label3D" parent="Decals" unique_id=91742653]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 8.90055, 0.16560411, 10.129019)
+text = "It reminds 
+me of..."
+font = ExtResource("39_0y73d")
+font_size = 30
+outline_size = 0
+
+[node name="Label3D4" type="Label3D" parent="Decals" unique_id=1203326098]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.253394, -0.12158227, 3.994588)
+text = "...that day"
+font = ExtResource("39_0y73d")
+font_size = 30
+outline_size = 0
+
+[node name="Label3D5" type="Label3D" parent="Decals" unique_id=643175522]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 26.945196, 0.099601746, 3.7909229)
+text = "It stinks 
+here"
+font = ExtResource("39_0y73d")
+font_size = 30
+outline_size = 0
+
+[node name="Label3D6" type="Label3D" parent="Decals" unique_id=1610469151]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.517178, 0.4223379, 8.002186)
+text = "I’ve always 
+been a stranger"
+font = ExtResource("39_0y73d")
+font_size = 30
+outline_size = 0
+
+[node name="Label3D7" type="Label3D" parent="Decals" unique_id=699682097]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 40.080456, -1.109687, 15.784298)
+text = "Now I’m in 
+someone 
+else’s body"
+font = ExtResource("39_0y73d")
+font_size = 30
+outline_size = 0
+
+[node name="Label3D8" type="Label3D" parent="Decals" unique_id=528462952]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 28.681679, -0.0660975, 26.86752)
+text = "It looks like I 
+need to go here"
+font = ExtResource("39_0y73d")
+font_size = 30
+outline_size = 0
+
+[node name="LevelExit" parent="." unique_id=2014359388 instance=ExtResource("40_d0msd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.7058175, -28.154812, 0.0667547, 32.048782)
+next_level = "uid://ch73p45bd8vc2"

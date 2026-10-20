@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://sjuriellygip"]
+
+[ext_resource type="PackedScene" uid="uid://bhk48xq5sdral" path="res://models/PSX modular house interior pack/geometry/wallNibPlaster.glb" id="1_xihei"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_g4v7s"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g4v7s"]
+size = Vector3(1, 1.0662537, 1.2545319)
+
+[node name="wallNibPlaster2" unique_id=554635301 instance=ExtResource("1_xihei")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1" unique_id=782853711]
+physics_material_override = SubResource("PhysicsMaterial_g4v7s")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=457565360]
+transform = Transform3D(0.2545368, 0, 0, 0, 3.7, 0, 0, 0, 1.6909757, 2, 2.0031052, 0.96187717)
+shape = SubResource("BoxShape3D_g4v7s")

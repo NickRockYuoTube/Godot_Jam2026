@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://c0lfo457o5j3y"]
+
+[ext_resource type="PackedScene" uid="uid://bjw18ph4ubbu0" path="res://models/PSX modular house interior pack/geometry/wallNibTiles.glb" id="1_omyp6"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_g4v7s"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g4v7s"]
+
+[node name="wallNibTiles2" unique_id=1687272881 instance=ExtResource("1_omyp6")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1" unique_id=1991684175]
+physics_material_override = SubResource("PhysicsMaterial_g4v7s")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=246913817]
+transform = Transform3D(0.2, 0, 0, 0, 4, 0, 0, 0, 2, 2, 2, 1)
+shape = SubResource("BoxShape3D_g4v7s")
