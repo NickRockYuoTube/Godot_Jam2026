@@ -18,5 +18,5 @@ attack_animation = "mixamo_com_002"
 
 [node name="StepSound" type="AudioStreamPlayer3D" parent="." unique_id=555945838]
 stream = ExtResource("3_vesgc")
-max_distance = 20.0
-bus = &"Wheelchair"
+max_distance = 50.0
+bus = &"Radio"
