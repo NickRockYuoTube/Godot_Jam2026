@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://cs4y4csbwnfwn"]
+
+[ext_resource type="PackedScene" uid="uid://btanrutkad1m0" path="res://models/medical_props/drip.glb" id="1_eps4n"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_g4v7s"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g4v7s"]
+size = Vector3(1.4130859, 4.6052856, 1.4398804)
+
+[node name="drip" unique_id=1927540607 instance=ExtResource("1_eps4n")]
+
+[node name="Куб" parent="." index="0" unique_id=287189332]
+transform = Transform3D(0.17551053, 0, 0, 0, 0.44281194, 0, 0, 0, 0.31091383, 0.800478, 7.9257054, 0.013573527)
+
+[node name="Пустышка" parent="." index="1" unique_id=1700118088]
+transform = Transform3D(0, 1, 0, 0, 0, -1, -1, 0, 0, -3.674821, 1.1828294, -3.0318499)
+
+[node name="Пустышка_001" parent="." index="2" unique_id=2012338158]
+transform = Transform3D(-1, -4.3711385e-08, -4.371137e-08, 4.3711385e-08, -3.5762787e-07, -0.99999994, 4.371137e-08, -0.99999994, 3.5762787e-07, -10.631051, 2.1588774, 10.004747)
+
+[node name="Тор_008" parent="." index="3" unique_id=1052717582]
+transform = Transform3D(0, -0.12162835, 0, 0.12162835, 0, 0, 0, 0, -0.12162835, 0.80106163, 8.364168, 0.008269012)
+
+[node name="Цилиндр_001" parent="." index="4" unique_id=1906218405]
+transform = Transform3D(0.040910654, 0, 0, 0, -0.14706579, 0, 0, 0, 0.040910654, 0.76350975, 7.446606, -0.060296297)
+
+[node name="Цилиндр_002" parent="." index="5" unique_id=1302576542]
+transform = Transform3D(0.117807776, 0, 0, 0, 0, 0.117807776, 0, -1.4052677, 0, 0, 0.5873147, 0)
+
+[node name="Цилиндр_003" parent="." index="6" unique_id=709194407]
+transform = Transform3D(0, -1.4052677, 0, 0, 0, 0.117807776, -0.117807776, 0, 0, 0, 0.5873147, 0)
+
+[node name="Цилиндр_004" parent="." index="7" unique_id=2115348906]
+transform = Transform3D(0.040910654, 0, 0, 0, -0.14706579, 0, 0, 0, 0.040910654, 0.76350975, 7.446606, 0.15479589)
+
+[node name="Цилиндр_005" parent="." index="8" unique_id=157696042]
+transform = Transform3D(0.020241471, 0, 0, 0, -0.07276412, 0, 0, 0, 0.020241471, 0.76350975, 7.2473626, -0.060296297)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="9" unique_id=1423058470]
+physics_material_override = SubResource("PhysicsMaterial_g4v7s")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="10" unique_id=502040734]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.0087890625, 4.6052856, 0.0051879883)
+shape = SubResource("BoxShape3D_g4v7s")

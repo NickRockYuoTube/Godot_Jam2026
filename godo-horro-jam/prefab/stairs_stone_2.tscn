@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://btlhgbalumgqd"]
+
+[ext_resource type="PackedScene" uid="uid://dlnxm27boip4x" path="res://models/PSX modular house interior pack/geometry/stairsStone.glb" id="1_p8yo0"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_g4v7s"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g4v7s"]
+size = Vector3(1.0239868, 4.040619, 8.052734)
+
+[node name="stairsStone2" unique_id=373990538 instance=ExtResource("1_p8yo0")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1" unique_id=1945194512]
+physics_material_override = SubResource("PhysicsMaterial_g4v7s")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=575992230]
+transform = Transform3D(1.9714339, 0, 0, 0, 1, 0, 0, 0, 1, 0.005474868, -2.001756, -4.0030017)
+shape = SubResource("BoxShape3D_g4v7s")

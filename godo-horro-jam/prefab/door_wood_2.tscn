@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://cngcfdrcgs4rx"]
 
 [ext_resource type="PackedScene" uid="uid://je041kxsiys2" path="res://models/PSX modular house interior pack/geometry/doorWood.glb" id="1_7yx2w"]
+[ext_resource type="Script" uid="uid://i4hra4sc3ujr" path="res://script/door.gd" id="2_535up"]
+[ext_resource type="AudioStream" uid="uid://ubongvrqjdpn" path="res://sound/door_open.ogg" id="3_ls7sp"]
+[ext_resource type="AudioStream" uid="uid://dhmnl8yp71iwa" path="res://sound/door_close.ogg" id="4_trl8a"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_g4v7s"]
 
@@ -12,7 +15,11 @@ size = Vector3(1.036377, 2.5263672, 1)
 [sub_resource type="BoxShape3D" id="BoxShape3D_yf5fn"]
 size = Vector3(1, 1.3476563, 1)
 
-[node name="doorWood2" unique_id=366124804 instance=ExtResource("1_7yx2w")]
+[node name="doorWood2" unique_id=366124804 node_paths=PackedStringArray("door_leaf") instance=ExtResource("1_7yx2w")]
+script = ExtResource("2_535up")
+door_leaf = NodePath("doorWood/doorWood_001")
+open_sound = ExtResource("3_ls7sp")
+close_sound = ExtResource("4_trl8a")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="doorWood/doorWood_001" parent_id_path=PackedInt32Array(545903015) index="0" unique_id=2083203044]
 physics_material_override = SubResource("PhysicsMaterial_g4v7s")
@@ -22,6 +29,7 @@ transform = Transform3D(1.5849218, 0, 0, 0, 1, 0, 0, 0, 0.13632922, 0.8197819, 1
 shape = SubResource("BoxShape3D_g4v7s")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="doorWood/doorWood_001" parent_id_path=PackedInt32Array(545903015) index="1" unique_id=582968847]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5941656, 1.6261493, 0)
 volume_db = -5.0
 max_distance = 100.0
 bus = &"Wheelchair"

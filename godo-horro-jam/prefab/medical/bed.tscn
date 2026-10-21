@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://cup3fvngic3f5"]
+
+[ext_resource type="PackedScene" uid="uid://ukv4i4q4pc6g" path="res://models/medical_props/bed.glb" id="1_ec5f0"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_g4v7s"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g4v7s"]
+size = Vector3(2.8052368, 3.065796, 6.2418823)
+
+[node name="bed" unique_id=1064373612 instance=ExtResource("1_ec5f0")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="4" unique_id=2139821231]
+physics_material_override = SubResource("PhysicsMaterial_g4v7s")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=1988223076]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -2.5224743, 3.065796, -0.08001709)
+shape = SubResource("BoxShape3D_g4v7s")

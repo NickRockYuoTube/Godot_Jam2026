@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://djdi2kb1clr25"]
+
+[ext_resource type="PackedScene" uid="uid://k3vvmgwp4frm" path="res://models/medical_props/shirma.glb" id="1_35nvu"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_g4v7s"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g4v7s"]
+size = Vector3(0.19848633, 1.3613281, 0.52874756)
+
+[node name="shirma" unique_id=1778579007 instance=ExtResource("1_35nvu")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
+
+[node name="Куб" parent="." index="0" unique_id=153729806]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.35455132, 0)
+
+[node name="Пустышка" parent="." index="1" unique_id=1753671161]
+transform = Transform3D(0, 1, 0, 0, 0, -1, -1, 0, 0, 0, 0.6336405, -0.0569454)
+
+[node name="Цилиндр" parent="." index="2" unique_id=623215451]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.35455132, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="3" unique_id=1980837495]
+physics_material_override = SubResource("PhysicsMaterial_g4v7s")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=1539034428]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0.008056648, 1.3613282, 0.5003052)
+shape = SubResource("BoxShape3D_g4v7s")
