@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://dcx2oixvo6dfl"]
+
+[ext_resource type="PackedScene" uid="uid://bev282yk0yydl" path="res://models/medical_props/o2.glb" id="1_dmbqb"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_yf5fn"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g4v7s"]
+size = Vector3(1, 4.868042, 1)
+
+[node name="o2" unique_id=45061622 instance=ExtResource("1_dmbqb")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, -0.123220146, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="4" unique_id=1210409386]
+physics_material_override = SubResource("PhysicsMaterial_yf5fn")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=613174259]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 0, 15.604125, 0)
+shape = SubResource("BoxShape3D_g4v7s")

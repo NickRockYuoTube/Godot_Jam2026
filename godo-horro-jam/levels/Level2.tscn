@@ -95,6 +95,8 @@
 [ext_resource type="PackedScene" uid="uid://hdftx8t5ywhf" path="res://models/PSX modular house interior pack/props/book2.glb" id="91_ovy1x"]
 [ext_resource type="PackedScene" uid="uid://driwucwjkiiab" path="res://scen/RoamingMonster.tscn" id="92_f6d8x"]
 [ext_resource type="AudioStream" uid="uid://qtq3swrpe6at" path="res://sound/scrimer.ogg" id="93_c76jl"]
+[ext_resource type="PackedScene" uid="uid://b8he4r34s201g" path="res://scen/TeleportTrigger1.tscn" id="96_cdvfa"]
+[ext_resource type="PackedScene" uid="uid://dv8kukdnkjyup" path="res://scen/LevelExit.tscn" id="97_kate0"]
 
 [sub_resource type="Environment" id="Environment_oe68w"]
 ambient_light_source = 1
@@ -124,7 +126,10 @@ compositor = SubResource("Compositor_kguvc")
 transform = Transform3D(-1.0927847e-08, 0, 0.25, 0, 0.25, 0, -0.25, 0, -1.0927847e-08, -4.9794073, 0.060111642, -13.86764)
 
 [node name="lift3" parent="." unique_id=416601569 instance=ExtResource("20_nn1ti")]
-transform = Transform3D(-0.25, 0, -2.1855694e-08, 0, 0.25, 0, 2.1855694e-08, 0, -0.25, -81.86514, 0.060111642, -3.086924)
+transform = Transform3D(-0.25, 0, -2.1855694e-08, 0, 0.25, 0, 2.1855694e-08, 0, -0.25, -156.86514, 0.060111642, -3.086924)
+
+[node name="TeleportPoint" type="Marker3D" parent="lift3" unique_id=1520076497]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48, 4, 3.9999943)
 
 [node name="Wheelchair" parent="." unique_id=311727349 instance=ExtResource("21_vfe3a")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.0248346, 0.1278565, -10.888838)
@@ -330,10 +335,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64, 0, -12)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64, 0, 4)
 
 [node name="floorWood43" parent="NavigationRegion3D/Floor" unique_id=426973193 instance=ExtResource("2_432n0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -72, 0, -4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -147, 0, -4)
+
+[node name="floorWood45" parent="NavigationRegion3D/Floor" unique_id=1618016614 instance=ExtResource("2_432n0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -143, 0, -4)
 
 [node name="floorWood44" parent="NavigationRegion3D/Floor" unique_id=587685580 instance=ExtResource("2_432n0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -76, 0, -4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -151, 0, -4)
 
 [node name="floorWood41" parent="NavigationRegion3D/Floor" unique_id=656969246 instance=ExtResource("2_432n0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64, 0, 8)
@@ -363,13 +371,13 @@ transform = Transform3D(1, 0, -1.7484555e-07, 0, 1, 0, 1.7484555e-07, 0, 1, -64,
 transform = Transform3D(1, 0, -1.7484555e-07, 0, 1, 0, 1.7484555e-07, 0, 1, -60, 0, 8)
 
 [node name="wallWallpaper79" parent="NavigationRegion3D/wall" unique_id=2104104910 instance=ExtResource("17_gwanj")]
-transform = Transform3D(1, 0, -1.7484555e-07, 0, 1, 0, 1.7484555e-07, 0, 1, -76, 0, -4)
+transform = Transform3D(1, 0, -1.7484555e-07, 0, 1, 0, 1.7484555e-07, 0, 1, -151, 0, -4)
 
 [node name="wallWallpaper80" parent="NavigationRegion3D/wall" unique_id=662257783 instance=ExtResource("17_gwanj")]
-transform = Transform3D(1, 0, -1.7484555e-07, 0, 1, 0, 1.7484555e-07, 0, 1, -72, 0, -4)
+transform = Transform3D(1, 0, -1.7484555e-07, 0, 1, 0, 1.7484555e-07, 0, 1, -147, 0, -4)
 
 [node name="wallWallpaper123" parent="NavigationRegion3D/wall" unique_id=1538075362 instance=ExtResource("17_gwanj")]
-transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, -72, 0, -4)
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, -143, 0, -4)
 
 [node name="wallWallpaper60" parent="NavigationRegion3D/wall" unique_id=2007171380 instance=ExtResource("17_gwanj")]
 transform = Transform3D(-1, 0, 2.6226834e-07, 0, 1, 0, -2.6226834e-07, 0, -1, -60, 0, 8)
@@ -962,16 +970,22 @@ transform = Transform3D(1, 0, -1.7484555e-07, 0, 1, 0, 1.7484555e-07, 0, 1, -60,
 transform = Transform3D(-1, 0, 2.6226834e-07, 0, 1, 0, -2.6226834e-07, 0, -1, -64, 0, -16)
 
 [node name="wallWallpaper81" parent="NavigationRegion3D/wall" unique_id=1368381217 instance=ExtResource("17_gwanj")]
-transform = Transform3D(-1, 0, 2.6226834e-07, 0, 1, 0, -2.6226834e-07, 0, -1, -72, 0, -4)
+transform = Transform3D(-1, 0, 2.6226834e-07, 0, 1, 0, -2.6226834e-07, 0, -1, -147, 0, -4)
+
+[node name="wallWallpaper124" parent="NavigationRegion3D/wall" unique_id=1286702920 instance=ExtResource("17_gwanj")]
+transform = Transform3D(1, 0, -1.7484555e-07, 0, 1, 0, 1.7484555e-07, 0, 1, -143, 0, -4)
+
+[node name="wallWallpaper125" parent="NavigationRegion3D/wall" unique_id=478187219 instance=ExtResource("17_gwanj")]
+transform = Transform3D(-1, 0, 2.6226834e-07, 0, 1, 0, -2.6226834e-07, 0, -1, -143, 0, -4)
 
 [node name="wallWallpaper82" parent="NavigationRegion3D/wall" unique_id=905212475 instance=ExtResource("17_gwanj")]
-transform = Transform3D(-1, 0, 2.6226834e-07, 0, 1, 0, -2.6226834e-07, 0, -1, -76, 0, -4)
+transform = Transform3D(-1, 0, 2.6226834e-07, 0, 1, 0, -2.6226834e-07, 0, -1, -151, 0, -4)
 
 [node name="wallDoorWallpaper32" parent="NavigationRegion3D/wall" unique_id=476013340 instance=ExtResource("15_pb71r")]
 transform = Transform3D(-1, 0, 8.742277e-08, 0, 1, 0, -8.742277e-08, 0, -1, -64, 0, 4)
 
 [node name="archWallpaper27" parent="NavigationRegion3D/wall" unique_id=237595800 instance=ExtResource("16_behg1")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -76, 0, -4)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -151, 0, -4)
 
 [node name="toilet2" parent="NavigationRegion3D/wall" unique_id=1221579684 instance=ExtResource("22_xv3on")]
 transform = Transform3D(-5.2453668e-08, 0, 1.2, 0, 1.2, 0, -1.2, 0, -5.2453668e-08, -52.841274, 0, 13.053407)
@@ -1452,10 +1466,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64, 0, 4)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60, 0, 8)
 
 [node name="ceilingPlaster54" parent="ceiling" unique_id=1675551895 instance=ExtResource("23_k6hxo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -76, 0, -4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -151, 0, -4)
 
 [node name="ceilingPlaster55" parent="ceiling" unique_id=663490367 instance=ExtResource("23_k6hxo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -72, 0, -4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -147, 0, -4)
+
+[node name="ceilingPlaster69" parent="ceiling" unique_id=1631598370 instance=ExtResource("23_k6hxo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -143, 0, -4)
 
 [node name="ceilingPlaster51" parent="ceiling" unique_id=2073303512 instance=ExtResource("23_k6hxo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64, 0, -16)
@@ -1597,6 +1614,9 @@ transform = Transform3D(-1.1997043, 0, -0.026640126, 0, 1.2, 0, 0.026640126, 0, 
 [node name="ceilingLight2" parent="." unique_id=88332726 instance=ExtResource("52_20lyj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55.579494, 1.9638376, -4.0456257)
 
+[node name="ceilingLight3" parent="." unique_id=153557268 instance=ExtResource("52_20lyj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -143.5795, 1.9638376, -4.0456257)
+
 [node name="MonsterSpots" type="Node3D" parent="." unique_id=368316957]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64.136765, 0.09354174, -1.6037328)
 
@@ -1633,3 +1653,11 @@ bus = &"Wheelchair"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0063719, 0)
 stream = ExtResource("93_c76jl")
 bus = &"Wheelchair"
+
+[node name="TeleportTrigger1" parent="." unique_id=1073442305 node_paths=PackedStringArray("destination") instance=ExtResource("96_cdvfa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2.1199179, -55.028263, 0.056756258, -4.035382)
+destination = NodePath("../lift3/TeleportPoint")
+
+[node name="LevelExit" parent="." unique_id=2014359388 instance=ExtResource("97_kate0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -155.60939, 0, -4)
+next_level = "uid://cjkdov6nerqw1"

@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://5dm1xx0o0k6a"]
+
+[ext_resource type="PackedScene" uid="uid://0tgbpv3hwhr0" path="res://models/medical_props/lamp.glb" id="1_st0gc"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_g4v7s"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g4v7s"]
+size = Vector3(1, 1.0634155, 4.161865)
+
+[node name="lamp" unique_id=1443999378 instance=ExtResource("1_st0gc")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="5" unique_id=920257951]
+physics_material_override = SubResource("PhysicsMaterial_g4v7s")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=6846149]
+transform = Transform3D(53.954388, 0, 0, 0, 57.320934, 0, 0, 0, 16, 0, 36.23316, 5.728516)
+shape = SubResource("BoxShape3D_g4v7s")

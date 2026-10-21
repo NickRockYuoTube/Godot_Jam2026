@@ -9,6 +9,7 @@ signal movement_changed(is_moving: bool)  # пригодится для дина
 @export var acceleration := 5.0           # плавность разгона
 @export var terminal_path: NodePath = ^"Terminal"
 
+var controls_locked := false
 var _cmd_forward := 0.0
 var _cmd_turn := 0.0
 var _current_turn := 0.0
@@ -22,8 +23,14 @@ func _ready() -> void:
 	add_to_group("player")
 
 func _on_command_changed(forward: float, turn: float) -> void:
-	_cmd_forward = forward
-	_cmd_turn = turn
+	_cmd_forward = 0.0 if controls_locked else forward
+	_cmd_turn = 0.0 if controls_locked else turn
+	
+func set_controls_locked(value: bool) -> void:
+	controls_locked = value
+	if value:
+		_cmd_forward = 0.0
+		_cmd_turn = 0.0
 
 func _physics_process(delta: float) -> void:
 	# --- Поворот вокруг своей оси (кресло едет «на месте») ---

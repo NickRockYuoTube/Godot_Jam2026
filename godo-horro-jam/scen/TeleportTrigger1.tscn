@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://b8he4r34s201g"]
+
+[ext_resource type="Script" uid="uid://ce54io6vxmvox" path="res://script/teleport_trigger.gd" id="1_67dx5"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g4v7s"]
+
+[node name="TeleportTrigger1" type="Area3D" unique_id=1073442305]
+script = ExtResource("1_67dx5")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=448972261]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 1, 0)
+shape = SubResource("BoxShape3D_g4v7s")
