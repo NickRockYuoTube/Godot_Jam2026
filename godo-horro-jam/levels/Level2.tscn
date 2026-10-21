@@ -87,6 +87,7 @@
 [ext_resource type="PackedScene" uid="uid://bavylsi7n7g0h" path="res://prefab/gprop/globe.tscn" id="84_y557i"]
 [ext_resource type="PackedScene" uid="uid://ltyb5r37f85e" path="res://prefab/gprop/plant.tscn" id="85_y557i"]
 [ext_resource type="PackedScene" uid="uid://u5wx1war1ug1" path="res://models/PSX modular house interior pack/props/bookStack2.glb" id="86_bn8yh"]
+[ext_resource type="AudioStream" uid="uid://bqkpn8jtlfpxd" path="res://music/horror ambient2.ogg" id="87_hnbd0"]
 [ext_resource type="PackedScene" uid="uid://dhcyvajn3baf" path="res://models/PSX modular house interior pack/props/bookStack3.glb" id="87_ovy1x"]
 [ext_resource type="PackedScene" uid="uid://dk21yg5k02lqi" path="res://models/PSX modular house interior pack/props/bookStack4.glb" id="88_f6d8x"]
 [ext_resource type="PackedScene" uid="uid://by0mpixepxe3a" path="res://models/PSX modular house interior pack/props/bookStack5.glb" id="89_c76jl"]
@@ -1126,7 +1127,7 @@ transform = Transform3D(-0.7266739, 0, 1.3122281, 0, 1.4999999, 0, -1.3122281, 0
 transform = Transform3D(-1.3122287, 0, -0.72667444, 0, 1.5, 0, 0.72667444, 0, -1.3122287, 35.70515, 1.270271, 58.20041)
 
 [node name="painting2" parent="NavigationRegion3D/props" unique_id=763319286 instance=ExtResource("44_oe68w")]
-transform = Transform3D(-0.7266743, -0.0402281, 1.3116118, -1.8626451e-09, 1.499295, 0.045984473, -1.3122286, 0.02227716, -0.7263327, 14.671315, 1.550691, 40.462234)
+transform = Transform3D(-0.7266743, -0.0402281, 1.3116118, -1.8626451e-09, 1.499295, 0.045984473, -1.3122286, 0.02227716, -0.7263327, 14.671315, 0.93512046, 40.462234)
 
 [node name="radiator2" parent="NavigationRegion3D/props" unique_id=1403233901 instance=ExtResource("36_y68t0")]
 transform = Transform3D(-1.3122287, 0, -0.72667444, 0, 1.5, 0, 0.72667444, 0, -1.3122287, 0.37713712, -0.6359916, 1.476725)
@@ -1263,8 +1264,14 @@ transform = Transform3D(-0.4844496, 0, 0.87481916, 0, 1, 0, -0.87481916, 0, -0.4
 [node name="windowCurtains2" parent="NavigationRegion3D/props" unique_id=864824135 instance=ExtResource("66_shkef")]
 transform = Transform3D(-0.4844496, 0, 0.87481916, 0, 1, 0, -0.87481916, 0, -0.4844496, 12.43412, -0.6863502, 53.13567)
 
-[node name="AudioTrigger1" parent="NavigationRegion3D/props" unique_id=1428236419 instance=ExtResource("64_e7484")]
+[node name="AudioTrigger1" parent="NavigationRegion3D/props" unique_id=1428236419 node_paths=PackedStringArray("player") instance=ExtResource("64_e7484")]
 transform = Transform3D(-0.4844496, 0, 0.87481916, 0, 1, 0, -0.87481916, 0, -0.4844496, 15.362126, -0.6863502, 32.91081)
+player = NodePath("ambient")
+one_shot = true
+
+[node name="ambient" type="AudioStreamPlayer3D" parent="NavigationRegion3D/props/AudioTrigger1" unique_id=871921573]
+stream = ExtResource("87_hnbd0")
+volume_db = -15.0
 
 [node name="ceilingLight10" parent="NavigationRegion3D/props" unique_id=612742518 instance=ExtResource("52_20lyj")]
 transform = Transform3D(-0.4844496, 0, 0.87481916, 0, 1, 0, -0.87481916, 0, -0.4844496, 12.4735365, 1.211995, 52.5185)
@@ -1609,7 +1616,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.282421, 0, -1.3904703)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.964161, 0, -26.080532)
 
 [node name="RoamingMonster" parent="." unique_id=1662520767 node_paths=PackedStringArray("spots_root", "agent", "vanish_sound") instance=ExtResource("92_f6d8x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -67.12681, 0.012817264, -5.921033)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -67.12681, -0.40135562, -5.921033)
 spots_root = NodePath("../MonsterSpots")
 agent = NodePath("NavigationAgent3D2")
 vanish_sound = NodePath("VanishSound")

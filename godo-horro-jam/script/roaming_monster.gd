@@ -14,6 +14,8 @@ enum State { ROAM, HUNT, STRIKE, RETREAT }
 @export var attack_animation := ""           # когда бьёт
 @export var start_dormant := true            # true = спит, пока его не включит MonsterTrigger
 
+@export var root_motion_bone := ""   # кость, которая «уводит» модель (пусто = самая первая кость скелета)
+
 @export_group("Движение")
 @export var speed := 1.3                     # м/с в обычном режиме (коляска едет 1.6)
 @export var idle_time := 3.0                 # пауза в точке, сек
@@ -93,6 +95,7 @@ func _ready() -> void:
 	for anim_name in [idle_animation, walk_animation]:
 		if anim_player and anim_name != "" and anim_player.has_animation(anim_name):
 			anim_player.get_animation(anim_name).loop_mode = Animation.LOOP_LINEAR
+	_lock_root_motion()
 
 	# Собственные физические тела монстра, их луч света должен игнорировать
 	for body in find_children("*", "CollisionObject3D", true, false):
@@ -422,3 +425,16 @@ func _create_door_sensor() -> void:
 	shape.position = Vector3(0, 1.0, 0)   # на уровне тела, а не ног
 	_sensor.add_child(shape)
 	add_child(_sensor)
+	
+	# Делает анимации «на месте»: корневая кость больше не двигает модель
+func _lock_root_motion() -> void:
+	if anim_player == null:
+		return
+	var root := anim_player.get_node_or_null(anim_player.root_node)
+	if root == null:
+		return
+	var skeleton := root.find_child("Skeleton3D", true, false) as Skeleton3D
+	if skeleton == null or skeleton.get_bone_count() == 0:
+		return
+	var bone_name := root_motion_bone if root_motion_bone != "" else skeleton.get_bone_name(0)
+	anim_player.root_motion_track = NodePath("%s:%s" % [root.get_path_to(skeleton), bone_name])
