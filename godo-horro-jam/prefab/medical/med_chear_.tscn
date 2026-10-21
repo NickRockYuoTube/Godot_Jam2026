@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://cblyygkx0baxg"]
+
+[ext_resource type="PackedScene" uid="uid://dwekclsiuiriq" path="res://models/medical_props/med_chear .glb" id="1_0bqhe"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_g4v7s"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g4v7s"]
+size = Vector3(1.2230225, 1.6726074, 1.7896729)
+
+[node name="med_chear " unique_id=1007002476 instance=ExtResource("1_0bqhe")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -3.1760225, -1.4243206, 1.0342064)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="11" unique_id=2076974785]
+physics_material_override = SubResource("PhysicsMaterial_g4v7s")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=1442806705]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 6.3381414, 6.1952553, -2.0316277)
+shape = SubResource("BoxShape3D_g4v7s")

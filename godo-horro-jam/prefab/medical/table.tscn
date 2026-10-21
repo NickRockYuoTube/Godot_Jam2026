@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://cvbft7lcnputa"]
+
+[ext_resource type="PackedScene" uid="uid://dhabkpujofkdr" path="res://models/medical_props/table.glb" id="1_245rd"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_g4v7s"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g4v7s"]
+size = Vector3(3.5823975, 3.6767578, 4.963867)
+
+[node name="table" unique_id=1975726703 instance=ExtResource("1_245rd")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -0.017986298, -0.042786002, -0.13489664)
+
+[node name="Цилиндр_004" parent="." index="1" unique_id=126507414]
+transform = Transform3D(0.3256668, 0, 0, 0, 0, -0.3256668, 0, 9.855987, 0, -13.290579, 4.284102, -8.566751)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="2" unique_id=721247540]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4946208, 1.2140673)
+physics_material_override = SubResource("PhysicsMaterial_g4v7s")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=693070203]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -6.7141113, 7.220703, -9.8438835)
+shape = SubResource("BoxShape3D_g4v7s")

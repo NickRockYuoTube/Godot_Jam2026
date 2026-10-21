@@ -1,0 +1,73 @@
+[gd_scene format=4 uid="uid://cg56hokqa6fur"]
+
+[ext_resource type="Texture2D" uid="uid://bd6lyuj65464y" path="res://models/PSX modular house interior pack/props/pizza_albedo.png" id="1_q5fxr"]
+[ext_resource type="Texture2D" uid="uid://bt05f0shje271" path="res://models/PSX modular house interior pack/props/pizza_roughness.png" id="2_utgxf"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0gn4k"]
+resource_name = "pizza"
+albedo_texture = ExtResource("1_q5fxr")
+metallic_texture = ExtResource("2_utgxf")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_utgxf")
+roughness_texture_channel = 1
+texture_filter = 2
+metadata/extras = {
+"yp": {
+"active_ypaint_node": "",
+"expand_content": 0.0
+}
+}
+metadata/_gltf_primary_texture_coord = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_13uu4"]
+_surfaces = [{
+"aabb": AABB(-0.32114467, -0.012989405, -0.32114467, 0.64228934, 0.03397001, 0.64228934),
+"format": 34896613377,
+"index_count": 276,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAAAAIABAADAAAABQACAAEAAwAGAAEABQABAAcABwABAAYAAwAIAAYACQAFAAcAAwAKAAgABAAKAAMACAALAAYACAAKAAsABwAGAAwADAAGAAsADQAHAAwACQAHAA0ADQAMAA4ADgAJAA0ADAALAA8ADgAMAA8ADwALABAACgAQAAsADgAPABEACgASABAADwAQABMAEQAPABMAEgAUABAAEwAQABQACgAVABIAEgAVABQACgAWABUAFwAOABEAEQATABcACgAEABYAEwAUABgAFwATABgAFQAZABQAGAAUABkAFQAaABkAFQAWABoAFwAYABsAGAAZABwAGwAYABwAGgAdABkAHAAZAB0AGgAWAB0AHgAXABsAGwAcAB4AHgAOABcAHAAdAB8AHgAcAB8AFgAgAB0AHwAdACAAFgAhACAAHgAfACIAFgAjACEAFgAEACMAIQAkACAAIQAjACQAHwAgACUAIgAfACUAJQAgACQAIwAEACYAIgAlACcAJwAeACIAJQAkACgAJwAlACgAIwApACQAIwAmACkAKAAkACkAJgAEACoAJgAqACkABAACACoAJwAoACsAKAApACwALAApACoAKwAoACwALQAqAAIALAAqAC0ALQACAAUAKwAsAC4ALgAnACsALgAsAC0ALgAeACcALgAOAB4ADgAuAAkALwAtAAUALgAtAC8ALwAFAAkACQAuAC8A"),
+"name": "pizza",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 48,
+"vertex_data": PackedByteArray("/38AAAAAAAD/v/7/JhEAAP9//v8AAAAA/78AACYRAAD/PwAAJhEAAP9////uBAAA2O7+//8/AACIvf//axUAANjuAAD/PwAA/3/Gw7YHAAD//wAA/38AAP///v//fwAAk+r//3ZCAAAjvMbD1BcAACroxsPbQwAAEPv///9/AADY7v7//78AAEj4xsP/fwAA2O4AAP+/AACT6v//iL0AAP+//v/Y7gAA/78AANjuAAD/PwAA2O4AACroxsMjvAAAiL3//5PqAAD/f/7///8AAP9/AAD//wAAI7zGwyroAAD/f///EPsAAP8//v/Y7gAA/3/Gw0j4AAB2Qv//k+oAACYR/v//vwAAJhEAAP+/AADbQ8bDKugAAAAAAAD/fwAAAAD+//9/AABrFf//iL0AACYRAAD/PwAA1BfGwyO8AADuBP///38AACYR/v//PwAA/z/+/yYRAAC2B8bD/38AAGsV//92QgAAdkL//2sVAADUF8bD20MAANtDxsPUFwAA")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_2baup"]
+resource_name = "pizza_Cylinder_010"
+_surfaces = [{
+"aabb": AABB(-0.32114467, -0.012989405, -0.32114467, 0.64228934, 0.03397001, 0.64228934),
+"attribute_data": PackedByteArray("MYRa1WKICMBiiFrVMYQIwDGECMBiiLWqYogIwDGEtaoxhLWqYohjlWKItaoxhGOVMYRjlWKIEYBiiGOVMYQRgP9///8xhKzqMYT///9/rOr/f6zqMYRa1TGErOr/f1rV/39a1TGECMAxhFrV/38IwP9/CMAxhLWqMYQIwP9/tar/f7WqMYRjlTGEtar/f2OV/39jlTGEEYAxhGOV/38RgBX9jcoO4Ousn/LJt+i3yreCyvCsPfKB8hf9CeBlytf8rd8Z/QGt1t/Jt13yEa1iyjGE//9iiKzqYoj//zGErOoxhKzqYoha1WKIrOoxhFrVFrqapzfAvJA3wP2cea//fxa6IIY4o7utea+7rXuS/ZycmJqnnJgghnuSvJA4o/9/aOCdq8j0rbWS89+2///Mydng/Klb/jrKJ8qqq///1OC2yQWqW/5j4Pi23rZX9KX0xrWptSbzcvPMqwzKbOD//ymqmcn/313+vasv4KLJsf8Zqp/gEMoS/t+2TvOstYX0DuDrrJLz37af8sm3aOCdq5/yybdb/jrKFf2NypLz37YV/Y3KW/5j4Bf9CeBb/jrKF/0J4CbzcvM98oHyW/5j4D3ygfL/313+rd8Z/SbzcvOt3xn9EMoS/mXK1/z/313+ZcrX/N+2TvPJt13yEMoS/sm3XfK9qy/gAa3W39+2TvMBrdbfzKsMyhGtYsq9qy/gEa1iyvi23rbot8q3zKsMyui3yrcnyqqrgsrwrPi23raCyvCsaOCdqw7g66wnyqqr"),
+"format": 34896613399,
+"index_count": 276,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUAGAAZABoAGAAbABkAHAAdAB4AHAAfAB0AIAAhACIAIAAjACEAJAAlACYAJAAnACUAKAApACoAKAArACkAKQArACwALQAoAC4ALwAoAC0AKwAoAC8ALwAtADAAKwAvADEAMQAvADIAKwAxADMANAA1ADYANAA3ADUAOAA5ADoAOAA7ADkAPAA9AD4APAA/AD0APQA/AEAAQQA8AEIAQwA8AEEAPwA8AEMAQwBBAEQAPwBDAEUARQBDAEYAPwBFAEcASABJAEoASgBJAEsASABMAEkASgBLAE0ATgBMAEgATQBLAE8ATgBQAEwATQBPAFEAUgBQAE4AUQBPAFMAUgBUAFAAUQBTAFUAVgBUAFIAVQBTAFcAVgBYAFQAVQBXAFkAWgBYAFYAWQBXAFsAWgBcAFgAWQBbAF0AXgBcAFoAXQBbAF8AXgBfAFwAXQBfAF4AYABhAGIAYABjAGEAZABlAGYAZABnAGUAaABpAGoAaABrAGkAbABtAG4AbABvAG0AcABxAHIAcABzAHEAdAB1AHYAdAB3AHUAeAB5AHoAeAB7AHkAfAB9AH4AfAB/AH0AgACBAIIAgACDAIEAhACFAIYAhACHAIUAiACJAIoAiACLAIkAjACNAI4AjACPAI0A"),
+"material": SubResource("StandardMaterial3D_0gn4k"),
+"name": "pizza",
+"primitive": 3,
+"uv_scale": Vector4(2, 2, 0, 0),
+"vertex_count": 144,
+"vertex_data": PackedByteArray("/38AAAAAd/j/v/7/JhF3+P9//v8AAHf4/78AACYRd/j/vwAAJhGq6dju/v//P6rp/7/+/yYRqunY7gAA/z+q6djuAAD/P7vb///+//9/u9vY7v7//z+72///AAD/f7vb//8AAP9/d8/Y7v7//793z////v//f3fP2O4AAP+/d8/Y7gAA/7/8xf+//v/Y7vzF2O7+//+//MX/vwAA2O78xf+/AADY7rDA/3/+////sMD/v/7/2O6wwP9/AAD//7DA/38AAP//sMD/P/7/2O6wwP9//v///7DA/z8AANjusMD/PwAA2O78xSYR/v//v/zF/z/+/9ju/MUmEQAA/7/8xSYRAAD/v3fPAAD+//9/d88mEf7//793zwAAAAD/f3fPAAAAAP9/u9smEf7//z+82wAA/v//f7vbJhEAAP8/vNsq6MbD20O3wP9/xsO2B7DAI7zGw9QXtMDUF8bD20OwwNtDxsPUF6/AKujGwyO8v8BI+MbD/3/CwP9/xsNI+LLAI7zGwyrowcDUF8bDI7ylwNtDxsMq6JnAtgfGw/9/rsAmEQAA/z+q6f8//v8mEarpJhH+//8/qun/PwAAJhGq6f8/AAAmEXf4/3/+/wAAd/j/P/7/JhF3+P9/AAAAAHf4/z8AACYRd8//vwAAJhF3z/9/AAAAAHfP//8AAP9/d8/Y7gAA/z93zwAAAAD/f3fPJhEAAP8/d8//PwAA2O53zyYRAAD/v3fP/78AANjud8//fwAA//93z9juAAD/v3fP/3///+4EucD/v/7/JhHDwIi9//9rFcLA2O7+//8/u8D/f/7/AAC6wJPq//92QrvAdkL//2sVqsD///7//3+vwP8//v8mEarAEPv///9/r8BrFf//dkKqwNju/v//v7DAJhH+//8/qsCT6v//iL2wwO4E////f7bA/7/+/9juucAAAP7//3+2wIi9//+T6rnAaxX//4i9t8D/f/7///+2wCYR/v//v7fA/3///xD7tsB2Qv//k+qmwP8//v/Y7qbA/3/Gw7YHaKOIvf//axVnpCO8xsPUF3Sk/3///+4EXqMjvMbD1BejspPq//92QsK0KujGw9tD37SIvf//axWNsiroxsPbQ7zCEPv///9/FcVI+MbD/381xZPq//92QqTCSPjGw/9/u9GT6v//iL1I0yroxsMjvF3TEPv///9/rNEq6MbDI7y63Yi9//+T6h3eI7zGwyroIt6T6v//iL223SO8xsMq6MTj/3///xD7wuP/f8bDSPjC44i9//+T6sTj/3/Gw0j44uF2Qv//k+re4dtDxsMq6N7h/3///xD74uHbQ8bDKuiG2WsV//+IvfLY1BfGwyO869h2Qv//k+qM2dQXxsMjvJTM7gT///9/Tcu2B8bD/38+y2sV//+IvaLMtgfGw/9/Q7xrFf//dkILu9QXxsPbQ/y67gT///9/UbzUF8bD20N2qnZC//9rFQ2q20PGw9QXCKprFf//dkJ6qttDxsPUF2ae/3///+4EaJ7/f8bDtgdonnZC//9rFWaeCzwLPAs8CzwLPAs8CzwLPAQ1BDUENQQ1BDUENQQ1BDVALkAuQC5ALkAuQC5ALkAuvya/Jr8mvya/Jr8mvya/Jv8c/xz/HP8c/xz/HP8c/xxWDVYNVg1WDVYNVg1WDVYNqPKo8qjyqPKo8qjyqPKo8v/i/+L/4v/i/+L/4v/i/+I/2T/ZP9k/2T/ZP9k/2T/ZvtG+0b7RvtG+0b7RvtG+0XPy6WSq8lZli/IYZazyWmWx8mRlPPJ5ZCfyUGSa8jVlLPJaZALzB2Zk88lmt/JxZfrK+sr6yvrK+sr6yvrK+srzw/PD88Pzw/PD88Pzw/PDf00/WX9NP1l/TT9Zf00/WX9NP1l/TT9Zf00/WX9NP1l/TT9Zf00/WX9NP1l/TT9ZY/LJZB/yQGQh8kVkV/KwZGLyx2Rb8rdk3vK9ZbPyZ2Xd8rtltvJuZdvyt2Ws8lll2PKyZa3yXGV+8v9kZfLMZHzy+2Rm8s1kdvLuZHzy+2R48vNkfvL9ZPry9mX68vVlAfvpstr8c7Ty/Ie07frYstzrbMEK7wPCM+8KwrrrZcGh59G/gutsv7XrZr9359W/yekjty/tK7Zc7R62pekut/Py2aZo9DimfPQwpuTy4Kb/+YlrDvqbaw/6nGv/+YlrM+W0Z8Pk7ma+5ORmOOW8ZwfRF2B/z4lca89aXBfRPGDwxBVco8OEV5HDR1f+xEVcvL6GWVa+oFVRvmtVwL6uWUTC8Femwt9Vq8LDVUDCBVge4RlWG+HtVRvh61Ue4RpW")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_13uu4")
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_bpk4q"]
+friction = 0.8
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_62ib4"]
+size = Vector3(0.64228934, 0.03397001, 0.64228934)
+
+[node name="pizza2" type="Node3D" unique_id=926529215]
+
+[node name="pizza" type="MeshInstance3D" parent="." unique_id=626248319]
+mesh = SubResource("ArrayMesh_2baup")
+metadata/extras = {
+"yp_decal": {}
+}
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=42161632]
+physics_material_override = SubResource("PhysicsMaterial_bpk4q")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1556286561]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0039956, 0)
+shape = SubResource("BoxShape3D_62ib4")

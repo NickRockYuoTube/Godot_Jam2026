@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://egdtps76psxk"]
+
+[ext_resource type="PackedScene" uid="uid://ck6amiuxg1wb8" path="res://models/PSX modular house interior pack/props/bathroomSink2.glb" id="1_vieh4"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_g4v7s"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g4v7s"]
+size = Vector3(0.6463623, 1.1548462, 0.84906006)
+
+[node name="bathroomSink22" unique_id=1058938225 instance=ExtResource("1_vieh4")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1" unique_id=1737382420]
+physics_material_override = SubResource("PhysicsMaterial_g4v7s")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=1182378297]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.051696777, 0.610199, 0.0101623535)
+shape = SubResource("BoxShape3D_g4v7s")

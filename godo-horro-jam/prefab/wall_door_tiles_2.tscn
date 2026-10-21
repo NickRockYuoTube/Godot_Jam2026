@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://cfvlxgrxdihh"]
+
+[ext_resource type="PackedScene" uid="uid://cye3rvly6sb7j" path="res://models/PSX modular house interior pack/geometry/wallDoorTiles.glb" id="1_33gq4"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_g4v7s"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g4v7s"]
+size = Vector3(0.5474243, 1.9953003, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yf5fn"]
+size = Vector3(1.8543701, 1.3099365, 1)
+
+[node name="wallDoorTiles2" unique_id=1449952738 instance=ExtResource("1_33gq4")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1" unique_id=1655754012]
+physics_material_override = SubResource("PhysicsMaterial_g4v7s")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=1678734606]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 0.072150886, 1.4625854, 1.9953003, 1.8893583)
+shape = SubResource("BoxShape3D_g4v7s")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D" index="1" unique_id=681875398]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 0.072150886, -1.4520535, 1.9953003, 1.8893583)
+shape = SubResource("BoxShape3D_g4v7s")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="StaticBody3D" index="2" unique_id=590693012]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.10873688, 0.019470215, 3.3406234, 1.8924251)
+shape = SubResource("BoxShape3D_yf5fn")

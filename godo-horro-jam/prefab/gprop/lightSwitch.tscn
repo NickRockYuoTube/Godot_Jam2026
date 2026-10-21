@@ -1,0 +1,115 @@
+[gd_scene format=4 uid="uid://bllyd4wlumgeo"]
+
+[ext_resource type="Texture2D" uid="uid://c616cuundcpd" path="res://models/PSX modular house interior pack/props/lightSwitch_albedo.png" id="1_8xbpi"]
+[ext_resource type="Texture2D" uid="uid://cnaohm4tgcccd" path="res://models/PSX modular house interior pack/props/lightSwitch_roughness.png" id="2_y73h1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uuw3h"]
+resource_name = "lightSwitch"
+albedo_texture = ExtResource("1_8xbpi")
+metallic_texture = ExtResource("2_y73h1")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_y73h1")
+roughness_texture_channel = 1
+texture_filter = 2
+metadata/extras = {
+"yp": {
+"active_ypaint_node": "",
+"expand_content": 0.0
+}
+}
+metadata/_gltf_primary_texture_coord = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_5s0vo"]
+_surfaces = [{
+"aabb": AABB(-3.9126608e-06, -0.09373875, -0.09373875, 0.034728736, 0.1874775, 0.1874775),
+"format": 34896613377,
+"index_count": 84,
+"index_data": PackedByteArray("DgAMAAEABgABAAwADgAPAAwADwAGAAwACwAPAA4AAAALAA4ACwANAA8ADQALAAAADQAQAA8ADwAQAAYADQAKABAADQAAAAoABwAGABAABwAQAAgACAAQAAoABAAGAAcACAAKAAkACQAKAAAACQAAAAUABAACAAYABgACAAEAAwACAAQABQAAABEABQARAAMAAwARAAIAEQABAAIAAAAOABEAEQAOAAEA"),
+"lods": [0.0189224, PackedByteArray("AAABAAIAAwAAAAIAAwACAAQABQAAAAMABAACAAYABgACAAEABAAGAAcABwAGAAgACQAAAAUACAAKAAkACQAKAAAACAAGAAoAAAALAAEABgABAAwACwAMAAEADQAKAAYADQAAAAoADQAGAAwADQALAAAACwANAAwA")],
+"name": "lightSwitch",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 18,
+"vertex_data": PackedByteArray("dq0AAP//AAAAAP////8AAHat/////wAA////f0KpAADn6TfLQqkAAOfpxzRCqQAAdq3//wAAAADn6TfLvFYAAP///3+8VgAA5+nHNLxWAAB2rQAAAAAAAAAAAAD//wAAAAD//wAAAAAAAAAAAAAAAAAA/3///wAAAAD/fwAAAAD///9/AAAAAP///3///wAA")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_hjdm4"]
+resource_name = "lightSwitch_Cube_089"
+_surfaces = [{
+"aabb": AABB(-3.9126608e-06, -0.09373875, -0.09373875, 0.034728736, 0.1874775, 0.1874775),
+"attribute_data": PackedByteArray("pPITvCnrfYCk8n2AKesTvIT4/////2jE/////4T4aMSE+BO8//99gP//E7yE+H2AM/b//7juaMQz9mjEuO7//zmthrvP6PB/z+iGuzmt8H+i1O3h0+j//6DUcfM8rf//1ujcw3DBc/Oh1GfQb8Ht4XHBadA+rdzDBMuGuwTL8H8z9jPiKesz4jP2SJ4p60ieotTt4dPo//+g1HHz2Ojt4XDBc/M5re3hb8Ht4Tyt//+h1GfQ2Ojt4dbo3MM+rdzDccFp0Dmt7eE="),
+"format": 34896613399,
+"index_count": 84,
+"index_data": PackedByteArray("HgARABIAHgAfABEAEAAfAB4AEAATAB8AIAANAA4AIAAhAA0ADAAhACAADAAPACEAIgABAAIAIgAjAAEAAAAjACIAAAADACMABAAFAAYABAAHAAUACAAJAAoACAALAAkAJAAlACYAJAAnACUAFgAXABkAFgAVABcAHAAYABoAHAAdABgAKAApACoAKAArACkALAAtABQALAAuAC0AGwAvADAAGwAxAC8A"),
+"lods": [0.0189224, PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFgAVABcAFAAYABUAFgAXABkAGgAYABQAGQAXABsAHAAYABoAGwAXAB0AHAAdABgAGwAdABwA")],
+"material": SubResource("StandardMaterial3D_uuw3h"),
+"name": "lightSwitch",
+"primitive": 3,
+"uv_scale": Vector4(1.9820614, 1.9820614, 0, 0),
+"vertex_count": 50,
+"vertex_data": PackedByteArray("dq0AAP//AIAAAP////8AgHat/////wCAAAAAAP//AIAAAAAAAAD/v3atAAD///+/dq0AAAAA/78AAAAA////v3at//8AAP//AAD///////8AAP//AAD//3at////////AAAAAAAA//92rf//AAD//wAA//8AAP//dq0AAAAA//8AAAAA//9U1QAA//8AAFTVAAD/////VNUAAAAAAABU1f///3+8VobBdq0AAAAAcMDn6cc0vFZwwHatAAD//3DAdq3//wAAcMDn6cc0QqlxwOfpN8u8VnDA////f0KpqL7n6TfLQqlwwHat/////3DAAAD/f///VNUAAP9/AABU1QAA/38AAP//////fwAA//////9///8AgAAA/3///wCA////f7xWhcF2rQAAAACFwefpxzS8VoTB////fwAAhsHn6cc0Qqmnvv///3///6e+////f0Kpp752rQAA//+ovufpN8u8VoXB////fwAAhcF2rf//AACFwXat/////6i+5+k3y0Kpqb7///9///+nvv9/////f////3////9///8AAP9/AAD/fwAA/38AAP9//3//v/9//7//f/+//3//v/9/////f////3////9///9U1VTVVNVU1VTVVNVU1VTV8YqRBeZ0MhbndDIW6HQyFjGWGwvrdDIWMZYeC06LdgUxlhkLMZYZC1TVVNVU1VTV/3////9/////f////3///1Z68wpUevMKMnr0Cmx68gqCek4LgXpOC3F6TguOek4L8oqiBfKKoQXyiq4FTot0BU+LUgVNi4wF")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_5s0vo")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_ucuek"]
+_surfaces = [{
+"aabb": AABB(0.020575268, -0.05508596, -0.030218909, 0.031630076, 0.11017192, 0.060437806),
+"format": 34896613377,
+"index_count": 60,
+"index_data": PackedByteArray("CAABAAIAAgABAAQAAgAEAAcABAABAAkACAAJAAEABwAEAAoABAAJAAoACwACAAcACwAIAAIABwAKAAsAAAAJAAgACwAKAAYACgAJAAMAAAADAAkACgADAAYACAAFAAAACAALAAUABQADAAAACwAGAAUABQAGAAMA"),
+"lods": [0.009215101, PackedByteArray("AAABAAIAAAADAAEAAgABAAQABQADAAAAAgAFAAAABgABAAMABAABAAYABQAGAAMAAgAEAAcABQACAAcABwAEAAYABwAGAAUA")],
+"name": "lightSwitch",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 12,
+"vertex_data": PackedByteArray("AAAAAAAAAACahv//AAAAAAAA//8AAAAA//8AAAAAAACahv7///8AAAAAAAD+/wAA//8AAP7/AAAAAP7///8AAAAA/38AAAAAcJr/fwAAAABwmv9//v8AAAAA/3/+/wAA")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_tnttt"]
+resource_name = "lightSwitch_Cube_090"
+_surfaces = [{
+"aabb": AABB(0.020575268, -0.05508596, -0.030218909, 0.031630076, 0.11017192, 0.060437806),
+"attribute_data": PackedByteArray("SwJibOcKZqVLAmalqhJibOcKrsTnCmalrkSuxK5EZqVLAmal5wquxEsCrsTnCmalDVWuxK5EZqUNVWalrkSuxEsCrsSqErP9SwKz/ecKrsRLAsUukyHKZ0sCymeTIcUuSwLkiCsM5IhwJ2alcCeuxHAnrsRwJ2alSwIw4SsMMOFLAkdLkyFHSw=="),
+"format": 34896613399,
+"index_count": 60,
+"index_data": PackedByteArray("GAABAAIAGAAZAAEAAAAZABgAAAADABkABAAaABsABAAFABoAHAAHAAYAHAAdAAcACAAJAAoACAALAAkAHgARABIAHgAfABEAEAAfAB4AEAATAB8ADAANAA4ADAAPAA0AIAAVABYAIAAhABUAIQAgABQAIQAUABcA"),
+"lods": [0.009215101, PackedByteArray("AAABAAIAAAADAAEABAAFAAYABgAFAAcACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFQAUABcA")],
+"material": SubResource("StandardMaterial3D_uuw3h"),
+"name": "lightSwitch",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 34,
+"vertex_data": PackedByteArray("AAAAAAAA//+ahv//AAD//wAA//8AAP////8AAAAA//+ahv7///9L1JqG//8AAEvU//8AAP7/RtD//wAAAABG0AAA//8AAP+/mob+/////78AAP7/////v5qG//8AAP+/AAAAAP7//////wAAAAD//wAAAAAAAP////8AAP7///8AAP7///8AgP//AAD+/wCAAAAAAP7/AICahv7///8AgAAAAAD+////AAD//wAA//8AAP7//////wAAAAAAAP//AAD/fwAA//9wmv9/AAD//3Ca/38AAEvUcJr/f/7/S9Rwmv9//v9G0HCa/38AAEbQAAD/f/7/AIBwmv9//v8AgAAA/3/+////AAD/fwAA//////9/////f////3////9/76v3Ve+r91VPsadYT7GnWP///3////9/////f////3//f/8//3//P/9//z//f/8//3////9/////f////3////8//3//P/9//z//f/8//3////9/////f++r91Xvq/dVT7GnWE+xp1j/f////3////8//3//P/9/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_ucuek")
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_lh8c0"]
+friction = 0.8
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rmvd1"]
+size = Vector3(0.052209258, 0.1874775, 0.1874775)
+
+[node name="lightSwitch2" type="Node3D" unique_id=1917673138]
+
+[node name="lightSwitch" type="MeshInstance3D" parent="." unique_id=678942184]
+mesh = SubResource("ArrayMesh_hjdm4")
+metadata/extras = {
+"yp_decal": {}
+}
+
+[node name="lightSwitch_001" type="MeshInstance3D" parent="lightSwitch" unique_id=1548370590]
+mesh = SubResource("ArrayMesh_tnttt")
+metadata/extras = {
+"yp_decal": {}
+}
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=148384662]
+physics_material_override = SubResource("PhysicsMaterial_lh8c0")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=835049478]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.026100716, 0, 0)
+shape = SubResource("BoxShape3D_rmvd1")

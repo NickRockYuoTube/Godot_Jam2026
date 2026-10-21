@@ -20,6 +20,8 @@
 [ext_resource type="AudioStream" uid="uid://jwxra4tjpqs8" path="res://music/HorrorThemMenuV2.ogg" id="15_f43ds"]
 [ext_resource type="PackedScene" uid="uid://3g5r7mk1lsw8" path="res://scen/screamer2.tscn" id="18_qm43r"]
 [ext_resource type="FontFile" uid="uid://cvo0aw7dhu72u" path="res://title/Ustroke-Regular.ttf" id="20_e4q6l"]
+[ext_resource type="PackedScene" uid="uid://e86q8amix5xa" path="res://prefab/gprop/plant3.tscn" id="21_2w3su"]
+[ext_resource type="PackedScene" uid="uid://vbhdo8ae2w4e" path="res://prefab/gprop/windowCurtains2.tscn" id="22_dhkve"]
 
 [sub_resource type="Environment" id="Environment_g4v7s"]
 ambient_light_source = 1
@@ -300,16 +302,16 @@ text = "Close"
 transform = Transform3D(-1.0927847e-08, 0, -0.25, 0, 0.25, 0, 0.25, 0, -1.0927847e-08, 2.7500002, 0, 11.843962)
 
 [node name="bucket2" parent="." unique_id=727610121 instance=ExtResource("10_2fvca")]
-transform = Transform3D(-0.5512694, 0, -1.3950276, 0, 1.5, 0, 1.3950276, 0, -0.5512694, -0.32593557, 0.050358653, 3.2825334)
+transform = Transform3D(-0.44101554, 0, -1.1160221, 0, 1.2, 0, 1.1160221, 0, -0.44101554, -0.28887853, 0.050358653, 3.2429745)
 
 [node name="broom2" parent="." unique_id=996972611 instance=ExtResource("11_2fvca")]
-transform = Transform3D(-0.038198948, 0.007457152, 0.99924225, 0.19160189, 0.98147273, -4.656613e-10, -0.9807291, 0.19145672, -0.03892003, 0.22718078, 0.032797784, 3.4558682)
+transform = Transform3D(-0.04583874, 0.008948583, 1.1990908, 0.22992228, 1.1777673, -8.668801e-10, -1.176875, 0.22974806, -0.04670404, 0.22718078, 0.032797784, 3.4558682)
 
 [node name="couchBig2" parent="." unique_id=1698006139 instance=ExtResource("12_pdtoi")]
-transform = Transform3D(-6.556708e-08, 0, 1.5, 0, 1.5, 0, -1.5, 0, -6.556708e-08, -2.91324, 0.050358772, 1.7363341)
+transform = Transform3D(-5.2453668e-08, 0, 1.2, 0, 1.2, 0, -1.2, 0, -5.2453668e-08, -2.91324, 0.050358772, 1.1744454)
 
 [node name="radiator2" parent="." unique_id=1403233901 instance=ExtResource("13_el1eq")]
-transform = Transform3D(-6.556708e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.556708e-08, -1.0509691, 0.050358895, 3.7356381)
+transform = Transform3D(-6.556708e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.556708e-08, -1.0509691, 0.050358895, 3.6089768)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1745122895]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9546745, 1.7116344, 3.6909556)
@@ -319,6 +321,9 @@ omni_range = 2.5140083
 
 [node name="ceilingLight2" parent="." unique_id=1932943327 instance=ExtResource("7_odmt8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2605274, 1.9692771, -1.2428956)
+
+[node name="ceilingLight4" parent="." unique_id=718049709 instance=ExtResource("7_odmt8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7448025, 1.9692771, -1.2428956)
 
 [node name="ceilingLight3" parent="." unique_id=1987113854 instance=ExtResource("7_odmt8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4198103, 1.9692771, 0.18872952)
@@ -333,7 +338,7 @@ autoplay = true
 transform = Transform3D(-2.4041263e-08, 0, 0.55, 0, 0.55, 0, -0.55, 0, -2.4041263e-08, -1.8985988, -1.7239335, 5.1488385)
 
 [node name="Label3D" type="Label3D" parent="." unique_id=1986306713]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -3.8990448, 1.6944706, 1.87683)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -3.8990448, 1.3276479, 1.9841717)
 text = "I HATE you"
 font = ExtResource("20_e4q6l")
 font_size = 30
@@ -344,3 +349,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8825326, 2.0241318, 10.6443
 light_energy = 5.0
 spot_range = 2.655206
 spot_angle = 77.084335
+
+[node name="plant32" parent="." unique_id=1398540651 instance=ExtResource("21_2w3su")]
+transform = Transform3D(-0.17684534, 0, -1.4895388, 0, 1.5, 0, 1.4895388, 0, -0.17684534, -2.9301023, 0.050500035, 3.1944191)
+
+[node name="windowCurtains22" parent="." unique_id=1571977071 instance=ExtResource("22_dhkve")]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, -1.9923836, -0.07906175, 1.9998419)

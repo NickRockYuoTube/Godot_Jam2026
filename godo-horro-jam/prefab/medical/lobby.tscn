@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://cbknqoashs752"]
+
+[ext_resource type="PackedScene" uid="uid://dxxwld60niq56" path="res://models/medical_props/lobby.glb" id="1_q2m50"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_g4v7s"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g4v7s"]
+size = Vector3(9.66626, 4.339966, 1.1501465)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yf5fn"]
+size = Vector3(1.065918, 4.2576904, 5.0803223)
+
+[node name="lobby" unique_id=943510074 instance=ExtResource("1_q2m50")]
+
+[node name="Куб" parent="." index="0" unique_id=1978238895]
+transform = Transform3D(1, 0, 0, 0, 4.1728373, 0, 0, 0, 1, -0.87244034, 4.3428726, -0.98500097)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1" unique_id=906434920]
+physics_material_override = SubResource("PhysicsMaterial_g4v7s")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=1680945228]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -9.473877, 4.339966, -0.89149475)
+shape = SubResource("BoxShape3D_g4v7s")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D" index="1" unique_id=178780982]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.87654686, 4.2576904, -7.120104)
+shape = SubResource("BoxShape3D_yf5fn")

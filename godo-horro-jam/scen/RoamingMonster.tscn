@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://driwucwjkiiab"]
+
+[ext_resource type="Script" uid="uid://hxaxt45ts5h0" path="res://script/roaming_monster.gd" id="1_ti6sc"]
+[ext_resource type="PackedScene" uid="uid://lyagm1r6hvdk" path="res://prefab/monstr1.tscn" id="2_vesgc"]
+[ext_resource type="AudioStream" uid="uid://dh7pegwwjuvg0" path="res://sound/step.ogg" id="3_vesgc"]
+
+[node name="RoamingMonster" type="Node3D" unique_id=1662520767 node_paths=PackedStringArray("step_sound", "anim_player")]
+script = ExtResource("1_ti6sc")
+step_sound = NodePath("StepSound")
+anim_player = NodePath("model/AnimationPlayer2")
+idle_animation = "mixamo_com_008"
+walk_animation = "mixamo_com_012"
+attack_animation = "mixamo_com_002"
+
+[node name="model" parent="." unique_id=312581060 instance=ExtResource("2_vesgc")]
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="model" unique_id=817228262]
+
+[node name="StepSound" type="AudioStreamPlayer3D" parent="." unique_id=555945838]
+stream = ExtResource("3_vesgc")
+max_distance = 50.0
+bus = &"Radio"

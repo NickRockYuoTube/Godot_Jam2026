@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://chpu532b27f6d"]
+
+[ext_resource type="Script" uid="uid://brmc6j3kltvi5" path="res://script/sound_trigger.gd" id="1_hrrca"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g4v7s"]
+
+[node name="SoundTrigger" type="Area3D" unique_id=915548453]
+script = ExtResource("1_hrrca")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1891963316]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 1, 0)
+shape = SubResource("BoxShape3D_g4v7s")

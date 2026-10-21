@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://cngtii7a7l6q6"]
+
+[ext_resource type="PackedScene" uid="uid://c5dvcs7cr2r5" path="res://models/PSX modular house interior pack/geometry/doorWood3.glb" id="1_xsw73"]
+[ext_resource type="Script" uid="uid://i4hra4sc3ujr" path="res://script/door.gd" id="2_bmpe1"]
+[ext_resource type="AudioStream" uid="uid://ubongvrqjdpn" path="res://sound/door_open.ogg" id="3_dvhqo"]
+[ext_resource type="AudioStream" uid="uid://dhmnl8yp71iwa" path="res://sound/door_close.ogg" id="4_7t1rp"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_g4v7s"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g4v7s"]
+size = Vector3(1.5943604, 1.0168457, 1)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_yf5fn"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yf5fn"]
+size = Vector3(1, 1.0839844, 1)
+
+[node name="doorWood32" unique_id=1579670647 node_paths=PackedStringArray("door_leaf", "audio_player") instance=ExtResource("1_xsw73")]
+script = ExtResource("2_bmpe1")
+door_leaf = NodePath("doorWood3/doorWood3_002")
+open_sound = ExtResource("3_dvhqo")
+close_sound = ExtResource("4_7t1rp")
+audio_player = NodePath("doorWood3/doorWood3_002/AudioStreamPlayer3D")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="doorWood3/doorWood3_002" parent_id_path=PackedInt32Array(582954056) index="1" unique_id=1538428595]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.817564, -0.049999878, -2)
+physics_material_override = SubResource("PhysicsMaterial_g4v7s")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="doorWood3/doorWood3_002/StaticBody3D" index="0" unique_id=561879553]
+transform = Transform3D(1, 0, 0, 0, 2.4960694, 0, 0, 0, 0.16594516, 0.018371582, 1.3174272, 1.9768636)
+shape = SubResource("BoxShape3D_g4v7s")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="doorWood3/doorWood3_002" parent_id_path=PackedInt32Array(582954056) index="2" unique_id=2116550457]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4375782, 1.0792284, 0.026180983)
+volume_db = -5.0
+max_distance = 100.0
+bus = &"Wheelchair"
+
+[node name="StaticBody3D" type="StaticBody3D" parent="doorWood3" parent_id_path=PackedInt32Array(498067510) index="1" unique_id=1854594942]
+physics_material_override = SubResource("PhysicsMaterial_yf5fn")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="doorWood3/StaticBody3D" index="0" unique_id=135482133]
+transform = Transform3D(0.10306537, 0, 0, 0, 2.4835606, 0, 0, 0, 0.34201318, 0.8656218, 1.3482652, 1.9935074)
+shape = SubResource("BoxShape3D_yf5fn")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="doorWood3/StaticBody3D" index="1" unique_id=1242637887]
+transform = Transform3D(0.10306537, 0, 0, 0, 2.4835606, 0, 0, 0, 0.34201318, -0.85610366, 1.3482652, 1.9935074)
+shape = SubResource("BoxShape3D_yf5fn")

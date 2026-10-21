@@ -21,6 +21,8 @@ func _ready() -> void:
 		lamp_red = find_child("LampRed", true, false) as OmniLight3D
 	if warning_sound == null:
 		warning_sound = find_child("WarningSound", true, false) as AudioStreamPlayer3D
+	if spot:
+		spot.add_to_group("flashlight_spot")
 
 	button.pressed_changed.connect(_on_button_pressed_changed)
 	PowerSystem.flashlight_changed.connect(_on_flashlight_changed)

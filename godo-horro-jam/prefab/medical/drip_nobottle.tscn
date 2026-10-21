@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://b5umysmfa8dwd"]
+
+[ext_resource type="PackedScene" uid="uid://byk2a4tvnka0l" path="res://models/medical_props/drip_nobottle.glb" id="1_802hp"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_g4v7s"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g4v7s"]
+size = Vector3(1.4268799, 4.540161, 1.4152832)
+
+[node name="drip_nobottle" unique_id=71860362 instance=ExtResource("1_802hp")]
+
+[node name="Пустышка" parent="." index="0" unique_id=109098502]
+transform = Transform3D(0, 1, 0, 0, 0, -1, -1, 0, 0, -3.674821, 1.1581879, -3.0318499)
+
+[node name="Пустышка_001" parent="." index="1" unique_id=1756852603]
+transform = Transform3D(-1, -4.3711385e-08, -4.371137e-08, 4.3711385e-08, -3.5762787e-07, -0.99999994, 4.371137e-08, -0.99999994, 3.5762787e-07, -10.631051, 2.1342359, 10.004747)
+
+[node name="Цилиндр_002" parent="." index="2" unique_id=2047973141]
+transform = Transform3D(0.117807776, 0, 0, 0, 0, 0.117807776, 0, -1.4052677, 0, 0, 0.5626732, 0)
+
+[node name="Цилиндр_003" parent="." index="3" unique_id=1710006148]
+transform = Transform3D(0, -1.4052677, 0, 0, 0, 0.117807776, -0.117807776, 0, 0, 0, 0.5626732, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="4" unique_id=1988459387]
+physics_material_override = SubResource("PhysicsMaterial_g4v7s")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=1230247669]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.0040283203, 4.540161, 0.0075683594)
+shape = SubResource("BoxShape3D_g4v7s")

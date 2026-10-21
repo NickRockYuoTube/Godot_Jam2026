@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://ddpdtcrn2dvy8"]
+
+[ext_resource type="PackedScene" uid="uid://c80fcwaoye45w" path="res://models/medical_props/scameika.glb" id="1_gp4fo"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_g4v7s"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g4v7s"]
+size = Vector3(1.9165039, 2.4649048, 5.0283203)
+
+[node name="scameika" unique_id=165461993 instance=ExtResource("1_gp4fo")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, -1.0551995, 0.035972357)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="2" unique_id=393663018]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.2609644, 0)
+physics_material_override = SubResource("PhysicsMaterial_g4v7s")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=1089084775]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -3.2269387, 4.9298096, -10.17002)
+shape = SubResource("BoxShape3D_g4v7s")
