@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://5xj2dc7wp22n"]
+
+[ext_resource type="Script" uid="uid://cssfpcrtkjq82" path="res://script/monster_trigger.gd" id="1_vo0qx"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g4v7s"]
+
+[node name="MonsterTrigger" type="Area3D" unique_id=484888824]
+script = ExtResource("1_vo0qx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=774262466]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 1, 0)
+shape = SubResource("BoxShape3D_g4v7s")

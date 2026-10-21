@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://hj0sr3lxx0hd"]
+
+[ext_resource type="PackedScene" uid="uid://db1qmqlft4fwx" path="res://models/PSX modular house interior pack/geometry/doorWood2.glb" id="1_hr15c"]
+[ext_resource type="Script" uid="uid://i4hra4sc3ujr" path="res://script/door.gd" id="2_3sv46"]
+[ext_resource type="AudioStream" uid="uid://ubongvrqjdpn" path="res://sound/door_open.ogg" id="3_3ww7r"]
+[ext_resource type="AudioStream" uid="uid://dhmnl8yp71iwa" path="res://sound/door_close.ogg" id="4_2p130"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_yf5fn"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yf5fn"]
+size = Vector3(1.1192627, 1.0756836, 1)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_g4v7s"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g4v7s"]
+size = Vector3(1, 1.1582031, 1)
+
+[sub_resource type="Environment" id="Environment_rak58"]
+ambient_light_source = 1
+fog_enabled = true
+fog_light_color = Color(0.011764706, 0.011764706, 0.039215688, 1)
+fog_density = 0.15
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_576dl"]
+
+[sub_resource type="Compositor" id="Compositor_77f68"]
+
+[node name="doorWood22" unique_id=177846205 node_paths=PackedStringArray("door_leaf", "audio_player") instance=ExtResource("1_hr15c")]
+script = ExtResource("2_3sv46")
+door_leaf = NodePath("doorWood2/doorWood2_001")
+open_sound = ExtResource("3_3ww7r")
+close_sound = ExtResource("4_2p130")
+audio_player = NodePath("doorWood2/doorWood2_001/AudioStreamPlayer3D")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="doorWood2/doorWood2_001" parent_id_path=PackedInt32Array(1649094880) index="0" unique_id=987508248]
+physics_material_override = SubResource("PhysicsMaterial_yf5fn")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="doorWood2/doorWood2_001/StaticBody3D" index="0" unique_id=51052349]
+transform = Transform3D(1.4959952, 0, 0, 0, 2.3699756, 0, 0, 0, 0.10494316, 0.8180238, 1.2954646, 0)
+shape = SubResource("BoxShape3D_yf5fn")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="doorWood2/doorWood2_001" parent_id_path=PackedInt32Array(1649094880) index="1" unique_id=707233483]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5147493, 1.2698114, 0.07015896)
+volume_db = -5.0
+autoplay = true
+max_distance = 100.0
+bus = &"Wheelchair"
+
+[node name="StaticBody3D" type="StaticBody3D" parent="doorWood2" parent_id_path=PackedInt32Array(1337381586) index="1" unique_id=1693565461]
+physics_material_override = SubResource("PhysicsMaterial_g4v7s")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="doorWood2/StaticBody3D" index="0" unique_id=1477713591]
+transform = Transform3D(0.11062626, 0, 0, 0, 2.3131118, 0, 0, 0, 0.28958124, 0.87224466, 1.3486445, 1.9953078)
+shape = SubResource("BoxShape3D_g4v7s")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="doorWood2/StaticBody3D" index="1" unique_id=2067374866]
+transform = Transform3D(0.11062626, 0, 0, 0, 2.3131118, 0, 0, 0, 0.28958124, -0.87642884, 1.3486445, 1.9953078)
+shape = SubResource("BoxShape3D_g4v7s")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." index="1" unique_id=2064049629]
+environment = SubResource("Environment_rak58")
+camera_attributes = SubResource("CameraAttributesPractical_576dl")
+compositor = SubResource("Compositor_77f68")

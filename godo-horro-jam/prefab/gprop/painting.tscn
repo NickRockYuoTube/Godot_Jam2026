@@ -1,0 +1,73 @@
+[gd_scene format=4 uid="uid://f07rx40jkkjg"]
+
+[ext_resource type="Texture2D" uid="uid://qhguur5ho5mk" path="res://models/PSX modular house interior pack/props/painting_albedo.png" id="1_vn72w"]
+[ext_resource type="Texture2D" uid="uid://bom60sblgyjjx" path="res://models/PSX modular house interior pack/props/painting_roughness.png" id="2_i4j25"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4wd4e"]
+resource_name = "painting"
+albedo_texture = ExtResource("1_vn72w")
+metallic_texture = ExtResource("2_i4j25")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_i4j25")
+roughness_texture_channel = 1
+texture_filter = 2
+metadata/extras = {
+"yp": {
+"active_ypaint_node": "",
+"expand_content": 0.0
+}
+}
+metadata/_gltf_primary_texture_coord = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_1ymub"]
+_surfaces = [{
+"aabb": AABB(1.0728836e-06, -0.58930135, -0.58930135, 0.0689176, 1.1786027, 1.1786027),
+"format": 34896613377,
+"index_count": 84,
+"index_data": PackedByteArray("AAABAAIAAwACAAEAAAAEAAEABAADAAEABQAAAAIABAAAAAUAAwAGAAIABQACAAYABAAHAAMABAAFAAcACAADAAcACQAGAAMACQADAAgACgAFAAYACgAGAAkACwAHAAUACwAFAAoACAAHAAsACQAMAAoACwANAAgACAAOAAkACQAOAAwACAANAA4ACgAMAA8ACgAPAAsADwAMAA4ACwAPAA0ADwAOAA0A"),
+"name": "painting",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 16,
+"vertex_data": PackedByteArray("AAAAAP//AAAAAP//AAAAAAAA/////wAA/////wAAAAAAAAAAAAAAAP//AAD//wAA////////AAD//wAAAAAAAP//efWFCgAA//959Xn1AAD//4UKefUAAP//hQqFCgAAW5aFCnn1AABblnn1hQoAAFuWefV59QAAW5aFCoUKAAA=")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_nuq2b"]
+resource_name = "painting_Cube_094"
+_surfaces = [{
+"aabb": AABB(1.0728836e-06, -0.58930135, -0.58930135, 0.0689176, 1.1786027, 1.1786027),
+"attribute_data": PackedByteArray("ivw9vnG9Vv1xvT2+ivxW/ff4OItc8SIJ9/giCVzxOItWM+3tu6rK6ruq7e1WM8rqXPE4i/f4Iglc8SIJ9/g4i/4t4foUsEbz/i1G8xSw4fr+LUbzFLDh+v4t4foUsEbzA+x7DlzxOIsD7OCFXPEiCVYz7e0UsEbzu6rt7f4tRvO7qu3t/i1G81Yz7e0UsEbzA+zghVzxIgkD7HsOXPE4i627vrurBbwFrbu8BasFvrsD7OCF4Oh7DgPsew7g6OCFA+x7DuDo4IUD7OCF4Oh7Druq7e1WM8rqVjPt7buqyuo="),
+"format": 34896613399,
+"index_count": 84,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUAGAAZABoAGAAbABkAHAAdAB4AHAAfAB0AIAAhACIAIAAjACEAJAAlACYAJAAnACUAKAApACoAKAArACkALAAtAC4ALAAvAC0AMAAxADIAMAAzADEANAA1ADYANAA3ADUA"),
+"material": SubResource("StandardMaterial3D_4wd4e"),
+"name": "painting",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 56,
+"vertex_data": PackedByteArray("AAAAAP//VNUAAP//AABU1QAA/////1TVAAAAAAAAVNUAAAAAAAD///////8AAP//AAD//wAA/////wAAAAD/////efWFClTVW5Z59Xn1VNX//3n1efVU1VuWefWFClTV//8AAP//AAAAAP////8AAP///////wAAAAAAAP//AAAAAAAAAACqKv//AAD//6oq//8AAAAAqioAAAAA//+qKv////8AAFTVAAD/////VNUAAP//AABU1f///////1TV//959YUK/7///wAAAAD/v///hQqFCv+//////wAA/7///4UKhQoAAP//AAD//wAA//+FCnn1AAD//wAAAAAAAP//efV59f///////wAA/////3n1hQr///////////////+FCnn1AAD///////8AAP//efV59QAA//8AAP//AABbloUKhQr/v1uWefV59f+/W5Z59YUK/79bloUKefX/v///hQqFCgCAW5Z59YUKAID//3n1hQoAgFuWhQqFCgCA//959Xn1AABbloUKefUAAP//hQp59QAAW5Z59Xn1AAD//4UKefWqKluWhQqFCqoq//+FCoUKqipbloUKefWqKlRVqqpUVaqqVFWqqlRVqqr/f////3////9/////f///qipU1aoqVNWqKlTVqipU1f9//3//f/9//3//f/9//3+qKlTVqipU1aoqVNWqKlTVqqqqqqqqqqqqqqqqqqqqqv9/AAD/fwAA/38AAP9/AAD/v/9//7//f/+//3//v/9//7//f/+//3//v/9//7//f/+//3//v/9//7//f/+//3//fwAA/38AAP9/AAD/fwAA/3////9/////f////3///////3////9/////f////3+qqqqqqqqqqqqqqqqqqqqq")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_1ymub")
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_g5xo2"]
+friction = 0.8
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sv3qo"]
+size = Vector3(0.0689176, 1.1786027, 1.1786027)
+
+[node name="painting2" type="Node3D" unique_id=865814754]
+
+[node name="painting" type="MeshInstance3D" parent="." unique_id=1710629321]
+mesh = SubResource("ArrayMesh_nuq2b")
+metadata/extras = {
+"yp_decal": {}
+}
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=907621240]
+physics_material_override = SubResource("PhysicsMaterial_g5xo2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=983002168]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.034459874, 0, 0)
+shape = SubResource("BoxShape3D_sv3qo")

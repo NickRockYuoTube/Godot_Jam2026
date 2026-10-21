@@ -19,6 +19,7 @@ func _ready() -> void:
 	var terminal := get_node(terminal_path) as Terminal
 	terminal.command_changed.connect(_on_command_changed)
 	movement_changed.connect(PowerSystem.set_moving)   # ← добавить
+	add_to_group("player")
 
 func _on_command_changed(forward: float, turn: float) -> void:
 	_cmd_forward = forward

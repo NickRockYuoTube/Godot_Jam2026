@@ -916,5 +916,5 @@ font_size = 30
 outline_size = 0
 
 [node name="LevelExit" parent="." unique_id=2014359388 instance=ExtResource("40_d0msd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.7058175, -28.154812, 0.0667547, 32.048782)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.7058175, -29.165785, 0.0667547, 32.048782)
 next_level = "uid://ch73p45bd8vc2"

@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://cngcfdrcgs4rx"]
+
+[ext_resource type="PackedScene" uid="uid://je041kxsiys2" path="res://models/PSX modular house interior pack/geometry/doorWood.glb" id="1_7yx2w"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_g4v7s"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g4v7s"]
+size = Vector3(1.036377, 2.5263672, 1)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_yf5fn"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yf5fn"]
+size = Vector3(1, 1.3476563, 1)
+
+[node name="doorWood2" unique_id=366124804 instance=ExtResource("1_7yx2w")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="doorWood/doorWood_001" parent_id_path=PackedInt32Array(545903015) index="0" unique_id=2083203044]
+physics_material_override = SubResource("PhysicsMaterial_g4v7s")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="doorWood/doorWood_001/StaticBody3D" index="0" unique_id=1723546800]
+transform = Transform3D(1.5849218, 0, 0, 0, 1, 0, 0, 0, 0.13632922, 0.8197819, 1.2662259, 0)
+shape = SubResource("BoxShape3D_g4v7s")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="doorWood/doorWood_001" parent_id_path=PackedInt32Array(545903015) index="1" unique_id=582968847]
+volume_db = -5.0
+max_distance = 100.0
+bus = &"Wheelchair"
+
+[node name="StaticBody3D" type="StaticBody3D" parent="doorWood" parent_id_path=PackedInt32Array(1975277153) index="1" unique_id=838383196]
+physics_material_override = SubResource("PhysicsMaterial_yf5fn")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="doorWood/StaticBody3D" index="0" unique_id=1226436670]
+transform = Transform3D(0.14750244, 0, 0, 0, 2.0075095, 0, 0, 0, 0.29877847, 0.8619813, 1.3380355, 1.9979348)
+shape = SubResource("BoxShape3D_yf5fn")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="doorWood/StaticBody3D" index="1" unique_id=1453139627]
+transform = Transform3D(0.14750244, 0, 0, 0, 2.0075095, 0, 0, 0, 0.29877847, -0.84667265, 1.3380355, 1.9979348)
+shape = SubResource("BoxShape3D_yf5fn")

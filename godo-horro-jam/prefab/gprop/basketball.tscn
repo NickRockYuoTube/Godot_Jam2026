@@ -1,0 +1,73 @@
+[gd_scene format=4 uid="uid://bl5ak6qowqqyc"]
+
+[ext_resource type="Texture2D" uid="uid://dmxw6v8igie7j" path="res://models/PSX modular house interior pack/props/basketball_albedo.png" id="1_3h5xy"]
+[ext_resource type="Texture2D" uid="uid://blerc7kwf7e8n" path="res://models/PSX modular house interior pack/props/basketball_roughness.png" id="2_p6f7f"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1d6j7"]
+resource_name = "basketball"
+albedo_texture = ExtResource("1_3h5xy")
+metallic_texture = ExtResource("2_p6f7f")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_p6f7f")
+roughness_texture_channel = 1
+texture_filter = 2
+metadata/extras = {
+"yp": {
+"active_ypaint_node": "",
+"expand_content": 0.0
+}
+}
+metadata/_gltf_primary_texture_coord = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_4fyev"]
+_surfaces = [{
+"aabb": AABB(-0.23263642, -0.23263647, -0.23263647, 0.4652729, 0.46527293, 0.46527293),
+"format": 34896613377,
+"index_count": 144,
+"index_data": PackedByteArray("AAABAAIAAwACAAEAAAAEAAEABAADAAEABQAAAAIABAAGAAMABwAAAAUACAAEAAAABwAIAAAACAAJAAQACQAGAAQACAAHAAoACgAHAAUACQAIAAsACAAKAAsACQAMAAYACQALAAwADAANAAYABgAOAAMABgANAA4ADAAPAA0ADgAQAAMAAwAQAAIADQARAA4ADgARABAADwASAA0ADQASABEADAATAA8ADwATABIADAALABMAEgAUABEACwAVABMACwAKABUAEwAWABIAEgAWABQAEwAVABYAEQAUABcAFgAXABQAEQAXABAAFQAYABYAFQAKABgAFgAYABcACgAFABgAEAAXABkAGAAZABcAGAAFABkAEAAZAAIABQACABkA"),
+"name": "basketball",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 26,
+"vertex_data": PackedByteArray("/38AAP9/AAAZNhk2GTYAAH0lfSX/fwAAfSX/f30lAAD/f30lfSUAAP9/fSWB2gAA/3//fwAAAADlyRk25ckAAIHafSX/fwAA5ckZNhk2AACB2v9/gdoAAP///3//fwAAgdr/f30lAAD/f4HafSUAABk25ckZNgAA5cnlyRk2AAAAAP9//38AAH0lgdr/fwAA/3////9/AACB2oHa/38AABk25cnlyQAA5cnlyeXJAAD/f4HagdoAAH0l/3+B2gAA/3//f///AAAZNhk25ckAAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_lk1gx"]
+resource_name = "basketball_Cube_202"
+_surfaces = [{
+"aabb": AABB(-0.23263642, -0.23263647, -0.23263647, 0.4652729, 0.46527293, 0.46527293),
+"attribute_data": PackedByteArray("EnnXEBigAVm7xSIzR3kvVWl57X9VoJymJqTLf4p5qqrYeRvvXaCspkTGR8yUecOqaXkFgBCgEFkmpNp/PnlIVVMKdYDCUvqmJy3hzKtOMIB+6JZ/EKAQWavFKjMmpNp/RMZHzCak2n9+6JZ/XaCsplWgnKZ+6JZ/JqTLfzPGQMwmpMt/u8UiMxigAVl+6JZ/jSzDM6tOMIBTCnWAdFJeWXxSPVlTCkSAq04OgJ4smjOrTg6AFi24zLlS2aZTCkSAq04wgD55SFVpeQWAdFJeWcJS+qZpeQWAlHnDqqtOMICUecOqJqTaf12grKZpeQWAJy3hzJR5w6rYeRvvwlL6prlS2abAeQPvinmqqhYtuMyKeaqqM8ZAzFWgnKbAeQPvq04OgIp5qqppee1/uVLZpnxSPVlpee1/R3kvVatODoBHeS9VJqTLfxigAVlpee1/niyaM0d5L1USedcQfFI9WXRSXln5eO8QPnlIVY0swzM+eUhVq8UqMxCgEFn5eO8Q"),
+"format": 34896613399,
+"index_count": 144,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUAGAAZABoAGAAbABkAHAAdAB4AHAAfAB0AIAAhACIAIAAjACEAJAAlACYAJAAnACUAKAApACoAKAArACkALAAtAC4ALAAvAC0AMAAxADIAMAAzADEANAA1ADYANAA3ADUAOAA5ADoAOAA7ADkAPAA9AD4APAA/AD0AQABBAEIAQABDAEEARABFAEYARABHAEUASABJAEoASABLAEkATABNAE4ATABPAE0AUABRAFIAUABTAFEAVABVAFYAVABXAFUAWABZAFoAWABbAFkAXABdAF4AXABfAF0A"),
+"material": SubResource("StandardMaterial3D_1d6j7"),
+"name": "basketball",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 96,
+"vertex_data": PackedByteArray("/38AAP9/cBIZNhk2GTZwEn0lfSX/fz0V/399JX0llg//f/9/AAC5DRk25ckZNrkNfSX/f30lNQ7/f4HafSU5Df9/////f7v8GTblyeXJu/x9JYHa/395+P9/gdqB2v/+/3//f///4v8ZNhk25cni/30l/3+B2j/9/399JYHaBf3///9//39P/uXJ5cnlyU/+gdqB2v9/SfyB2v9/gdrs+AAA/3//f1D+GTYZNuXJT/59JX0l/39J/H0l/3+B2uz4fSWB2v9/BP59Jf9/gdoE/gAA/3//f6D4GTblyeXJcfAZNuXJGTaPLwAA/3//f48vfSX/f30l3DB9JYHa/3/oLX0l/399JVoufSV9Jf9/Wi4ZNhk2GTYUKQAA/3//f9Awgdp9Jf9/BP6B2v9/gdoE/v///3//f6D45ckZNuXJcfDlyRk2GTaPL////3//f48vgdr/f30l3DCB2n0l/3/oLYHa/399JVougdqB2v9/Wi7lyeXJGTYUKf///3//f9Awgdr/f4Hamf//f30lgdqZ//9//3////X85ckZNuXJmvzlyeXJ5cni//9//3///+L//3+B2oHaBf2B2v9/gdo//f9/gdqB2pn/fSX/f4Hamf8ZNuXJ5cma/P9//3////X8gdqB2v9/u/3/f4Hagdq7/f9/////f8/75cnlyeXJf//lyeXJGTZwEv9/////f3AS/3+B2n0llg+B2oHa/389Ff9/gdp9JRMSfSWB2v9/ExIZNuXJGTYxEP9/////f2ATgdr/f30ltw3/f4HafSW3Df9//38AACsO5cnlyRk2Cg3lyRk2GTa5Df9//38AALkN/399JX0lOQ2B2v9/fSU1Dv9/fSV9JbcNfSX/f30ltw0ZNhk2GTYKDf9//38AACsOgdp9Jf9/ExL/f30lfSUTEv9/AAD/f2AT5ckZNhk2MRDlyRk25cm7/P9/AAD/f7v8/399JYHa//6B2n0l/395+P9/fSWB2rv9fSV9Jf9/u/0ZNhk25cl///9/AAD/f8/7FkuR/BZLkfwISQb4WLSs/jqACO06gAjtA4Rb6nR8pul+1GUSftRlEiPW9xQ5cC2tlO+g75TvoO8Jbyxw/O438HStV490rVePqxJTK6uv4IuKUqdwilKncFPtq9RTUB50/lOckf5TnJFP9MsvNFnBmfaC/uX2gv7lLovR49565t+MncP8jJ3D/HKyLu3pYyf1AKxibgCsYm6vCzPQyqY9Zgh9ABoIfQAa0HQtHCCFGCByYjsDcmI7A4xN0BIVnNcKTxCF708Qhe/DD/nusI/mbmoQXhBqEF4QAhHHD/WQ0o+v73kQr+95EE5wGJE78AURyJHjq8iR46v0kiOr+ywVEOi0bQPotG0DpktSAfa2+AfUglvL1IJby65/Zsz1hGTK65IrAOuSKwBtlbgDXWjUBMR/9hLEf/YSioNYFvt7oxUTbdP/E23T/6GXKvuRakb8Kn2jNCp9ozQJe5o1UICYM4Arme2AK5ntxY/RUtspB+s2bhtUNm4bVAPT6e8KbdtU")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_4fyev")
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_7f8pq"]
+friction = 0.8
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cree2"]
+size = Vector3(0.4652729, 0.46527293, 0.46527293)
+
+[node name="basketball2" type="Node3D" unique_id=1777687529]
+
+[node name="basketball" type="MeshInstance3D" parent="." unique_id=1486547693]
+mesh = SubResource("ArrayMesh_lk1gx")
+metadata/extras = {
+"yp_decal": {}
+}
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1153405346]
+physics_material_override = SubResource("PhysicsMaterial_7f8pq")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1783311999]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9802322e-08, 0, 0)
+shape = SubResource("BoxShape3D_cree2")
