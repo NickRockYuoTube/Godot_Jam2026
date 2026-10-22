@@ -85,6 +85,11 @@ script = ExtResource("36_qv7rl")
 
 [node name="Wheelchair" parent="." unique_id=311727349 instance=ExtResource("3_vi6ws")]
 transform = Transform3D(-0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, -0.70710677, -4.2280636, 0.07839537, 1.3678558)
+forward_speed = 1.6
+back_speed = 0.8
+turn_speed_deg = 25.0
+acceleration = 5.0
+terminal_path = NodePath("Terminal")
 
 [node name="lift2" parent="." unique_id=985641796 instance=ExtResource("32_jb2e5")]
 transform = Transform3D(-0.25, 0, 2.1855694e-08, 0, 0.25, 0, -2.1855694e-08, 0, -0.25, -29.846048, 0.06660712, 32.908634)

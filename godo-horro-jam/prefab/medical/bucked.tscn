@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://b86nwle44f8qk"]
+
+[ext_resource type="PackedScene" uid="uid://ijkymxq6hadh" path="res://models/medical_props/bucked.glb" id="1_27afl"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g4v7s"]
+size = Vector3(1.3898315, 2.0473633, 1.2020264)
+
+[node name="bucked" unique_id=2127170244 instance=ExtResource("1_27afl")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -0.3527422, -0.07262325, 0.46686363)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="2" unique_id=1106391871]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=832422293]
+transform = Transform3D(15, 0, 0, 0, 15, 0, 0, 0, 15, -6.5411386, 16.060791, -13.631954)
+shape = SubResource("BoxShape3D_g4v7s")

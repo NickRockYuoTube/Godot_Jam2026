@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://d0cwoat0ekidr"]
+
+[ext_resource type="PackedScene" uid="uid://dttq8oc4vbj1r" path="res://models/medical_props/table_surgensi.glb" id="1_p7404"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_g4v7s"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g4v7s"]
+size = Vector3(3.432495, 4.781128, 13.08609)
+
+[node name="table_surgensi" unique_id=16717320 instance=ExtResource("1_p7404")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, -0.42703533, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="6" unique_id=1331137184]
+physics_material_override = SubResource("PhysicsMaterial_g4v7s")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=466079264]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, -0.00036627054, 18.655666, -4.6310115)
+shape = SubResource("BoxShape3D_g4v7s")

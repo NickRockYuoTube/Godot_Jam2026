@@ -1,6 +1,14 @@
 [gd_scene format=3 uid="uid://djw6hnxcpjexi"]
 
 [ext_resource type="PackedScene" uid="uid://bnmtru6eu72vj" path="res://scen/wheelchair.tscn" id="1_46lwt"]
+[ext_resource type="PackedScene" uid="uid://driwucwjkiiab" path="res://scen/RoamingMonster.tscn" id="2_gmgay"]
+[ext_resource type="AudioStream" uid="uid://qtq3swrpe6at" path="res://sound/scrimer.ogg" id="3_w7r7j"]
+[ext_resource type="AudioStream" uid="uid://c3jjlyxdm3s8f" path="res://sound/panch.ogg" id="4_o6mel"]
+[ext_resource type="PackedScene" uid="uid://5xj2dc7wp22n" path="res://scen/monster_trigger.tscn" id="4_w7r7j"]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_g4v7s"]
+vertices = PackedVector3Array(-47.080257, 0.6703545, -22.06523, -47.080257, 0.6703545, 22.18477, 47.169743, 0.6703545, 22.18477, 47.169743, 0.6703545, -22.06523)
+polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_g4v7s"]
 
@@ -11,16 +19,20 @@
 [node name="TestLevel" type="Node3D" unique_id=725854085]
 
 [node name="Wheelchair" parent="." unique_id=311727349 instance=ExtResource("1_46lwt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7612095, 2.3303251, 9.422695)
+transform = Transform3D(0.8660254, 0, 0.5, 0, 1, 0, -0.5, 0, 0.8660254, 17.76121, 2.3303251, 17.422695)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1364498435]
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=300132419]
+navigation_mesh = SubResource("NavigationMesh_g4v7s")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D" unique_id=1364498435]
+transform = Transform3D(2.1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 physics_material_override = SubResource("PhysicsMaterial_g4v7s")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1021851173]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/StaticBody3D" unique_id=1021851173]
 transform = Transform3D(45.314533, 0, 0, 0, 0.659291, 0, 0, 0, 45.13046, 0, 0, 0)
 shape = SubResource("BoxShape3D_yf5fn")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D/CollisionShape3D" unique_id=1096026536]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/StaticBody3D/CollisionShape3D" unique_id=1096026536]
 layers = 1023
 mesh = SubResource("BoxMesh_yf5fn")
 
@@ -35,3 +47,47 @@ spot_angle = 43.268635
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.020349, 0)
 light_energy = 2.0
 omni_range = 12.6144085
+
+[node name="RoamingMonster" parent="." unique_id=1662520767 node_paths=PackedStringArray("agent", "vanish_sound") instance=ExtResource("2_gmgay")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.126808, -0.40135562, -5.921033)
+agent = NodePath("NavigationAgent3D2")
+vanish_sound = NodePath("VanishSound")
+debug_light = true
+
+[node name="NavigationAgent3D2" type="NavigationAgent3D" parent="RoamingMonster" unique_id=335480267]
+
+[node name="VanishSound" type="AudioStreamPlayer3D" parent="RoamingMonster" unique_id=1145663822]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0063719, 0)
+stream = ExtResource("3_w7r7j")
+bus = &"Wheelchair"
+
+[node name="AttackSound" type="AudioStreamPlayer3D" parent="RoamingMonster" unique_id=222040541]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0063719, 0)
+stream = ExtResource("4_o6mel")
+volume_db = 30.0
+
+[node name="MonsterSpots" type="Node3D" parent="." unique_id=563856356]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43.136765, 0.09354174, 7.396267)
+
+[node name="Spot1" type="Marker3D" parent="MonsterSpots" unique_id=2105674357]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7744217, 0, -2.55817)
+
+[node name="Spot2" type="Marker3D" parent="MonsterSpots" unique_id=1985869805]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.700485, 0, 11.220858)
+
+[node name="Spot3" type="Marker3D" parent="MonsterSpots" unique_id=1266066321]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.178635, 0, -17.922249)
+
+[node name="Spot5" type="Marker3D" parent="MonsterSpots" unique_id=365088255]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.282421, 0, -1.3904703)
+
+[node name="Spot4" type="Marker3D" parent="MonsterSpots" unique_id=745055499]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.964161, 0, -26.080532)
+
+[node name="MonsterTrigger" parent="MonsterSpots" unique_id=484888824 node_paths=PackedStringArray("monster", "spawn_at") instance=ExtResource("4_w7r7j")]
+transform = Transform3D(0.07739515, 0, 0.82973146, 0, 0.83333313, 0, -0.82973146, 0, 0.07739515, 58.22944, 0.2166689, 4.009636)
+monster = NodePath("../../RoamingMonster")
+spawn_at = NodePath("../Spot3")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="MonsterSpots/MonsterTrigger" unique_id=1634188706]
+transform = Transform3D(1.1896495, -0.11144903, -0.11096733, 0.11144904, -5.117446e-08, 1.1948138, -0.110967346, -1.1948136, 0.010350686, 0, 3.6000018, 0)

@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bqorvqvhqaw2s"]
+
+[ext_resource type="PackedScene" uid="uid://b4lgjjfgpu7il" path="res://models/medical_props/boobs_storage.glb" id="1_q47q7"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_g4v7s"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g4v7s"]
+size = Vector3(2.8813477, 6.13501, 1)
+
+[node name="boobs_storage" unique_id=1033539322 instance=ExtResource("1_q47q7")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="2" unique_id=1753366702]
+physics_material_override = SubResource("PhysicsMaterial_g4v7s")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0" unique_id=1010078311]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 3.5570848, -6.325533, 12.27002, 1.581213)
+shape = SubResource("BoxShape3D_g4v7s")
