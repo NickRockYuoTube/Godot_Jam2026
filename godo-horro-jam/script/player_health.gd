@@ -13,6 +13,7 @@ const VIGNETTE_PULSE := 0.06      # ← НОВОЕ: амплитуда «пул�
 const VIGNETTE_FLASH := 0.6       # ← НОВОЕ: вспышка в момент удара (было 1.0)
 const VIGNETTE_DURATION := 10.0   # ← НОВОЕ: сколько секунд держится виньетка после удара
 const VIGNETTE_FADE_TIME := 2.0   # ← НОВОЕ: за сколько секунд до конца она плавно гаснет
+const DEATH_SCENE := "res://levels/BedEND.tscn"   # ← замени на свой путь (см. ниже)
 
 const SHADER_CODE := """
 shader_type canvas_item;
@@ -87,9 +88,20 @@ func _die() -> void:
 	died.emit()
 	create_tween().tween_property(self, "_blackout", 1.0, 1.2)   # затемнение
 	await get_tree().create_timer(RESTART_DELAY).timeout
-	get_tree().reload_current_scene()   # перезапуск уровня
+
+	# Переход на сцену концовки вместо перезапуска уровня
+	if ResourceLoader.exists(DEATH_SCENE):
+		get_tree().change_scene_to_file(DEATH_SCENE)
+	else:
+		push_warning("PlayerHealth: сцена '%s' не найдена, перезапускаю уровень" % DEATH_SCENE)
+		get_tree().reload_current_scene()
+
 	reset()
 	PowerSystem.reset()
+
+	# Концовка проявляется из черного, а не появляется рывком
+	_blackout = 1.0
+	create_tween().tween_property(self, "_blackout", 0.0, 1.0)
 
 func reset() -> void:
 	hp = MAX_HP

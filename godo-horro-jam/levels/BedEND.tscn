@@ -12,7 +12,9 @@
 [ext_resource type="PackedScene" uid="uid://cvbft7lcnputa" path="res://prefab/medical/table.tscn" id="9_yas3p"]
 [ext_resource type="FontFile" uid="uid://cvo0aw7dhu72u" path="res://title/Ustroke-Regular.ttf" id="10_4ovcn"]
 [ext_resource type="Shader" uid="uid://bvpq8vfw0hc1" path="res://material/VHS_Effect.gdshader" id="11_t8qpo"]
+[ext_resource type="Script" uid="uid://byqyrad2w28n8" path="res://script/achievement_popup.gd" id="14_h4d7h"]
 [ext_resource type="PackedScene" uid="uid://b86lp4yesjkmb" path="res://prefab/prop/ceiling_light_32.tscn" id="14_x7osf"]
+[ext_resource type="AudioStream" uid="uid://bquyf50210vnv" path="res://sound/pingAtch.ogg" id="15_jrcxk"]
 
 [sub_resource type="Environment" id="Environment_x033u"]
 ambient_light_source = 1
@@ -183,3 +185,9 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.9
 
 [node name="ceilingLight33" parent="." unique_id=1010501062 instance=ExtResource("14_x7osf")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -4.110531, 1.9332471, -2.2797813)
+
+[node name="AchievementPopup" type="Node" parent="." unique_id=2063887392]
+script = ExtResource("14_h4d7h")
+text = "Ending 2 Unlocked"
+font_size = 30
+sound = ExtResource("15_jrcxk")

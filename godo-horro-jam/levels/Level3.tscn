@@ -2195,6 +2195,83 @@ font = ExtResource("56_b53ax")
 font_size = 30
 outline_size = 0
 
+[node name="Label3D13" type="Label3D" parent="Decals" unique_id=904248153]
+transform = Transform3D(0.9844336, -0.17575684, 0, 0.17575684, 0.9844336, 0, 0, 0, 1, -20.50519, 3.4668028, 2.117445)
+text = "This isn't my body!"
+font = ExtResource("56_b53ax")
+font_size = 40
+outline_size = 0
+
+[node name="Label3D22" type="Label3D" parent="Decals" unique_id=1197094424]
+transform = Transform3D(0.99317795, 0.116608664, 0, -0.116608664, 0.99317795, 0, 0, 0, 1, -23.12438, 1.4011211, 2.117445)
+text = "This isn't my body!"
+font = ExtResource("56_b53ax")
+font_size = 40
+outline_size = 0
+
+[node name="Label3D17" type="Label3D" parent="Decals" unique_id=1486472336]
+transform = Transform3D(0.9833795, 0.18156223, 0, -0.18156223, 0.9833795, 0, 0, 0, 1, -23.655224, 2.4733524, 2.117445)
+text = "This can't be me! "
+font = ExtResource("56_b53ax")
+font_size = 40
+outline_size = 0
+
+[node name="Label3D14" type="Label3D" parent="Decals" unique_id=552805731]
+transform = Transform3D(0.9913365, -0.13134643, 0, 0.13134643, 0.9913365, 0, 0, 0, 1, -24.718424, 3.4482117, 2.117445)
+text = "This isn't me!"
+font = ExtResource("56_b53ax")
+font_size = 40
+outline_size = 0
+
+[node name="Label3D20" type="Label3D" parent="Decals" unique_id=1310824746]
+transform = Transform3D(0.9176124, -0.39747646, 0, 0.39747646, 0.9176124, 0, 0, 0, 1, -21.408474, 2.1287005, 2.117445)
+text = "This isn't me!"
+font = ExtResource("56_b53ax")
+font_size = 40
+outline_size = 0
+
+[node name="Label3D15" type="Label3D" parent="Decals" unique_id=202774918]
+transform = Transform3D(0.9945346, -0.10440714, 0, 0.10440714, 0.9945346, 0, 0, 0, 1, -22.989538, 3.6585858, 2.117445)
+text = "Not me! "
+font = ExtResource("56_b53ax")
+font_size = 40
+outline_size = 0
+
+[node name="Label3D23" type="Label3D" parent="Decals" unique_id=1860835582]
+transform = Transform3D(0.98521715, 0.17131028, 0, -0.17131028, 0.98521715, 0, 0, 0, 1, -20.394802, 2.8076622, 2.117445)
+text = "Not me! "
+font = ExtResource("56_b53ax")
+font_size = 40
+outline_size = 0
+
+[node name="Label3D16" type="Label3D" parent="Decals" unique_id=2042338229]
+transform = Transform3D(0.99826396, 0.05889917, 0, -0.05889917, 0.99826396, 0, 0, 0, 1, -20.26697, 1.6421561, 2.117445)
+text = "No! It's not me!"
+font = ExtResource("56_b53ax")
+font_size = 40
+outline_size = 0
+
+[node name="Label3D21" type="Label3D" parent="Decals" unique_id=116064899]
+transform = Transform3D(0.9762278, 0.21674709, 0, -0.21674709, 0.9762278, 0, 0, 0, 1, -22.517149, 2.8974016, 2.117445)
+text = "No! It's not me!"
+font = ExtResource("56_b53ax")
+font_size = 40
+outline_size = 0
+
+[node name="Label3D18" type="Label3D" parent="Decals" unique_id=566783666]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.089155, 2.8602765, 2.117445)
+text = "No!"
+font = ExtResource("56_b53ax")
+font_size = 40
+outline_size = 0
+
+[node name="Label3D19" type="Label3D" parent="Decals" unique_id=1216955291]
+transform = Transform3D(0.96590483, 0.25889766, 0, -0.25889766, 0.96590483, 0, 0, 0, 1, -21.539667, 1.1418744, 2.117445)
+text = "No!"
+font = ExtResource("56_b53ax")
+font_size = 40
+outline_size = 0
+
 [node name="Label3D5" type="Label3D" parent="Decals" unique_id=1748711612]
 transform = Transform3D(8.940697e-08, 0, 1, 0, 1, 0, -1, 0, 8.940697e-08, -29.894938, 1.119623, -4.8136005)
 text = "...go to hell!"
