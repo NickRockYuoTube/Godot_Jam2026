@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://cp7xej4h6xorp"]
+
+[ext_resource type="Script" uid="uid://6csad0hummpp" path="res://script/trigger_switch.gd" id="1_bahg0"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g4v7s"]
+
+[node name="TriggerSwitch" type="Area3D" unique_id=1302614125]
+script = ExtResource("1_bahg0")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=343289085]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 1, 0)
+shape = SubResource("BoxShape3D_g4v7s")

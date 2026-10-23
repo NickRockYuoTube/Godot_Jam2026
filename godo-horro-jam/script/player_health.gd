@@ -6,10 +6,13 @@ signal damaged(hp: int)
 signal died
 
 const MAX_HP := 2
-const INVULNERABLE_TIME := 1.5   # после удара игрока нельзя ударить повторно, сек
-const RESTART_DELAY := 2.5       # через сколько секунд после смерти перезапуск уровня
-const VIGNETTE_STEADY := 0.55    # постоянная сила виньетки при низком HP
-const VIGNETTE_PULSE := 0.12     # амплитуда «пульса» виньетки
+const INVULNERABLE_TIME := 1.5    # после удара игрока нельзя ударить повторно, сек
+const RESTART_DELAY := 2.5        # через сколько секунд после смерти перезапуск уровня
+const VIGNETTE_STEADY := 0.3      # ← НОВОЕ: постоянная сила виньетки (было 0.55)
+const VIGNETTE_PULSE := 0.06      # ← НОВОЕ: амплитуда «пульса» (было 0.12)
+const VIGNETTE_FLASH := 0.6       # ← НОВОЕ: вспышка в момент удара (было 1.0)
+const VIGNETTE_DURATION := 10.0   # ← НОВОЕ: сколько секунд держится виньетка после удара
+const VIGNETTE_FADE_TIME := 2.0   # ← НОВОЕ: за сколько секунд до конца она плавно гаснет
 
 const SHADER_CODE := """
 shader_type canvas_item;
@@ -29,8 +32,9 @@ var hp := MAX_HP
 var is_dead := false
 
 var _invulnerable_left := 0.0
-var _flash := 0.0        # короткая вспышка в момент удара
-var _blackout := 0.0     # затемнение при смерти
+var _vignette_left := 0.0   # ← НОВОЕ: сколько секунд ещё держится виньетка
+var _flash := 0.0           # короткая вспышка в момент удара
+var _blackout := 0.0        # затемнение при смерти
 var _time := 0.0
 var _material: ShaderMaterial
 
@@ -54,13 +58,15 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	_time += delta
 	_invulnerable_left = maxf(0.0, _invulnerable_left - delta)
+	_vignette_left = maxf(0.0, _vignette_left - delta)   # ← НОВОЕ
 	_flash = maxf(0.0, _flash - delta * 1.2)
 	_update_vignette()
 
 func _update_vignette() -> void:
 	var base := 0.0
-	if hp < MAX_HP and not is_dead:
-		base = VIGNETTE_STEADY + sin(_time * 3.0) * VIGNETTE_PULSE
+	if _vignette_left > 0.0 and not is_dead:   # ← НОВОЕ: работает по таймеру
+		var fade := clampf(_vignette_left / VIGNETTE_FADE_TIME, 0.0, 1.0)   # плавное гашение в конце
+		base = (VIGNETTE_STEADY + sin(_time * 3.0) * VIGNETTE_PULSE) * fade
 	_material.set_shader_parameter("intensity", clampf(base + _flash, 0.0, 1.0))
 	_material.set_shader_parameter("blackout", _blackout)
 
@@ -69,7 +75,8 @@ func take_damage(amount: int = 1) -> void:
 		return
 	hp = maxi(0, hp - amount)
 	_invulnerable_left = INVULNERABLE_TIME
-	_flash = 1.0
+	_vignette_left = VIGNETTE_DURATION   # ← НОВОЕ
+	_flash = VIGNETTE_FLASH              # ← НОВОЕ
 	health_changed.emit(hp, MAX_HP)
 	damaged.emit(hp)
 	if hp <= 0:
@@ -88,6 +95,7 @@ func reset() -> void:
 	hp = MAX_HP
 	is_dead = false
 	_flash = 0.0
+	_vignette_left = 0.0   # ← НОВОЕ
 	_blackout = 0.0
 	_invulnerable_left = 0.0
 	health_changed.emit(hp, MAX_HP)

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b02f1vbiv3o1q"]
 
 [ext_resource type="PackedScene" uid="uid://l31rkg07dguk" path="res://models/PSX modular house interior pack/props/radio.glb" id="1_3q6lu"]
-[ext_resource type="AudioStream" uid="uid://e43656qvf3rs" path="res://music/demo_radio_musicV2.ogg" id="2_3q6lu"]
+[ext_resource type="AudioStream" uid="uid://xics682aqaxi" path="res://music/havana radio.ogg" id="2_3q6lu"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_g4v7s"]
 
@@ -19,7 +19,7 @@ shape = SubResource("BoxShape3D_g4v7s")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." index="2" unique_id=1678906833]
 stream = ExtResource("2_3q6lu")
-volume_db = -15.0
+volume_db = -20.0
 autoplay = true
 max_distance = 50.0
 bus = &"Radio"

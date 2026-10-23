@@ -212,6 +212,7 @@ text = "Exit"
 icon_alignment = 1
 
 [node name="AuthorsPanel" type="PanelContainer" parent="Camera3D/CanvasLayer2/UI" unique_id=1022991610]
+visible = false
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5

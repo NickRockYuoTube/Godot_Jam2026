@@ -5,7 +5,9 @@
 [ext_resource type="PackedScene" uid="uid://8sjeg0mmytb5" path="res://prefab/floor_wood_22.tscn" id="3_mmhpo"]
 [ext_resource type="PackedScene" uid="uid://c7g7ap7iasjmo" path="res://prefab/wall_plaster_2.tscn" id="4_liotd"]
 [ext_resource type="PackedScene" uid="uid://cg0h6umf6yb0c" path="res://prefab/wall_door_wallpaper_2.tscn" id="5_10eaw"]
+[ext_resource type="PackedScene" uid="uid://b8he4r34s201g" path="res://scen/TeleportTrigger1.tscn" id="5_hmdqb"]
 [ext_resource type="PackedScene" uid="uid://bfohptvgwc84k" path="res://prefab/wall_door_plaster_2.tscn" id="6_ldhjt"]
+[ext_resource type="AudioStream" uid="uid://brm5qylt2uc0b" path="res://sound/epeleptic.ogg" id="7_6in6c"]
 [ext_resource type="PackedScene" uid="uid://lro4hvxrfar1" path="res://prefab/wall_wallpaper_2.tscn" id="7_oq8ku"]
 [ext_resource type="PackedScene" uid="uid://cfvlxgrxdihh" path="res://prefab/wall_door_tiles_2.tscn" id="8_ldhjt"]
 [ext_resource type="PackedScene" uid="uid://cd7oorgqt44g7" path="res://prefab/wall_tiles_2.tscn" id="9_oq8ku"]
@@ -51,6 +53,8 @@
 [ext_resource type="PackedScene" uid="uid://driwucwjkiiab" path="res://scen/RoamingMonster.tscn" id="49_33iar"]
 [ext_resource type="PackedScene" uid="uid://ci4ru6hdjpnga" path="res://scen/AudioTrigger1.tscn" id="49_rh35s"]
 [ext_resource type="AudioStream" uid="uid://qtq3swrpe6at" path="res://sound/scrimer.ogg" id="50_rh35s"]
+[ext_resource type="PackedScene" uid="uid://dmkhb74555pcm" path="res://prefab/end_cat.tscn" id="52_rh35s"]
+[ext_resource type="AudioStream" uid="uid://clnpuo5wbhp4g" path="res://music/horror ambient3.ogg" id="54_0k0h2"]
 
 [sub_resource type="Environment" id="Environment_oe68w"]
 ambient_light_source = 1
@@ -99,13 +103,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.982897, 0, 19.980312)
 [node name="doorWood20" parent="Door" unique_id=69325459 instance=ExtResource("32_2klfl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.017103, 0, 19.980312)
 
+[node name="doorWood21" parent="Door" unique_id=2018008581 instance=ExtResource("32_2klfl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.011414, 0, 19.980312)
+
 [node name="doorWood3" parent="Door" unique_id=1906445333 instance=ExtResource("32_2klfl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.982897, 0, 0)
 
 [node name="DoorTrigger" parent="Door/doorWood3" unique_id=226052448 node_paths=PackedStringArray("door") instance=ExtResource("33_mrbej")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2, -0.012724876, 0, 2.1762342)
 door = NodePath("..")
-auto_close_time = 10.0
+auto_close_time = 20.0
 
 [node name="doorWood5" parent="Door" unique_id=918140573 instance=ExtResource("32_2klfl")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 4)
@@ -114,7 +121,7 @@ open_angle = -90.0
 [node name="DoorTrigger2" parent="Door/doorWood5" unique_id=1412388424 node_paths=PackedStringArray("door") instance=ExtResource("33_mrbej")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2, 0, 0, 2.1762342)
 door = NodePath("..")
-auto_close_time = 10.0
+auto_close_time = 20.0
 
 [node name="doorWood6" parent="Door" unique_id=1998522996 instance=ExtResource("32_2klfl")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -11.999998, 0, 4)
@@ -123,25 +130,15 @@ open_angle = -90.0
 [node name="DoorTrigger2" parent="Door/doorWood6" unique_id=76973650 node_paths=PackedStringArray("door") instance=ExtResource("33_mrbej")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2, 0, 0, 2.1762342)
 door = NodePath("..")
-auto_close_time = 10.0
+auto_close_time = 20.0
 
 [node name="doorWood17" parent="Door" unique_id=1901813669 instance=ExtResource("32_2klfl")]
-transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, -11.999998, 0, 20)
-open_angle = -90.0
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -11.999998, 0, 24)
 
 [node name="DoorTrigger2" parent="Door/doorWood17" unique_id=2048895100 node_paths=PackedStringArray("door") instance=ExtResource("33_mrbej")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2, 0, 0, 2.1762342)
 door = NodePath("..")
-auto_close_time = 10.0
-
-[node name="doorWood21" parent="Door" unique_id=1874184195 instance=ExtResource("32_2klfl")]
-transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, -31.999998, 0, 20)
-open_angle = -90.0
-
-[node name="DoorTrigger2" parent="Door/doorWood21" unique_id=1914708704 node_paths=PackedStringArray("door") instance=ExtResource("33_mrbej")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2, 0, 0, 2.1762342)
-door = NodePath("..")
-auto_close_time = 10.0
+auto_close_time = 20.0
 
 [node name="doorWood18" parent="Door" unique_id=1582126281 instance=ExtResource("32_2klfl")]
 transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, 1.9073486e-06, 0, 20)
@@ -150,7 +147,20 @@ open_angle = -90.0
 [node name="DoorTrigger2" parent="Door/doorWood18" unique_id=1739223141 node_paths=PackedStringArray("door") instance=ExtResource("33_mrbej")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2, 0, 0, 2.1762342)
 door = NodePath("..")
-auto_close_time = 10.0
+one_shot = true
+react_to_monster = false
+
+[node name="TeleportTrigger1" parent="Door/doorWood18" unique_id=1073442305 node_paths=PackedStringArray("destination", "sound") instance=ExtResource("5_hmdqb")]
+transform = Transform3D(-4.3711395e-08, 0, -2.1199179, 0, 1, 0, 1, 0, -9.266455e-08, -0.08988953, 0.056756258, -1.2230949)
+destination = NodePath("Teleport")
+sound = NodePath("Horror")
+
+[node name="Teleport" type="Marker3D" parent="Door/doorWood18/TeleportTrigger1" unique_id=662258780]
+transform = Transform3D(-4.3711395e-08, 0, 1, 0, 1, 0, -1, 0, -4.3711374e-08, -2.861023e-06, 0, 15.094924)
+
+[node name="Horror" type="AudioStreamPlayer3D" parent="Door/doorWood18/TeleportTrigger1" unique_id=2109586754]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.47171637, 0.74330425, 0, 9.536743e-07)
+stream = ExtResource("7_6in6c")
 
 [node name="doorWood9" parent="Door" unique_id=1456046173 instance=ExtResource("32_2klfl")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -19.999998, 0, 8)
@@ -158,7 +168,7 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -19.
 [node name="DoorTrigger2" parent="Door/doorWood9" unique_id=960755251 node_paths=PackedStringArray("door") instance=ExtResource("33_mrbej")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2, 0, 0, 2.1762342)
 door = NodePath("..")
-auto_close_time = 10.0
+auto_close_time = 20.0
 
 [node name="doorWood15" parent="Door" unique_id=387654361 instance=ExtResource("32_2klfl")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -19.999998, 0, 16)
@@ -167,7 +177,7 @@ start_open = true
 [node name="DoorTrigger2" parent="Door/doorWood15" unique_id=2131310816 node_paths=PackedStringArray("door") instance=ExtResource("33_mrbej")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2, 0, 0, 2.1762342)
 door = NodePath("..")
-auto_close_time = 10.0
+auto_close_time = 20.0
 
 [node name="doorWood16" parent="Door" unique_id=1086212136 instance=ExtResource("32_2klfl")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -19.999998, 0, 8)
@@ -175,7 +185,7 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -19.
 [node name="DoorTrigger2" parent="Door/doorWood16" unique_id=282901461 node_paths=PackedStringArray("door") instance=ExtResource("33_mrbej")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2, 0, 0, 2.1762342)
 door = NodePath("..")
-auto_close_time = 10.0
+auto_close_time = 20.0
 
 [node name="doorWood10" parent="Door" unique_id=1095760262 instance=ExtResource("32_2klfl")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -19.999998, 0, 12)
@@ -184,7 +194,7 @@ start_open = true
 [node name="DoorTrigger2" parent="Door/doorWood10" unique_id=199843754 node_paths=PackedStringArray("door") instance=ExtResource("33_mrbej")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2, 0, 0, 2.1762342)
 door = NodePath("..")
-auto_close_time = 10.0
+auto_close_time = 20.0
 
 [node name="doorWood12" parent="Door" unique_id=808749007 instance=ExtResource("32_2klfl")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -7.999998, 0, 12)
@@ -192,7 +202,7 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -7.9
 [node name="DoorTrigger2" parent="Door/doorWood12" unique_id=2114528640 node_paths=PackedStringArray("door") instance=ExtResource("33_mrbej")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2, 0, 0, 2.1762342)
 door = NodePath("..")
-auto_close_time = 10.0
+auto_close_time = 20.0
 
 [node name="doorWood13" parent="Door" unique_id=1286912284 instance=ExtResource("32_2klfl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.999998, 0, 12)
@@ -200,7 +210,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.999998, 0, 12)
 [node name="DoorTrigger2" parent="Door/doorWood13" unique_id=403707548 node_paths=PackedStringArray("door") instance=ExtResource("33_mrbej")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2, 0, 0, 2.1762342)
 door = NodePath("..")
-auto_close_time = 10.0
+auto_close_time = 20.0
 
 [node name="doorWood14" parent="Door" unique_id=1424413658 instance=ExtResource("32_2klfl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.999998, 0, 12)
@@ -208,15 +218,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.999998, 0, 12)
 [node name="DoorTrigger2" parent="Door/doorWood14" unique_id=1571550494 node_paths=PackedStringArray("door") instance=ExtResource("33_mrbej")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2, 0, 0, 2.1762342)
 door = NodePath("..")
-auto_close_time = 10.0
+auto_close_time = 20.0
 
 [node name="doorWood11" parent="Door" unique_id=52001104 instance=ExtResource("32_2klfl")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -19.999998, 0, 16)
+open_angle = -90.0
 
 [node name="DoorTrigger2" parent="Door/doorWood11" unique_id=398607695 node_paths=PackedStringArray("door") instance=ExtResource("33_mrbej")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2, 0, 0, 2.1762342)
 door = NodePath("..")
-auto_close_time = 10.0
+auto_close_time = 20.0
 
 [node name="doorWood7" parent="Door" unique_id=2012497907 instance=ExtResource("32_2klfl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.999998, 0, 0)
@@ -717,12 +728,11 @@ transform = Transform3D(0.4455185, 0, 0, 0, 1, 0, 0, 0, 1.302274, 103.03648, -0.
 monster = NodePath("../../../RoamingMonster")
 spawn_at = NodePath("../Spot1")
 
-[node name="AudioTrigger1" parent="LevelExit/MonsterSpots" unique_id=1428236419 instance=ExtResource("49_rh35s")]
+[node name="AudioTrigger1" parent="LevelExit/MonsterSpots" unique_id=1913536072 instance=ExtResource("49_rh35s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.71428573, 130.89624, -0.03678572, 1.6071427)
 
-[node name="RoamingMonster" parent="." unique_id=1662520767 node_paths=PackedStringArray("spots_root", "agent", "vanish_sound") instance=ExtResource("49_33iar")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.4, -50.220154, -0.30781388, 4.068681)
-spots_root = NodePath("")
+[node name="RoamingMonster" parent="." unique_id=1662520767 node_paths=PackedStringArray("agent", "vanish_sound") instance=ExtResource("49_33iar")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50.220154, -0.30781388, 4.068681)
 agent = NodePath("NavigationAgent3D2")
 vanish_sound = NodePath("VanishSound")
 debug_light = true
@@ -1150,7 +1160,7 @@ transform = Transform3D(-1, 0, 2.6226832e-07, 0, 1, 0, -2.6226832e-07, 0, -1, -2
 transform = Transform3D(-1, 0, 2.6226832e-07, 0, 1, 0, -2.6226832e-07, 0, -1, -20, 0, -11.999999)
 
 [node name="wallPlaster36" parent="NavigationRegion3D/Wall" unique_id=1075229144 instance=ExtResource("4_liotd")]
-transform = Transform3D(-1, 0, 2.6226832e-07, 0, 1, 0, -2.6226832e-07, 0, -1, -12, 0, -11.999998)
+transform = Transform3D(-1, 0, 2.6226832e-07, 0, 1, 0, -2.6226832e-07, 0, -1, -12.000341, 0, -11.999965)
 
 [node name="wallPlaster45" parent="NavigationRegion3D/Wall" unique_id=1761527034 instance=ExtResource("4_liotd")]
 transform = Transform3D(-1, 0, 2.6226832e-07, 0, 1, 0, -2.6226832e-07, 0, -1, -40, 0, 11.999999)
@@ -1841,9 +1851,6 @@ spot_angle = 52.046726
 [node name="bed" parent="NavigationRegion3D/Props" unique_id=1064373612 instance=ExtResource("13_52gcn")]
 transform = Transform3D(-1.3113417e-08, 0, -0.3, 0, 0.3, 0, 0.3, 0, -1.3113417e-08, -36.10099, 0.06012702, -4.5682406)
 
-[node name="bed7" parent="NavigationRegion3D/Props" unique_id=90415208 instance=ExtResource("13_52gcn")]
-transform = Transform3D(-1.3113417e-08, 0, -0.3, 0, 0.3, 0, 0.3, 0, -1.3113417e-08, -23.95801, 0.06012702, 6.123623)
-
 [node name="bed2" parent="NavigationRegion3D/Props" unique_id=2119207992 instance=ExtResource("13_52gcn")]
 transform = Transform3D(-1.3113417e-08, 0, -0.3, 0, 0.3, 0, 0.3, 0, -1.3113417e-08, -20.126575, 0.06012702, -2.3925142)
 
@@ -1881,7 +1888,7 @@ transform = Transform3D(-6.5567085e-09, 0, -0.15, 0, 0.15, 0, 0.15, 0, -6.556708
 transform = Transform3D(-6.5567085e-09, 0, -0.15, 0, 0.15, 0, 0.15, 0, -6.5567085e-09, -49.27759, -0.743186, 11.318098)
 
 [node name="scameika16" parent="NavigationRegion3D/Props" unique_id=1250251675 instance=ExtResource("18_t3rlc")]
-transform = Transform3D(-6.5567085e-09, 0, -0.15, 0, 0.15, 0, 0.15, 0, -6.5567085e-09, -54.27759, -0.743186, 11.318098)
+transform = Transform3D(0.122814775, 0, -0.086119264, 0, 0.14999998, 0, 0.086119264, 0, 0.122814775, -53.097122, -0.743186, 13.064598)
 
 [node name="scameika12" parent="NavigationRegion3D/Props" unique_id=724806950 instance=ExtResource("18_t3rlc")]
 transform = Transform3D(-0.12371217, 0, -0.08482509, 0, 0.14999999, 0, 0.08482509, 0, -0.12371217, -19.524647, -0.743186, 11.215717)
@@ -2046,13 +2053,13 @@ transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, -16.001532, 0, -6.61
 transform = Transform3D(0.025, 0, 0, 0, 0.025, 0, 0, 0, 0.025, -51.492424, 2.2171025, -6.10232)
 
 [node name="monitor" parent="NavigationRegion3D/Props" unique_id=1404918551 instance=ExtResource("38_x8iti")]
-transform = Transform3D(-0.03540117, 0, 0.018621415, 0, 0.04, 0, -0.018621415, 0, -0.03540117, -34.93554, 0.050499916, -3.0135925)
+transform = Transform3D(-0.03540117, 0, 0.018621415, 0, 0.04, 0, -0.018621415, 0, -0.03540117, -34.93554, -0.293204, -3.0135925)
 
 [node name="monitor2" parent="NavigationRegion3D/Props" unique_id=681837449 instance=ExtResource("38_x8iti")]
-transform = Transform3D(-0.03316596, 0, -0.022361103, 0, 0.04, 0, 0.022361103, 0, -0.03316596, -34.93554, 0.050499916, 3.2822564)
+transform = Transform3D(-0.03316596, 0, -0.022361103, 0, 0.04, 0, 0.022361103, 0, -0.03316596, -34.93554, -0.2926296, 3.2822564)
 
 [node name="monitor3" parent="NavigationRegion3D/Props" unique_id=1574971360 instance=ExtResource("38_x8iti")]
-transform = Transform3D(0.019555964, 0, -0.034893613, 0, 0.04, 0, 0.034893613, 0, 0.019555964, -24.6183, 0.050499916, 2.9540515)
+transform = Transform3D(0.019555964, 0, -0.034893613, 0, 0.04, 0, 0.034893613, 0, 0.019555964, -24.6183, -0.32640243, 2.9540515)
 
 [node name="monitor4" parent="NavigationRegion3D/Props" unique_id=622218467 instance=ExtResource("38_x8iti")]
 transform = Transform3D(0.0331527, 0, -0.022380766, 0, 0.04, 0, 0.022380766, 0, 0.0331527, -52.645405, 0.050499916, -8.97567)
@@ -2070,10 +2077,10 @@ transform = Transform3D(0.07, 0, 0, 0, 0.07, 0, 0, 0, 0.07, -25.49176, 0.0504999
 transform = Transform3D(0.07, 0, 0, 0, 0.07, 0, 0, 0, 0.07, -18.642649, 0.050499916, 9.352373)
 
 [node name="o13" parent="NavigationRegion3D/Props" unique_id=893118496 instance=ExtResource("39_3ikim")]
-transform = Transform3D(0.053673424, 0, -0.044935104, 0, 0.07, 0, 0.044935104, 0, 0.053673424, -19.64741, 0.050499916, 9.167657)
+transform = Transform3D(0.053673424, 0, -0.044935104, 0, 0.07, 0, 0.044935104, 0, 0.053673424, -22.367968, 0.050499916, 8.487804)
 
 [node name="o14" parent="NavigationRegion3D/Props" unique_id=282115571 instance=ExtResource("39_3ikim")]
-transform = Transform3D(-0.00073364296, 0, 0.069996156, 0, 0.07, 0, -0.069996156, 0, -0.00073364296, -19.227757, 0.050499916, 8.20583)
+transform = Transform3D(-0.00073364296, 0, 0.069996156, 0, 0.07, 0, -0.069996156, 0, -0.00073364296, -20.79733, 0.050499916, 8.20583)
 
 [node name="o11" parent="NavigationRegion3D/Props" unique_id=952794532 instance=ExtResource("39_3ikim")]
 transform = Transform3D(0.0022270204, 0, -0.069964565, 0, 0.06999999, 0, 0.069964565, 0, 0.0022270204, -26.354479, 0.050499916, 6.5837727)
@@ -2085,10 +2092,10 @@ transform = Transform3D(0.013201218, 0, 0.06874393, 0, 0.07, 0, -0.06874393, 0, 
 transform = Transform3D(0.06403085, 0, -0.028285153, 0, 0.07, 0, 0.028285153, 0, 0.06403085, -57.064064, 0.050500154, -7.1707907)
 
 [node name="o5" parent="NavigationRegion3D/Props" unique_id=753508119 instance=ExtResource("39_3ikim")]
-transform = Transform3D(0.06449333, 0, -0.02721416, 0, 0.07, 0, 0.02721416, 0, 0.06449333, -56.68861, 0.050500154, -8.145586)
+transform = Transform3D(0.06449333, 0, -0.02721416, 0, 0.07, 0, 0.02721416, 0, 0.06449333, -53.96852, 0.050500154, 13.10851)
 
 [node name="o6" parent="NavigationRegion3D/Props" unique_id=77399625 instance=ExtResource("39_3ikim")]
-transform = Transform3D(0.06345116, 0, 0.02956265, 0, 0.07, 0, -0.02956265, 0, 0.06345116, -56.00664, 0.050500393, -7.310774)
+transform = Transform3D(0.06345116, 0, 0.02956265, 0, 0.07, 0, -0.02956265, 0, 0.06345116, -52.591553, 0.050500393, 13.226363)
 
 [node name="o7" parent="NavigationRegion3D/Props" unique_id=240844202 instance=ExtResource("39_3ikim")]
 transform = Transform3D(0.054576177, 0, 0.04383424, 0, 0.07, 0, -0.04383424, 0, 0.054576177, -55.30187, 0.050500393, -8.772661)
@@ -2101,3 +2108,25 @@ transform = Transform3D(-1.9670126e-09, 0, 0.045, 0, 0.045, 0, -0.045, 0, -1.967
 
 [node name="table6" parent="NavigationRegion3D/Props" unique_id=964317828 instance=ExtResource("25_lwl86")]
 transform = Transform3D(0.018881375, 0.002994851, 0.09815562, 0.00013977588, 0.099952586, -0.0030765657, -0.09820121, 0.0007180938, 0.018868236, -46.61861, 0.05049944, -8.914777)
+
+[node name="end_cat" parent="." unique_id=1404307506 instance=ExtResource("52_rh35s")]
+transform = Transform3D(-1.3113416e-08, 0, 0.29999998, 0, 0.29999998, 0, -0.29999998, 0, -1.3113416e-08, -23.946526, 0.052425116, 4.7343225)
+
+[node name="MonsterTrigger" parent="." unique_id=807571381 node_paths=PackedStringArray("monster") instance=ExtResource("48_fvkjy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56, 1, 6)
+monster = NodePath("../RoamingMonster")
+action = 1
+
+[node name="AudioTrigger1" parent="." unique_id=1460263439 node_paths=PackedStringArray("player") instance=ExtResource("49_rh35s")]
+transform = Transform3D(0.5, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0, -12)
+player = NodePath("AudioStreamPlayer3D")
+one_shot = true
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="AudioTrigger1" unique_id=785200694]
+stream = ExtResource("54_0k0h2")
+volume_db = -5.0
+
+[node name="AudioTrigger2" parent="." unique_id=172194956 node_paths=PackedStringArray("player") instance=ExtResource("49_rh35s")]
+transform = Transform3D(0.3, 0, 0, 0, 1, 0, 0, 0, 1, -26, 0, 12)
+player = NodePath("../AudioTrigger1/AudioStreamPlayer3D")
+action = 1

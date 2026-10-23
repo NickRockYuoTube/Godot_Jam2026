@@ -40,6 +40,7 @@
 [ext_resource type="PackedScene" uid="uid://ci4ru6hdjpnga" path="res://scen/AudioTrigger1.tscn" id="38_xgs4t"]
 [ext_resource type="FontFile" uid="uid://cvo0aw7dhu72u" path="res://title/Ustroke-Regular.ttf" id="39_0y73d"]
 [ext_resource type="PackedScene" uid="uid://dv8kukdnkjyup" path="res://scen/LevelExit.tscn" id="40_d0msd"]
+[ext_resource type="AudioStream" uid="uid://c32n1gmxvtxs4" path="res://sound/water.ogg" id="41_e8o2b"]
 
 [sub_resource type="Environment" id="Environment_g4v7s"]
 ambient_light_source = 2
@@ -923,3 +924,11 @@ outline_size = 0
 [node name="LevelExit" parent="." unique_id=2014359388 instance=ExtResource("40_d0msd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.7058175, -29.165785, 0.0667547, 32.048782)
 next_level = "uid://ch73p45bd8vc2"
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=474462656]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.97628987, 1.3590131, 28.569248)
+stream = ExtResource("41_e8o2b")
+volume_db = -10.0
+autoplay = true
+max_distance = 15.0
+bus = &"Radio"

@@ -1,0 +1,185 @@
+[gd_scene format=3 uid="uid://csegs1ir5b0l5"]
+
+[ext_resource type="Script" uid="uid://by3iruk1kl1er" path="res://script/auto_level_change.gd" id="1_8oqu3"]
+[ext_resource type="PackedScene" uid="uid://gbo3fdxxg12w" path="res://prefab/floor_carpet_2.tscn" id="2_omjbl"]
+[ext_resource type="AudioStream" uid="uid://c8ax4d5lc6lwg" path="res://sound/BeadEND.ogg" id="2_x7osf"]
+[ext_resource type="PackedScene" uid="uid://c7g7ap7iasjmo" path="res://prefab/wall_plaster_2.tscn" id="3_x7osf"]
+[ext_resource type="PackedScene" uid="uid://dxvml68jn5k6" path="res://prefab/ceiling_plaster_22.tscn" id="4_h4d7h"]
+[ext_resource type="PackedScene" uid="uid://dmkhb74555pcm" path="res://prefab/end_cat.tscn" id="5_jrcxk"]
+[ext_resource type="PackedScene" uid="uid://ddv84nku4ccs1" path="res://prefab/prop/ceiling_light_2.tscn" id="6_53v62"]
+[ext_resource type="PackedScene" uid="uid://21cresb0t4xm" path="res://prefab/corner_pillar_plaster_2.tscn" id="7_udf6x"]
+[ext_resource type="PackedScene" uid="uid://jy5t8pxnopbp" path="res://prefab/medical/monitor.tscn" id="8_ld3kh"]
+[ext_resource type="PackedScene" uid="uid://cvbft7lcnputa" path="res://prefab/medical/table.tscn" id="9_yas3p"]
+[ext_resource type="FontFile" uid="uid://cvo0aw7dhu72u" path="res://title/Ustroke-Regular.ttf" id="10_4ovcn"]
+[ext_resource type="Shader" uid="uid://bvpq8vfw0hc1" path="res://material/VHS_Effect.gdshader" id="11_t8qpo"]
+[ext_resource type="PackedScene" uid="uid://b86lp4yesjkmb" path="res://prefab/prop/ceiling_light_32.tscn" id="14_x7osf"]
+
+[sub_resource type="Environment" id="Environment_x033u"]
+ambient_light_source = 1
+fog_enabled = true
+fog_light_color = Color(0.011764706, 0.011764706, 0.039215688, 1)
+fog_density = 0.15
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_vnxhk"]
+
+[sub_resource type="Compositor" id="Compositor_nqlg3"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nqlg3"]
+shader = ExtResource("11_t8qpo")
+shader_parameter/scanline_density = 2000.0
+shader_parameter/scanline_intensity = 0.15
+shader_parameter/chromatic_aberration = 0.003
+shader_parameter/noise_intensity = 0.08
+shader_parameter/vignette_intensity = 0.5
+shader_parameter/color_bleed = 0.3
+shader_parameter/desaturation = 0.2
+
+[node name="GoorEnd" type="Node3D" unique_id=850110074]
+script = ExtResource("1_8oqu3")
+music = ExtResource("2_x7osf")
+next_level = "uid://c8ok3s27eila1"
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1701159145]
+environment = SubResource("Environment_x033u")
+camera_attributes = SubResource("CameraAttributesPractical_vnxhk")
+compositor = SubResource("Compositor_nqlg3")
+
+[node name="Room" type="Node3D" parent="." unique_id=1086369787]
+
+[node name="floorCarpet2" parent="Room" unique_id=1862307730 instance=ExtResource("2_omjbl")]
+
+[node name="floorCarpet6" parent="Room" unique_id=1234542186 instance=ExtResource("2_omjbl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
+
+[node name="floorCarpet3" parent="Room" unique_id=1502890747 instance=ExtResource("2_omjbl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
+
+[node name="floorCarpet4" parent="Room" unique_id=1813396166 instance=ExtResource("2_omjbl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -4)
+
+[node name="floorCarpet5" parent="Room" unique_id=843905637 instance=ExtResource("2_omjbl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
+
+[node name="wallPlaster2" parent="Room" unique_id=1185111535 instance=ExtResource("3_x7osf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
+
+[node name="wallPlaster3" parent="Room" unique_id=1624846970 instance=ExtResource("3_x7osf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
+
+[node name="wallPlaster4" parent="Room" unique_id=508726932 instance=ExtResource("3_x7osf")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -4, 0, -4)
+
+[node name="wallPlaster5" parent="Room" unique_id=1472041956 instance=ExtResource("3_x7osf")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -4, 0, 0)
+
+[node name="wallPlaster11" parent="Room" unique_id=1027093669 instance=ExtResource("3_x7osf")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 4)
+
+[node name="wallPlaster6" parent="Room" unique_id=180230712 instance=ExtResource("3_x7osf")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, -4)
+
+[node name="wallPlaster7" parent="Room" unique_id=1625013865 instance=ExtResource("3_x7osf")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -4, 0, -4)
+
+[node name="wallPlaster8" parent="Room" unique_id=883101825 instance=ExtResource("3_x7osf")]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 0, 0, 0)
+
+[node name="wallPlaster10" parent="Room" unique_id=1959520644 instance=ExtResource("3_x7osf")]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 0, 0, 4)
+
+[node name="wallPlaster9" parent="Room" unique_id=8889510 instance=ExtResource("3_x7osf")]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 1.1920929e-07, 0, -4)
+
+[node name="ceilingPlaster22" parent="Room" unique_id=402794791 instance=ExtResource("4_h4d7h")]
+
+[node name="ceilingPlaster26" parent="Room" unique_id=375174010 instance=ExtResource("4_h4d7h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
+
+[node name="ceilingPlaster23" parent="Room" unique_id=1754093487 instance=ExtResource("4_h4d7h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
+
+[node name="ceilingPlaster24" parent="Room" unique_id=1134608606 instance=ExtResource("4_h4d7h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -4)
+
+[node name="ceilingPlaster25" parent="Room" unique_id=1625139848 instance=ExtResource("4_h4d7h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
+
+[node name="end_cat" parent="." unique_id=1404307506 instance=ExtResource("5_jrcxk")]
+transform = Transform3D(-0.3, 0, -4.5298744e-08, 0, 0.3, 0, 4.5298744e-08, 0, -0.3, -3.663822, 0, -0.095924556)
+
+[node name="ceilingLight3" parent="." unique_id=1842740641 instance=ExtResource("6_53v62")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.34116775, 1.9394927, 3.5752168)
+
+[node name="cornerPillarPlaster2" parent="." unique_id=264749202 instance=ExtResource("7_udf6x")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -3.8192031, -2.3841858e-07, 3.8474302)
+
+[node name="monitor" parent="." unique_id=1404918551 instance=ExtResource("8_ld3kh")]
+transform = Transform3D(0.02828427, 0, 0.02828427, 0, 0.04, 0, -0.02828427, 0, 0.02828427, -5, -0.29080558, 1)
+
+[node name="table" parent="." unique_id=1975726703 instance=ExtResource("9_yas3p")]
+transform = Transform3D(-4.371139e-09, 0, 0.1, 0, 0.1, 0, -0.1, 0, -4.371139e-09, 0.9725554, 0.01619351, 4.2160125)
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=428017538]
+transform = Transform3D(-0.7071068, -0.18301272, 0.6830128, 0, 0.9659259, 0.25881907, -0.7071068, 0.18301272, -0.6830127, -0.25245643, 2.77906, -3.6335921)
+fov = 65.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Camera3D" unique_id=1495226908]
+
+[node name="Control" type="Control" parent="Camera3D/CanvasLayer" unique_id=1935147338]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Camera3D/CanvasLayer/Control" unique_id=1916234475]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -184.0
+offset_top = 64.0
+offset_right = 184.0
+offset_bottom = 138.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("10_4ovcn")
+theme_override_font_sizes/font_size = 80
+text = "The END"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="Camera3D/CanvasLayer/Control" unique_id=380921118]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -363.5
+offset_top = 478.0
+offset_right = 363.5
+offset_bottom = 595.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("10_4ovcn")
+theme_override_font_sizes/font_size = 60
+text = "We are the result 
+of our mistakes"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="Camera3D/CanvasLayer/Control" unique_id=1667509751]
+material = SubResource("ShaderMaterial_nqlg3")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 1, 1, 0)
+metadata/_edit_use_anchors_ = true
+
+[node name="ceilingLight32" parent="." unique_id=864440962 instance=ExtResource("14_x7osf")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.9233656, 1.9332471, -1.7926686)
+
+[node name="ceilingLight33" parent="." unique_id=1010501062 instance=ExtResource("14_x7osf")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -4.110531, 1.9332471, -2.2797813)

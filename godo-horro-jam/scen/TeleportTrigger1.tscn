@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b8he4r34s201g"]
 
 [ext_resource type="Script" uid="uid://ce54io6vxmvox" path="res://script/teleport_trigger.gd" id="1_67dx5"]
+[ext_resource type="AudioStream" uid="uid://brm5qylt2uc0b" path="res://sound/epeleptic.ogg" id="2_pxaxt"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_g4v7s"]
 
@@ -10,3 +11,9 @@ script = ExtResource("1_67dx5")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=448972261]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 1, 0)
 shape = SubResource("BoxShape3D_g4v7s")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=794035521]
+
+[node name="AudioStreamPlayer3D2" type="AudioStreamPlayer3D" parent="." unique_id=1794791889]
+stream = ExtResource("2_pxaxt")
+bus = &"Wheelchair"

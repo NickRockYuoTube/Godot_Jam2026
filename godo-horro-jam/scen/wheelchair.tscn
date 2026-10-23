@@ -32,7 +32,7 @@ shader_parameter/desaturation = 0.2
 size = Vector3(1, 2.319458, 1.8027344)
 
 [node name="Wheelchair" type="CharacterBody3D" unique_id=311727349]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.24693179)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.35459363)
 script = ExtResource("1_0vjwd")
 forward_speed = null
 back_speed = null

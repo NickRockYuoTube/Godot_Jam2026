@@ -2,9 +2,10 @@ extends Area3D
 class_name TeleportTrigger
 
 @export var destination: Marker3D          # куда телепортировать игрока
+@export var sound: Node                    # AudioStreamPlayer (или 3D): гул на время тряски
 @export var shake_time := 5.0              # сколько секунд трясётся камера
 @export var shake_strength := 0.04         # сила тряски в конце (радианы, 0.04 ≈ 2.3°)
-@export var fade_out_time := 1.0           # затемнение в конце тряски, сек
+@export var fade_out_time := 1.0           # затемнение в конце тряски, сек (0 = резкий обрыв)
 @export var fade_in_time := 1.5            # проявление после телепорта, сек
 @export var lock_controls := true          # блокировать управление на время эффекта
 @export var one_shot := true
@@ -43,13 +44,20 @@ func _run(chair: Wheelchair) -> void:
 		_cam_base_rot = _camera.rotation
 	_create_fade_overlay()
 
+	# Гул стартует вместе с тряской
+	var p = sound
+	if p and is_instance_valid(p):
+		p.play()
+
 	# Тряска: сила растёт к концу, в последние fade_out_time секунд экран гаснет
 	var duration := maxf(shake_time, 0.01)
 	var tween := create_tween()
 	tween.tween_method(_shake_step, 0.0, duration, duration)
 	await tween.finished
 
-	# Телепорт
+	# Хлоп: звук обрывается, игрок в другом месте
+	if p and is_instance_valid(p):
+		p.stop()
 	chair.global_position = destination.global_position
 	chair.global_rotation = Vector3(0.0, destination.global_rotation.y, 0.0)
 	chair.velocity = Vector3.ZERO
