@@ -55,6 +55,7 @@
 [ext_resource type="AudioStream" uid="uid://qtq3swrpe6at" path="res://sound/scrimer.ogg" id="50_rh35s"]
 [ext_resource type="PackedScene" uid="uid://dmkhb74555pcm" path="res://prefab/end_cat.tscn" id="52_rh35s"]
 [ext_resource type="AudioStream" uid="uid://clnpuo5wbhp4g" path="res://music/horror ambient3.ogg" id="54_0k0h2"]
+[ext_resource type="FontFile" uid="uid://cvo0aw7dhu72u" path="res://title/Ustroke-Regular.ttf" id="56_b53ax"]
 
 [sub_resource type="Environment" id="Environment_oe68w"]
 ambient_light_source = 1
@@ -2062,7 +2063,7 @@ transform = Transform3D(-0.03316596, 0, -0.022361103, 0, 0.04, 0, 0.022361103, 0
 transform = Transform3D(0.019555964, 0, -0.034893613, 0, 0.04, 0, 0.034893613, 0, 0.019555964, -24.6183, -0.32640243, 2.9540515)
 
 [node name="monitor4" parent="NavigationRegion3D/Props" unique_id=622218467 instance=ExtResource("38_x8iti")]
-transform = Transform3D(0.0331527, 0, -0.022380766, 0, 0.04, 0, 0.022380766, 0, 0.0331527, -52.645405, 0.050499916, -8.97567)
+transform = Transform3D(0.0331527, 0, -0.022380766, 0, 0.04, 0, 0.022380766, 0, 0.0331527, -52.645405, -0.26168817, -8.97567)
 
 [node name="o2" parent="NavigationRegion3D/Props" unique_id=45061622 instance=ExtResource("39_3ikim")]
 transform = Transform3D(0.07, 0, 0, 0, 0.07, 0, 0, 0, 0.07, -52.990433, 0.050499916, -2.9404578)
@@ -2130,3 +2131,112 @@ volume_db = -5.0
 transform = Transform3D(0.3, 0, 0, 0, 1, 0, 0, 0, 1, -26, 0, 12)
 player = NodePath("../AudioTrigger1/AudioStreamPlayer3D")
 action = 1
+
+[node name="Decals" type="Node3D" parent="." unique_id=637110389]
+
+[node name="Label3D" type="Label3D" parent="Decals" unique_id=1303222783]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.708674, 0.8845632, -5.8902564)
+text = "White 
+ceiling 
+and the 
+smell 
+of 
+bleach..."
+font = ExtResource("56_b53ax")
+font_size = 30
+outline_size = 0
+
+[node name="Label3D2" type="Label3D" parent="Decals" unique_id=970901075]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -6.1206174, 0.8845632, -5.1141367)
+text = "...here 
+again"
+font = ExtResource("56_b53ax")
+font_size = 30
+outline_size = 0
+
+[node name="Label3D3" type="Label3D" parent="Decals" unique_id=1327523841]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -18.111599, 1.129628, -7.3973126)
+text = "God, if you exist, 
+hear me..."
+font = ExtResource("56_b53ax")
+font_size = 30
+outline_size = 0
+
+[node name="Label3D4" type="Label3D" parent="Decals" unique_id=1488019953]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -29.101881, 1.063827, -2.1036615)
+text = "And if there 
+is no God..."
+font = ExtResource("56_b53ax")
+font_size = 30
+outline_size = 0
+
+[node name="Label3D10" type="Label3D" parent="Decals" unique_id=551815351]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -30.062622, 1.3561277, -10.106923)
+text = "The doctor said,
+\"You'll get used to it.\"
+Get used to what?"
+font = ExtResource("56_b53ax")
+font_size = 30
+outline_size = 0
+
+[node name="Label3D12" type="Label3D" parent="Decals" unique_id=429465017]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -64.78808, 1.6603328, 1.8994594)
+text = "Up. 
+Always up. 
+Or down?"
+font = ExtResource("56_b53ax")
+font_size = 40
+outline_size = 0
+
+[node name="Label3D11" type="Label3D" parent="Decals" unique_id=1637017006]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.729925, 1.5840446, 10.10895)
+text = "Ward 314. Mine."
+font = ExtResource("56_b53ax")
+font_size = 30
+outline_size = 0
+
+[node name="Label3D5" type="Label3D" parent="Decals" unique_id=1748711612]
+transform = Transform3D(8.940697e-08, 0, 1, 0, 1, 0, -1, 0, 8.940697e-08, -29.894938, 1.119623, -4.8136005)
+text = "...go to hell!"
+font = ExtResource("56_b53ax")
+font_size = 30
+outline_size = 0
+
+[node name="Label3D6" type="Label3D" parent="Decals" unique_id=1391711073]
+transform = Transform3D(-1.9841906e-09, 0, -1, 0, 1, 0, 1, 0, -1.9841906e-09, -34.101692, 2.1911385, -5.159853)
+modulate = Color(0.5333242, 1.0949746e-06, 2.8878452e-07, 1)
+text = "DO YOU KNOW 
+WHO I AM?
+"
+font = ExtResource("56_b53ax")
+font_size = 40
+outline_size = 0
+
+[node name="Label3D7" type="Label3D" parent="Decals" unique_id=236476552]
+transform = Transform3D(-1.9841906e-09, 0, -1, 0, 1, 0, 1, 0, -1.9841906e-09, -34.101692, 2.1911385, 5.213595)
+modulate = Color(0.5333242, 1.0949746e-06, 2.8878452e-07, 1)
+text = "LIGHT WILL 
+NOT SAVE...
+"
+font = ExtResource("56_b53ax")
+font_size = 40
+outline_size = 0
+
+[node name="Label3D8" type="Label3D" parent="Decals" unique_id=196390651]
+transform = Transform3D(-7.351372e-08, 0, 1.0000001, 0, 1, 0, -1.0000001, 0, -7.351372e-08, -53.89347, 0.481238, -8.698423)
+text = "I don't remember
+ the diagnosis.
+"
+font = ExtResource("56_b53ax")
+font_size = 30
+outline_size = 0
+
+[node name="Label3D9" type="Label3D" parent="Decals" unique_id=806239384]
+transform = Transform3D(1.0000001, 0, 2.9802326e-08, 0, 1, 0, -2.9802326e-08, 0, 1.0000001, -47.573536, 1.9462476, -9.885271)
+text = "I remember 
+the word: 
+Irreversible.
+"
+font = ExtResource("56_b53ax")
+font_size = 30
+outline_size = 0

@@ -883,15 +883,15 @@ outline_size = 0
 
 [node name="Label3D4" type="Label3D" parent="Decals" unique_id=1203326098]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.253394, -0.12158227, 3.994588)
-text = "...that day"
+text = "...those days"
 font = ExtResource("39_0y73d")
 font_size = 30
 outline_size = 0
 
 [node name="Label3D5" type="Label3D" parent="Decals" unique_id=643175522]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 26.945196, 0.099601746, 3.7909229)
-text = "It stinks 
-here"
+text = "This place 
+stinks"
 font = ExtResource("39_0y73d")
 font_size = 30
 outline_size = 0
@@ -899,24 +899,24 @@ outline_size = 0
 [node name="Label3D6" type="Label3D" parent="Decals" unique_id=1610469151]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.517178, 0.4223379, 8.002186)
 text = "I’ve always 
-been a stranger"
+been an outsider."
 font = ExtResource("39_0y73d")
 font_size = 30
 outline_size = 0
 
 [node name="Label3D7" type="Label3D" parent="Decals" unique_id=699682097]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 40.080456, -1.109687, 15.784298)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 40.055637, -1.0353621, 15.784298)
 text = "Now I’m in 
-someone 
-else’s body"
+a stranger's 
+body."
 font = ExtResource("39_0y73d")
 font_size = 30
 outline_size = 0
 
 [node name="Label3D8" type="Label3D" parent="Decals" unique_id=528462952]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 28.681679, -0.0660975, 26.86752)
-text = "It looks like I 
-need to go here"
+text = "Seems like I'm 
+meant to be here... "
 font = ExtResource("39_0y73d")
 font_size = 30
 outline_size = 0

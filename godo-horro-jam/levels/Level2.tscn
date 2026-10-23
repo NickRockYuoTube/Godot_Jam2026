@@ -98,6 +98,7 @@
 [ext_resource type="PackedScene" uid="uid://b8he4r34s201g" path="res://scen/TeleportTrigger1.tscn" id="96_cdvfa"]
 [ext_resource type="PackedScene" uid="uid://dv8kukdnkjyup" path="res://scen/LevelExit.tscn" id="97_kate0"]
 [ext_resource type="AudioStream" uid="uid://brm5qylt2uc0b" path="res://sound/epeleptic.ogg" id="97_v0e18"]
+[ext_resource type="FontFile" uid="uid://cvo0aw7dhu72u" path="res://title/Ustroke-Regular.ttf" id="99_1jsec"]
 
 [sub_resource type="Environment" id="Environment_oe68w"]
 ambient_light_source = 1
@@ -611,6 +612,7 @@ transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, -24,
 
 [node name="OmniLight3D" type="OmniLight3D" parent="NavigationRegion3D/wall/WindowWood7" unique_id=2097360235]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.0427368, 1.6675344)
+light_energy = 0.5
 shadow_enabled = true
 omni_range = 1.9413966
 
@@ -1142,7 +1144,7 @@ transform = Transform3D(-0.7266739, 0, 1.3122281, 0, 1.4999999, 0, -1.3122281, 0
 transform = Transform3D(-1.3122287, 0, -0.72667444, 0, 1.5, 0, 0.72667444, 0, -1.3122287, 35.70515, 1.270271, 58.20041)
 
 [node name="painting2" parent="NavigationRegion3D/props" unique_id=763319286 instance=ExtResource("44_oe68w")]
-transform = Transform3D(-0.7266743, -0.0402281, 1.3116118, -1.8626451e-09, 1.499295, 0.045984473, -1.3122286, 0.02227716, -0.7263327, 14.671315, 0.93512046, 40.462234)
+transform = Transform3D(-0.58133954, -0.03218248, 1.0492896, -1.4901164e-09, 1.199436, 0.03678758, -1.049783, 0.017821727, -0.58106625, 14.671315, 1.0872301, 40.462234)
 
 [node name="radiator2" parent="NavigationRegion3D/props" unique_id=1403233901 instance=ExtResource("36_y68t0")]
 transform = Transform3D(-1.3122287, 0, -0.72667444, 0, 1.5, 0, 0.72667444, 0, -1.3122287, 0.37713712, -0.6359916, 1.476725)
@@ -1228,6 +1230,9 @@ transform = Transform3D(-0.4844496, 0, 0.87481916, 0, 1, 0, -0.87481916, 0, -0.4
 [node name="ceilingLight5" parent="NavigationRegion3D/props" unique_id=84857350 instance=ExtResource("52_20lyj")]
 transform = Transform3D(-0.4844496, 0, 0.87481916, 0, 1, 0, -0.87481916, 0, -0.4844496, 19.431633, 1.22055, 40.909016)
 
+[node name="ceilingLight9" parent="NavigationRegion3D/props" unique_id=461990315 instance=ExtResource("52_20lyj")]
+transform = Transform3D(-0.4844496, 0, 0.87481916, 0, 1, 0, -0.87481916, 0, -0.4844496, 16.379578, 1.22055, 19.30521)
+
 [node name="ceilingLight8" parent="NavigationRegion3D/props" unique_id=2001191101 instance=ExtResource("52_20lyj")]
 transform = Transform3D(-0.4844496, 0, 0.87481916, 0, 1, 0, -0.87481916, 0, -0.4844496, 11.629197, 1.22055, 34.85324)
 
@@ -1277,7 +1282,7 @@ transform = Transform3D(-1.049783, 0, -0.5813396, 0, 1.2, 0, 0.5813396, 0, -1.04
 transform = Transform3D(-0.4844496, 0, 0.87481916, 0, 1, 0, -0.87481916, 0, -0.4844496, 12.50821, -0.73299897, 53.270016)
 
 [node name="windowCurtains2" parent="NavigationRegion3D/props" unique_id=864824135 instance=ExtResource("66_shkef")]
-transform = Transform3D(-0.4844496, 0, 0.87481916, 0, 1, 0, -0.87481916, 0, -0.4844496, 12.43412, -0.6863502, 53.13567)
+transform = Transform3D(-0.58133954, 0, 1.0497829, 0, 1.2, 0, -1.0497829, 0, -0.58133954, 12.038256, -0.93601525, 53.35489)
 
 [node name="AudioTrigger1" parent="NavigationRegion3D/props" unique_id=1428236419 node_paths=PackedStringArray("player") instance=ExtResource("64_e7484")]
 transform = Transform3D(-0.4844496, 0, 0.87481916, 0, 1, 0, -0.87481916, 0, -0.4844496, 15.362126, -0.6863502, 32.91081)
@@ -1667,3 +1672,120 @@ stream = ExtResource("97_v0e18")
 [node name="LevelExit" parent="." unique_id=2014359388 instance=ExtResource("97_kate0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -155.60939, 0, -4)
 next_level = "uid://cjkdov6nerqw1"
+
+[node name="Decals" type="Node3D" parent="." unique_id=284687817]
+
+[node name="Label3D" type="Label3D" parent="Decals" unique_id=966808559]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -2, 1.4403858, 5.8969264)
+text = "I scream, 
+but no one hears."
+font = ExtResource("99_1jsec")
+font_size = 30
+outline_size = 0
+
+[node name="Label3D7" type="Label3D" parent="Decals" unique_id=2123261767]
+transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, -22.104752, 1.1633269, 5.5183907)
+text = "I fear the 
+new day"
+font = ExtResource("99_1jsec")
+font_size = 30
+outline_size = 0
+
+[node name="Label3D2" type="Label3D" parent="Decals" unique_id=1587643569]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.758038, 3.676889, -5.8972673)
+text = "The flashlight's beam, 
+my only defense."
+font = ExtResource("99_1jsec")
+font_size = 30
+outline_size = 0
+
+[node name="Label3D3" type="Label3D" parent="Decals" unique_id=1222019275]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -41.885902, 0.33152163, -6.897543)
+text = "I feel them...
+...they are shifting, 
+but why can't I..."
+font = ExtResource("99_1jsec")
+font_size = 30
+outline_size = 0
+
+[node name="Label3D8" type="Label3D" parent="Decals" unique_id=1058858250]
+transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, -38.446415, 0.86470735, -0.8802409)
+text = "So tired..."
+font = ExtResource("99_1jsec")
+font_size = 30
+outline_size = 0
+
+[node name="Label3D9" type="Label3D" parent="Decals" unique_id=694387262]
+transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, -38.446415, 1.8647074, -0.8802409)
+text = "I'm tired... "
+font = ExtResource("99_1jsec")
+font_size = 30
+outline_size = 0
+
+[node name="Label3D4" type="Label3D" parent="Decals" unique_id=1772458998]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.89132, 1.5430213, -29.898333)
+text = "Forget it, 
+the way is 
+closed to you here"
+font = ExtResource("99_1jsec")
+font_size = 30
+outline_size = 0
+
+[node name="Label3D5" type="Label3D" parent="Decals" unique_id=386114167]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -53.419327, 1.5430213, -14.10143)
+text = "What is worse: 
+to feel 
+everything, 
+or to feel 
+nothing at all?"
+font = ExtResource("99_1jsec")
+font_size = 30
+outline_size = 0
+
+[node name="Label3D6" type="Label3D" parent="Decals" unique_id=832400396]
+transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, -50.13603, 1.4301248, 11.032192)
+text = "Who is this?        This isn't me..."
+font = ExtResource("99_1jsec")
+font_size = 30
+outline_size = 0
+
+[node name="Label3D11" type="Label3D" parent="Decals" unique_id=92924659]
+transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, -62.142014, 1.4301248, -2.5098858)
+text = "Don't go in. 
+In there..."
+font = ExtResource("99_1jsec")
+font_size = 30
+outline_size = 0
+
+[node name="Label3D12" type="Label3D" parent="Decals" unique_id=1877313002]
+transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, -54.10408, 1.3233862, -3.9787958)
+text = "My diary...
+"
+font = ExtResource("99_1jsec")
+font_size = 30
+outline_size = 0
+
+[node name="Label3D13" type="Label3D" parent="Decals" unique_id=1159286740]
+transform = Transform3D(1.3113416e-07, 0, -1, 0.33238223, 0.9431448, 4.3586663e-08, 0.9431448, -0.33238223, 1.236785e-07, -54.10408, 1.6806219, -4.8984447)
+text = "My thoughts...
+"
+font = ExtResource("99_1jsec")
+font_size = 30
+outline_size = 0
+
+[node name="Label3D14" type="Label3D" parent="Decals" unique_id=2075547001]
+transform = Transform3D(1.3113414e-07, -8.3973364e-16, -1, -0.3822424, 0.9240622, -5.0125035e-08, 0.9240622, 0.3822424, 1.2117611e-07, -54.10408, 1.4248126, -2.8933256)
+text = "My dreams...
+"
+font = ExtResource("99_1jsec")
+font_size = 30
+outline_size = 0
+
+[node name="Label3D10" type="Label3D" parent="Decals" unique_id=386923066]
+transform = Transform3D(0.99374425, -0.1116799, 1.7375176e-07, 0.1116799, 0.99374425, 1.9526734e-08, -1.7484555e-07, 0, 1, -55.77601, 0.8859948, 6.1638374)
+text = "I see him...
+In reflections...
+In the shadows..."
+font = ExtResource("99_1jsec")
+font_size = 30
+outline_size = 0

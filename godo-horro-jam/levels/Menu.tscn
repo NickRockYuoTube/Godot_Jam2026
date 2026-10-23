@@ -15,6 +15,7 @@
 [ext_resource type="FontFile" uid="uid://3qko443w4nu0" path="res://title/BlankSpotsRegular.ttf" id="10_dbgr6"]
 [ext_resource type="AudioStream" uid="uid://ca3seckps7fy5" path="res://sound/point.ogg" id="10_umd7l"]
 [ext_resource type="PackedScene" uid="uid://drej4bbn46n5v" path="res://models/PSX modular house interior pack/props/broom.glb" id="11_2fvca"]
+[ext_resource type="Script" uid="uid://dhq4y0peejjpo" path="res://levels/fullscreen_button.gd" id="12_0xrwu"]
 [ext_resource type="PackedScene" uid="uid://bkyjjp0s5tnsy" path="res://models/PSX modular house interior pack/props/couchBig.glb" id="12_pdtoi"]
 [ext_resource type="PackedScene" uid="uid://d37i5ja1er608" path="res://prefab/prop/radiator_2.tscn" id="13_el1eq"]
 [ext_resource type="AudioStream" uid="uid://jwxra4tjpqs8" path="res://music/HorrorThemMenuV2.ogg" id="15_f43ds"]
@@ -171,6 +172,25 @@ metadata/_edit_use_anchors_ = true
 
 [node name="ClickSound" type="AudioStreamPlayer" parent="Camera3D/CanvasLayer2/UI" unique_id=1321397024]
 stream = ExtResource("10_umd7l")
+
+[node name="Button" type="Button" parent="Camera3D/CanvasLayer2/UI" unique_id=269479152]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -148.0
+offset_top = -99.0
+offset_right = -33.0
+offset_bottom = -31.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("10_dbgr6")
+theme_override_font_sizes/font_size = 30
+text = "Full
+Screen"
+script = ExtResource("12_0xrwu")
 
 [node name="MenuRight" type="VBoxContainer" parent="Camera3D/CanvasLayer2/UI" unique_id=745858423]
 layout_mode = 1
