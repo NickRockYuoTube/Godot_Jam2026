@@ -409,6 +409,7 @@ func _set_walking(walking: bool) -> void:
 		anim_player.play(wanted)
 
 # Датчик монстра: по нему DoorTrigger понимает, что рядом монстр
+# Датчик монстра: по нему DoorTrigger понимает, что рядом монстр
 func _create_door_sensor() -> void:
 	_sensor = Area3D.new()
 	_sensor.name = "DoorSensor"
@@ -425,6 +426,11 @@ func _create_door_sensor() -> void:
 	shape.position = Vector3(0, 1.0, 0)   # на уровне тела, а не ног
 	_sensor.add_child(shape)
 	add_child(_sensor)
+
+	# Jolt не поддерживает неравномерный масштаб у сфер, поэтому гасим масштаб родителя
+	var parent_scale := global_transform.basis.get_scale()
+	if absf(parent_scale.x) > 0.0001 and absf(parent_scale.y) > 0.0001 and absf(parent_scale.z) > 0.0001:
+		_sensor.scale = Vector3.ONE / parent_scale
 	
 	# Делает анимации «на месте»: корневая кость больше не двигает модель
 func _lock_root_motion() -> void:

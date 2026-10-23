@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://c18hkbvm7dbqi" path="res://prefab/arch_brick_2.tscn" id="2_5d720"]
 [ext_resource type="PackedScene" uid="uid://dq18t146vwtn3" path="res://prefab/lift_2.tscn" id="3_d02fo"]
 [ext_resource type="PackedScene" uid="uid://bqmbwpsvpjuin" path="res://prefab/wall_brick_2.tscn" id="4_2dgjd"]
+[ext_resource type="PackedScene" uid="uid://bnmtru6eu72vj" path="res://scen/wheelchair.tscn" id="5_5d720"]
 
 [sub_resource type="Environment" id="Environment_xdnvt"]
 ambient_light_source = 1
@@ -29,13 +30,34 @@ compositor = SubResource("Compositor_d02fo")
 transform = Transform3D(-1.0927847e-08, 0, -0.25, 0, 0.25, 0, 0.25, 0, -1.0927847e-08, -3.341908, 27.5, 19.557186)
 
 [node name="archBrick2" parent="lift2" unique_id=2036894152 instance=ExtResource("2_5d720")]
-transform = Transform3D(-1.7484555e-07, 0, 4, 0, 4, 0, -4, 0, -1.7484555e-07, -23.2719, -0.11708069, 3.8320093)
+transform = Transform3D(-1.7484555e-07, 0, 4, 0, 4.4, 0, -4, 0, -1.7484555e-07, -23.2719, -0.118125916, 3.8320103)
 
 [node name="wallBrick2" parent="lift2" unique_id=1696222510 instance=ExtResource("4_2dgjd")]
-transform = Transform3D(-3.9999998, 0, -3.4969108e-07, 0, 4, 0, 3.4969108e-07, 0, -3.9999998, -7.589653, -0.10311127, 3.83961)
+transform = Transform3D(-3.9999998, 0, -3.4969108e-07, 0, 4.4, 0, 3.4969108e-07, 0, -3.9999998, -7.589653, -0.102760315, 3.8396091)
 
 [node name="wallBrick3" parent="lift2" unique_id=316591950 instance=ExtResource("4_2dgjd")]
-transform = Transform3D(3.9999995, 0, 1.4210855e-14, 0, 4, 0, -1.4210855e-14, 0, 3.9999995, -7.589653, -0.10311127, 3.83961)
+transform = Transform3D(3.9999995, 0, 1.4210855e-14, 0, 4.4, 0, -1.4210855e-14, 0, 3.9999995, -7.589653, -0.102760315, 3.8396091)
 
 [node name="wallBrick4" parent="lift2" unique_id=1426718931 instance=ExtResource("4_2dgjd")]
-transform = Transform3D(-1.7484557e-07, 0, 3.9999995, 0, 4, 0, -3.9999995, 0, -1.7484557e-07, -7.589653, -0.10311127, 3.83961)
+transform = Transform3D(-1.7484557e-07, 0, 3.9999995, 0, 4.4, 0, -3.9999995, 0, -1.7484557e-07, -7.589653, -0.102760315, 3.8396091)
+
+[node name="Wheelchair" parent="." unique_id=311727349 instance=ExtResource("5_5d720")]
+transform = Transform3D(1, 0, -1.7484555e-07, 0, 1, 0, 1.7484555e-07, 0, 1, -4.435151, 27.550041, 17.253122)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=102878673]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.217989, 26.3359, -17.293358)
+light_energy = 5.0
+shadow_enabled = true
+omni_range = 28.764614
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="." unique_id=1542921914]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.642406, 26.3359, -17.293358)
+light_energy = 5.0
+shadow_enabled = true
+omni_range = 28.764614
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="." unique_id=252309670]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.079543, 26.3359, -17.293358)
+light_energy = 5.0
+shadow_enabled = true
+omni_range = 28.764614
