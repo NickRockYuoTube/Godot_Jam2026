@@ -23,6 +23,7 @@ buses/default_bus_layout="uid://bwbuqa0vjqoxp"
 
 PowerSystem="*uid://qtvxu78mulba"
 PlayerHealth="*uid://t6qakvi7sob7"
+PauseMenu="*uid://7slctv6qehyc"
 
 [display]
 
