@@ -100,6 +100,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.982897, 0, 19.980312)
 
 [node name="doorWood19" parent="Door" unique_id=541191772 instance=ExtResource("32_2klfl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.982897, 0, 19.980312)
+open_angle = -90.0
+start_open = true
 
 [node name="doorWood20" parent="Door" unique_id=69325459 instance=ExtResource("32_2klfl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.017103, 0, 19.980312)
@@ -555,6 +557,9 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -16,
 [node name="ceilingLight33" parent="Ceiling" unique_id=473575678 instance=ExtResource("45_b2fgi")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -10, 1.9471469, 3)
 
+[node name="ceilingLight52" parent="Ceiling" unique_id=797503826 instance=ExtResource("45_b2fgi")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -15.885371, 1.9471469, 8.153324)
+
 [node name="ceilingLight34" parent="Ceiling" unique_id=828458373 instance=ExtResource("45_b2fgi")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -10, 1.9471469, -3)
 
@@ -596,6 +601,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 1.9652016, -8)
 
 [node name="ceilingLight3" parent="Ceiling" unique_id=1617904560 instance=ExtResource("46_hmdbd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 1.9652016, -12)
+
+[node name="ceilingLight50" parent="Ceiling" unique_id=1821235609 instance=ExtResource("46_hmdbd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.047175, 1.9652016, -7.933803)
+
+[node name="ceilingLight51" parent="Ceiling" unique_id=578092422 instance=ExtResource("46_hmdbd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.047175, 1.9652016, 7.6682715)
 
 [node name="ceilingLight4" parent="Ceiling" unique_id=829108451 instance=ExtResource("46_hmdbd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28, 1.9652016, -12)

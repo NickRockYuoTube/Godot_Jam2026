@@ -19,7 +19,7 @@
 [ext_resource type="Script" uid="uid://dhq4y0peejjpo" path="res://script/fullscreen_button.gd" id="12_0xrwu"]
 [ext_resource type="PackedScene" uid="uid://bkyjjp0s5tnsy" path="res://models/PSX modular house interior pack/props/couchBig.glb" id="12_pdtoi"]
 [ext_resource type="PackedScene" uid="uid://d37i5ja1er608" path="res://prefab/prop/radiator_2.tscn" id="13_el1eq"]
-[ext_resource type="Script" uid="uid://c7wnu8u0rjlc6" path="res://levels/version.gd" id="13_kmrjf"]
+[ext_resource type="Script" uid="uid://c7wnu8u0rjlc6" path="res://script/version.gd" id="13_kmrjf"]
 [ext_resource type="AudioStream" uid="uid://jwxra4tjpqs8" path="res://music/HorrorThemMenuV2.ogg" id="15_f43ds"]
 [ext_resource type="PackedScene" uid="uid://3g5r7mk1lsw8" path="res://scen/screamer2.tscn" id="18_qm43r"]
 [ext_resource type="FontFile" uid="uid://cvo0aw7dhu72u" path="res://title/Ustroke-Regular.ttf" id="20_e4q6l"]

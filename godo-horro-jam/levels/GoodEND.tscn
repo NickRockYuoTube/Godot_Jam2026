@@ -188,7 +188,7 @@ color = Color(1, 1, 1, 0)
 metadata/_edit_use_anchors_ = true
 
 [node name="ceilingLight33" parent="." unique_id=864440962 instance=ExtResource("13_kimed")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -4.110531, 1.9332471, -2.0872648)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -4.110531, 1.9332471, -0.9620589)
 
 [node name="ceilingLight34" parent="." unique_id=1464536381 instance=ExtResource("13_kimed")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -0.8555901, 1.9332471, -0.4445656)
