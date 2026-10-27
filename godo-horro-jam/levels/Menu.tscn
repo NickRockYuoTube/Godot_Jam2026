@@ -142,6 +142,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("9_751lk")
+authors_scene = "uid://cguy2telqdnv0"
 
 [node name="TITLE" type="Label" parent="Camera3D/CanvasLayer2/UI" unique_id=230116466]
 layout_mode = 1
@@ -160,29 +161,17 @@ text = "Paralyzed"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ColorRect" type="ColorRect" parent="Camera3D/CanvasLayer2/UI" unique_id=945501189]
-material = SubResource("ShaderMaterial_f43ds")
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-color = Color(1, 1, 1, 0)
-metadata/_edit_use_anchors_ = true
-
 [node name="ClickSound" type="AudioStreamPlayer" parent="Camera3D/CanvasLayer2/UI" unique_id=1321397024]
 stream = ExtResource("10_umd7l")
 
 [node name="Button" type="Button" parent="Camera3D/CanvasLayer2/UI" unique_id=269479152]
 layout_mode = 0
-offset_left = 1015.0
-offset_top = 558.0
-offset_right = 1125.0
-offset_bottom = 626.0
+offset_left = 965.0
+offset_top = 499.0
+offset_right = 1134.0
+offset_bottom = 627.0
 theme_override_fonts/font = ExtResource("10_dbgr6")
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 60
 text = "Full
 Screen"
 script = ExtResource("12_0xrwu")
@@ -194,10 +183,10 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -381.0
-offset_top = -105.0
-offset_right = -190.0
-offset_bottom = 105.0
+offset_left = -507.0
+offset_top = -100.0
+offset_right = -254.0
+offset_bottom = 208.0
 grow_horizontal = 0
 grow_vertical = 2
 alignment = 1
@@ -206,7 +195,7 @@ alignment = 1
 layout_mode = 2
 theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("10_dbgr6")
-theme_override_font_sizes/font_size = 80
+theme_override_font_sizes/font_size = 90
 text = "Start"
 icon_alignment = 1
 
@@ -214,7 +203,7 @@ icon_alignment = 1
 layout_mode = 2
 theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("10_dbgr6")
-theme_override_font_sizes/font_size = 80
+theme_override_font_sizes/font_size = 90
 text = "Authors"
 icon_alignment = 1
 
@@ -222,111 +211,22 @@ icon_alignment = 1
 layout_mode = 2
 theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("10_dbgr6")
-theme_override_font_sizes/font_size = 80
+theme_override_font_sizes/font_size = 90
 text = "Exit"
 icon_alignment = 1
 
-[node name="AuthorsPanel" type="PanelContainer" parent="Camera3D/CanvasLayer2/UI" unique_id=1022991610]
-visible = false
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 24.0
-offset_top = -169.0
-offset_right = 671.0
-offset_bottom = 299.0
-grow_vertical = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Camera3D/CanvasLayer2/UI/AuthorsPanel" unique_id=1963095176]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="Camera3D/CanvasLayer2/UI/AuthorsPanel/VBoxContainer" unique_id=1476909295]
-layout_mode = 2
-theme_override_constants/outline_size = 10
-theme_override_fonts/font = ExtResource("10_dbgr6")
-theme_override_font_sizes/font_size = 48
-text = "Authors:"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label2" type="Label" parent="Camera3D/CanvasLayer2/UI/AuthorsPanel/VBoxContainer" unique_id=976826726]
-layout_mode = 2
-theme_override_constants/outline_size = 10
-theme_override_fonts/font = ExtResource("10_dbgr6")
-theme_override_font_sizes/font_size = 48
-text = "Nikita Aleshin (NickRock)"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label3" type="Label" parent="Camera3D/CanvasLayer2/UI/AuthorsPanel/VBoxContainer" unique_id=1599819117]
-layout_mode = 2
-theme_override_constants/outline_size = 10
-theme_override_fonts/font = ExtResource("10_dbgr6")
-theme_override_font_sizes/font_size = 48
-text = "Gennady Lipatov (Gogrog98)"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label4" type="Label" parent="Camera3D/CanvasLayer2/UI/AuthorsPanel/VBoxContainer" unique_id=889611626]
-layout_mode = 2
-theme_override_constants/outline_size = 10
-theme_override_fonts/font = ExtResource("10_dbgr6")
-theme_override_font_sizes/font_size = 48
-text = "Special thanks for the models:"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label5" type="Label" parent="Camera3D/CanvasLayer2/UI/AuthorsPanel/VBoxContainer" unique_id=477188088]
-layout_mode = 2
-theme_override_constants/outline_size = 10
-theme_override_fonts/font = ExtResource("10_dbgr6")
-theme_override_font_sizes/font_size = 40
-text = "Kkryy
-Elbolilloduro
-Сhilly_durango
-DissonantVoid"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="CloseBtn" type="Button" parent="Camera3D/CanvasLayer2/UI/AuthorsPanel/VBoxContainer" unique_id=126955398]
-layout_mode = 2
-theme_override_constants/outline_size = 10
-theme_override_fonts/font = ExtResource("10_dbgr6")
-theme_override_font_sizes/font_size = 48
-text = "Close"
-
 [node name="CanvasLayer" type="CanvasLayer" parent="Camera3D" unique_id=655923113]
 
-[node name="lift2" parent="." unique_id=985641796 instance=ExtResource("10_bnfj6")]
-transform = Transform3D(-1.0927847e-08, 0, -0.25, 0, 0.25, 0, 0.25, 0, -1.0927847e-08, 2.7500002, 0, 11.843962)
-
-[node name="bucket2" parent="." unique_id=727610121 instance=ExtResource("10_2fvca")]
-transform = Transform3D(-0.44101554, 0, -1.1160221, 0, 1.2, 0, 1.1160221, 0, -0.44101554, -0.28887853, 0.050358653, 3.2429745)
-
-[node name="broom2" parent="." unique_id=996972611 instance=ExtResource("11_2fvca")]
-transform = Transform3D(-0.04583874, 0.008948583, 1.1990908, 0.22992228, 1.1777673, -8.668801e-10, -1.176875, 0.22974806, -0.04670404, 0.22718078, 0.032797784, 3.4558682)
-
-[node name="couchBig2" parent="." unique_id=1698006139 instance=ExtResource("12_pdtoi")]
-transform = Transform3D(-5.2453668e-08, 0, 1.2, 0, 1.2, 0, -1.2, 0, -5.2453668e-08, -2.91324, 0.050358772, 1.1744454)
-
-[node name="radiator2" parent="." unique_id=1403233901 instance=ExtResource("13_el1eq")]
-transform = Transform3D(-6.556708e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.556708e-08, -1.0509691, 0.050358895, 3.6089768)
-
-[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1745122895]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9546745, 1.7116344, 3.6909556)
-light_color = Color(0.45452422, 0.45452428, 0.45452422, 1)
-light_energy = 0.5
-omni_range = 2.5140083
-
-[node name="ceilingLight2" parent="." unique_id=1932943327 instance=ExtResource("7_odmt8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2605274, 1.9692771, -1.2428956)
-
-[node name="ceilingLight4" parent="." unique_id=718049709 instance=ExtResource("7_odmt8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7448025, 1.9692771, -1.2428956)
-
-[node name="ceilingLight3" parent="." unique_id=1987113854 instance=ExtResource("7_odmt8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4198103, 1.9692771, 0.18872952)
+[node name="ColorRect" type="ColorRect" parent="Camera3D/CanvasLayer" unique_id=945501189]
+material = SubResource("ShaderMaterial_f43ds")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 1, 1, 0)
+metadata/_edit_use_anchors_ = true
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=972339684]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3560338, 1.5461498, 1.1045564)
@@ -350,8 +250,40 @@ light_energy = 5.0
 spot_range = 2.655206
 spot_angle = 77.084335
 
-[node name="plant32" parent="." unique_id=1398540651 instance=ExtResource("21_2w3su")]
+[node name="evenment" type="Node3D" parent="." unique_id=2126154365]
+
+[node name="lift2" parent="evenment" unique_id=985641796 instance=ExtResource("10_bnfj6")]
+transform = Transform3D(-1.0927847e-08, 0, -0.25, 0, 0.25, 0, 0.25, 0, -1.0927847e-08, 2.7500002, 0, 11.843962)
+
+[node name="bucket2" parent="evenment" unique_id=727610121 instance=ExtResource("10_2fvca")]
+transform = Transform3D(-0.44101554, 0, -1.1160221, 0, 1.2, 0, 1.1160221, 0, -0.44101554, -0.28887853, 0.050358653, 3.2429745)
+
+[node name="broom2" parent="evenment" unique_id=996972611 instance=ExtResource("11_2fvca")]
+transform = Transform3D(-0.04583874, 0.008948583, 1.1990908, 0.22992228, 1.1777673, -8.668801e-10, -1.176875, 0.22974806, -0.04670404, 0.22718078, 0.032797784, 3.4558682)
+
+[node name="couchBig2" parent="evenment" unique_id=1698006139 instance=ExtResource("12_pdtoi")]
+transform = Transform3D(-5.2453668e-08, 0, 1.2, 0, 1.2, 0, -1.2, 0, -5.2453668e-08, -2.91324, 0.050358772, 1.1744454)
+
+[node name="radiator2" parent="evenment" unique_id=1403233901 instance=ExtResource("13_el1eq")]
+transform = Transform3D(-6.556708e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.556708e-08, -1.0509691, 0.050358895, 3.6089768)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="evenment" unique_id=1745122895]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9546745, 1.7116344, 3.6909556)
+light_color = Color(0.45452422, 0.45452428, 0.45452422, 1)
+light_energy = 0.5
+omni_range = 2.5140083
+
+[node name="ceilingLight2" parent="evenment" unique_id=1932943327 instance=ExtResource("7_odmt8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2605274, 1.9692771, -1.2428956)
+
+[node name="ceilingLight4" parent="evenment" unique_id=718049709 instance=ExtResource("7_odmt8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7448025, 1.9692771, -1.2428956)
+
+[node name="ceilingLight3" parent="evenment" unique_id=1987113854 instance=ExtResource("7_odmt8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4198103, 1.9692771, 0.18872952)
+
+[node name="plant32" parent="evenment" unique_id=1398540651 instance=ExtResource("21_2w3su")]
 transform = Transform3D(-0.17684534, 0, -1.4895388, 0, 1.5, 0, 1.4895388, 0, -0.17684534, -2.9301023, 0.050500035, 3.1944191)
 
-[node name="windowCurtains22" parent="." unique_id=1571977071 instance=ExtResource("22_dhkve")]
+[node name="windowCurtains22" parent="evenment" unique_id=1571977071 instance=ExtResource("22_dhkve")]
 transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, -1.9923836, -0.07906175, 1.9998419)

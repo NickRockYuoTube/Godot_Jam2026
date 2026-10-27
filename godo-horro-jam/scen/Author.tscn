@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://cnou1fddigfv"]
+
+[ext_resource type="FontFile" uid="uid://3qko443w4nu0" path="res://title/BlankSpotsRegular.ttf" id="1_scq4y"]
+
+[node name="Authors" type="Control" unique_id=441752611]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1170489358]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 39.5
+offset_right = 554.0
+offset_bottom = 528.5
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=1999033772]
+layout_mode = 2
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("1_scq4y")
+theme_override_font_sizes/font_size = 60
+text = "Authors:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="VBoxContainer" unique_id=869677288]
+layout_mode = 2
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("1_scq4y")
+theme_override_font_sizes/font_size = 80
+text = "Nikita Aleshin 
+(NickRock)
+Gennady Lipatov 
+(Gogrog98)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="." unique_id=234283009]
+layout_mode = 0
+offset_left = 550.0
+offset_top = 40.5
+offset_right = 1081.0
+offset_bottom = 529.5
+
+[node name="Label4" type="Label" parent="VBoxContainer2" unique_id=120301964]
+layout_mode = 2
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("1_scq4y")
+theme_override_font_sizes/font_size = 60
+text = "Special thanks 
+for the models:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label5" type="Label" parent="VBoxContainer2" unique_id=53349042]
+layout_mode = 2
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("1_scq4y")
+theme_override_font_sizes/font_size = 80
+text = "Kkryy
+Elbolilloduro
+Сhilly_durango
+DissonantVoid"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CloseBtn" type="Button" parent="." unique_id=1412219584]
+layout_mode = 0
+offset_left = 312.0
+offset_top = 554.0
+offset_right = 843.0
+offset_bottom = 632.0
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("1_scq4y")
+theme_override_font_sizes/font_size = 70
+text = "Back"
