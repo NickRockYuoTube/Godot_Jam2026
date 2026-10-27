@@ -1,7 +1,7 @@
-extends Node3D
+extends CharacterBody3D
 class_name RoamingMonster
 
-enum State { ROAM, HUNT, STRIKE, RETREAT }
+enum State { ROAM, HUNT, STRIKE, RETREAT, FALLBACK }
 
 @export var spots_root: Node3D               # узел с Marker3D-точками (MonsterSpots)
 @export var agent: NavigationAgent3D
@@ -22,6 +22,8 @@ enum State { ROAM, HUNT, STRIKE, RETREAT }
 @export var chase_speed := 2.0               # скорость, когда идёт на игрока
 @export var retreat_speed := 2.5             # скорость отступления
 @export var retreat_by_teleport := false     # true = после удара исчезает и появляется на дальней точке
+@export var turn_speed_deg := 270.0          # скорость поворота, градусов в секунду
+@export var min_move_factor := 0.3           # во сколько раз замедляется, пока не повернулся лицом к цели
 
 @export_group("Шаги")
 @export var step_is_loop := false            # true = звук это зацикленная дорожка шагов; false = один шаг
@@ -43,8 +45,19 @@ enum State { ROAM, HUNT, STRIKE, RETREAT }
 @export var hit_distance := 1.9              # игрок получает урон, если в момент удара ближе этого
 @export var strike_windup := 0.45            # замах перед ударом, сек
 @export var strike_recover := 0.6            # пауза после удара, сек
-@export var hunt_timeout := 15.0             # если не дошёл за это время, бросает погоню
+@export var hunt_timeout := 15.0             # если не дошёл за это время, отходит и пробует снова
+@export var retry_delay_min := 2.0           # через сколько секунд после отхода пробует снова
+@export var retry_delay_max := 4.0
+@export var max_hunt_retries := 3            # сколько раз подряд пробует, прежде чем бросить погоню
 @export var damage := 1
+
+@export_group("Слух")
+@export var door_hear_range := 25.0          # на каком расстоянии монстр слышит, как игрок открыл дверь
+@export var door_spot_max_distance := 12.0   # точка патруля должна быть не дальше этого от двери
+@export var door_alert_cooldown := 8.0       # пауза между реакциями на двери, сек
+@export var alert_starts_hunt := true        # дойдя до двери, сразу идёт за игроком, если тот рядом
+@export var alert_hunt_distance := 10.0      # «рядом» = ближе этого расстояния до игрока
+
 
 var _state: State = State.ROAM
 var _spots: Array[Marker3D] = []
@@ -62,6 +75,16 @@ var _repath_timer := 0.0
 var _step_distance := 0.0
 var _did_hit := false
 var _debug_t := 0.0
+var _stuck_time := 0.0
+var _stuck_count := 0
+var _hunt_fails := 0       # сколько раз подряд не смог добраться до игрока
+var _retry_left := 0.0
+var _waiting_retry := false
+var _player_ignored := false
+var _investigating := false        # идёт проверять дверь, которую открыл игрок
+var _last_alert_time := -100.0
+var _doors_connected := false
+
 
 func _ready() -> void:
 	# Автопоиск, если поля не заполнены в Inspector
@@ -97,9 +120,17 @@ func _ready() -> void:
 			anim_player.get_animation(anim_name).loop_mode = Animation.LOOP_LINEAR
 	_lock_root_motion()
 
-	# Собственные физические тела монстра, их луч света должен игнорировать
+	# Физическое тело монстра
+	motion_mode = CharacterBody3D.MOTION_MODE_FLOATING   # без гравитации: ходит по высоте навигации
+	collision_layer = 1 << 4    # слой 5: собственный слой монстра, луч света и коляска его не «видят»
+	collision_mask = 1          # упирается в стены и всё остальное на слое 1
+
+	# Собственные физические тела монстра: луч света их игнорирует, и сам монстр о них не спотыкается
 	for body in find_children("*", "CollisionObject3D", true, false):
 		_own_rids.append((body as CollisionObject3D).get_rid())
+		if body is PhysicsBody3D:
+			add_collision_exception_with(body as PhysicsBody3D)
+	_own_rids.append(get_rid())   # луч света не должен упираться в собственную капсулу
 
 	_create_door_sensor()
 	add_to_group("roaming_monsters")
@@ -149,6 +180,8 @@ func _physics_process(delta: float) -> void:
 			_process_strike(delta)
 		State.RETREAT:
 			_process_retreat(delta)
+		State.FALLBACK:
+			_process_fallback(delta)
 
 # ---------------- Состояния ----------------
 
@@ -167,6 +200,15 @@ func _process_roam(delta: float) -> void:
 		return
 
 	if agent.is_navigation_finished():
+		_stuck_count = 0
+		# Дошёл до точки у двери, которую открыл игрок
+		if _investigating:
+			_investigating = false
+			var player := _get_player()
+			if alert_starts_hunt and attack_enabled and player and not PlayerHealth.is_dead \
+					and _flat_distance_to(player) <= alert_hunt_distance:
+				_start_hunt()
+				return
 		_idle_left = idle_time
 		_set_walking(false)
 		return
@@ -178,8 +220,11 @@ func _start_hunt() -> void:
 
 func _process_hunt(delta: float) -> void:
 	var player := _get_player()
-	if player == null or PlayerHealth.is_dead or _state_time > hunt_timeout:
+	if player == null or PlayerHealth.is_dead:
 		_start_retreat()
+		return
+	if _state_time > hunt_timeout:
+		_start_fallback()   # слишком долго не может добраться
 		return
 
 	if _flat_distance_to(player) <= strike_distance:
@@ -195,11 +240,36 @@ func _process_hunt(delta: float) -> void:
 
 	# Дошёл до ближайшей точки сетки, а игрока не достать (он вне навигации)
 	if agent.is_navigation_finished() and _state_time > 1.0:
-		_start_retreat()
+		_start_fallback()
 		return
 	_move_along_path(chase_speed, delta)
 
+# Не может добраться до игрока: отходит к ближайшей точке и пробует снова
+func _start_fallback() -> void:
+	_hunt_fails += 1
+	if _hunt_fails > max_hunt_retries:
+		_enter_roam()   # хватит, возвращается к обычному блужданию
+		return
+	_set_state(State.FALLBACK)
+	_waiting_retry = false
+	agent.target_position = _nearest_spot().global_position
+
+func _process_fallback(delta: float) -> void:
+	if _waiting_retry:
+		_retry_left -= delta
+		if _retry_left <= 0.0:
+			_start_hunt()   # пробует снова добраться до игрока
+		return
+
+	if agent.is_navigation_finished() and _state_time > 0.5:
+		_waiting_retry = true
+		_retry_left = randf_range(retry_delay_min, retry_delay_max)
+		_set_walking(false)
+		return
+	_move_along_path(speed, delta)
+
 func _start_strike() -> void:
+	_hunt_fails = 0   # добрался до игрока
 	_set_state(State.STRIKE)
 	_did_hit = false
 	_set_walking(false)
@@ -237,6 +307,7 @@ func _process_retreat(delta: float) -> void:
 	_move_along_path(retreat_speed, delta)
 
 func _enter_roam() -> void:
+	_hunt_fails = 0
 	_set_state(State.ROAM)
 	_idle_left = idle_time
 	_attack_timer = randf_range(attack_interval_min, attack_interval_max)
@@ -245,17 +316,24 @@ func _enter_roam() -> void:
 func _set_state(new_state: State) -> void:
 	_state = new_state
 	_state_time = 0.0
+	_stuck_time = 0.0
+	_investigating = false
 
 # ---------------- Появление и исчезновение ----------------
 
 func _spawn(spot: Marker3D) -> void:
+	_connect_doors()
+	_ignore_player()
 	global_position = spot.global_position
+	velocity = Vector3.ZERO
 	visible = true
 	_enabled = true
 	_active = true
 	_lit_timer = 0.0
 	_idle_left = 0.0
 	_step_distance = 0.0
+	_stuck_count = 0
+	_hunt_fails = 0
 	_set_state(State.ROAM)
 	_attack_timer = randf_range(attack_interval_min, attack_interval_max)
 	if _sensor:
@@ -263,13 +341,13 @@ func _spawn(spot: Marker3D) -> void:
 	_set_walking(false)
 	_pick_next_target()
 
-func _vanish() -> void:
+func _vanish(with_sound: bool = true) -> void:
 	_active = false
 	visible = false
 	_set_walking(false)
 	if _sensor:
 		_sensor.set_deferred("monitorable", false)   # скрытый монстр не открывает двери
-	if vanish_sound:
+	if with_sound and vanish_sound:
 		vanish_sound.play()
 	await get_tree().create_timer(respawn_delay).timeout
 	if not _enabled or _active:
@@ -291,19 +369,79 @@ func _pick_next_target() -> void:
 
 func _move_along_path(spd: float, delta: float) -> void:
 	if agent.is_navigation_finished():
+		velocity = Vector3.ZERO
 		return
-	var before := global_position
 	var next := agent.get_next_path_position()
 	var to_next := next - global_position
-	global_position = global_position.move_toward(next, spd * delta)
-	_face(Vector3(to_next.x, 0.0, to_next.z), delta)
-	_set_walking(true)
-	_update_steps(before.distance_to(global_position), spd)
+	var flat_dir := Vector3(to_next.x, 0.0, to_next.z)
 
+	# Куда смотреть: туда, куда реально движемся (в том числе вдоль стены),
+	# а если почти стоим, то на цель
+	var real := get_real_velocity()
+	var look_dir := Vector3(real.x, 0.0, real.z)
+	if look_dir.length() < 0.3:
+		look_dir = flat_dir
+	_face(look_dir, delta)
+
+	# Не бежим боком: чем сильнее монстр отвёрнут от цели, тем медленнее идёт, пока не повернётся
+	var alignment := 1.0
+	if flat_dir.length() > 0.01:
+		var forward := -global_transform.basis.z
+		forward.y = 0.0
+		alignment = forward.normalized().dot(flat_dir.normalized())
+	var factor := lerpf(min_move_factor, 1.0, smoothstep(0.2, 0.9, alignment))
+
+	# На последнем отрезке замедляемся, чтобы не перелететь точку
+	velocity = to_next.normalized() * minf(spd * factor, to_next.length() / maxf(delta, 0.001))
+	var commanded := velocity.length()
+	move_and_slide()
+	_set_walking(true)
+	_update_steps(get_real_velocity().length() * delta, spd)
+	_check_stuck(commanded, delta)
+
+# Если монстр упёрся и почти не движется дольше 1.5 с, это застревание
+func _check_stuck(commanded: float, delta: float) -> void:
+	if get_real_velocity().length() < commanded * 0.2:
+		_stuck_time += delta
+	else:
+		_stuck_time = 0.0
+	if _stuck_time > 1.5:
+		_stuck_time = 0.0
+		_on_stuck()
+
+func _on_stuck() -> void:
+	_stuck_count += 1
+	if _stuck_count >= 3:
+		# Застрял по-настоящему: тихо исчезает и появляется в другом месте, без звука
+		_stuck_count = 0
+		_vanish(false)
+		return
+	match _state:
+		State.HUNT:
+			_start_fallback()   # не добраться до игрока: отходит и пробует снова
+		State.ROAM:
+			_pick_next_target()   # выбираем другую цель
+		_:
+			_enter_roam()
+
+# Коляску монстр обходит физически, чтобы не было толкотни в момент удара
+func _ignore_player() -> void:
+	if _player_ignored:
+		return
+	var player := _get_player() as PhysicsBody3D
+	if player:
+		add_collision_exception_with(player)
+		_player_ignored = true
+
+# Плавно поворачивает монстра лицом в сторону dir (по горизонтали) с постоянной скоростью
 func _face(dir: Vector3, delta: float) -> void:
-	if dir.length() > 0.05:
-		# Модель смотрит в -Z
-		rotation.y = lerp_angle(rotation.y, atan2(-dir.x, -dir.z), 8.0 * delta)
+	var flat := Vector3(dir.x, 0.0, dir.z)
+	if flat.length() < 0.01:
+		return
+	var target_y := atan2(-flat.x, -flat.z)   # модель смотрит в -Z
+	var diff := angle_difference(rotation.y, target_y)
+	var step := deg_to_rad(turn_speed_deg) * delta
+	rotation.y += clampf(diff, -step, step)
 
 func _flat_distance_to(node: Node3D) -> float:
 	var d := node.global_position - global_position
@@ -321,6 +459,74 @@ func _far_spot() -> Marker3D:
 	)
 	var pool := mini(far_spots_pool, sorted.size())
 	return sorted[randi() % pool]
+
+# Ближайшая к монстру точка (не ближе 1.5 м, чтобы действительно отойти).
+# Сначала ищем среди тех, что не ближе к игроку, чем он сам; если таких нет, любую
+func _nearest_spot() -> Marker3D:
+	var player := _get_player()
+	var my_dist := INF
+	if player:
+		my_dist = _flat_distance_to(player)
+
+	var best: Marker3D = null
+	var best_d := INF
+	for away_only in [true, false]:
+		for spot in _spots:
+			var d := spot.global_position.distance_to(global_position)
+			if d < 1.5 or d >= best_d:
+				continue
+			if away_only and player:
+				var offset := spot.global_position - player.global_position
+				if Vector2(offset.x, offset.z).length() < my_dist:
+					continue
+			best = spot
+			best_d = d
+		if best != null:
+			break
+	return best if best != null else _spots.pick_random()
+
+
+# Подписываемся на сигнал всех дверей уровня
+func _connect_doors() -> void:
+	if _doors_connected:
+		return
+	_doors_connected = true
+	for node in get_tree().get_nodes_in_group("doors"):
+		var door := node as Door
+		if door and not door.opened_by_player.is_connected(_on_door_opened_by_player):
+			door.opened_by_player.connect(_on_door_opened_by_player)
+
+# Игрок открыл дверь: монстр меняет цель патруля на ближайшую к ней точку
+func _on_door_opened_by_player(door: Door) -> void:
+	if not _active or _state != State.ROAM or PlayerHealth.is_dead:
+		return   # занят: уже идёт за игроком, отступает или скрыт
+	var now := Time.get_ticks_msec() / 1000.0
+	if now - _last_alert_time < door_alert_cooldown:
+		return
+	if global_position.distance_to(door.global_position) > door_hear_range:
+		return   # слишком далеко, не слышит
+
+	var spot := _spot_near(door.global_position)
+	if spot == null or spot.global_position.distance_to(door.global_position) > door_spot_max_distance:
+		return   # у этой двери нет подходящей точки патруля
+
+	print("Монстр услышал дверь: ", door.name)   # для проверки, потом можно удалить
+	_last_alert_time = now
+	_investigating = true
+	_idle_left = 0.0
+	agent.target_position = spot.global_position
+
+# Ближайшая к позиции точка патруля
+func _spot_near(pos: Vector3) -> Marker3D:
+	var best: Marker3D = null
+	var best_d := INF
+	for spot in _spots:
+		var d := spot.global_position.distance_to(pos)
+		if d < best_d:
+			best_d = d
+			best = spot
+	return best
+
 
 # ---------------- Шаги ----------------
 
@@ -409,7 +615,6 @@ func _set_walking(walking: bool) -> void:
 		anim_player.play(wanted)
 
 # Датчик монстра: по нему DoorTrigger понимает, что рядом монстр
-# Датчик монстра: по нему DoorTrigger понимает, что рядом монстр
 func _create_door_sensor() -> void:
 	_sensor = Area3D.new()
 	_sensor.name = "DoorSensor"
@@ -425,14 +630,16 @@ func _create_door_sensor() -> void:
 	shape.shape = sphere
 	shape.position = Vector3(0, 1.0, 0)   # на уровне тела, а не ног
 	_sensor.add_child(shape)
-	add_child(_sensor)
 
 	# Jolt не поддерживает неравномерный масштаб у сфер, поэтому гасим масштаб родителя
+	# (до add_child, иначе форма уже построится с кривым масштабом)
 	var parent_scale := global_transform.basis.get_scale()
 	if absf(parent_scale.x) > 0.0001 and absf(parent_scale.y) > 0.0001 and absf(parent_scale.z) > 0.0001:
 		_sensor.scale = Vector3.ONE / parent_scale
-	
-	# Делает анимации «на месте»: корневая кость больше не двигает модель
+
+	add_child(_sensor)
+
+# Делает анимации «на месте»: корневая кость больше не двигает модель
 func _lock_root_motion() -> void:
 	if anim_player == null:
 		return

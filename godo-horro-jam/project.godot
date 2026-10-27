@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="GodoHorroJam"
+config/version="0.0.1.4"
 run/main_scene="uid://c8ok3s27eila1"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
@@ -24,6 +25,7 @@ buses/default_bus_layout="uid://bwbuqa0vjqoxp"
 PowerSystem="*uid://qtvxu78mulba"
 PlayerHealth="*uid://t6qakvi7sob7"
 PauseMenu="*uid://7slctv6qehyc"
+DevCheats="*uid://wirmwn203ev7"
 
 [display]
 

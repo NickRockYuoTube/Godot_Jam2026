@@ -19,6 +19,7 @@
 [ext_resource type="Script" uid="uid://dhq4y0peejjpo" path="res://script/fullscreen_button.gd" id="12_0xrwu"]
 [ext_resource type="PackedScene" uid="uid://bkyjjp0s5tnsy" path="res://models/PSX modular house interior pack/props/couchBig.glb" id="12_pdtoi"]
 [ext_resource type="PackedScene" uid="uid://d37i5ja1er608" path="res://prefab/prop/radiator_2.tscn" id="13_el1eq"]
+[ext_resource type="Script" uid="uid://c7wnu8u0rjlc6" path="res://levels/version.gd" id="13_kmrjf"]
 [ext_resource type="AudioStream" uid="uid://jwxra4tjpqs8" path="res://music/HorrorThemMenuV2.ogg" id="15_f43ds"]
 [ext_resource type="PackedScene" uid="uid://3g5r7mk1lsw8" path="res://scen/screamer2.tscn" id="18_qm43r"]
 [ext_resource type="FontFile" uid="uid://cvo0aw7dhu72u" path="res://title/Ustroke-Regular.ttf" id="20_e4q6l"]
@@ -214,6 +215,23 @@ theme_override_fonts/font = ExtResource("10_dbgr6")
 theme_override_font_sizes/font_size = 90
 text = "Exit"
 icon_alignment = 1
+
+[node name="Version" type="Label" parent="Camera3D/CanvasLayer2/UI" unique_id=1479543221]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 19.0
+offset_top = -69.0
+offset_right = 116.0
+offset_bottom = -13.0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("20_e4q6l")
+theme_override_font_sizes/font_size = 35
+text = "0000"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("13_kmrjf")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Camera3D" unique_id=655923113]
 

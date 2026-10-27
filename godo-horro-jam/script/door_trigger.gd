@@ -24,13 +24,13 @@ func _ready() -> void:
 
 func _on_body_entered(body: Node3D) -> void:
 	if body is Wheelchair:
-		_activate()
+		_activate(true)    # дверь открыл игрок
 
 func _on_area_entered(area: Area3D) -> void:
 	if react_to_monster and area.is_in_group("monster_sensor"):
-		_activate()
+		_activate(false)   # дверь открыл монстр
 
-func _activate() -> void:
+func _activate(by_player: bool = false) -> void:
 	if door == null:
 		return
 	if one_shot and _used:
@@ -43,7 +43,7 @@ func _activate() -> void:
 		return
 
 	if action == Action.OPEN:
-		door.open()
+		door.open(by_player)
 		if auto_close_time > 0.0:
 			_start_auto_close()
 	else:
