@@ -58,6 +58,13 @@ enum State { ROAM, HUNT, STRIKE, RETREAT, FALLBACK }
 @export var alert_starts_hunt := true        # дойдя до двери, сразу идёт за игроком, если тот рядом
 @export var alert_hunt_distance := 10.0      # «рядом» = ближе этого расстояния до игрока
 
+@export_group("Зрение")
+@export var sight_enabled := true
+@export var sight_range := 14.0            # на каком расстоянии видит игрока
+@export var sight_angle := 55.0            # половина угла конуса, градусов (55 = конус 110°)
+@export var close_notice_distance := 2.5   # ближе этого замечает игрока даже спиной (если нет стены)
+@export var eye_height := 1.4              # высота глаз монстра над полом
+@export var notice_time := 0.4             # сколько секунд игрок должен быть на виду, чтобы его заметили
 
 var _state: State = State.ROAM
 var _spots: Array[Marker3D] = []
@@ -84,7 +91,7 @@ var _player_ignored := false
 var _investigating := false        # идёт проверять дверь, которую открыл игрок
 var _last_alert_time := -100.0
 var _doors_connected := false
-
+var _sight_timer := 0.0
 
 func _ready() -> void:
 	# Автопоиск, если поля не заполнены в Inspector
@@ -186,6 +193,11 @@ func _physics_process(delta: float) -> void:
 # ---------------- Состояния ----------------
 
 func _process_roam(delta: float) -> void:
+	# Заметил игрока в конусе зрения?
+	if sight_enabled and attack_enabled and _update_sight(delta):
+		_start_hunt()
+		return
+		
 	# Пора идти за игроком?
 	if attack_enabled and not PlayerHealth.is_dead:
 		_attack_timer -= delta
@@ -273,7 +285,9 @@ func _start_strike() -> void:
 	_set_state(State.STRIKE)
 	_did_hit = false
 	_set_walking(false)
-	if attack_sound:
+	# На смертельном ударе звук не играем: дальше идёт скример
+	var lethal := PlayerHealth.hp - damage <= 0
+	if attack_sound and not lethal:
 		attack_sound.play()
 	if anim_player and attack_animation != "" and anim_player.has_animation(attack_animation):
 		anim_player.play(attack_animation)
@@ -526,6 +540,49 @@ func _spot_near(pos: Vector3) -> Marker3D:
 			best_d = d
 			best = spot
 	return best
+
+
+# Копит время «игрок на виду»; true, когда монстр его заметил
+func _update_sight(delta: float) -> bool:
+	if _can_see_player():
+		_sight_timer += delta
+		if _sight_timer >= notice_time:
+			_sight_timer = 0.0
+			print("Монстр заметил игрока")   # для проверки, потом можно удалить
+			return true
+	else:
+		_sight_timer = maxf(0.0, _sight_timer - delta * 2.0)   # быстро «забывает», если игрок пропал из виду
+	return false
+
+# Игрок в конусе зрения, в пределах дальности и между ними нет стены
+func _can_see_player() -> bool:
+	var player := _get_player()
+	if player == null or PlayerHealth.is_dead:
+		return false
+
+	var eye := global_position + Vector3.UP * eye_height
+	var target := player.global_position + Vector3.UP * 1.0   # примерно уровень камеры игрока
+	var to_player := target - eye
+	if to_player.length() > sight_range:
+		return false
+
+	# Конус по горизонтали; вплотную замечает и вне конуса
+	var flat_to := Vector3(to_player.x, 0.0, to_player.z)
+	if flat_to.length() > close_notice_distance:
+		var forward := -global_transform.basis.z
+		var flat_forward := Vector3(forward.x, 0.0, forward.z).normalized()
+		if rad_to_deg(flat_forward.angle_to(flat_to)) > sight_angle:
+			return false
+
+	# Стены и закрытые двери (слой 1) загораживают обзор
+	var query := PhysicsRayQueryParameters3D.create(eye, target, 1)
+	var excluded: Array[RID] = []
+	excluded.append_array(_own_rids)
+	var p := player as CollisionObject3D
+	if p:
+		excluded.append(p.get_rid())
+	query.exclude = excluded
+	return get_world_3d().direct_space_state.intersect_ray(query).is_empty()
 
 
 # ---------------- Шаги ----------------

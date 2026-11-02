@@ -16,12 +16,14 @@ func _ready() -> void:
 	add_child(_layer)
 
 func _unhandled_input(event: InputEvent) -> void:
-	if not event.is_action_pressed("ui_cancel"):   # ESC
+	if not event.is_action_pressed("ui_cancel"):   # реагируем только на ESC
 		return
+	if PlayerHealth.is_dead:
+		return   # во время скримера и смерти пауза не работает
 
 	if get_tree().paused:
 		_set_paused(false)
-	elif _in_gameplay() and not PlayerHealth.is_dead:
+	elif _in_gameplay():
 		_set_paused(true)
 	else:
 		return   # в меню и на сценах концовок пауза не нужна

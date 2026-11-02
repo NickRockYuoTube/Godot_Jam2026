@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://c3guxog4ihajt"]
+
+[ext_resource type="PackedScene" uid="uid://bvx5bu1pftxvt" path="res://models/RUK/detail-light-single.glb" id="1_rvg7g"]
+
+[node name="detail-light-single2" unique_id=204987384 instance=ExtResource("1_rvg7g")]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 0, 0, 0)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." index="1" unique_id=1465284772]
+transform = Transform3D(0.125, 0, 0, 0, 0.125, 0, 0, 0, 0.125, 0, 0.89512855, -0.16400053)
+light_color = Color(1, 0.8725054, 0.7193022, 1)
+light_energy = 15.0
+omni_range = 0.5
+
+[node name="SpotLight3D" type="SpotLight3D" parent="." index="2" unique_id=1016526273]
+transform = Transform3D(0.125, 0, 0, 0, -5.4639235e-09, 0.125, 0, -0.125, -5.4639235e-09, 0, 0.8833929, -0.16399097)
+light_color = Color(1, 0.87058824, 0.7176471, 1)
+light_energy = 5.0
+spot_range = 11.0

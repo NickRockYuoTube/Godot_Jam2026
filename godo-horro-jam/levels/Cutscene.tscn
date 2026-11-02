@@ -1,0 +1,2444 @@
+[gd_scene format=3 uid="uid://b5e66bjtqsfls"]
+
+[ext_resource type="AudioStream" uid="uid://dt0wpp5pkotra" path="res://sound/catscene_sound/Car2_Engine_Loop.ogg" id="1_e0p4r"]
+[ext_resource type="Script" uid="uid://bppgp1f6y160o" path="res://levels/cutscene.gd" id="1_n4sbh"]
+[ext_resource type="PackedScene" uid="uid://ckwi1f23fu8kl" path="res://models/PSX modular house interior pack/geometry/floorStone.glb" id="1_nw7y5"]
+[ext_resource type="ArrayMesh" uid="uid://b6wpap5te2bpt" path="res://models/catscene/1/Car 04/Car4.obj" id="2_1mweo"]
+[ext_resource type="AudioStream" uid="uid://c580r6554fv1a" path="res://sound/catscene_sound/Car_Hood_Open.ogg" id="2_yhrd8"]
+[ext_resource type="PackedScene" uid="uid://c4wlchusjigwy" path="res://models/RUK/road-asphalt-straight.glb" id="4_por10"]
+[ext_resource type="PackedScene" uid="uid://bcki4r2jcm30h" path="res://prefab/buildingsCAT.tscn" id="5_8tcd5"]
+[ext_resource type="PackedScene" uid="uid://dnopnws70j8da" path="res://prefab/Street/barrel.tscn" id="5_b06kh"]
+[ext_resource type="PackedScene" uid="uid://c3guxog4ihajt" path="res://prefab/catscene/detail_light_single_2.tscn" id="6_8tcd5"]
+[ext_resource type="PackedScene" uid="uid://cjls4ot23qjfu" path="res://prefab/Street/conditioner.tscn" id="8_3c56x"]
+[ext_resource type="Shader" uid="uid://bvpq8vfw0hc1" path="res://material/VHS_Effect.gdshader" id="8_7hdex"]
+[ext_resource type="Script" uid="uid://ek51j3q6fuec" path="res://script/flashback_effect.gd" id="8_7pqoc"]
+[ext_resource type="AudioStream" uid="uid://dh7pegwwjuvg0" path="res://sound/step.ogg" id="8_nxk4q"]
+[ext_resource type="AudioStream" uid="uid://pnhmbq7dht3w" path="res://music/ambientcatscen.ogg" id="12_3shk0"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7pqoc"]
+shader = ExtResource("8_7hdex")
+shader_parameter/scanline_density = 2000.0
+shader_parameter/scanline_intensity = 0.15
+shader_parameter/chromatic_aberration = 0.003
+shader_parameter/noise_intensity = 0.08
+shader_parameter/vignette_intensity = 0.5
+shader_parameter/color_bleed = 0.3
+shader_parameter/desaturation = 0.2
+
+[sub_resource type="Animation" id="Animation_n4sbh"]
+length = 20.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Rig:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-22, 1.8, 8)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Rig/Camera3D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Car:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(42.390438, -0.23543108, -10.721616)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:impact_sound")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Object(AudioStreamPlayer,"unique_name_in_owner":false,"process_mode":0,"process_priority":0,"process_physics_priority":0,"process_thread_group":0,"physics_interpolation_mode":0,"auto_translate_mode":0,"editor_description":"","stream":ExtResource("2_yhrd8"),"volume_db":0.0,"pitch_scale":1.0,"autoplay":false,"stream_paused":false,"mix_target":0,"max_polyphony":1,"bus":&"Engine","playback_type":0,"script":null)
+]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:fade_in_time")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".:fade_out_time")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Rig/Step:stream")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("8_nxk4q")]
+}
+
+[sub_resource type="Animation" id="Animation_xf8q2"]
+resource_name = "scene"
+length = 17.5
+step = 0.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Rig:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 6.9, 11.833333, 17.05667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-22, 1.8, 8), Vector3(-22, 1.8, -2.6040964), Vector3(-22, 1.8, -2.6040964), Vector3(-22, 1.8, -11.072591)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Rig/Camera3D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(7, 9.266666, 11.066667, 12.233334, 16.786667, 17.44333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -0.5241262, 0), Vector3(0, 0.87565315, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, -1.3559711, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Car:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(15.763334, 17.16, 17.416666),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(42.390438, -0.23543108, -10.721616), Vector3(-20.33838, -0.23543108, -8.966597), Vector3(-22.028185, -0.23543108, -8.966597)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:impact_sound")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(19.312513),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Object(AudioStreamPlayer,"unique_name_in_owner":false,"process_mode":0,"process_priority":0,"process_physics_priority":0,"process_thread_group":0,"physics_interpolation_mode":0,"auto_translate_mode":0,"editor_description":"","stream":ExtResource("2_yhrd8"),"volume_db":0.0,"pitch_scale":1.0,"autoplay":false,"stream_paused":false,"mix_target":0,"max_polyphony":1,"bus":&"Engine","playback_type":0,"script":null)
+]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:fade_in_time")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".:fade_out_time")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(19.56011),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Rig/Step:stream")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 1.2, 2.3333333, 3.6333334, 4.8, 6, 7.031736, 12.2, 13.4, 14.6, 15.8, 17, 18.2, 19.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("8_nxk4q"), ExtResource("8_nxk4q"), ExtResource("8_nxk4q"), ExtResource("8_nxk4q"), ExtResource("8_nxk4q"), ExtResource("8_nxk4q"), ExtResource("8_nxk4q"), ExtResource("8_nxk4q"), ExtResource("8_nxk4q"), ExtResource("8_nxk4q"), ExtResource("8_nxk4q"), ExtResource("8_nxk4q"), ExtResource("8_nxk4q"), ExtResource("8_nxk4q")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nw7y5"]
+_data = {
+&"RESET": SubResource("Animation_n4sbh"),
+&"scene": SubResource("Animation_xf8q2")
+}
+
+[sub_resource type="Environment" id="Environment_nw7y5"]
+fog_enabled = true
+fog_light_color = Color(0.011764706, 0.011764706, 0.039215688, 1)
+fog_density = 0.15
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_8tcd5"]
+
+[sub_resource type="Compositor" id="Compositor_por10"]
+
+[node name="Cutscene" type="Node3D" unique_id=1397333407 node_paths=PackedStringArray("impact_sound")]
+script = ExtResource("1_n4sbh")
+next_level = "uid://cdkiatds8cmyl"
+impact_sound = NodePath("")
+bob_stop_time = 15.0
+
+[node name="Street" type="Node3D" parent="." unique_id=403535995]
+
+[node name="floor" type="Node3D" parent="Street" unique_id=223872716]
+
+[node name="floorStone2" parent="Street/floor" unique_id=430320315 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -62, 0, 0)
+
+[node name="floorStone6" parent="Street/floor" unique_id=1012527763 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -62, 0, -16)
+
+[node name="floorStone7" parent="Street/floor" unique_id=712942053 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -62, 0, -20)
+
+[node name="floorStone8" parent="Street/floor" unique_id=1178932859 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -62, 0, -24)
+
+[node name="floorStone9" parent="Street/floor" unique_id=1108615880 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -62, 0, -28)
+
+[node name="floorStone10" parent="Street/floor" unique_id=734522106 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -58, 0, 0)
+
+[node name="floorStone14" parent="Street/floor" unique_id=1524210101 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -58, 0, -16)
+
+[node name="floorStone15" parent="Street/floor" unique_id=913762383 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -58, 0, -20)
+
+[node name="floorStone16" parent="Street/floor" unique_id=840949124 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -58, 0, -24)
+
+[node name="floorStone17" parent="Street/floor" unique_id=2098872654 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -58, 0, -28)
+
+[node name="floorStone18" parent="Street/floor" unique_id=507250651 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54, 0, 0)
+
+[node name="floorStone22" parent="Street/floor" unique_id=1762977551 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54, 0, -16)
+
+[node name="floorStone23" parent="Street/floor" unique_id=1773136502 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54, 0, -20)
+
+[node name="floorStone24" parent="Street/floor" unique_id=410766007 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54, 0, -24)
+
+[node name="floorStone25" parent="Street/floor" unique_id=1170971490 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54, 0, -28)
+
+[node name="floorStone26" parent="Street/floor" unique_id=1669593349 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50, 0, 0)
+
+[node name="floorStone30" parent="Street/floor" unique_id=1309458997 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50, 0, -16)
+
+[node name="floorStone31" parent="Street/floor" unique_id=909601858 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50, 0, -20)
+
+[node name="floorStone32" parent="Street/floor" unique_id=354840762 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50, 0, -24)
+
+[node name="floorStone33" parent="Street/floor" unique_id=1185057782 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50, 0, -28)
+
+[node name="floorStone34" parent="Street/floor" unique_id=531079189 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46, 0, 0)
+
+[node name="floorStone38" parent="Street/floor" unique_id=1781359252 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46, 0, -16)
+
+[node name="floorStone39" parent="Street/floor" unique_id=1133557230 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46, 0, -20)
+
+[node name="floorStone40" parent="Street/floor" unique_id=1106819118 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46, 0, -24)
+
+[node name="floorStone41" parent="Street/floor" unique_id=1266633299 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46, 0, -28)
+
+[node name="floorStone42" parent="Street/floor" unique_id=476320983 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42, 0, 0)
+
+[node name="floorStone46" parent="Street/floor" unique_id=1448594112 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42, 0, -16)
+
+[node name="floorStone47" parent="Street/floor" unique_id=335814729 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42, 0, -20)
+
+[node name="floorStone48" parent="Street/floor" unique_id=516408920 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42, 0, -24)
+
+[node name="floorStone49" parent="Street/floor" unique_id=356465225 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42, 0, -28)
+
+[node name="floorStone50" parent="Street/floor" unique_id=1949947150 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38, 0, 0)
+
+[node name="floorStone54" parent="Street/floor" unique_id=1030864270 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38, 0, -16)
+
+[node name="floorStone55" parent="Street/floor" unique_id=1979030670 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38, 0, -20)
+
+[node name="floorStone56" parent="Street/floor" unique_id=189396793 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38, 0, -24)
+
+[node name="floorStone57" parent="Street/floor" unique_id=1691195363 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38, 0, -28)
+
+[node name="floorStone58" parent="Street/floor" unique_id=316970476 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34, 0, 0)
+
+[node name="floorStone62" parent="Street/floor" unique_id=1444497202 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34, 0, -16)
+
+[node name="floorStone63" parent="Street/floor" unique_id=2013753902 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34, 0, -20)
+
+[node name="floorStone64" parent="Street/floor" unique_id=405890373 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34, 0, -24)
+
+[node name="floorStone65" parent="Street/floor" unique_id=447156781 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34, 0, -28)
+
+[node name="floorStone66" parent="Street/floor" unique_id=1615197629 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, 0)
+
+[node name="floorStone70" parent="Street/floor" unique_id=1498834230 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, -16)
+
+[node name="floorStone71" parent="Street/floor" unique_id=411649652 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, -20)
+
+[node name="floorStone72" parent="Street/floor" unique_id=284417918 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, -24)
+
+[node name="floorStone73" parent="Street/floor" unique_id=666808571 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, -28)
+
+[node name="floorStone74" parent="Street/floor" unique_id=1809416422 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26, 0, 0)
+
+[node name="floorStone78" parent="Street/floor" unique_id=425448105 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26, 0, -16)
+
+[node name="floorStone79" parent="Street/floor" unique_id=1214214796 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26, 0, -20)
+
+[node name="floorStone80" parent="Street/floor" unique_id=2098641383 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26, 0, -24)
+
+[node name="floorStone81" parent="Street/floor" unique_id=1179687077 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26, 0, -28)
+
+[node name="floorStone82" parent="Street/floor" unique_id=1855360761 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 0, 0)
+
+[node name="floorStone86" parent="Street/floor" unique_id=1523303004 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 0, -16)
+
+[node name="floorStone87" parent="Street/floor" unique_id=312128583 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 0, -20)
+
+[node name="floorStone88" parent="Street/floor" unique_id=668852609 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 0, -24)
+
+[node name="floorStone89" parent="Street/floor" unique_id=837795950 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 0, -28)
+
+[node name="floorStone90" parent="Street/floor" unique_id=1013061082 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 0, 0)
+
+[node name="floorStone94" parent="Street/floor" unique_id=13677386 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 0, -16)
+
+[node name="floorStone95" parent="Street/floor" unique_id=1744877093 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 0, -20)
+
+[node name="floorStone96" parent="Street/floor" unique_id=1057003414 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 0, -24)
+
+[node name="floorStone97" parent="Street/floor" unique_id=1705939647 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 0, -28)
+
+[node name="floorStone98" parent="Street/floor" unique_id=1208829210 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0, 0)
+
+[node name="floorStone102" parent="Street/floor" unique_id=244785868 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0, -16)
+
+[node name="floorStone103" parent="Street/floor" unique_id=747031005 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0, -20)
+
+[node name="floorStone104" parent="Street/floor" unique_id=462577257 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0, -24)
+
+[node name="floorStone105" parent="Street/floor" unique_id=315802522 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0, -28)
+
+[node name="floorStone106" parent="Street/floor" unique_id=312654747 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 0)
+
+[node name="floorStone110" parent="Street/floor" unique_id=282190016 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -16)
+
+[node name="floorStone111" parent="Street/floor" unique_id=1330944517 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -20)
+
+[node name="floorStone112" parent="Street/floor" unique_id=1975533620 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -24)
+
+[node name="floorStone113" parent="Street/floor" unique_id=1115561324 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -28)
+
+[node name="floorStone114" parent="Street/floor" unique_id=1323787063 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 0)
+
+[node name="floorStone118" parent="Street/floor" unique_id=373040951 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -16)
+
+[node name="floorStone119" parent="Street/floor" unique_id=306404220 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -20)
+
+[node name="floorStone120" parent="Street/floor" unique_id=2100634248 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -24)
+
+[node name="floorStone121" parent="Street/floor" unique_id=845437263 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -28)
+
+[node name="floorStone122" parent="Street/floor" unique_id=588552628 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+
+[node name="floorStone126" parent="Street/floor" unique_id=292227125 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -16)
+
+[node name="floorStone127" parent="Street/floor" unique_id=491844161 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -20)
+
+[node name="floorStone128" parent="Street/floor" unique_id=818092993 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -24)
+
+[node name="floorStone129" parent="Street/floor" unique_id=915126728 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -28)
+
+[node name="floorStone130" parent="Street/floor" unique_id=54117633 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
+
+[node name="floorStone134" parent="Street/floor" unique_id=1188477435 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -16)
+
+[node name="floorStone135" parent="Street/floor" unique_id=902421431 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -20)
+
+[node name="floorStone136" parent="Street/floor" unique_id=866857994 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -24)
+
+[node name="floorStone137" parent="Street/floor" unique_id=1507262085 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -28)
+
+[node name="floorStone138" parent="Street/floor" unique_id=1741292898 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)
+
+[node name="floorStone142" parent="Street/floor" unique_id=1851294666 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -16)
+
+[node name="floorStone143" parent="Street/floor" unique_id=954935049 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -20)
+
+[node name="floorStone144" parent="Street/floor" unique_id=1396912684 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -24)
+
+[node name="floorStone145" parent="Street/floor" unique_id=1385346685 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -28)
+
+[node name="floorStone146" parent="Street/floor" unique_id=2058730406 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 0)
+
+[node name="floorStone150" parent="Street/floor" unique_id=65917092 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -16)
+
+[node name="floorStone151" parent="Street/floor" unique_id=1284164083 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -20)
+
+[node name="floorStone152" parent="Street/floor" unique_id=941737998 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -24)
+
+[node name="floorStone153" parent="Street/floor" unique_id=441523759 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -28)
+
+[node name="floorStone154" parent="Street/floor" unique_id=1657408957 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, 0)
+
+[node name="floorStone158" parent="Street/floor" unique_id=338475604 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, -16)
+
+[node name="floorStone159" parent="Street/floor" unique_id=1171980860 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, -20)
+
+[node name="floorStone160" parent="Street/floor" unique_id=500118868 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, -24)
+
+[node name="floorStone161" parent="Street/floor" unique_id=1470306399 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, -28)
+
+[node name="floorStone162" parent="Street/floor" unique_id=613357270 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 0)
+
+[node name="floorStone166" parent="Street/floor" unique_id=916776277 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, -16)
+
+[node name="floorStone167" parent="Street/floor" unique_id=899142802 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, -20)
+
+[node name="floorStone168" parent="Street/floor" unique_id=636714449 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, -24)
+
+[node name="floorStone169" parent="Street/floor" unique_id=1529274594 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, -28)
+
+[node name="floorStone170" parent="Street/floor" unique_id=53505198 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, 0)
+
+[node name="floorStone174" parent="Street/floor" unique_id=287874517 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, -16)
+
+[node name="floorStone175" parent="Street/floor" unique_id=1797976453 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, -20)
+
+[node name="floorStone176" parent="Street/floor" unique_id=131344826 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, -24)
+
+[node name="floorStone177" parent="Street/floor" unique_id=1025762648 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, -28)
+
+[node name="floorStone178" parent="Street/floor" unique_id=935305661 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, 0, 0)
+
+[node name="floorStone182" parent="Street/floor" unique_id=1056698075 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, 0, -16)
+
+[node name="floorStone183" parent="Street/floor" unique_id=1485329909 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, 0, -20)
+
+[node name="floorStone184" parent="Street/floor" unique_id=2022581375 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, 0, -24)
+
+[node name="floorStone185" parent="Street/floor" unique_id=376800086 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, 0, -28)
+
+[node name="floorStone186" parent="Street/floor" unique_id=122200858 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 0)
+
+[node name="floorStone190" parent="Street/floor" unique_id=869679646 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, -16)
+
+[node name="floorStone191" parent="Street/floor" unique_id=674381415 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, -20)
+
+[node name="floorStone192" parent="Street/floor" unique_id=1409193503 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, -24)
+
+[node name="floorStone193" parent="Street/floor" unique_id=869222833 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, -28)
+
+[node name="floorStone194" parent="Street/floor" unique_id=274769962 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34, 0, 0)
+
+[node name="floorStone198" parent="Street/floor" unique_id=2053441532 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34, 0, -16)
+
+[node name="floorStone199" parent="Street/floor" unique_id=1112308865 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34, 0, -20)
+
+[node name="floorStone200" parent="Street/floor" unique_id=1113566016 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34, 0, -24)
+
+[node name="floorStone201" parent="Street/floor" unique_id=1517933671 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34, 0, -28)
+
+[node name="floorStone202" parent="Street/floor" unique_id=1078035320 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38, 0, 0)
+
+[node name="floorStone206" parent="Street/floor" unique_id=1722056111 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38, 0, -16)
+
+[node name="floorStone207" parent="Street/floor" unique_id=1728999603 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38, 0, -20)
+
+[node name="floorStone208" parent="Street/floor" unique_id=40811126 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38, 0, -24)
+
+[node name="floorStone209" parent="Street/floor" unique_id=984392617 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38, 0, -28)
+
+[node name="floorStone210" parent="Street/floor" unique_id=806691931 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42, 0, 0)
+
+[node name="floorStone214" parent="Street/floor" unique_id=1570229884 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42, 0, -16)
+
+[node name="floorStone215" parent="Street/floor" unique_id=1160380710 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42, 0, -20)
+
+[node name="floorStone216" parent="Street/floor" unique_id=465742672 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42, 0, -24)
+
+[node name="floorStone217" parent="Street/floor" unique_id=1848213430 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42, 0, -28)
+
+[node name="floorStone218" parent="Street/floor" unique_id=829913326 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46, 0, 0)
+
+[node name="floorStone222" parent="Street/floor" unique_id=160830292 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46, 0, -16)
+
+[node name="floorStone223" parent="Street/floor" unique_id=933500432 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46, 0, -20)
+
+[node name="floorStone224" parent="Street/floor" unique_id=971468536 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46, 0, -24)
+
+[node name="floorStone225" parent="Street/floor" unique_id=505204178 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46, 0, -28)
+
+[node name="floorStone226" parent="Street/floor" unique_id=1299036424 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 0, 0)
+
+[node name="floorStone227" parent="Street/floor" unique_id=2033843626 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 0, -4)
+
+[node name="floorStone228" parent="Street/floor" unique_id=1405277387 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 0, -8)
+
+[node name="floorStone229" parent="Street/floor" unique_id=1072676804 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 0, -12)
+
+[node name="floorStone230" parent="Street/floor" unique_id=849200092 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 0, -16)
+
+[node name="floorStone231" parent="Street/floor" unique_id=811223752 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 0, -20)
+
+[node name="floorStone232" parent="Street/floor" unique_id=1953298813 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 0, -24)
+
+[node name="floorStone233" parent="Street/floor" unique_id=1206369556 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 0, -28)
+
+[node name="floorStone234" parent="Street/floor" unique_id=557604196 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54, 0, 0)
+
+[node name="floorStone235" parent="Street/floor" unique_id=1542329904 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54, 0, -4)
+
+[node name="floorStone236" parent="Street/floor" unique_id=510198984 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54, 0, -8)
+
+[node name="floorStone237" parent="Street/floor" unique_id=1550928801 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54, 0, -12)
+
+[node name="floorStone238" parent="Street/floor" unique_id=1591021550 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54, 0, -16)
+
+[node name="floorStone239" parent="Street/floor" unique_id=621914912 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54, 0, -20)
+
+[node name="floorStone240" parent="Street/floor" unique_id=733201955 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54, 0, -24)
+
+[node name="floorStone241" parent="Street/floor" unique_id=2135195526 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54, 0, -28)
+
+[node name="floorStone242" parent="Street/floor" unique_id=53433359 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 58, 0, 0)
+
+[node name="floorStone243" parent="Street/floor" unique_id=1399831666 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 58, 0, -4)
+
+[node name="floorStone244" parent="Street/floor" unique_id=586456229 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 58, 0, -8)
+
+[node name="floorStone245" parent="Street/floor" unique_id=265039671 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 58, 0, -12)
+
+[node name="floorStone246" parent="Street/floor" unique_id=152194270 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 58, 0, -16)
+
+[node name="floorStone247" parent="Street/floor" unique_id=1923316765 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 58, 0, -20)
+
+[node name="floorStone248" parent="Street/floor" unique_id=929512308 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 58, 0, -24)
+
+[node name="floorStone249" parent="Street/floor" unique_id=1096146601 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 58, 0, -28)
+
+[node name="floorStone250" parent="Street/floor" unique_id=1510299802 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 62, 0, 0)
+
+[node name="floorStone251" parent="Street/floor" unique_id=601502381 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 62, 0, -4)
+
+[node name="floorStone252" parent="Street/floor" unique_id=112553567 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 62, 0, -8)
+
+[node name="floorStone253" parent="Street/floor" unique_id=1713710683 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 62, 0, -12)
+
+[node name="floorStone254" parent="Street/floor" unique_id=1080649186 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 62, 0, -16)
+
+[node name="floorStone255" parent="Street/floor" unique_id=705677350 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 62, 0, -20)
+
+[node name="floorStone256" parent="Street/floor" unique_id=1076117679 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 62, 0, -24)
+
+[node name="floorStone257" parent="Street/floor" unique_id=1299979847 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 62, 0, -28)
+
+[node name="floorStone258" parent="Street/floor" unique_id=2132914441 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66, 0, 0)
+
+[node name="floorStone259" parent="Street/floor" unique_id=379116551 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66, 0, -4)
+
+[node name="floorStone260" parent="Street/floor" unique_id=1980422255 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66, 0, -8)
+
+[node name="floorStone261" parent="Street/floor" unique_id=1416295754 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66, 0, -12)
+
+[node name="floorStone262" parent="Street/floor" unique_id=555873552 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66, 0, -16)
+
+[node name="floorStone263" parent="Street/floor" unique_id=1506800939 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66, 0, -20)
+
+[node name="floorStone264" parent="Street/floor" unique_id=2006394995 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66, 0, -24)
+
+[node name="floorStone265" parent="Street/floor" unique_id=562558327 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66, 0, -28)
+
+[node name="floorStone266" parent="Street/floor" unique_id=1879891508 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 0, 0)
+
+[node name="floorStone267" parent="Street/floor" unique_id=1931479968 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 0, -4)
+
+[node name="floorStone268" parent="Street/floor" unique_id=1263316871 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 0, -8)
+
+[node name="floorStone269" parent="Street/floor" unique_id=1496045835 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 0, -12)
+
+[node name="floorStone270" parent="Street/floor" unique_id=335054171 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 0, -16)
+
+[node name="floorStone271" parent="Street/floor" unique_id=1768824366 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 0, -20)
+
+[node name="floorStone272" parent="Street/floor" unique_id=2044558213 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 0, -24)
+
+[node name="floorStone273" parent="Street/floor" unique_id=238828537 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 0, -28)
+
+[node name="floorStone274" parent="Street/floor" unique_id=1430879867 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 74, 0, 0)
+
+[node name="floorStone275" parent="Street/floor" unique_id=618261091 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 74, 0, -4)
+
+[node name="floorStone276" parent="Street/floor" unique_id=962567305 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 74, 0, -8)
+
+[node name="floorStone277" parent="Street/floor" unique_id=1707840837 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 74, 0, -12)
+
+[node name="floorStone278" parent="Street/floor" unique_id=987198855 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 74, 0, -16)
+
+[node name="floorStone279" parent="Street/floor" unique_id=49785202 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 74, 0, -20)
+
+[node name="floorStone280" parent="Street/floor" unique_id=338876969 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 74, 0, -24)
+
+[node name="floorStone281" parent="Street/floor" unique_id=1153015296 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 74, 0, -28)
+
+[node name="floorStone282" parent="Street/floor" unique_id=2121500786 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 78, 0, 0)
+
+[node name="floorStone283" parent="Street/floor" unique_id=255843583 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 78, 0, -4)
+
+[node name="floorStone284" parent="Street/floor" unique_id=942845421 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 78, 0, -8)
+
+[node name="floorStone285" parent="Street/floor" unique_id=661890073 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 78, 0, -12)
+
+[node name="floorStone286" parent="Street/floor" unique_id=2084918788 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 78, 0, -16)
+
+[node name="floorStone287" parent="Street/floor" unique_id=335642231 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 78, 0, -20)
+
+[node name="floorStone288" parent="Street/floor" unique_id=794135128 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 78, 0, -24)
+
+[node name="floorStone289" parent="Street/floor" unique_id=1576025942 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 78, 0, -28)
+
+[node name="floorStone290" parent="Street/floor" unique_id=973517154 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 82, 0, 0)
+
+[node name="floorStone291" parent="Street/floor" unique_id=1088443041 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 82, 0, -4)
+
+[node name="floorStone292" parent="Street/floor" unique_id=1396963212 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 82, 0, -8)
+
+[node name="floorStone293" parent="Street/floor" unique_id=383405753 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 82, 0, -12)
+
+[node name="floorStone294" parent="Street/floor" unique_id=779032245 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 82, 0, -16)
+
+[node name="floorStone295" parent="Street/floor" unique_id=1499414955 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 82, 0, -20)
+
+[node name="floorStone296" parent="Street/floor" unique_id=211127507 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 82, 0, -24)
+
+[node name="floorStone297" parent="Street/floor" unique_id=633894082 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 82, 0, -28)
+
+[node name="floorStone298" parent="Street/floor" unique_id=565896000 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 86, 0, 0)
+
+[node name="floorStone299" parent="Street/floor" unique_id=1872138004 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 86, 0, -4)
+
+[node name="floorStone300" parent="Street/floor" unique_id=1821748714 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 86, 0, -8)
+
+[node name="floorStone301" parent="Street/floor" unique_id=1178992466 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 86, 0, -12)
+
+[node name="floorStone302" parent="Street/floor" unique_id=681661873 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 86, 0, -16)
+
+[node name="floorStone303" parent="Street/floor" unique_id=1585226613 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 86, 0, -20)
+
+[node name="floorStone304" parent="Street/floor" unique_id=1897739645 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 86, 0, -24)
+
+[node name="floorStone305" parent="Street/floor" unique_id=1713542765 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 86, 0, -28)
+
+[node name="floorStone306" parent="Street/floor" unique_id=296805913 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 90, 0, 0)
+
+[node name="floorStone307" parent="Street/floor" unique_id=1325419188 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 90, 0, -4)
+
+[node name="floorStone308" parent="Street/floor" unique_id=706733648 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 90, 0, -8)
+
+[node name="floorStone309" parent="Street/floor" unique_id=1871083057 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 90, 0, -12)
+
+[node name="floorStone310" parent="Street/floor" unique_id=1972539946 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 90, 0, -16)
+
+[node name="floorStone311" parent="Street/floor" unique_id=477413570 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 90, 0, -20)
+
+[node name="floorStone312" parent="Street/floor" unique_id=1829799723 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 90, 0, -24)
+
+[node name="floorStone313" parent="Street/floor" unique_id=1625191362 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 90, 0, -28)
+
+[node name="floorStone314" parent="Street/floor" unique_id=797884019 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 94, 0, 0)
+
+[node name="floorStone315" parent="Street/floor" unique_id=1492392921 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 94, 0, -4)
+
+[node name="floorStone316" parent="Street/floor" unique_id=249083552 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 94, 0, -8)
+
+[node name="floorStone317" parent="Street/floor" unique_id=935329322 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 94, 0, -12)
+
+[node name="floorStone318" parent="Street/floor" unique_id=2140621037 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 94, 0, -16)
+
+[node name="floorStone319" parent="Street/floor" unique_id=1210783596 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 94, 0, -20)
+
+[node name="floorStone320" parent="Street/floor" unique_id=273061402 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 94, 0, -24)
+
+[node name="floorStone321" parent="Street/floor" unique_id=1883150114 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 94, 0, -28)
+
+[node name="floorStone322" parent="Street/floor" unique_id=1774598687 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66, 0, -32)
+
+[node name="floorStone323" parent="Street/floor" unique_id=2103463142 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66, 0, -36)
+
+[node name="floorStone324" parent="Street/floor" unique_id=857958553 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66, 0, -40)
+
+[node name="floorStone325" parent="Street/floor" unique_id=611101676 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66, 0, -44)
+
+[node name="floorStone326" parent="Street/floor" unique_id=1265259631 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66, 0, -48)
+
+[node name="floorStone327" parent="Street/floor" unique_id=257363487 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66, 0, -52)
+
+[node name="floorStone328" parent="Street/floor" unique_id=1035747629 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66, 0, -56)
+
+[node name="floorStone329" parent="Street/floor" unique_id=944389931 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66, 0, -60)
+
+[node name="floorStone330" parent="Street/floor" unique_id=414791252 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 0, -32)
+
+[node name="floorStone331" parent="Street/floor" unique_id=2050696320 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 0, -36)
+
+[node name="floorStone332" parent="Street/floor" unique_id=266375703 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 0, -40)
+
+[node name="floorStone333" parent="Street/floor" unique_id=1500691783 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 0, -44)
+
+[node name="floorStone334" parent="Street/floor" unique_id=2083929939 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 0, -48)
+
+[node name="floorStone335" parent="Street/floor" unique_id=1209302801 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 0, -52)
+
+[node name="floorStone336" parent="Street/floor" unique_id=1572063021 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 0, -56)
+
+[node name="floorStone337" parent="Street/floor" unique_id=1244353382 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 0, -60)
+
+[node name="floorStone338" parent="Street/floor" unique_id=1161321762 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 74, 0, -32)
+
+[node name="floorStone339" parent="Street/floor" unique_id=123674369 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 74, 0, -36)
+
+[node name="floorStone340" parent="Street/floor" unique_id=1949826563 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 74, 0, -40)
+
+[node name="floorStone341" parent="Street/floor" unique_id=1346201085 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 74, 0, -44)
+
+[node name="floorStone342" parent="Street/floor" unique_id=1389065306 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 74, 0, -48)
+
+[node name="floorStone343" parent="Street/floor" unique_id=1283323130 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 74, 0, -52)
+
+[node name="floorStone344" parent="Street/floor" unique_id=2124928057 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 74, 0, -56)
+
+[node name="floorStone345" parent="Street/floor" unique_id=1558741745 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 74, 0, -60)
+
+[node name="floorStone346" parent="Street/floor" unique_id=2079338710 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 78, 0, -32)
+
+[node name="floorStone347" parent="Street/floor" unique_id=1055384280 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 78, 0, -36)
+
+[node name="floorStone348" parent="Street/floor" unique_id=1888614966 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 78, 0, -40)
+
+[node name="floorStone349" parent="Street/floor" unique_id=2103152228 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 78, 0, -44)
+
+[node name="floorStone350" parent="Street/floor" unique_id=1769805909 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 78, 0, -48)
+
+[node name="floorStone351" parent="Street/floor" unique_id=1783093520 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 78, 0, -52)
+
+[node name="floorStone352" parent="Street/floor" unique_id=1817153198 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 78, 0, -56)
+
+[node name="floorStone353" parent="Street/floor" unique_id=907082158 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 78, 0, -60)
+
+[node name="floorStone354" parent="Street/floor" unique_id=1001543441 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 82, 0, -32)
+
+[node name="floorStone355" parent="Street/floor" unique_id=975335889 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 82, 0, -36)
+
+[node name="floorStone356" parent="Street/floor" unique_id=711245818 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 82, 0, -40)
+
+[node name="floorStone357" parent="Street/floor" unique_id=397315221 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 82, 0, -44)
+
+[node name="floorStone358" parent="Street/floor" unique_id=378603346 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 82, 0, -48)
+
+[node name="floorStone359" parent="Street/floor" unique_id=980768361 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 82, 0, -52)
+
+[node name="floorStone360" parent="Street/floor" unique_id=10244018 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 82, 0, -56)
+
+[node name="floorStone361" parent="Street/floor" unique_id=823447011 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 82, 0, -60)
+
+[node name="floorStone362" parent="Street/floor" unique_id=584431662 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 86, 0, -32)
+
+[node name="floorStone363" parent="Street/floor" unique_id=1222323138 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 86, 0, -36)
+
+[node name="floorStone364" parent="Street/floor" unique_id=808720373 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 86, 0, -40)
+
+[node name="floorStone365" parent="Street/floor" unique_id=440995689 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 86, 0, -44)
+
+[node name="floorStone366" parent="Street/floor" unique_id=108256537 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 86, 0, -48)
+
+[node name="floorStone367" parent="Street/floor" unique_id=710698702 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 86, 0, -52)
+
+[node name="floorStone368" parent="Street/floor" unique_id=1370747711 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 86, 0, -56)
+
+[node name="floorStone369" parent="Street/floor" unique_id=1770988036 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 86, 0, -60)
+
+[node name="floorStone370" parent="Street/floor" unique_id=689060351 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 90, 0, -32)
+
+[node name="floorStone371" parent="Street/floor" unique_id=630305869 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 90, 0, -36)
+
+[node name="floorStone372" parent="Street/floor" unique_id=351471023 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 90, 0, -40)
+
+[node name="floorStone373" parent="Street/floor" unique_id=1907514299 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 90, 0, -44)
+
+[node name="floorStone374" parent="Street/floor" unique_id=1001863187 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 90, 0, -48)
+
+[node name="floorStone375" parent="Street/floor" unique_id=1411465680 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 90, 0, -52)
+
+[node name="floorStone376" parent="Street/floor" unique_id=302116821 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 90, 0, -56)
+
+[node name="floorStone377" parent="Street/floor" unique_id=737917522 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 90, 0, -60)
+
+[node name="floorStone378" parent="Street/floor" unique_id=1853042827 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 94, 0, -32)
+
+[node name="floorStone379" parent="Street/floor" unique_id=89850148 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 94, 0, -36)
+
+[node name="floorStone380" parent="Street/floor" unique_id=88670730 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 94, 0, -40)
+
+[node name="floorStone381" parent="Street/floor" unique_id=1436828233 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 94, 0, -44)
+
+[node name="floorStone382" parent="Street/floor" unique_id=226804790 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 94, 0, -48)
+
+[node name="floorStone383" parent="Street/floor" unique_id=1068451433 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 94, 0, -52)
+
+[node name="floorStone384" parent="Street/floor" unique_id=1418536243 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 94, 0, -56)
+
+[node name="floorStone385" parent="Street/floor" unique_id=158787495 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 94, 0, -60)
+
+[node name="floorStone386" parent="Street/floor" unique_id=1107646674 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66, 0, 32)
+
+[node name="floorStone387" parent="Street/floor" unique_id=1541745937 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66, 0, 28)
+
+[node name="floorStone388" parent="Street/floor" unique_id=1954482914 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66, 0, 24)
+
+[node name="floorStone389" parent="Street/floor" unique_id=831490483 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66, 0, 20)
+
+[node name="floorStone390" parent="Street/floor" unique_id=709962932 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66, 0, 16)
+
+[node name="floorStone391" parent="Street/floor" unique_id=249366142 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66, 0, 12)
+
+[node name="floorStone392" parent="Street/floor" unique_id=882462931 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66, 0, 8)
+
+[node name="floorStone393" parent="Street/floor" unique_id=365850585 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66, 0, 4)
+
+[node name="floorStone394" parent="Street/floor" unique_id=1157663641 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 0, 32)
+
+[node name="floorStone395" parent="Street/floor" unique_id=1953294873 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 0, 28)
+
+[node name="floorStone396" parent="Street/floor" unique_id=1951827371 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 0, 24)
+
+[node name="floorStone397" parent="Street/floor" unique_id=413638652 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 0, 20)
+
+[node name="floorStone398" parent="Street/floor" unique_id=2039758168 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 0, 16)
+
+[node name="floorStone399" parent="Street/floor" unique_id=1331791168 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 0, 12)
+
+[node name="floorStone400" parent="Street/floor" unique_id=1291702393 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 0, 8)
+
+[node name="floorStone401" parent="Street/floor" unique_id=1864404921 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 0, 4)
+
+[node name="floorStone402" parent="Street/floor" unique_id=171869148 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 74, 0, 32)
+
+[node name="floorStone403" parent="Street/floor" unique_id=1309308315 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 74, 0, 28)
+
+[node name="floorStone404" parent="Street/floor" unique_id=1442336893 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 74, 0, 24)
+
+[node name="floorStone405" parent="Street/floor" unique_id=610463883 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 74, 0, 20)
+
+[node name="floorStone406" parent="Street/floor" unique_id=1920926224 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 74, 0, 16)
+
+[node name="floorStone407" parent="Street/floor" unique_id=974370932 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 74, 0, 12)
+
+[node name="floorStone408" parent="Street/floor" unique_id=135983059 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 74, 0, 8)
+
+[node name="floorStone409" parent="Street/floor" unique_id=888892304 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 74, 0, 4)
+
+[node name="floorStone410" parent="Street/floor" unique_id=192913551 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 78, 0, 32)
+
+[node name="floorStone411" parent="Street/floor" unique_id=387528513 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 78, 0, 28)
+
+[node name="floorStone412" parent="Street/floor" unique_id=2021272694 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 78, 0, 24)
+
+[node name="floorStone413" parent="Street/floor" unique_id=33539708 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 78, 0, 20)
+
+[node name="floorStone414" parent="Street/floor" unique_id=1275996270 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 78, 0, 16)
+
+[node name="floorStone415" parent="Street/floor" unique_id=636495808 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 78, 0, 12)
+
+[node name="floorStone416" parent="Street/floor" unique_id=2099379484 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 78, 0, 8)
+
+[node name="floorStone417" parent="Street/floor" unique_id=747385646 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 78, 0, 4)
+
+[node name="floorStone418" parent="Street/floor" unique_id=1673708963 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 82, 0, 32)
+
+[node name="floorStone419" parent="Street/floor" unique_id=1417525939 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 82, 0, 28)
+
+[node name="floorStone420" parent="Street/floor" unique_id=1164997915 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 82, 0, 24)
+
+[node name="floorStone421" parent="Street/floor" unique_id=2134400189 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 82, 0, 20)
+
+[node name="floorStone422" parent="Street/floor" unique_id=29952331 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 82, 0, 16)
+
+[node name="floorStone423" parent="Street/floor" unique_id=423679409 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 82, 0, 12)
+
+[node name="floorStone424" parent="Street/floor" unique_id=84227708 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 82, 0, 8)
+
+[node name="floorStone425" parent="Street/floor" unique_id=1279388492 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 82, 0, 4)
+
+[node name="floorStone426" parent="Street/floor" unique_id=173187772 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 86, 0, 32)
+
+[node name="floorStone427" parent="Street/floor" unique_id=1474735370 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 86, 0, 28)
+
+[node name="floorStone428" parent="Street/floor" unique_id=170054902 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 86, 0, 24)
+
+[node name="floorStone429" parent="Street/floor" unique_id=1639343876 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 86, 0, 20)
+
+[node name="floorStone430" parent="Street/floor" unique_id=1798675758 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 86, 0, 16)
+
+[node name="floorStone431" parent="Street/floor" unique_id=1783296937 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 86, 0, 12)
+
+[node name="floorStone432" parent="Street/floor" unique_id=243899015 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 86, 0, 8)
+
+[node name="floorStone433" parent="Street/floor" unique_id=480709130 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 86, 0, 4)
+
+[node name="floorStone434" parent="Street/floor" unique_id=1746932361 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 90, 0, 32)
+
+[node name="floorStone435" parent="Street/floor" unique_id=1579677550 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 90, 0, 28)
+
+[node name="floorStone436" parent="Street/floor" unique_id=954282335 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 90, 0, 24)
+
+[node name="floorStone437" parent="Street/floor" unique_id=2076232148 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 90, 0, 20)
+
+[node name="floorStone438" parent="Street/floor" unique_id=1385079143 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 90, 0, 16)
+
+[node name="floorStone439" parent="Street/floor" unique_id=577748448 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 90, 0, 12)
+
+[node name="floorStone440" parent="Street/floor" unique_id=63159455 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 90, 0, 8)
+
+[node name="floorStone441" parent="Street/floor" unique_id=1364882871 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 90, 0, 4)
+
+[node name="floorStone442" parent="Street/floor" unique_id=916493043 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 94, 0, 32)
+
+[node name="floorStone443" parent="Street/floor" unique_id=1078504175 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 94, 0, 28)
+
+[node name="floorStone444" parent="Street/floor" unique_id=722638485 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 94, 0, 24)
+
+[node name="floorStone445" parent="Street/floor" unique_id=1876330844 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 94, 0, 20)
+
+[node name="floorStone446" parent="Street/floor" unique_id=52740172 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 94, 0, 16)
+
+[node name="floorStone447" parent="Street/floor" unique_id=1759720853 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 94, 0, 12)
+
+[node name="floorStone448" parent="Street/floor" unique_id=107324881 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 94, 0, 8)
+
+[node name="floorStone449" parent="Street/floor" unique_id=140599370 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 94, 0, 4)
+
+[node name="floorStone450" parent="Street/floor" unique_id=919344608 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34, 0, 32)
+
+[node name="floorStone451" parent="Street/floor" unique_id=549251485 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34, 0, 28)
+
+[node name="floorStone452" parent="Street/floor" unique_id=555057331 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34, 0, 24)
+
+[node name="floorStone453" parent="Street/floor" unique_id=426810153 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34, 0, 20)
+
+[node name="floorStone454" parent="Street/floor" unique_id=386542421 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34, 0, 16)
+
+[node name="floorStone455" parent="Street/floor" unique_id=8028714 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34, 0, 12)
+
+[node name="floorStone456" parent="Street/floor" unique_id=448678858 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34, 0, 8)
+
+[node name="floorStone457" parent="Street/floor" unique_id=1135663004 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34, 0, 4)
+
+[node name="floorStone458" parent="Street/floor" unique_id=700818201 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38, 0, 32)
+
+[node name="floorStone459" parent="Street/floor" unique_id=1616260914 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38, 0, 28)
+
+[node name="floorStone460" parent="Street/floor" unique_id=244693653 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38, 0, 24)
+
+[node name="floorStone461" parent="Street/floor" unique_id=1125836026 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38, 0, 20)
+
+[node name="floorStone462" parent="Street/floor" unique_id=705985361 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38, 0, 16)
+
+[node name="floorStone463" parent="Street/floor" unique_id=968906407 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38, 0, 12)
+
+[node name="floorStone464" parent="Street/floor" unique_id=1298808830 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38, 0, 8)
+
+[node name="floorStone465" parent="Street/floor" unique_id=1813506938 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38, 0, 4)
+
+[node name="floorStone466" parent="Street/floor" unique_id=888060507 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42, 0, 32)
+
+[node name="floorStone467" parent="Street/floor" unique_id=418394514 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42, 0, 28)
+
+[node name="floorStone468" parent="Street/floor" unique_id=1942715265 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42, 0, 24)
+
+[node name="floorStone469" parent="Street/floor" unique_id=1525557808 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42, 0, 20)
+
+[node name="floorStone470" parent="Street/floor" unique_id=492628784 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42, 0, 16)
+
+[node name="floorStone471" parent="Street/floor" unique_id=1259695104 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42, 0, 12)
+
+[node name="floorStone472" parent="Street/floor" unique_id=1087636118 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42, 0, 8)
+
+[node name="floorStone473" parent="Street/floor" unique_id=329497799 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42, 0, 4)
+
+[node name="floorStone474" parent="Street/floor" unique_id=930092890 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46, 0, 32)
+
+[node name="floorStone475" parent="Street/floor" unique_id=303737084 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46, 0, 28)
+
+[node name="floorStone476" parent="Street/floor" unique_id=552784870 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46, 0, 24)
+
+[node name="floorStone477" parent="Street/floor" unique_id=570950943 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46, 0, 20)
+
+[node name="floorStone478" parent="Street/floor" unique_id=463109204 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46, 0, 16)
+
+[node name="floorStone479" parent="Street/floor" unique_id=196284346 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46, 0, 12)
+
+[node name="floorStone480" parent="Street/floor" unique_id=1254294406 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46, 0, 8)
+
+[node name="floorStone481" parent="Street/floor" unique_id=1113918732 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46, 0, 4)
+
+[node name="floorStone482" parent="Street/floor" unique_id=1533232257 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 0, 32)
+
+[node name="floorStone483" parent="Street/floor" unique_id=723977250 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 0, 28)
+
+[node name="floorStone484" parent="Street/floor" unique_id=1994083572 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 0, 24)
+
+[node name="floorStone485" parent="Street/floor" unique_id=1863484660 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 0, 20)
+
+[node name="floorStone486" parent="Street/floor" unique_id=320322832 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 0, 16)
+
+[node name="floorStone487" parent="Street/floor" unique_id=403129437 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 0, 12)
+
+[node name="floorStone488" parent="Street/floor" unique_id=399231375 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 0, 8)
+
+[node name="floorStone489" parent="Street/floor" unique_id=1218687285 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 0, 4)
+
+[node name="floorStone490" parent="Street/floor" unique_id=569820236 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54, 0, 32)
+
+[node name="floorStone491" parent="Street/floor" unique_id=1624188173 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54, 0, 28)
+
+[node name="floorStone492" parent="Street/floor" unique_id=2028824397 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54, 0, 24)
+
+[node name="floorStone493" parent="Street/floor" unique_id=1691222762 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54, 0, 20)
+
+[node name="floorStone494" parent="Street/floor" unique_id=1212182015 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54, 0, 16)
+
+[node name="floorStone495" parent="Street/floor" unique_id=1385203461 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54, 0, 12)
+
+[node name="floorStone496" parent="Street/floor" unique_id=1799274780 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54, 0, 8)
+
+[node name="floorStone497" parent="Street/floor" unique_id=2025530796 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54, 0, 4)
+
+[node name="floorStone498" parent="Street/floor" unique_id=95919627 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 58, 0, 32)
+
+[node name="floorStone499" parent="Street/floor" unique_id=207238298 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 58, 0, 28)
+
+[node name="floorStone500" parent="Street/floor" unique_id=158711890 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 58, 0, 24)
+
+[node name="floorStone501" parent="Street/floor" unique_id=1376273147 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 58, 0, 20)
+
+[node name="floorStone502" parent="Street/floor" unique_id=770009647 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 58, 0, 16)
+
+[node name="floorStone503" parent="Street/floor" unique_id=290415125 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 58, 0, 12)
+
+[node name="floorStone504" parent="Street/floor" unique_id=1557860783 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 58, 0, 8)
+
+[node name="floorStone505" parent="Street/floor" unique_id=415677059 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 58, 0, 4)
+
+[node name="floorStone506" parent="Street/floor" unique_id=1853527132 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 62, 0, 32)
+
+[node name="floorStone507" parent="Street/floor" unique_id=988780242 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 62, 0, 28)
+
+[node name="floorStone508" parent="Street/floor" unique_id=1409573893 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 62, 0, 24)
+
+[node name="floorStone509" parent="Street/floor" unique_id=453469879 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 62, 0, 20)
+
+[node name="floorStone510" parent="Street/floor" unique_id=236056648 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 62, 0, 16)
+
+[node name="floorStone511" parent="Street/floor" unique_id=2115066599 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 62, 0, 12)
+
+[node name="floorStone512" parent="Street/floor" unique_id=403027853 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 62, 0, 8)
+
+[node name="floorStone513" parent="Street/floor" unique_id=1638047620 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 62, 0, 4)
+
+[node name="floorStone514" parent="Street/floor" unique_id=1459108060 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 32)
+
+[node name="floorStone515" parent="Street/floor" unique_id=1313060997 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 28)
+
+[node name="floorStone516" parent="Street/floor" unique_id=1506823164 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 24)
+
+[node name="floorStone517" parent="Street/floor" unique_id=1357028113 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 20)
+
+[node name="floorStone518" parent="Street/floor" unique_id=1776466042 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 16)
+
+[node name="floorStone519" parent="Street/floor" unique_id=1186570749 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 12)
+
+[node name="floorStone520" parent="Street/floor" unique_id=1071086495 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 8)
+
+[node name="floorStone521" parent="Street/floor" unique_id=596468652 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 4)
+
+[node name="floorStone522" parent="Street/floor" unique_id=94980815 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 32)
+
+[node name="floorStone523" parent="Street/floor" unique_id=352583676 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 28)
+
+[node name="floorStone524" parent="Street/floor" unique_id=1919683012 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 24)
+
+[node name="floorStone525" parent="Street/floor" unique_id=545787108 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 20)
+
+[node name="floorStone526" parent="Street/floor" unique_id=1554095441 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 16)
+
+[node name="floorStone527" parent="Street/floor" unique_id=583903140 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 12)
+
+[node name="floorStone528" parent="Street/floor" unique_id=561531625 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 8)
+
+[node name="floorStone529" parent="Street/floor" unique_id=466736625 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 4)
+
+[node name="floorStone530" parent="Street/floor" unique_id=118025128 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 32)
+
+[node name="floorStone531" parent="Street/floor" unique_id=1332055631 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 28)
+
+[node name="floorStone532" parent="Street/floor" unique_id=1436941092 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 24)
+
+[node name="floorStone533" parent="Street/floor" unique_id=111724071 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 20)
+
+[node name="floorStone534" parent="Street/floor" unique_id=1478047917 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 16)
+
+[node name="floorStone535" parent="Street/floor" unique_id=1474033032 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 12)
+
+[node name="floorStone536" parent="Street/floor" unique_id=330817643 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 8)
+
+[node name="floorStone537" parent="Street/floor" unique_id=362902233 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 4)
+
+[node name="floorStone538" parent="Street/floor" unique_id=1448275801 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, 32)
+
+[node name="floorStone539" parent="Street/floor" unique_id=757252040 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, 28)
+
+[node name="floorStone540" parent="Street/floor" unique_id=1682865987 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, 24)
+
+[node name="floorStone541" parent="Street/floor" unique_id=1167956799 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, 20)
+
+[node name="floorStone542" parent="Street/floor" unique_id=1214509854 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, 16)
+
+[node name="floorStone543" parent="Street/floor" unique_id=2094077431 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, 12)
+
+[node name="floorStone544" parent="Street/floor" unique_id=726540905 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, 8)
+
+[node name="floorStone545" parent="Street/floor" unique_id=47338532 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, 4)
+
+[node name="floorStone546" parent="Street/floor" unique_id=163168400 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 32)
+
+[node name="floorStone547" parent="Street/floor" unique_id=1494940323 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 28)
+
+[node name="floorStone548" parent="Street/floor" unique_id=1787566837 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 24)
+
+[node name="floorStone549" parent="Street/floor" unique_id=658285950 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 20)
+
+[node name="floorStone550" parent="Street/floor" unique_id=104353698 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 16)
+
+[node name="floorStone551" parent="Street/floor" unique_id=1769714010 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 12)
+
+[node name="floorStone552" parent="Street/floor" unique_id=1263091531 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 8)
+
+[node name="floorStone553" parent="Street/floor" unique_id=480230782 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 4)
+
+[node name="floorStone554" parent="Street/floor" unique_id=1373835487 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, 32)
+
+[node name="floorStone555" parent="Street/floor" unique_id=1634777375 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, 28)
+
+[node name="floorStone556" parent="Street/floor" unique_id=884789543 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, 24)
+
+[node name="floorStone557" parent="Street/floor" unique_id=1342965004 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, 20)
+
+[node name="floorStone558" parent="Street/floor" unique_id=766698559 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, 16)
+
+[node name="floorStone559" parent="Street/floor" unique_id=587222324 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, 12)
+
+[node name="floorStone560" parent="Street/floor" unique_id=973536245 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, 8)
+
+[node name="floorStone561" parent="Street/floor" unique_id=1638877732 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, 4)
+
+[node name="floorStone562" parent="Street/floor" unique_id=262583903 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, 0, 32)
+
+[node name="floorStone563" parent="Street/floor" unique_id=1825362707 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, 0, 28)
+
+[node name="floorStone564" parent="Street/floor" unique_id=1457565514 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, 0, 24)
+
+[node name="floorStone565" parent="Street/floor" unique_id=509255238 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, 0, 20)
+
+[node name="floorStone566" parent="Street/floor" unique_id=935748258 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, 0, 16)
+
+[node name="floorStone567" parent="Street/floor" unique_id=1706632051 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, 0, 12)
+
+[node name="floorStone568" parent="Street/floor" unique_id=1731476315 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, 0, 8)
+
+[node name="floorStone569" parent="Street/floor" unique_id=2094514500 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, 0, 4)
+
+[node name="floorStone570" parent="Street/floor" unique_id=1050694811 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 32)
+
+[node name="floorStone571" parent="Street/floor" unique_id=1247945505 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 28)
+
+[node name="floorStone572" parent="Street/floor" unique_id=1172481031 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 24)
+
+[node name="floorStone573" parent="Street/floor" unique_id=1238558920 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 20)
+
+[node name="floorStone574" parent="Street/floor" unique_id=474329422 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 16)
+
+[node name="floorStone575" parent="Street/floor" unique_id=902724716 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 12)
+
+[node name="floorStone576" parent="Street/floor" unique_id=1585840231 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 8)
+
+[node name="floorStone577" parent="Street/floor" unique_id=1572831480 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, 4)
+
+[node name="floorStone578" parent="Street/floor" unique_id=1439859175 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, 32)
+
+[node name="floorStone579" parent="Street/floor" unique_id=2090293493 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, 28)
+
+[node name="floorStone580" parent="Street/floor" unique_id=2068851774 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, 24)
+
+[node name="floorStone581" parent="Street/floor" unique_id=1772847484 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, 20)
+
+[node name="floorStone582" parent="Street/floor" unique_id=739563854 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, 16)
+
+[node name="floorStone583" parent="Street/floor" unique_id=716429296 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, 12)
+
+[node name="floorStone584" parent="Street/floor" unique_id=1657935303 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, 8)
+
+[node name="floorStone585" parent="Street/floor" unique_id=266106432 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, 4)
+
+[node name="floorStone586" parent="Street/floor" unique_id=2018045743 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26, 0, 32)
+
+[node name="floorStone587" parent="Street/floor" unique_id=20082825 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26, 0, 28)
+
+[node name="floorStone588" parent="Street/floor" unique_id=1086902769 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26, 0, 24)
+
+[node name="floorStone589" parent="Street/floor" unique_id=76852266 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26, 0, 20)
+
+[node name="floorStone590" parent="Street/floor" unique_id=624314798 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26, 0, 16)
+
+[node name="floorStone591" parent="Street/floor" unique_id=1585722490 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26, 0, 12)
+
+[node name="floorStone592" parent="Street/floor" unique_id=410801073 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26, 0, 8)
+
+[node name="floorStone593" parent="Street/floor" unique_id=1140887643 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26, 0, 4)
+
+[node name="floorStone594" parent="Street/floor" unique_id=1388855331 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 0, 32)
+
+[node name="floorStone595" parent="Street/floor" unique_id=911694126 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 0, 28)
+
+[node name="floorStone596" parent="Street/floor" unique_id=1152939538 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 0, 24)
+
+[node name="floorStone597" parent="Street/floor" unique_id=394430124 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 0, 20)
+
+[node name="floorStone598" parent="Street/floor" unique_id=338089155 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 0, 16)
+
+[node name="floorStone599" parent="Street/floor" unique_id=261173983 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 0, 12)
+
+[node name="floorStone600" parent="Street/floor" unique_id=133288623 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 0, 8)
+
+[node name="floorStone601" parent="Street/floor" unique_id=2013590831 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 0, 4)
+
+[node name="floorStone602" parent="Street/floor" unique_id=344071131 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 0, 32)
+
+[node name="floorStone603" parent="Street/floor" unique_id=1516090296 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 0, 28)
+
+[node name="floorStone604" parent="Street/floor" unique_id=238008564 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 0, 24)
+
+[node name="floorStone605" parent="Street/floor" unique_id=1577388563 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 0, 20)
+
+[node name="floorStone606" parent="Street/floor" unique_id=298136976 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 0, 16)
+
+[node name="floorStone607" parent="Street/floor" unique_id=1813823646 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 0, 12)
+
+[node name="floorStone608" parent="Street/floor" unique_id=1272868882 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 0, 8)
+
+[node name="floorStone609" parent="Street/floor" unique_id=1507102470 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 0, 4)
+
+[node name="floorStone610" parent="Street/floor" unique_id=1405787505 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0, 32)
+
+[node name="floorStone611" parent="Street/floor" unique_id=645400383 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0, 28)
+
+[node name="floorStone612" parent="Street/floor" unique_id=2082337308 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0, 24)
+
+[node name="floorStone613" parent="Street/floor" unique_id=483562694 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0, 20)
+
+[node name="floorStone614" parent="Street/floor" unique_id=188261135 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0, 16)
+
+[node name="floorStone615" parent="Street/floor" unique_id=86640385 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0, 12)
+
+[node name="floorStone616" parent="Street/floor" unique_id=73839275 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0, 8)
+
+[node name="floorStone617" parent="Street/floor" unique_id=1737350976 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0, 4)
+
+[node name="floorStone618" parent="Street/floor" unique_id=1594214453 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 32)
+
+[node name="floorStone619" parent="Street/floor" unique_id=192860600 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 28)
+
+[node name="floorStone620" parent="Street/floor" unique_id=1816111513 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 24)
+
+[node name="floorStone621" parent="Street/floor" unique_id=103946201 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 20)
+
+[node name="floorStone622" parent="Street/floor" unique_id=1212384869 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 16)
+
+[node name="floorStone623" parent="Street/floor" unique_id=392067455 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 12)
+
+[node name="floorStone624" parent="Street/floor" unique_id=686886205 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 8)
+
+[node name="floorStone625" parent="Street/floor" unique_id=1133988770 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 4)
+
+[node name="floorStone626" parent="Street/floor" unique_id=305149103 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 32)
+
+[node name="floorStone627" parent="Street/floor" unique_id=1535185715 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 28)
+
+[node name="floorStone628" parent="Street/floor" unique_id=2048559054 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 24)
+
+[node name="floorStone629" parent="Street/floor" unique_id=21072230 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 20)
+
+[node name="floorStone630" parent="Street/floor" unique_id=1434407218 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 16)
+
+[node name="floorStone631" parent="Street/floor" unique_id=410844715 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 12)
+
+[node name="floorStone632" parent="Street/floor" unique_id=1425850776 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 8)
+
+[node name="floorStone633" parent="Street/floor" unique_id=126634382 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 4)
+
+[node name="floorStone634" parent="Street/floor" unique_id=2116771275 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 32)
+
+[node name="floorStone635" parent="Street/floor" unique_id=616954741 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 28)
+
+[node name="floorStone636" parent="Street/floor" unique_id=1212473850 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 24)
+
+[node name="floorStone637" parent="Street/floor" unique_id=839548583 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 20)
+
+[node name="floorStone638" parent="Street/floor" unique_id=1418050854 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 16)
+
+[node name="floorStone639" parent="Street/floor" unique_id=18339595 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 12)
+
+[node name="floorStone640" parent="Street/floor" unique_id=288436464 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 8)
+
+[node name="floorStone641" parent="Street/floor" unique_id=209717502 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 4)
+
+[node name="floorStone642" parent="Street/floor" unique_id=1752367331 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, -32)
+
+[node name="floorStone643" parent="Street/floor" unique_id=894422126 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, -36)
+
+[node name="floorStone644" parent="Street/floor" unique_id=1445961802 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, -40)
+
+[node name="floorStone645" parent="Street/floor" unique_id=2113489597 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, -44)
+
+[node name="floorStone646" parent="Street/floor" unique_id=1222199505 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, -48)
+
+[node name="floorStone647" parent="Street/floor" unique_id=1254557446 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, -52)
+
+[node name="floorStone648" parent="Street/floor" unique_id=1672485194 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, -56)
+
+[node name="floorStone649" parent="Street/floor" unique_id=330414196 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, -60)
+
+[node name="floorStone650" parent="Street/floor" unique_id=1464287773 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26, 0, -32)
+
+[node name="floorStone651" parent="Street/floor" unique_id=1471806674 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26, 0, -36)
+
+[node name="floorStone652" parent="Street/floor" unique_id=1450988886 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26, 0, -40)
+
+[node name="floorStone653" parent="Street/floor" unique_id=1954619524 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26, 0, -44)
+
+[node name="floorStone654" parent="Street/floor" unique_id=279650463 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26, 0, -48)
+
+[node name="floorStone655" parent="Street/floor" unique_id=1170290295 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26, 0, -52)
+
+[node name="floorStone656" parent="Street/floor" unique_id=2070717086 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26, 0, -56)
+
+[node name="floorStone657" parent="Street/floor" unique_id=979782719 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26, 0, -60)
+
+[node name="floorStone658" parent="Street/floor" unique_id=970366726 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 0, -32)
+
+[node name="floorStone659" parent="Street/floor" unique_id=53728462 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 0, -36)
+
+[node name="floorStone660" parent="Street/floor" unique_id=1145744717 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 0, -40)
+
+[node name="floorStone661" parent="Street/floor" unique_id=1081727178 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 0, -44)
+
+[node name="floorStone662" parent="Street/floor" unique_id=1393561650 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 0, -48)
+
+[node name="floorStone663" parent="Street/floor" unique_id=316256223 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 0, -52)
+
+[node name="floorStone664" parent="Street/floor" unique_id=322130895 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 0, -56)
+
+[node name="floorStone665" parent="Street/floor" unique_id=1775889640 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 0, -60)
+
+[node name="floorStone666" parent="Street/floor" unique_id=1897843087 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 0, -32)
+
+[node name="floorStone667" parent="Street/floor" unique_id=1726197425 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 0, -36)
+
+[node name="floorStone668" parent="Street/floor" unique_id=750927036 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 0, -40)
+
+[node name="floorStone669" parent="Street/floor" unique_id=887481623 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 0, -44)
+
+[node name="floorStone670" parent="Street/floor" unique_id=266563904 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 0, -48)
+
+[node name="floorStone671" parent="Street/floor" unique_id=893887677 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 0, -52)
+
+[node name="floorStone672" parent="Street/floor" unique_id=1338304906 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 0, -56)
+
+[node name="floorStone673" parent="Street/floor" unique_id=1112577164 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 0, -60)
+
+[node name="floorStone674" parent="Street/floor" unique_id=793612360 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0, -32)
+
+[node name="floorStone675" parent="Street/floor" unique_id=610239813 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0, -36)
+
+[node name="floorStone676" parent="Street/floor" unique_id=2107634797 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0, -40)
+
+[node name="floorStone677" parent="Street/floor" unique_id=738160269 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0, -44)
+
+[node name="floorStone678" parent="Street/floor" unique_id=1632350968 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0, -48)
+
+[node name="floorStone679" parent="Street/floor" unique_id=649287783 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0, -52)
+
+[node name="floorStone680" parent="Street/floor" unique_id=27293894 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0, -56)
+
+[node name="floorStone681" parent="Street/floor" unique_id=132184221 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0, -60)
+
+[node name="floorStone682" parent="Street/floor" unique_id=570609592 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -32)
+
+[node name="floorStone683" parent="Street/floor" unique_id=1336157538 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -36)
+
+[node name="floorStone684" parent="Street/floor" unique_id=954996135 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -40)
+
+[node name="floorStone685" parent="Street/floor" unique_id=624899483 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -44)
+
+[node name="floorStone686" parent="Street/floor" unique_id=295090682 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -48)
+
+[node name="floorStone687" parent="Street/floor" unique_id=1359231983 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -52)
+
+[node name="floorStone688" parent="Street/floor" unique_id=653635678 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -56)
+
+[node name="floorStone689" parent="Street/floor" unique_id=1577995508 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -60)
+
+[node name="floorStone690" parent="Street/floor" unique_id=1117153040 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -32)
+
+[node name="floorStone691" parent="Street/floor" unique_id=1966556120 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -36)
+
+[node name="floorStone692" parent="Street/floor" unique_id=861259655 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -40)
+
+[node name="floorStone693" parent="Street/floor" unique_id=1268343518 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -44)
+
+[node name="floorStone694" parent="Street/floor" unique_id=716200678 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -48)
+
+[node name="floorStone695" parent="Street/floor" unique_id=653192766 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -52)
+
+[node name="floorStone696" parent="Street/floor" unique_id=1846169725 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -56)
+
+[node name="floorStone697" parent="Street/floor" unique_id=702823159 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -60)
+
+[node name="floorStone698" parent="Street/floor" unique_id=377863858 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -32)
+
+[node name="floorStone699" parent="Street/floor" unique_id=1472608107 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -36)
+
+[node name="floorStone700" parent="Street/floor" unique_id=1438603714 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -40)
+
+[node name="floorStone701" parent="Street/floor" unique_id=1185812142 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -44)
+
+[node name="floorStone702" parent="Street/floor" unique_id=1816563314 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -48)
+
+[node name="floorStone703" parent="Street/floor" unique_id=777253012 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -52)
+
+[node name="floorStone704" parent="Street/floor" unique_id=675955435 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -56)
+
+[node name="floorStone705" parent="Street/floor" unique_id=697616120 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -60)
+
+[node name="floorStone706" parent="Street/floor" unique_id=711246285 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -32)
+
+[node name="floorStone707" parent="Street/floor" unique_id=1495699421 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -36)
+
+[node name="floorStone708" parent="Street/floor" unique_id=71753563 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -40)
+
+[node name="floorStone709" parent="Street/floor" unique_id=1644347672 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -44)
+
+[node name="floorStone710" parent="Street/floor" unique_id=679005620 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -48)
+
+[node name="floorStone711" parent="Street/floor" unique_id=1940002032 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -52)
+
+[node name="floorStone712" parent="Street/floor" unique_id=344433905 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -56)
+
+[node name="floorStone713" parent="Street/floor" unique_id=1063687311 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -60)
+
+[node name="floorStone714" parent="Street/floor" unique_id=1641462302 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -32)
+
+[node name="floorStone715" parent="Street/floor" unique_id=983881341 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -36)
+
+[node name="floorStone716" parent="Street/floor" unique_id=899146640 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -40)
+
+[node name="floorStone717" parent="Street/floor" unique_id=1206825817 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -44)
+
+[node name="floorStone718" parent="Street/floor" unique_id=1765807638 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -48)
+
+[node name="floorStone719" parent="Street/floor" unique_id=1780839398 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -52)
+
+[node name="floorStone720" parent="Street/floor" unique_id=680125553 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -56)
+
+[node name="floorStone721" parent="Street/floor" unique_id=1464733750 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -60)
+
+[node name="floorStone722" parent="Street/floor" unique_id=1599962427 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -32)
+
+[node name="floorStone723" parent="Street/floor" unique_id=338428329 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -36)
+
+[node name="floorStone724" parent="Street/floor" unique_id=801762825 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -40)
+
+[node name="floorStone725" parent="Street/floor" unique_id=936104424 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -44)
+
+[node name="floorStone726" parent="Street/floor" unique_id=1049372517 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -48)
+
+[node name="floorStone727" parent="Street/floor" unique_id=887656654 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -52)
+
+[node name="floorStone728" parent="Street/floor" unique_id=585717376 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -56)
+
+[node name="floorStone729" parent="Street/floor" unique_id=1368923928 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -60)
+
+[node name="floorStone730" parent="Street/floor" unique_id=1914391083 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, -32)
+
+[node name="floorStone731" parent="Street/floor" unique_id=847312328 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, -36)
+
+[node name="floorStone732" parent="Street/floor" unique_id=1545615607 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, -40)
+
+[node name="floorStone733" parent="Street/floor" unique_id=2102471715 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, -44)
+
+[node name="floorStone734" parent="Street/floor" unique_id=624276036 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, -48)
+
+[node name="floorStone735" parent="Street/floor" unique_id=1328570138 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, -52)
+
+[node name="floorStone736" parent="Street/floor" unique_id=467579029 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, -56)
+
+[node name="floorStone737" parent="Street/floor" unique_id=717674241 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, -60)
+
+[node name="floorStone738" parent="Street/floor" unique_id=1757973414 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, -32)
+
+[node name="floorStone739" parent="Street/floor" unique_id=982027151 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, -36)
+
+[node name="floorStone740" parent="Street/floor" unique_id=1177081083 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, -40)
+
+[node name="floorStone741" parent="Street/floor" unique_id=487065366 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, -44)
+
+[node name="floorStone742" parent="Street/floor" unique_id=1350752914 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, -48)
+
+[node name="floorStone743" parent="Street/floor" unique_id=2116757032 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, -52)
+
+[node name="floorStone744" parent="Street/floor" unique_id=75856985 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, -56)
+
+[node name="floorStone745" parent="Street/floor" unique_id=363568825 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, -60)
+
+[node name="floorStone746" parent="Street/floor" unique_id=1064775158 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, -32)
+
+[node name="floorStone747" parent="Street/floor" unique_id=850528472 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, -36)
+
+[node name="floorStone748" parent="Street/floor" unique_id=1468406388 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, -40)
+
+[node name="floorStone749" parent="Street/floor" unique_id=337187775 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, -44)
+
+[node name="floorStone750" parent="Street/floor" unique_id=1060281327 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, -48)
+
+[node name="floorStone751" parent="Street/floor" unique_id=295742755 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, -52)
+
+[node name="floorStone752" parent="Street/floor" unique_id=645283238 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, -56)
+
+[node name="floorStone753" parent="Street/floor" unique_id=1927357818 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, -60)
+
+[node name="floorStone754" parent="Street/floor" unique_id=1359237979 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, 0, -32)
+
+[node name="floorStone755" parent="Street/floor" unique_id=57021598 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, 0, -36)
+
+[node name="floorStone756" parent="Street/floor" unique_id=1020098896 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, 0, -40)
+
+[node name="floorStone757" parent="Street/floor" unique_id=1199952977 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, 0, -44)
+
+[node name="floorStone758" parent="Street/floor" unique_id=895244466 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, 0, -48)
+
+[node name="floorStone759" parent="Street/floor" unique_id=51511548 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, 0, -52)
+
+[node name="floorStone760" parent="Street/floor" unique_id=557772957 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, 0, -56)
+
+[node name="floorStone761" parent="Street/floor" unique_id=1113640804 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, 0, -60)
+
+[node name="floorStone762" parent="Street/floor" unique_id=1645113810 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, -32)
+
+[node name="floorStone763" parent="Street/floor" unique_id=1180294067 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, -36)
+
+[node name="floorStone764" parent="Street/floor" unique_id=41398123 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, -40)
+
+[node name="floorStone765" parent="Street/floor" unique_id=384571534 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, -44)
+
+[node name="floorStone766" parent="Street/floor" unique_id=780818127 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, -48)
+
+[node name="floorStone767" parent="Street/floor" unique_id=1278295272 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, -52)
+
+[node name="floorStone768" parent="Street/floor" unique_id=1089307248 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, -56)
+
+[node name="floorStone769" parent="Street/floor" unique_id=1165772655 instance=ExtResource("1_nw7y5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, -60)
+
+[node name="Buildings" parent="Street" unique_id=118963078 instance=ExtResource("5_8tcd5")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -1, 0, -20)
+
+[node name="detail-light-single2" parent="Street" unique_id=204987384 instance=ExtResource("6_8tcd5")]
+transform = Transform3D(-8, 0, -6.993822e-07, 0, 8, 0, 6.993822e-07, 0, -8, -16, 0, -15)
+
+[node name="detail-light-single3" parent="Street" unique_id=1143950238 instance=ExtResource("6_8tcd5")]
+transform = Transform3D(8, 0, 1.3987644e-06, 0, 8, 0, -1.3987644e-06, 0, 8, -16, 0, -1)
+
+[node name="detail-light-single4" parent="Street" unique_id=1607494326 instance=ExtResource("6_8tcd5")]
+transform = Transform3D(-8, 0, -6.993822e-07, 0, 8, 0, 6.993822e-07, 0, -8, 11, 0, -15)
+
+[node name="detail-light-single5" parent="Street" unique_id=1002078071 instance=ExtResource("6_8tcd5")]
+transform = Transform3D(8, 0, 1.3987644e-06, 0, 8, 0, -1.3987644e-06, 0, 8, 11, 0, -1)
+
+[node name="detail-light-single6" parent="Street" unique_id=862313930 instance=ExtResource("6_8tcd5")]
+transform = Transform3D(-8, 0, -6.993822e-07, 0, 8, 0, 6.993822e-07, 0, -8, 43, 0, -15)
+
+[node name="detail-light-single7" parent="Street" unique_id=318631141 instance=ExtResource("6_8tcd5")]
+transform = Transform3D(8, 0, 1.3987644e-06, 0, 8, 0, -1.3987644e-06, 0, 8, 43, 0, -1)
+
+[node name="detail-light-single8" parent="Street" unique_id=1796435499 instance=ExtResource("6_8tcd5")]
+transform = Transform3D(-8, 0, -6.993822e-07, 0, 8, 0, 6.993822e-07, 0, -8, -47, 0, -15)
+
+[node name="detail-light-single9" parent="Street" unique_id=802777956 instance=ExtResource("6_8tcd5")]
+transform = Transform3D(8, 0, 1.3987644e-06, 0, 8, 0, -1.3987644e-06, 0, 8, -47, 0, -1)
+
+[node name="road-asphalt-straight2" parent="Street" unique_id=399233220 instance=ExtResource("4_por10")]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 44, -0.23289084, -8)
+
+[node name="road-asphalt-straight3" parent="Street" unique_id=1425276735 instance=ExtResource("4_por10")]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 36, -0.23289084, -8)
+
+[node name="road-asphalt-straight4" parent="Street" unique_id=127614516 instance=ExtResource("4_por10")]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 28, -0.23289084, -8)
+
+[node name="road-asphalt-straight5" parent="Street" unique_id=960671492 instance=ExtResource("4_por10")]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 20, -0.23289084, -8)
+
+[node name="road-asphalt-straight6" parent="Street" unique_id=1951128730 instance=ExtResource("4_por10")]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 12, -0.23289084, -8)
+
+[node name="road-asphalt-straight7" parent="Street" unique_id=115329331 instance=ExtResource("4_por10")]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 4, -0.23289084, -8)
+
+[node name="road-asphalt-straight8" parent="Street" unique_id=1686777472 instance=ExtResource("4_por10")]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, -4, -0.23289084, -8)
+
+[node name="road-asphalt-straight9" parent="Street" unique_id=1589875005 instance=ExtResource("4_por10")]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, -12, -0.23289084, -8)
+
+[node name="road-asphalt-straight10" parent="Street" unique_id=47936718 instance=ExtResource("4_por10")]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, -20, -0.23289084, -8)
+
+[node name="road-asphalt-straight11" parent="Street" unique_id=1751937248 instance=ExtResource("4_por10")]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, -28, -0.23289084, -8)
+
+[node name="road-asphalt-straight12" parent="Street" unique_id=364572366 instance=ExtResource("4_por10")]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, -36, -0.23289084, -8)
+
+[node name="road-asphalt-straight13" parent="Street" unique_id=1406352498 instance=ExtResource("4_por10")]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, -44, -0.23289084, -8)
+
+[node name="road-asphalt-straight14" parent="Street" unique_id=1947705170 instance=ExtResource("4_por10")]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, -52, -0.23289084, -8)
+
+[node name="road-asphalt-straight15" parent="Street" unique_id=200517923 instance=ExtResource("4_por10")]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, -60, -0.23289084, -8)
+
+[node name="Conditioner" parent="Street" unique_id=1577848002 instance=ExtResource("8_3c56x")]
+transform = Transform3D(-0.5, 0, -7.54979e-08, 0, 0.5, 0, 7.54979e-08, 0, -0.5, -20.4702, 3, 3.1359272)
+
+[node name="Conditioner2" parent="Street" unique_id=1185614128 instance=ExtResource("8_3c56x")]
+transform = Transform3D(-0.5, 0, -7.54979e-08, 0, 0.5, 0, 7.54979e-08, 0, -0.5, -20.4702, 3, 4.135927)
+
+[node name="Barrel" parent="Street" unique_id=1163239448 instance=ExtResource("5_b06kh")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -23.301674, 0, 4)
+
+[node name="Rig" type="Node3D" parent="." unique_id=1045568444]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22, 1.8, 8)
+
+[node name="Camera3D" type="Camera3D" parent="Rig" unique_id=1465084713]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
+fov = 60.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Rig/Camera3D" unique_id=1187546660]
+
+[node name="ColorRect" type="ColorRect" parent="Rig/Camera3D/CanvasLayer" unique_id=1763070583]
+material = SubResource("ShaderMaterial_7pqoc")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 1, 1, 0)
+metadata/_edit_use_anchors_ = true
+
+[node name="Step" type="AudioStreamPlayer" parent="Rig" unique_id=444829866]
+stream = ExtResource("8_nxk4q")
+bus = &"Wheelchair"
+
+[node name="Car" type="Node3D" parent="." unique_id=427300833]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.390438, -0.23543108, -10.721616)
+
+[node name="EngineSound" type="AudioStreamPlayer3D" parent="Car" unique_id=331615738]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7272949, 1, 0.33483124)
+stream = ExtResource("1_e0p4r")
+volume_db = -10.0
+autoplay = true
+
+[node name="Car4" type="MeshInstance3D" parent="Car" unique_id=1813651578]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 2.8242168, 2.3841858e-07, 0.42342234)
+mesh = ExtResource("2_1mweo")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Car" unique_id=1928279621]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1519165, 1.1881258, -0.48751497)
+light_energy = 15.0
+omni_range = 0.5
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="Car" unique_id=965586137]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1519165, 1.1881258, 1.2932806)
+light_energy = 15.0
+omni_range = 0.5
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="Car" unique_id=418446957]
+transform = Transform3D(-4.362018e-08, -0.064566225, 0.9979134, -2.8222793e-09, 0.9979134, 0.064566225, -1, 0, -4.371139e-08, -0.25249863, 1.1307425, 1.4148006)
+light_energy = 15.0
+spot_range = 20.0
+spot_angle = 25.0
+
+[node name="SpotLight3D3" type="SpotLight3D" parent="Car" unique_id=1139545294]
+transform = Transform3D(-4.362018e-08, -0.064566225, 0.9979134, -2.8222793e-09, 0.9979134, 0.064566225, -1, -2.220446e-16, -4.3711385e-08, -0.25249863, 1.1307425, -0.5769043)
+light_energy = 15.0
+spot_range = 20.0
+spot_angle = 25.0
+
+[node name="ImpactSound" type="AudioStreamPlayer" parent="." unique_id=1539996701]
+stream = ExtResource("2_yhrd8")
+bus = &"Engine"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1786340058]
+libraries/ = SubResource("AnimationLibrary_nw7y5")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=55655458]
+environment = SubResource("Environment_nw7y5")
+camera_attributes = SubResource("CameraAttributesPractical_8tcd5")
+compositor = SubResource("Compositor_por10")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment" unique_id=1211701600]
+transform = Transform3D(1, 0, 0, 0, -0.7143623, 0.69977605, 0, -0.69977605, -0.7143623, 0, 0, 38.8349)
+light_color = Color(0.14583692, 0.22735149, 0.30854335, 1)
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=413692738]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6286812, 0)
+stream = ExtResource("12_3shk0")
+autoplay = true
+bus = &"Wheelchair"
+
+[node name="FlashbackEffect" type="Node" parent="." unique_id=1500142353]
+script = ExtResource("8_7pqoc")
+fisheye = 0.6

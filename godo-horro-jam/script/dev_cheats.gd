@@ -8,8 +8,9 @@ const LEVEL_PATH := "res://levels/Level%d.tscn"
 # Другие сцены на цифры, которые не подходят под шаблон (например, концовки).
 # Формат: цифра: "путь". Путь проще взять через «Копировать путь» в панели файлов
 const EXTRA_SCENES := {
-	# 5: "res://levels/GoodEND.tscn",
-	# 6: "res://levels/BedEND.tscn",
+	5: "res://levels/GoodEND.tscn",
+	6: "res://levels/BedEND.tscn",
+	7: "res://levels/Cutscene.tscn"
 }
 
 func _ready() -> void:
@@ -23,6 +24,11 @@ func _input(event: InputEvent) -> void:
 		return
 	# Физическая клавиша H: работает при любой раскладке (RU и EN)
 	if not Input.is_physical_key_pressed(KEY_H):
+		return
+
+	# H+0: проигрывает скример для проверки (проверяем до цифр, у нуля digit = -1)
+	if key.physical_keycode == KEY_0 or key.physical_keycode == KEY_KP_0:
+		PlayerHealth.test_jumpscare()
 		return
 
 	var digit := _digit_of(key.physical_keycode)

@@ -199,11 +199,12 @@ vertical_alignment = 1
 layout_mode = 2
 theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("9_gyk0n")
-theme_override_font_sizes/font_size = 80
+theme_override_font_sizes/font_size = 60
 text = "Kkryy
 Elbolilloduro
 Сhilly_durango
-DissonantVoid"
+DissonantVoid
+GGBotNet"
 horizontal_alignment = 1
 vertical_alignment = 1
 

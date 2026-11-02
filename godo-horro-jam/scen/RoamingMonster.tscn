@@ -23,7 +23,7 @@ max_distance = 50.0
 bus = &"Radio"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=761806220]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 0.8, 0)
 shape = SubResource("CapsuleShape3D_yf5fn")
 
 [node name="tiran_creacher" parent="." unique_id=1417004769 instance=ExtResource("3_wtrex")]

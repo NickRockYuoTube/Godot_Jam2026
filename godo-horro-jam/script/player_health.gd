@@ -5,7 +5,7 @@ signal health_changed(hp: int, max_hp: int)
 signal damaged(hp: int)
 signal died
 
-const MAX_HP := 2
+const MAX_HP := 3
 const INVULNERABLE_TIME := 1.5    # после удара игрока нельзя ударить повторно, сек
 const RESTART_DELAY := 2.5        # через сколько секунд после смерти перезапуск уровня
 const VIGNETTE_STEADY := 0.3      # ← НОВОЕ: постоянная сила виньетки (было 0.55)
@@ -28,7 +28,10 @@ void fragment() {
 	COLOR = vec4(col, max(a, blackout));
 }
 """
+const JUMPSCARE_SCENE_PATH := "res://scen/Jumpscare.tscn"   # путь к сцене скримера
+const DEATH_BLACK_TIME := 1.0       # черный экран после скримера, сек
 
+var _jumpscare_layer: CanvasLayer
 var hp := MAX_HP
 var is_dead := false
 
@@ -40,6 +43,7 @@ var _time := 0.0
 var _material: ShaderMaterial
 
 func _ready() -> void:
+	process_mode = Node.PROCESS_MODE_ALWAYS   # работает и пока игра заморожена
 	var layer := CanvasLayer.new()
 	layer.layer = 100                       # поверх всего интерфейса
 	add_child(layer)
@@ -86,10 +90,14 @@ func take_damage(amount: int = 1) -> void:
 func _die() -> void:
 	is_dead = true
 	died.emit()
-	create_tween().tween_property(self, "_blackout", 1.0, 1.2)   # затемнение
-	await get_tree().create_timer(RESTART_DELAY).timeout
+	get_tree().paused = true          # замораживаем игру: скример играет поверх неё
+	await _play_jumpscare()
 
-	# Переход на сцену концовки вместо перезапуска уровня
+	_blackout = 1.0                   # после скримера резкий обрыв в черноту
+	await get_tree().create_timer(DEATH_BLACK_TIME).timeout
+
+	get_tree().paused = false         # иначе новая сцена останется замороженной
+	# Переход на сцену концовки
 	if ResourceLoader.exists(DEATH_SCENE):
 		get_tree().change_scene_to_file(DEATH_SCENE)
 	else:
@@ -99,9 +107,43 @@ func _die() -> void:
 	reset()
 	PowerSystem.reset()
 
-	# Концовка проявляется из черного, а не появляется рывком
+	# Концовка проявляется из черного
 	_blackout = 1.0
 	create_tween().tween_property(self, "_blackout", 0.0, 1.0)
+
+# Показывает скример поверх всего и ждёт, пока он закончится
+# Показывает скример поверх всего и ждёт, пока он закончится
+func _play_jumpscare() -> void:
+	if not ResourceLoader.exists(JUMPSCARE_SCENE_PATH):
+		return   # сцены нет: сразу идём дальше
+	_ensure_jumpscare_layer()
+
+	var scare = (load(JUMPSCARE_SCENE_PATH) as PackedScene).instantiate()
+	scare.process_mode = Node.PROCESS_MODE_ALWAYS   # играет, пока игра на паузе
+	_jumpscare_layer.add_child(scare)
+
+	if scare.has_method("play") and scare.has_signal("finished"):
+		scare.play()
+		await scare.finished
+	else:
+		await get_tree().create_timer(2.0).timeout
+	scare.queue_free()
+
+# Для чит-кода: проигрывает скример и возвращает игру, без смерти и перехода на концовку
+func test_jumpscare() -> void:
+	if is_dead or get_tree().paused:
+		return
+	get_tree().paused = true      # замораживаем игру, как при настоящей смерти
+	await _play_jumpscare()
+	get_tree().paused = false
+
+# Создаёт слой для скримера, если его ещё нет
+func _ensure_jumpscare_layer() -> void:
+	process_mode = Node.PROCESS_MODE_ALWAYS   # продолжает работать, пока игра заморожена
+	if _jumpscare_layer == null:
+		_jumpscare_layer = CanvasLayer.new()
+		_jumpscare_layer.layer = 130          # поверх виньетки и всего интерфейса
+		add_child(_jumpscare_layer)
 
 func reset() -> void:
 	hp = MAX_HP

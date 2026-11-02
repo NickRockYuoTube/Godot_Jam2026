@@ -223,7 +223,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9319098, 0.118594944)
 script = ExtResource("3_kmb4p")
 
 [node name="Camera3D" type="Camera3D" parent="Head" unique_id=1783926359]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.026337206, -0.056592464, -0.33019873)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.026337206, -0.063583374, -0.33019873)
 fov = 68.0
 
 [node name="RayCast3D" type="RayCast3D" parent="Head/Camera3D" unique_id=365777482]

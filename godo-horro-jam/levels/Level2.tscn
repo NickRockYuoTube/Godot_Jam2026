@@ -96,6 +96,7 @@
 [ext_resource type="PackedScene" uid="uid://driwucwjkiiab" path="res://scen/RoamingMonster.tscn" id="92_f6d8x"]
 [ext_resource type="AudioStream" uid="uid://qtq3swrpe6at" path="res://sound/scrimer.ogg" id="93_c76jl"]
 [ext_resource type="PackedScene" uid="uid://b8he4r34s201g" path="res://scen/TeleportTrigger1.tscn" id="96_cdvfa"]
+[ext_resource type="AudioStream" uid="uid://c3jjlyxdm3s8f" path="res://sound/panch.ogg" id="96_h21de"]
 [ext_resource type="PackedScene" uid="uid://dv8kukdnkjyup" path="res://scen/LevelExit.tscn" id="97_kate0"]
 [ext_resource type="AudioStream" uid="uid://brm5qylt2uc0b" path="res://sound/epeleptic.ogg" id="97_v0e18"]
 [ext_resource type="FontFile" uid="uid://cvo0aw7dhu72u" path="res://title/Ustroke-Regular.ttf" id="99_1jsec"]
@@ -1657,17 +1658,21 @@ bus = &"Wheelchair"
 
 [node name="AttackSound" type="AudioStreamPlayer3D" parent="RoamingMonster" unique_id=808705465]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0063719, 0)
-stream = ExtResource("93_c76jl")
+stream = ExtResource("96_h21de")
 bus = &"Wheelchair"
 
-[node name="TeleportTrigger1" parent="." unique_id=1073442305 node_paths=PackedStringArray("destination", "sound") instance=ExtResource("96_cdvfa")]
+[node name="TeleportTrigger1" parent="." unique_id=1073442305 node_paths=PackedStringArray("destination", "look_target", "sound") instance=ExtResource("96_cdvfa")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2.1199179, -55.028263, 0.056756258, -4.035382)
 destination = NodePath("../lift3/TeleportPoint")
+look_target = NodePath("LookTarget")
 sound = NodePath("Horror")
 
 [node name="Horror" type="AudioStreamPlayer3D" parent="TeleportTrigger1" unique_id=965818839]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.47171637, 0.52044296, 0, 0)
 stream = ExtResource("97_v0e18")
+
+[node name="LookTarget" type="Marker3D" parent="TeleportTrigger1" unique_id=1619189730]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.06539154, 1.5196593, 0)
 
 [node name="LevelExit" parent="." unique_id=2014359388 instance=ExtResource("97_kate0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -155.60939, 0, -4)
