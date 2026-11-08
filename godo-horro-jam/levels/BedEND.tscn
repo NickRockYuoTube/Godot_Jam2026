@@ -147,7 +147,7 @@ offset_bottom = 138.0
 grow_horizontal = 2
 theme_override_fonts/font = ExtResource("10_4ovcn")
 theme_override_font_sizes/font_size = 80
-text = "The END"
+text = "ENDING_TXT1"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -163,8 +163,7 @@ offset_bottom = 595.0
 grow_horizontal = 2
 theme_override_fonts/font = ExtResource("10_4ovcn")
 theme_override_font_sizes/font_size = 60
-text = "We are the result 
-of our mistakes"
+text = "ENDING_TXT2"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -188,6 +187,7 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -4.1
 
 [node name="AchievementPopup" type="Node" parent="." unique_id=2063887392]
 script = ExtResource("14_h4d7h")
-text = "Ending 2 Unlocked"
+text = "ENDING_2_UNLOCKED"
 font_size = 30
 sound = ExtResource("15_jrcxk")
+ending_id = 1

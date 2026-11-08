@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="GodoHorroJam"
-config/version="0.0.1.8"
+config/version="0.0.2.0"
 run/main_scene="uid://c8ok3s27eila1"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
@@ -26,6 +26,10 @@ PowerSystem="*uid://qtvxu78mulba"
 PlayerHealth="*uid://t6qakvi7sob7"
 PauseMenu="*uid://7slctv6qehyc"
 DevCheats="*uid://wirmwn203ev7"
+GameSettings="*uid://dr1cg2b437l0t"
+Hints="*uid://dgllg6qbw3geo"
+LocaleFonts="*uid://c1mlyvurjj2qm"
+MenuMusic="*uid://bou3n6bckkn8x"
 
 [display]
 
@@ -63,6 +67,10 @@ interact={
 "events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":1,"position":Vector2(235, 8),"global_position":Vector2(244, 56),"factor":1.0,"button_index":1,"canceled":false,"pressed":true,"double_click":false,"script":null)
 ]
 }
+
+[internationalization]
+
+locale/translations=PackedStringArray("res://translations.ru.translation", "res://translations.en.translation")
 
 [physics]
 

@@ -1,0 +1,173 @@
+[gd_scene format=3 uid="uid://d2t1dq3u1r1hl"]
+
+[ext_resource type="FontFile" uid="uid://3qko443w4nu0" path="res://title/BlankSpotsRegular.ttf" id="1_0620o"]
+[ext_resource type="Script" uid="uid://d2oug4lppmubi" path="res://script/settings_menu.gd" id="1_ib8md"]
+[ext_resource type="AudioStream" uid="uid://ca3seckps7fy5" path="res://sound/point.ogg" id="2_imk46"]
+
+[node name="Settings" type="Control" unique_id=345562482]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ib8md")
+menu_scene = "uid://cmoog3v3tmkvn"
+
+[node name="Label" type="Label" parent="." unique_id=1743802009]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -83.0
+offset_top = -279.0
+offset_right = 83.0
+offset_bottom = -219.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_0620o")
+theme_override_font_sizes/font_size = 60
+text = "SETTINGS_VOLUME"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VolumeSlider" type="HSlider" parent="." unique_id=1595654791]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.499
+anchor_top = 0.5
+anchor_right = 0.499
+anchor_bottom = 0.5
+offset_left = -111.84802
+offset_top = -212.0
+offset_right = 111.15198
+offset_bottom = -196.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label2" type="Label" parent="." unique_id=437850701]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -113.0
+offset_top = -166.0
+offset_right = 113.0
+offset_bottom = -106.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_0620o")
+theme_override_font_sizes/font_size = 60
+text = "SETTINGS_BRIGHTNESS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BrightnessSlider" type="HSlider" parent="." unique_id=1010771063]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.499
+anchor_top = 0.5
+anchor_right = 0.499
+anchor_bottom = 0.5
+offset_left = -111.84802
+offset_top = -93.0
+offset_right = 111.15198
+offset_bottom = -77.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label3" type="Label" parent="." unique_id=570294382]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -123.0
+offset_top = -43.0
+offset_right = 123.0
+offset_bottom = 17.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_0620o")
+theme_override_font_sizes/font_size = 60
+text = "SETTINGS_SENSITIVITY"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SensitivitySlider" type="HSlider" parent="." unique_id=309394784]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.499
+anchor_top = 0.5
+anchor_right = 0.499
+anchor_bottom = 0.5
+offset_left = -111.84802
+offset_top = 33.0
+offset_right = 111.15198
+offset_bottom = 49.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label4" type="Label" parent="SensitivitySlider" unique_id=518114118]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -114.5
+offset_top = 49.0
+offset_right = 57.5
+offset_bottom = 152.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_0620o")
+theme_override_font_sizes/font_size = 50
+text = "SETTINGS_FULLSCREEN"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FullscreenCheck" type="CheckButton" parent="." unique_id=786864660]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 58.0
+offset_top = -207.0
+offset_right = 102.0
+offset_bottom = -183.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(2, 2)
+theme_override_fonts/font = ExtResource("1_0620o")
+theme_override_font_sizes/font_size = 20
+
+[node name="BackBtn" type="Button" parent="." unique_id=997061338]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -54.0
+offset_top = -99.0
+offset_right = 54.0
+offset_bottom = -26.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("1_0620o")
+theme_override_font_sizes/font_size = 60
+text = "Back"
+
+[node name="ClickSound" type="AudioStreamPlayer" parent="." unique_id=852284530]
+stream = ExtResource("2_imk46")
+
+[node name="HoverSound" type="AudioStreamPlayer" parent="." unique_id=381435458]
+stream = ExtResource("2_imk46")

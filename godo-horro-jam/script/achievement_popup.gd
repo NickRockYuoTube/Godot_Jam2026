@@ -8,10 +8,17 @@ class_name AchievementPopup
 @export var on_left := false        # false = справа внизу, true = слева внизу
 @export var font_size := 22
 @export var sound: AudioStream      # необязательно: звук появления («дзынь»)
+@export var ending_id := 0             # номер концовки (1 = BedEND, 2 = GoodEND), 0 = не привязывать
+@export var only_first_time := true    # показывать плашку только при первом открытии
 
 var _panel: PanelContainer
 
 func _ready() -> void:
+		# Если это концовка: запоминаем её, и плашку показываем только при первом открытии
+	if ending_id > 0:
+		var is_new := GameSettings.unlock_ending(ending_id)
+		if not is_new and only_first_time:
+			return
 	var layer := CanvasLayer.new()
 	layer.layer = 110               # поверх всего, в том числе виньетки
 	add_child(layer)

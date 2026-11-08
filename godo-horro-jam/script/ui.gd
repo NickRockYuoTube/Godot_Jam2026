@@ -2,11 +2,15 @@ extends Control
 
 const START_LEVEL := "res://levels/Level1.tscn"
 
-@export_file("*.tscn") var authors_scene: String   # сцена с авторами (выбери в Inspector)
+@export_file("*.tscn") var authors_scene: String    # сцена с авторами
+@export_file("*.tscn") var settings_scene: String   # сцена настроек
 
 @onready var start_btn = $MenuRight/StartBtn
 @onready var authors_btn = $MenuRight/AuthorsBtn
 @onready var exit_btn = $MenuRight/ExitBtn
+@onready var settings_btn = get_node_or_null("MenuRight/SettingsBtn")
+@onready var language_btn = get_node_or_null("MenuRight/LanguageBtn")   # ← НОВОЕ
+@onready var endings_label: Label = get_node_or_null("EndingsLabel")
 
 # Используем get_node_or_null: если узла нет, переменная будет просто null, и ошибки не будет
 @onready var click_sound: AudioStreamPlayer = get_node_or_null("ClickSound")
@@ -17,8 +21,7 @@ var _changing := false
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE   # курсор после игры снова виден
 
-	var buttons = [start_btn, authors_btn, exit_btn]
-
+	var buttons = [start_btn, authors_btn, exit_btn, settings_btn, language_btn]   # ← ИЗМЕНЕНО
 	for btn in buttons:
 		if btn != null:
 			btn.pressed.connect(_on_button_pressed.bind(btn))
@@ -27,6 +30,22 @@ func _ready():
 	start_btn.pressed.connect(_on_start_pressed)
 	authors_btn.pressed.connect(_on_authors_pressed)
 	exit_btn.pressed.connect(_on_exit_pressed)
+	if settings_btn:
+		settings_btn.pressed.connect(_on_settings_pressed)
+	if language_btn:                                           # ← НОВОЕ
+		language_btn.pressed.connect(_on_language_pressed)     # ← НОВОЕ
+
+	GameSettings.language_changed.connect(_refresh_texts)      # ← НОВОЕ
+	_refresh_texts()                                           # ← НОВОЕ: заменяет прежний блок с endings_label
+
+	GameSettings.endings_changed.connect(_refresh_texts)
+
+# Обновляет тексты, которые ставятся из кода (автоперевод их не знает)   ← НОВОЕ
+func _refresh_texts() -> void:
+	if endings_label:
+		endings_label.text = GameSettings.endings_text()
+	if language_btn:
+		language_btn.text = GameSettings.language_name()
 
 func _on_button_pressed(btn: Button):
 	if click_sound: # Проверяем, существует ли звук
@@ -41,6 +60,14 @@ func _on_start_pressed():
 
 func _on_authors_pressed():
 	_change_scene(authors_scene)
+
+func _on_settings_pressed():
+	_change_scene(settings_scene)
+
+func _on_language_pressed():
+	GameSettings.cycle_language()
+	GameSettings.save_all()
+	get_tree().reload_current_scene.call_deferred()   # перезагружаем меню, чтобы подхватились шрифты
 
 func _on_exit_pressed():
 	get_tree().quit()

@@ -24,6 +24,10 @@ enum State { ROAM, HUNT, STRIKE, RETREAT, FALLBACK }
 @export var retreat_by_teleport := false     # true = после удара исчезает и появляется на дальней точке
 @export var turn_speed_deg := 270.0          # скорость поворота, градусов в секунду
 @export var min_move_factor := 0.3           # во сколько раз замедляется, пока не повернулся лицом к цели
+@export var anim_base_speed := 1.3     # скорость (м/с), при которой анимация ходьбы выглядит естественно
+@export var anim_speed_min := 0.6      # во сколько раз анимацию можно замедлить
+@export var anim_speed_max := 2.2      # во сколько раз анимацию можно ускорить
+
 
 @export_group("Шаги")
 @export var step_is_loop := false            # true = звук это зацикленная дорожка шагов; false = один шаг
@@ -409,6 +413,8 @@ func _move_along_path(spd: float, delta: float) -> void:
 	velocity = to_next.normalized() * minf(spd * factor, to_next.length() / maxf(delta, 0.001))
 	var commanded := velocity.length()
 	move_and_slide()
+	_update_anim_speed(get_real_velocity().length(), delta)   # ← НОВОЕ
+	_set_walking(true)
 	_set_walking(true)
 	_update_steps(get_real_velocity().length() * delta, spd)
 	_check_stuck(commanded, delta)
@@ -659,6 +665,8 @@ func _get_player() -> Node3D:
 	return _player
 
 func _set_walking(walking: bool) -> void:
+	if not walking and anim_player:
+		anim_player.speed_scale = 1.0   # ← НОВОЕ: стоит или бьёт, значит, обычная скорость
 	if step_sound and step_is_loop and not walking:
 		step_sound.stop()
 	if anim_player == null:
@@ -670,6 +678,13 @@ func _set_walking(walking: bool) -> void:
 		return
 	if anim_player.current_animation != wanted or not anim_player.is_playing():
 		anim_player.play(wanted)
+
+# Подстраивает скорость анимации под реальную скорость монстра, чтобы ноги не «скользили»
+func _update_anim_speed(current_speed: float, delta: float) -> void:
+	if anim_player == null:
+		return
+	var target := clampf(current_speed / anim_base_speed, anim_speed_min, anim_speed_max)
+	anim_player.speed_scale = lerpf(anim_player.speed_scale, target, 8.0 * delta)   # плавно, без рывков
 
 # Датчик монстра: по нему DoorTrigger понимает, что рядом монстр
 func _create_door_sensor() -> void:

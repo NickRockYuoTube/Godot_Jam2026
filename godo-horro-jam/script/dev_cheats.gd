@@ -31,6 +31,11 @@ func _input(event: InputEvent) -> void:
 		PlayerHealth.test_jumpscare()
 		return
 
+	# H+K: сбрасывает сохранённые концовки
+	if key.physical_keycode == KEY_K:
+		GameSettings.reset_endings()
+		return
+
 	var digit := _digit_of(key.physical_keycode)
 	if digit < 0:
 		return

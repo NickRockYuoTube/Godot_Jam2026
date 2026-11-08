@@ -1,0 +1,132 @@
+keys,en,ru
+MENU_START,Start,Старт
+MENU_AUTHORS,Authors,Авторы
+MENU_SETTINGS,Settings,Настройки
+MENU_EXIT,Exit,Выход
+BACK,Back,Назад
+SETTINGS_VOLUME,Volume,Громкость
+SETTINGS_BRIGHTNESS,Brightness,Яркость
+SETTINGS_SENSITIVITY,Mouse sensitivity,Чувствительность мыши
+SETTINGS_FULLSCREEN,Fullscreen,Полный экран
+PAUSE_TEXT,"PAUSE\n\nESC to resume","ПАУЗА\n\nESC, чтобы продолжить"
+ENDINGS_COUNT,Endings: %d / %d,Концовки: %d / %d
+ENDING_1,Ending 1,Концовка 1
+ENDING_2,Ending 2,Концовка 2
+ENDING_1_UNLOCKED,Ending 1 Unlocked,Концовка 1 открыта
+ENDING_2_UNLOCKED,Ending 2 Unlocked,Концовка 2 открыта
+ENDING_TXT1,"The END","Конец"
+ENDING_TXT2,"We are the result 
+of our mistakes","Мы это результат
+наших ошибок"
+HINT_MOVE,"On the left is the control terminal, on the right is the lantern on the dynamo machine","Слева пульт управления, справа фонарь на динамо-машине."
+WALL_NOTE_1,"I  hate 
+people","Я ненавижу 
+людей"
+WALL_NOTE_2,"I hate 
+this music","Я ненавижу 
+эту музыку"
+WALL_NOTE_3,"It reminds 
+me of...","Она мне 
+напоминает о..."
+WALL_NOTE_4,"...those days","...тех днях"
+WALL_NOTE_5,"This place 
+stinks","Здесь 
+воняет"
+WALL_NOTE_6,"I’ve always 
+been an outsider.","Я всегда был 
+чужим"
+WALL_NOTE_7,"Now I’m in 
+a stranger's 
+body.","Теперь я 
+в чужом теле"
+WALL_NOTE_8,"Seems like I'm 
+meant to be here... ","Похоже мне сюда..."
+WALL_NOTE_9,"I scream, 
+but no one hears.","Я кричу, 
+но никто не слышит"
+WALL_NOTE_10,"I fear the 
+new day","Я боюсь 
+нового дня"
+WALL_NOTE_11,"The flashlight's beam, 
+my only defense.","Свет фонаря, единственная защита"
+WALL_NOTE_12,"I feel them...
+...they are shifting, 
+but why can't I...","Я чувствую их...
+...они шевелятся, 
+но почему я не могу..."
+WALL_NOTE_13,"So tired...","Так устал..."
+WALL_NOTE_14,"I'm tired...","Я устал..."
+WALL_NOTE_15,"Forget it, 
+the way is 
+closed to you here","Забудь, 
+путь сюда 
+тебе закрыт"
+WALL_NOTE_16,"What is worse: 
+to feel 
+everything, 
+or to feel 
+nothing at all?","Что хуже: 
+чувствовать всё 
+или не чувствовать 
+ничего?"
+WALL_NOTE_17,"Who is this?        This isn't me...","Кто это?        Это не я."
+WALL_NOTE_18,"Don't go in. 
+In there...","Не входи. 
+Там..."
+WALL_NOTE_19,"My diary...","Мой дневник..."
+WALL_NOTE_20,"My thoughts...","Мои мысли..."
+WALL_NOTE_21,"My dreams...","Мои мечты..."
+WALL_NOTE_22,"I see him...
+In reflections...
+In the shadows...","Я вижу его... 
+В отражениях... 
+В тенях..."
+WALL_NOTE_23,"White 
+ceiling 
+and the 
+smell 
+of 
+bleach...","Белый 
+потолок 
+и запах 
+хлорки..."
+WALL_NOTE_24,"...here 
+again","...опять 
+здесь"
+WALL_NOTE_25,"God, if you exist, 
+hear me...","Боже, если ты есть, 
+услышь меня..."
+WALL_NOTE_26,"And if there 
+is no God...","А если боже 
+нет тебя..."
+WALL_NOTE_27,"...go to hell!","...то иди к чёрту!"
+WALL_NOTE_28,"DO YOU KNOW 
+WHO I AM?","ТЫ ЗНАЕШЬ, КТО Я?"
+WALL_NOTE_29,"LIGHT WILL 
+NOT SAVE...","СВЕТ 
+НЕ СПАСЁТ..."
+WALL_NOTE_30,"I don't remember
+the diagnosis.","Диагноз 
+не помню "
+WALL_NOTE_31,"I remember 
+the word: 
+Irreversible.","Помню 
+слово 
+Необратимо"
+WALL_NOTE_32,"The doctor said,
+""You'll get used to it.""
+Get used to what?","Врач сказал:
+«Вы привыкнете».
+К чему привыкнуть?"
+WALL_NOTE_33,"Up. 
+Always up. 
+Or down?","Вверх. 
+Всегда вверх. 
+Или вниз?"
+WALL_NOTE_34,"Ward 314. Mine.","Палата 314. Моя."
+WALL_NOTE_35,"This isn't my body!","Это не моё тело!"
+WALL_NOTE_36,"This can't be me!","Это не могу быть я!"
+WALL_NOTE_37,"This isn't me!","Это не я!"
+WALL_NOTE_38,"Not me!","Не я!"
+WALL_NOTE_39,"No! It's not me!","Нет! Это не я!"
+WALL_NOTE_40,"No!","Нет!"

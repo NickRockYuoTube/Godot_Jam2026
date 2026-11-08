@@ -15,8 +15,8 @@ func _ready() -> void:
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
-		_target_yaw -= event.relative.x * sensitivity
-		_target_pitch -= event.relative.y * sensitivity
+		_target_yaw -= event.relative.x * sensitivity * GameSettings.mouse_sensitivity
+		_target_pitch -= event.relative.y * sensitivity * GameSettings.mouse_sensitivity
 		# Жёсткое ограничение: гг парализован и не может крутить головой
 		_target_yaw = clamp(_target_yaw, -deg_to_rad(max_yaw_deg), deg_to_rad(max_yaw_deg))
 		_target_pitch = clamp(_target_pitch, -deg_to_rad(max_pitch_down_deg), deg_to_rad(max_pitch_up_deg))

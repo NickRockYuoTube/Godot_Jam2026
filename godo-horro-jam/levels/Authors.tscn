@@ -11,7 +11,6 @@
 [ext_resource type="FontFile" uid="uid://3qko443w4nu0" path="res://title/BlankSpotsRegular.ttf" id="9_gyk0n"]
 [ext_resource type="Script" uid="uid://vcvdfst2ogp7" path="res://script/authors.gd" id="9_h3lcq"]
 [ext_resource type="Shader" uid="uid://bvpq8vfw0hc1" path="res://material/VHS_Effect.gdshader" id="10_eucti"]
-[ext_resource type="AudioStream" uid="uid://ce3ok6tfd3gvr" path="res://music/ambient_horror.ogg" id="12_h3lcq"]
 [ext_resource type="PackedScene" uid="uid://3g5r7mk1lsw8" path="res://scen/screamer2.tscn" id="12_qtir1"]
 [ext_resource type="FontFile" uid="uid://cvo0aw7dhu72u" path="res://title/Ustroke-Regular.ttf" id="13_qns8p"]
 [ext_resource type="PackedScene" uid="uid://dq18t146vwtn3" path="res://prefab/lift_2.tscn" id="14_r0r6w"]
@@ -230,12 +229,6 @@ grow_vertical = 2
 mouse_filter = 2
 color = Color(1, 1, 1, 0)
 metadata/_edit_use_anchors_ = true
-
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=972339684]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3560338, 1.5461498, 1.1045564)
-stream = ExtResource("12_h3lcq")
-volume_db = -15.0
-autoplay = true
 
 [node name="тест" parent="." unique_id=471729371 instance=ExtResource("12_qtir1")]
 transform = Transform3D(-2.4041263e-08, 0, 0.55, 0, 0.55, 0, -0.55, 0, -2.4041263e-08, -1.8985988, -1.7239335, 5.1488385)

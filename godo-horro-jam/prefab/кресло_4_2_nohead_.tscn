@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://x5nc3voyroaf"]
+
+[ext_resource type="PackedScene" uid="uid://cm8cxo1nkqo5r" path="res://models/кресло 4.2 nohead .glb" id="1_ey41h"]
+
+[node name="кресло 4_2 nohead " unique_id=1798535467 instance=ExtResource("1_ey41h")]
+
+[node name="Куб_006" parent="." index="3" unique_id=1467528047]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.01376152, -0.6684189, -0.08040261)
+
+[node name="Куб_007" parent="." index="4" unique_id=1960912853]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.01376152, -0.6684189, -0.08040261)
+
+[node name="Куб_008" parent="." index="5" unique_id=2068988183]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.01376152, -0.6684189, -0.08040261)
+
+[node name="Куб_009" parent="." index="6" unique_id=1322250811]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.01376152, -0.6684189, -0.08040261)
+
+[node name="Куб_010" parent="." index="7" unique_id=1533964608]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.01376152, -0.6684189, -0.08040261)
+
+[node name="Цилиндр_050" parent="." index="21" unique_id=1467802898]
+transform = Transform3D(0.99949896, 0, 0.031651005, 0, 0.65865105, 0, -0.031651005, 0, 0.99949896, 0, 2.4974236, 0)
+
+[node name="Цилиндр_053" parent="." index="22" unique_id=544376649]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 2.6839952, 3.1039, -0.7750976)
+
+[node name="Цилиндр_056" parent="." index="23" unique_id=3914400]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 2.678217, 3.107212, -0.77256167)

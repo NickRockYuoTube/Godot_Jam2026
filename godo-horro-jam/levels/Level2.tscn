@@ -1549,8 +1549,7 @@ door = NodePath("..")
 auto_close_time = 10.0
 
 [node name="door8" parent="Doors" unique_id=569682792 instance=ExtResource("55_arvlc")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 15.040807, -3.9994998, -26.015594)
-open_angle = -90.0
+transform = Transform3D(-4.371138e-08, 0, -1, 0, 1, 0, 1, 0, -4.371138e-08, 19.040806, -3.9994998, -26.015594)
 
 [node name="DoorTrigger5" parent="Doors/door8" unique_id=1782538811 node_paths=PackedStringArray("door") instance=ExtResource("54_7apex")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2.0084822, 0.03364563, -4.7683716e-07, 2.0349026)
@@ -1558,7 +1557,8 @@ door = NodePath("..")
 auto_close_time = 10.0
 
 [node name="door9" parent="Doors" unique_id=874322732 instance=ExtResource("55_arvlc")]
-transform = Transform3D(1, 0, 7.351371e-08, 0, 1, 0, -7.351371e-08, 0, 1, 11.059542, -3.9994998, -22.002102)
+transform = Transform3D(-1, 0, -1.6093648e-07, 0, 1, 0, 1.6093648e-07, 0, -1, 11.05954, -3.9994998, -18.002102)
+open_angle = -90.0
 
 [node name="DoorTrigger5" parent="Doors/door9" unique_id=2107190214 node_paths=PackedStringArray("door") instance=ExtResource("54_7apex")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2.0084822, 0.03364563, -4.7683716e-07, 2.0349026)
@@ -1649,7 +1649,10 @@ agent = NodePath("NavigationAgent3D2")
 vanish_sound = NodePath("VanishSound")
 debug_light = true
 
-[node name="NavigationAgent3D2" type="NavigationAgent3D" parent="RoamingMonster" unique_id=1720897223]
+[node name="NavigationAgent3D2" type="NavigationAgent3D" parent="RoamingMonster" unique_id=138642915]
+path_desired_distance = 0.2
+target_desired_distance = 0.5
+path_max_distance = 3.01
 
 [node name="VanishSound" type="AudioStreamPlayer3D" parent="RoamingMonster" unique_id=1138526245]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0063719, 0)
@@ -1682,115 +1685,98 @@ next_level = "uid://cjkdov6nerqw1"
 
 [node name="Label3D" type="Label3D" parent="Decals" unique_id=966808559]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -2, 1.4403858, 5.8969264)
-text = "I scream, 
-but no one hears."
+text = "WALL_NOTE_9"
 font = ExtResource("99_1jsec")
 font_size = 30
 outline_size = 0
 
 [node name="Label3D7" type="Label3D" parent="Decals" unique_id=2123261767]
 transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, -22.104752, 1.1633269, 5.5183907)
-text = "I fear the 
-new day"
+text = "WALL_NOTE_10"
 font = ExtResource("99_1jsec")
 font_size = 30
 outline_size = 0
 
 [node name="Label3D2" type="Label3D" parent="Decals" unique_id=1587643569]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.758038, 3.676889, -5.8972673)
-text = "The flashlight's beam, 
-my only defense."
+text = "WALL_NOTE_11"
 font = ExtResource("99_1jsec")
 font_size = 30
 outline_size = 0
 
 [node name="Label3D3" type="Label3D" parent="Decals" unique_id=1222019275]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -41.885902, 0.33152163, -6.897543)
-text = "I feel them...
-...they are shifting, 
-but why can't I..."
+text = "WALL_NOTE_12"
 font = ExtResource("99_1jsec")
 font_size = 30
 outline_size = 0
 
 [node name="Label3D8" type="Label3D" parent="Decals" unique_id=1058858250]
 transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, -38.446415, 0.86470735, -0.8802409)
-text = "So tired..."
+text = "WALL_NOTE_13"
 font = ExtResource("99_1jsec")
 font_size = 30
 outline_size = 0
 
 [node name="Label3D9" type="Label3D" parent="Decals" unique_id=694387262]
 transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, -38.446415, 1.8647074, -0.8802409)
-text = "I'm tired... "
+text = "WALL_NOTE_14"
 font = ExtResource("99_1jsec")
 font_size = 30
 outline_size = 0
 
 [node name="Label3D4" type="Label3D" parent="Decals" unique_id=1772458998]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.89132, 1.5430213, -29.898333)
-text = "Forget it, 
-the way is 
-closed to you here"
+text = "WALL_NOTE_15"
 font = ExtResource("99_1jsec")
 font_size = 30
 outline_size = 0
 
 [node name="Label3D5" type="Label3D" parent="Decals" unique_id=386114167]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -53.419327, 1.5430213, -14.10143)
-text = "What is worse: 
-to feel 
-everything, 
-or to feel 
-nothing at all?"
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -53.44407, 1.5430213, -14.10143)
+text = "WALL_NOTE_16"
 font = ExtResource("99_1jsec")
 font_size = 30
 outline_size = 0
 
 [node name="Label3D6" type="Label3D" parent="Decals" unique_id=832400396]
 transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, -50.13603, 1.4301248, 11.032192)
-text = "Who is this?        This isn't me..."
+text = "WALL_NOTE_17"
 font = ExtResource("99_1jsec")
 font_size = 30
 outline_size = 0
 
 [node name="Label3D11" type="Label3D" parent="Decals" unique_id=92924659]
 transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, -62.142014, 1.4301248, -2.5098858)
-text = "Don't go in. 
-In there..."
+text = "WALL_NOTE_18"
 font = ExtResource("99_1jsec")
 font_size = 30
 outline_size = 0
 
 [node name="Label3D12" type="Label3D" parent="Decals" unique_id=1877313002]
 transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, -54.10408, 1.3233862, -3.9787958)
-text = "My diary...
-"
+text = "WALL_NOTE_19"
 font = ExtResource("99_1jsec")
 font_size = 30
 outline_size = 0
 
 [node name="Label3D13" type="Label3D" parent="Decals" unique_id=1159286740]
 transform = Transform3D(1.3113416e-07, 0, -1, 0.33238223, 0.9431448, 4.3586663e-08, 0.9431448, -0.33238223, 1.236785e-07, -54.10408, 1.6806219, -4.8984447)
-text = "My thoughts...
-"
+text = "WALL_NOTE_20"
 font = ExtResource("99_1jsec")
 font_size = 30
 outline_size = 0
 
 [node name="Label3D14" type="Label3D" parent="Decals" unique_id=2075547001]
 transform = Transform3D(1.3113414e-07, -8.3973364e-16, -1, -0.3822424, 0.9240622, -5.0125035e-08, 0.9240622, 0.3822424, 1.2117611e-07, -54.10408, 1.4248126, -2.8933256)
-text = "My dreams...
-"
+text = "WALL_NOTE_21"
 font = ExtResource("99_1jsec")
 font_size = 30
 outline_size = 0
 
 [node name="Label3D10" type="Label3D" parent="Decals" unique_id=386923066]
 transform = Transform3D(0.99374425, -0.1116799, 1.7375176e-07, 0.1116799, 0.99374425, 1.9526734e-08, -1.7484555e-07, 0, 1, -55.77601, 0.8859948, 6.1638374)
-text = "I see him...
-In reflections...
-In the shadows..."
+text = "WALL_NOTE_22"
 font = ExtResource("99_1jsec")
 font_size = 30
 outline_size = 0

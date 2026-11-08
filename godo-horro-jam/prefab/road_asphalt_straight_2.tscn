@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://t5iw66cexbs0"]
+
+[ext_resource type="PackedScene" uid="uid://c4wlchusjigwy" path="res://models/RUK/road-asphalt-straight.glb" id="1_fdmma"]
+[ext_resource type="Texture2D" uid="uid://bfoffspsrernq" path="res://models/RUK/Textures/tiles.png" id="2_1imy2"]
+[ext_resource type="Texture2D" uid="uid://cidsuy3bxcv0q" path="res://models/RUK/Textures/asphalt.png" id="3_udchh"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fjd0a"]
+albedo_texture = ExtResource("2_1imy2")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lv5ck"]
+albedo_texture = ExtResource("3_udchh")
+
+[node name="road-asphalt-straight2" unique_id=399233220 instance=ExtResource("1_fdmma")]
+
+[node name="road-asphalt-straight" parent="." index="0" unique_id=1360973261]
+surface_material_override/0 = SubResource("StandardMaterial3D_fjd0a")
+surface_material_override/1 = SubResource("StandardMaterial3D_lv5ck")

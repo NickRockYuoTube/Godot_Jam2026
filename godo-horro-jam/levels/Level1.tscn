@@ -41,6 +41,7 @@
 [ext_resource type="FontFile" uid="uid://cvo0aw7dhu72u" path="res://title/Ustroke-Regular.ttf" id="39_0y73d"]
 [ext_resource type="PackedScene" uid="uid://dv8kukdnkjyup" path="res://scen/LevelExit.tscn" id="40_d0msd"]
 [ext_resource type="AudioStream" uid="uid://c32n1gmxvtxs4" path="res://sound/water.ogg" id="41_e8o2b"]
+[ext_resource type="Script" uid="uid://c25eex7qh0p4e" path="res://script/hint_trigger.gd" id="42_uf85f"]
 
 [sub_resource type="Environment" id="Environment_g4v7s"]
 ambient_light_source = 2
@@ -859,64 +860,56 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 1.89
 
 [node name="Label3D" type="Label3D" parent="Decals" unique_id=251718809]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.10458946, -0.15899932, 0)
-text = "I  hate
-people"
+text = "WALL_NOTE_1"
 font = ExtResource("39_0y73d")
 font_size = 30
 outline_size = 0
 
 [node name="Label3D2" type="Label3D" parent="Decals" unique_id=677142935]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 9.66541, 0.7835436, 11.785751)
-text = "I hate 
-this music"
+text = "WALL_NOTE_2"
 font = ExtResource("39_0y73d")
 font_size = 30
 outline_size = 0
 
 [node name="Label3D3" type="Label3D" parent="Decals" unique_id=91742653]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 8.90055, 0.16560411, 10.129019)
-text = "It reminds 
-me of..."
+text = "WALL_NOTE_3"
 font = ExtResource("39_0y73d")
 font_size = 30
 outline_size = 0
 
 [node name="Label3D4" type="Label3D" parent="Decals" unique_id=1203326098]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.253394, -0.12158227, 3.994588)
-text = "...those days"
+text = "WALL_NOTE_4"
 font = ExtResource("39_0y73d")
 font_size = 30
 outline_size = 0
 
 [node name="Label3D5" type="Label3D" parent="Decals" unique_id=643175522]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 26.945196, 0.099601746, 3.7909229)
-text = "This place 
-stinks"
+text = "WALL_NOTE_5"
 font = ExtResource("39_0y73d")
 font_size = 30
 outline_size = 0
 
 [node name="Label3D6" type="Label3D" parent="Decals" unique_id=1610469151]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.517178, 0.4223379, 8.002186)
-text = "I’ve always 
-been an outsider."
+text = "WALL_NOTE_6"
 font = ExtResource("39_0y73d")
 font_size = 30
 outline_size = 0
 
 [node name="Label3D7" type="Label3D" parent="Decals" unique_id=699682097]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 40.055637, -1.0353621, 15.784298)
-text = "Now I’m in 
-a stranger's 
-body."
+text = "WALL_NOTE_7"
 font = ExtResource("39_0y73d")
 font_size = 30
 outline_size = 0
 
 [node name="Label3D8" type="Label3D" parent="Decals" unique_id=528462952]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 28.681679, -0.0660975, 26.86752)
-text = "Seems like I'm 
-meant to be here... "
+text = "WALL_NOTE_8"
 font = ExtResource("39_0y73d")
 font_size = 30
 outline_size = 0
@@ -932,3 +925,9 @@ volume_db = -10.0
 autoplay = true
 max_distance = 15.0
 bus = &"Radio"
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1532589768]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.575987, 1.6394404, 1.6618218)
+script = ExtResource("42_uf85f")
+text = "HINT_MOVE"
+show_on_start = true
