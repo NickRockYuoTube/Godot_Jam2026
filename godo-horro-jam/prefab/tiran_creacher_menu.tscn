@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://nwiav7xql61s"]
 
 [ext_resource type="PackedScene" uid="uid://bj7gwo1f6ti8q" path="res://models/revork/tiran_creacher_skrimmer.glb" id="1_6wv54"]
-[ext_resource type="Script" uid="uid://b1spta0k4g5c2" path="res://prefab/tiran_creacher_menu.gd" id="2_013d8"]
+[ext_resource type="Script" uid="uid://b1spta0k4g5c2" path="res://script/tiran_creacher_menu.gd" id="2_013d8"]
 
 [node name="tiran_creacher_menu" unique_id=289997385 node_paths=PackedStringArray("anim_player") instance=ExtResource("1_6wv54")]
 script = ExtResource("2_013d8")

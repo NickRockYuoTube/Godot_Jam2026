@@ -129,7 +129,6 @@ grow_vertical = 2
 theme_override_fonts/font = ExtResource("1_0620o")
 theme_override_font_sizes/font_size = 50
 text = "SETTINGS_FULLSCREEN"
-horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="FullscreenCheck" type="CheckButton" parent="." unique_id=786864660]
@@ -139,10 +138,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = 58.0
-offset_top = -207.0
-offset_right = 102.0
-offset_bottom = -183.0
+offset_left = 88.0
+offset_top = -204.0
+offset_right = 132.0
+offset_bottom = -180.0
 grow_horizontal = 2
 grow_vertical = 0
 scale = Vector2(2, 2)

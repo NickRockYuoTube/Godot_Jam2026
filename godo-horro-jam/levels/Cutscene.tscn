@@ -2478,6 +2478,8 @@ stream = ExtResource("12_lvpkv")
 
 [node name="Bonk" type="AudioStreamPlayer" parent="Car" unique_id=1780707412]
 stream = ExtResource("13_y333c")
+volume_db = 5.0
+pitch_scale = 2.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1786340058]
 libraries/ = SubResource("AnimationLibrary_nw7y5")

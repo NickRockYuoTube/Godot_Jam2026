@@ -47,7 +47,7 @@ func _refresh_texts() -> void:
 	if language_btn:
 		language_btn.text = GameSettings.language_name()
 
-func _on_button_pressed(btn: Button):
+func _on_button_pressed(_btn: Button):
 	if click_sound: # Проверяем, существует ли звук
 		click_sound.play()
 
