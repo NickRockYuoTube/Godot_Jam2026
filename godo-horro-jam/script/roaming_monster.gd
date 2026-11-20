@@ -35,7 +35,7 @@ enum State { ROAM, HUNT, STRIKE, RETREAT, FALLBACK }
 @export var step_pitch_random := 0.08        # разброс высоты тона, чтобы шаги не были одинаковыми
 
 @export_group("Свет")
-@export var lit_time := 0.5                  # сколько секунд держать луч, чтобы исчез
+@export var lit_time := 0.2                  # сколько секунд держать луч, чтобы исчез
 @export var respawn_delay := 4.0             # через сколько секунд появится снова
 @export var far_spots_pool := 3              # респавн в одной из N самых дальних точек
 @export var body_center_height := 1.0        # высота центра тела (по ней проверяется свет)

@@ -748,7 +748,7 @@ spawn_at = NodePath("../Spot1")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.71428573, 130.89624, -0.03678572, 1.6071427)
 
 [node name="RoamingMonster" parent="." unique_id=1662520767 node_paths=PackedStringArray("agent", "vanish_sound") instance=ExtResource("49_33iar")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50.220154, -0.30781388, 4.068681)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50.220154, -0.4237073, 4.068681)
 agent = NodePath("NavigationAgent3D2")
 vanish_sound = NodePath("VanishSound")
 debug_light = true
